@@ -7665,6 +7665,10 @@
     }
   }
 
+  .dark\:bg-background:is(.dark *) {
+    background-color: var(--background);
+  }
+
   .dark\:bg-black:is(.dark *) {
     background-color: var(--color-black);
   }

@@ -921,7 +921,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
+function WorldMap({ dots = [], lineColor = "#00D9FF" }) {
     _s();
     const svgRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const map = new __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$dotted$2d$map$40$2$2e$2$2e$3$2f$node_modules$2f$dotted$2d$map$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"]({
@@ -931,9 +931,9 @@ function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
     const { theme } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$2d$themes$40$0$2e$4$2e$6_react$2d$dom_c91534e86f74096d969606227a1c49a3$2f$node_modules$2f$next$2d$themes$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTheme"])();
     const svgMap = map.getSVG({
         radius: 0.22,
-        color: theme === "dark" ? "#FFFFFF40" : "#00000040",
+        color: theme === "dark" ? "#FFFFFF60" : "#00000030",
         shape: "circle",
-        backgroundColor: theme === "dark" ? "black" : "white"
+        backgroundColor: theme === "dark" ? "transparent" : "transparent"
     });
     const projectPoint = (lat, lng)=>{
         const x = (lng + 180) * (800 / 360);
@@ -949,7 +949,7 @@ function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
         return `M ${start.x} ${start.y} Q ${midX} ${midY} ${end.x} ${end.y}`;
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "w-full aspect-[2/1] dark:bg-black bg-white relative font-sans overflow-hidden",
+        className: "w-full aspect-[2/1] dark:bg-background bg-background relative font-sans overflow-hidden",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 src: `data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`,
@@ -1009,7 +1009,7 @@ function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
                                     offset: "0%",
-                                    stopColor: "white",
+                                    stopColor: "transparent",
                                     stopOpacity: "0"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/world-map.tsx",
@@ -1018,7 +1018,7 @@ function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
                                     offset: "5%",
-                                    stopColor: lineColor,
+                                    stopColor: theme === "dark" ? "#00D9FF" : "#7B3FEF",
                                     stopOpacity: "1"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/world-map.tsx",
@@ -1027,7 +1027,7 @@ function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
                                     offset: "95%",
-                                    stopColor: lineColor,
+                                    stopColor: theme === "dark" ? "#00D9FF" : "#7B3FEF",
                                     stopOpacity: "1"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/world-map.tsx",
@@ -1036,7 +1036,7 @@ function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
                                     offset: "100%",
-                                    stopColor: "white",
+                                    stopColor: "transparent",
                                     stopOpacity: "0"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/world-map.tsx",
@@ -1062,7 +1062,7 @@ function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
                                             cx: projectPoint(dot.start.lat, dot.start.lng).x,
                                             cy: projectPoint(dot.start.lat, dot.start.lng).y,
                                             r: "2",
-                                            fill: lineColor
+                                            fill: theme === "dark" ? "#00D9FF" : "#7B3FEF"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/world-map.tsx",
                                             lineNumber: 102,
@@ -1072,7 +1072,7 @@ function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
                                             cx: projectPoint(dot.start.lat, dot.start.lng).x,
                                             cy: projectPoint(dot.start.lat, dot.start.lng).y,
                                             r: "2",
-                                            fill: lineColor,
+                                            fill: theme === "dark" ? "#00D9FF" : "#7B3FEF",
                                             opacity: "0.5",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("animate", {
@@ -1117,7 +1117,7 @@ function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
                                             cx: projectPoint(dot.end.lat, dot.end.lng).x,
                                             cy: projectPoint(dot.end.lat, dot.end.lng).y,
                                             r: "2",
-                                            fill: lineColor
+                                            fill: theme === "dark" ? "#00D9FF" : "#7B3FEF"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/world-map.tsx",
                                             lineNumber: 134,
@@ -1127,7 +1127,7 @@ function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
                                             cx: projectPoint(dot.end.lat, dot.end.lng).x,
                                             cy: projectPoint(dot.end.lat, dot.end.lng).y,
                                             r: "2",
-                                            fill: lineColor,
+                                            fill: theme === "dark" ? "#00D9FF" : "#7B3FEF",
                                             opacity: "0.5",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("animate", {
@@ -1193,10 +1193,9 @@ function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
                         duration: 1.2,
                         ease: "easeOut"
                     },
-                    className: "text-6xl lg:text-8xl font-black tracking-wider dark:text-white text-black select-none",
+                    className: "text-6xl lg:text-8xl font-black tracking-wider bg-gradient-to-r from-[#7B3FEF] via-[#00D9FF] to-[#7B3FEF] bg-clip-text text-transparent select-none",
                     style: {
-                        textShadow: 'none',
-                        fontFamily: 'system-ui, -apple-system, sans-serif'
+                        textShadow: 'none'
                     },
                     children: "TECHNOVA"
                 }, void 0, false, {

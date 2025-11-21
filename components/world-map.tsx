@@ -16,7 +16,7 @@ interface MapProps {
 
 export function WorldMap({
   dots = [],
-  lineColor = "#0ea5e9",
+  lineColor = "#00D9FF",
 }: MapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const map = new DottedMap({ height: 100, grid: "diagonal" });
@@ -25,9 +25,9 @@ export function WorldMap({
 
   const svgMap = map.getSVG({
     radius: 0.22,
-    color: theme === "dark" ? "#FFFFFF40" : "#00000040",
+    color: theme === "dark" ? "#FFFFFF60" : "#00000030",
     shape: "circle",
-    backgroundColor: theme === "dark" ? "black" : "white",
+    backgroundColor: theme === "dark" ? "transparent" : "transparent",
   });
 
   const projectPoint = (lat: number, lng: number) => {
@@ -46,7 +46,7 @@ export function WorldMap({
   };
 
   return (
-    <div className="w-full aspect-[2/1] dark:bg-black bg-white relative font-sans overflow-hidden">
+    <div className="w-full aspect-[2/1] dark:bg-background bg-background relative font-sans overflow-hidden">
       <Image
         src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
         className="h-full w-full [mask-image:linear-gradient(to_bottom,transparent,white_10%,white_90%,transparent)] pointer-events-none select-none"
@@ -89,10 +89,10 @@ export function WorldMap({
 
         <defs>
           <linearGradient id="path-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="white" stopOpacity="0" />
-            <stop offset="5%" stopColor={lineColor} stopOpacity="1" />
-            <stop offset="95%" stopColor={lineColor} stopOpacity="1" />
-            <stop offset="100%" stopColor="white" stopOpacity="0" />
+            <stop offset="0%" stopColor="transparent" stopOpacity="0" />
+            <stop offset="5%" stopColor={theme === "dark" ? "#00D9FF" : "#7B3FEF"} stopOpacity="1" />
+            <stop offset="95%" stopColor={theme === "dark" ? "#00D9FF" : "#7B3FEF"} stopOpacity="1" />
+            <stop offset="100%" stopColor="transparent" stopOpacity="0" />
           </linearGradient>
         </defs>
 
@@ -103,13 +103,13 @@ export function WorldMap({
                 cx={projectPoint(dot.start.lat, dot.start.lng).x}
                 cy={projectPoint(dot.start.lat, dot.start.lng).y}
                 r="2"
-                fill={lineColor}
+                fill={theme === "dark" ? "#00D9FF" : "#7B3FEF"}
               />
               <circle
                 cx={projectPoint(dot.start.lat, dot.start.lng).x}
                 cy={projectPoint(dot.start.lat, dot.start.lng).y}
                 r="2"
-                fill={lineColor}
+                fill={theme === "dark" ? "#00D9FF" : "#7B3FEF"}
                 opacity="0.5"
               >
                 <animate
@@ -135,13 +135,13 @@ export function WorldMap({
                 cx={projectPoint(dot.end.lat, dot.end.lng).x}
                 cy={projectPoint(dot.end.lat, dot.end.lng).y}
                 r="2"
-                fill={lineColor}
+                fill={theme === "dark" ? "#00D9FF" : "#7B3FEF"}
               />
               <circle
                 cx={projectPoint(dot.end.lat, dot.end.lng).x}
                 cy={projectPoint(dot.end.lat, dot.end.lng).y}
                 r="2"
-                fill={lineColor}
+                fill={theme === "dark" ? "#00D9FF" : "#7B3FEF"}
                 opacity="0.5"
               >
                 <animate
@@ -172,10 +172,10 @@ export function WorldMap({
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="text-6xl lg:text-8xl font-black tracking-wider dark:text-white text-black select-none"
+          className="text-6xl lg:text-8xl font-black tracking-wider bg-gradient-to-r from-[#7B3FEF] via-[#00D9FF] to-[#7B3FEF] bg-clip-text text-transparent select-none"
           style={{
             textShadow: 'none',
-            fontFamily: 'system-ui, -apple-system, sans-serif'
+        
           }}
         >
           TECHNOVA
