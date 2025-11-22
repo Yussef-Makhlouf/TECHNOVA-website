@@ -1,7 +1,7 @@
 "use client"
 
 import Navigation from "@/components/navigation"
-import Footer from "@/components/footer"
+
 import { Calendar, Clock, ArrowLeft, Share2, Bookmark } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
@@ -147,7 +147,7 @@ export default function BlogPostPage() {
         </div>
       </article>
 
-      <Footer />
+
     </div>
   )
 }

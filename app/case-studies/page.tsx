@@ -1,7 +1,7 @@
 "use client"
 
 import Navigation from "@/components/navigation"
-import Footer from "@/components/footer"
+
 import { ArrowRight, TrendingUp, BarChart3, Globe, Activity, Shield, Database, Cpu } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
@@ -161,7 +161,7 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      <Footer />
+
     </div>
   )
 }

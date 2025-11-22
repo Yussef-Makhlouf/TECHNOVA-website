@@ -12,8 +12,12 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#7B3FEF] to-[#00D9FF] rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-white font-heading text-xl font-bold">T</span>
+              <div className="relative w-10 h-10 transition-transform hover:scale-110">
+                <img
+                  src="/logos/logo-12.svg"
+                  alt="TECHNOVA Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="font-heading text-xl font-bold text-foreground tracking-wider">TECHNOVA</span>
             </div>

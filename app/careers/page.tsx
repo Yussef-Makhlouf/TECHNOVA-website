@@ -1,7 +1,7 @@
 "use client"
 
 import Navigation from "@/components/navigation"
-import Footer from "@/components/footer"
+
 import { Briefcase, MapPin, Clock, ArrowRight, Users, Heart, Zap, Trophy } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
@@ -256,7 +256,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <Footer />
+
     </div>
   )
 }

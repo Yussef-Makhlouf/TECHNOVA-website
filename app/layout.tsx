@@ -7,6 +7,9 @@ import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern"
 import { cn } from "@/lib/utils"
 import "./globals.css"
 
+import { PartnersMarquee } from "@/components/partners-marquee"
+import Footer from "@/components/footer"
+
 // Import custom fonts for Neo-Futurist design
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -65,7 +68,11 @@ export default function RootLayout({
               )}
             />
           </div>
-          <div className="relative z-10">{children}</div>
+          <div className="relative z-10">
+            {children}
+            <PartnersMarquee />
+            <Footer />
+          </div>
           <Analytics />
         </ThemeProvider>
       </body>

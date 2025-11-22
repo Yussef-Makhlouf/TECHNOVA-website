@@ -1,7 +1,7 @@
 "use client"
 
 import Navigation from "@/components/navigation"
-import Footer from "@/components/footer"
+
 import { Brain, Cloud, Shield, Sparkles, Database, Code, Cpu, Network } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
@@ -211,7 +211,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <Footer />
+
     </div>
   )
 }

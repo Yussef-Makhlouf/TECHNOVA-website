@@ -8,6 +8,7 @@ import { motion } from "framer-motion"
 import { DiagonalCard } from "@/components/diagonal-card"
 import { Globe } from "@/components/globe"
 import { About3 } from "@/components/ui/about-3"
+import { PartnersMarquee } from "@/components/partners-marquee"
 
 export default function AboutPage() {
   const values = [
@@ -85,55 +86,79 @@ export default function AboutPage() {
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#00D9FF]/5 rounded-full blur-3xl" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+
+            {/* Vision Text */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="group floating-tile"
+              className="flex-1 text-center lg:text-left"
             >
-              <div className="p-8 lg:p-10 glass-panel rounded-3xl border-border hover:border-[#7B3FEF]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#7B3FEF]/20 h-full">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#7B3FEF] to-[#7B3FEF]/50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-[#7B3FEF]/30">
-                  <Eye size={36} className="text-white" />
-                </div>
-                <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">Our Vision</h2>
-                <div className="gradient-line w-16 mb-6" />
-                <p className="text-muted-foreground leading-relaxed text-lg">
-                  To be the global leader in technology innovation, empowering businesses to thrive in the digital age
-                  through cutting-edge solutions and transformative strategies that shape the future of industries
-                  worldwide.
-                </p>
+              <div className="inline-flex items-center justify-center lg:justify-end gap-3 mb-4">
+                <Eye size={32} className="text-[#7B3FEF]" />
+                <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground">Our Vision</h2>
+              </div>
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                To be the global leader in technology innovation, empowering businesses to thrive in the digital age
+                through cutting-edge solutions and transformative strategies that shape the future of industries
+                worldwide.
+              </p>
+            </motion.div>
+
+            {/* Robot Scene Centerpiece */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative w-full max-w-md lg:max-w-lg aspect-square flex-shrink-0"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-[#7B3FEF]/20 to-[#00D9FF]/20 rounded-full blur-3xl animate-pulse" />
+              <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/10 shadow-2xl shadow-[#00D9FF]/20">
+                {/* Using the generated robot image here. I'll use the path from the artifact directory but I need to copy it to public first. 
+                     Since I can't copy files easily, I will assume I can use the artifact path directly or I'll use a placeholder if that fails.
+                     Wait, I can't use absolute paths in next/image src easily if it's outside public.
+                     I will use a placeholder for now and ask the user to move the file, OR I will try to read the file and write it to public.
+                     Actually, I can use the `write_to_file` tool to write the binary content if I read it first? No, `read_file` returns text.
+                     I will use the artifact path and hope the browser tool can see it, or I'll just use a placeholder and tell the user.
+                     Better: I will use the `run_command` to copy the file.
+                 */}
+                <img
+                  src="/robot-scene.png"
+                  alt="Futuristic Robot"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
 
+            {/* Mission Text */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="group floating-tile"
+              className="flex-1 text-center lg:text-left"
             >
-              <div className="p-8 lg:p-10 glass-panel rounded-3xl border-border hover:border-[#00D9FF]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#00D9FF]/20 h-full">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#00D9FF] to-[#00D9FF]/50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-[#00D9FF]/30">
-                  <Target size={36} className="text-white" />
-                </div>
-                <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">Our Mission</h2>
-                <div className="gradient-line w-16 mb-6" />
-                <p className="text-muted-foreground leading-relaxed text-lg">
-                  To deliver innovative, scalable, and secure technology solutions that drive measurable business value.
-                  We partner with our clients to understand their unique challenges and create tailored solutions that
-                  exceed expectations.
-                </p>
+              <div className="inline-flex items-center justify-center lg:justify-start gap-3 mb-4">
+                <Target size={32} className="text-[#00D9FF]" />
+                <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground">Our Mission</h2>
               </div>
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                To deliver innovative, scalable, and secure technology solutions that drive measurable business value.
+                We partner with our clients to understand their unique challenges and create tailored solutions that
+                exceed expectations.
+              </p>
             </motion.div>
+
           </div>
         </div>
       </section>
 
       <section className="py-20 lg:py-32 relative overflow-hidden">
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#7B3FEF]/5 rounded-full blur-3xl" />
-        
+
         {/* Globe Background */}
         <div className="absolute inset-0 flex items-center justify-center opacity-30">
           <Globe className="scale-75" />
@@ -296,16 +321,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* <About3 
-        title="About TECHNOVA"
-        description="We are a passionate team of innovators, designers, and developers dedicated to creating cutting-edge digital solutions that transform businesses and shape the future of technology."
-        companiesTitle="Trusted by Industry Leaders"
-        achievementsTitle="Our Impact in Numbers"
-        achievementsDescription="Delivering exceptional results and building lasting partnerships with clients worldwide."
-        achievements={achievements}
-      /> */}
 
-      <Footer />
+
+
     </div>
   )
 }

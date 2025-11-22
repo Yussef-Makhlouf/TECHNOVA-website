@@ -1,7 +1,7 @@
 "use client"
 
 import Navigation from "@/components/navigation"
-import Footer from "@/components/footer"
+
 import { Calendar, Clock, ArrowRight, FileText } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
@@ -106,11 +106,10 @@ export default function BlogPage() {
             {categories.map((category, index) => (
               <button
                 key={index}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  index === 0
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${index === 0
                     ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30"
                     : "bg-card border border-border text-muted-foreground hover:border-accent/50 hover:text-foreground dark:bg-card/50"
-                }`}
+                  }`}
               >
                 {category}
               </button>
@@ -198,7 +197,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <Footer />
+
     </div>
   )
 }

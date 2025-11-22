@@ -1,7 +1,7 @@
 "use client"
 
 import Navigation from "@/components/navigation"
-import Footer from "@/components/footer"
+
 import { Calendar, Clock, ArrowLeft, TrendingUp } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
@@ -96,7 +96,7 @@ export default function InsightDetailPage() {
         </div>
       </article>
 
-      <Footer />
+
     </div>
   )
 }

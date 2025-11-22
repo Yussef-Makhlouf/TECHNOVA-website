@@ -219,17 +219,27 @@ function RootLayout({ children }) {
                         lineNumber: 56,
                         columnNumber: 11
                     }, this),
+                    "import ",
+                    PartnersMarquee,
+                    ' from "@/components/partners-marquee" // ... (imports) // ... (RootLayout function)',
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "relative z-10",
-                        children: children
-                    }, void 0, false, {
+                        children: [
+                            children,
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(PartnersMarquee, {}, void 0, false, {
+                                fileName: "[project]/Downloads/futuristic-minimal-website-2/app/layout.tsx",
+                                lineNumber: 75,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/layout.tsx",
-                        lineNumber: 68,
+                        lineNumber: 73,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f40$vercel$2b$analytics$40$1$2e$5$2e$0_nex_f4d98341598b232ca6324861b6525ecb$2f$node_modules$2f40$vercel$2f$analytics$2f$dist$2f$next$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Analytics"], {}, void 0, false, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/layout.tsx",
-                        lineNumber: 69,
+                        lineNumber: 77,
                         columnNumber: 11
                     }, this)
                 ]

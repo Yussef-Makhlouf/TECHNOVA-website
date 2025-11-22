@@ -1,7 +1,7 @@
 "use client"
 
 import Navigation from "@/components/navigation"
-import Footer from "@/components/footer"
+
 import { Hero } from "@/components/hero"
 import Link from "next/link"
 import {
@@ -27,18 +27,18 @@ import { FeatureCard } from "@/components/ui/grid-feature-cards"
 import DisplayCards from "@/components/ui/display-cards"
 import FeaturesAdvanced from "@/components/ui/features-advanced"
 import { FeaturesSectionWithHoverEffects } from "@/components/ui/feature-section-with-hover-effects"
-import { 
-  IconTarget, 
-  IconUsers, 
-  IconAward, 
-  IconBolt, 
-  IconGlobe, 
-  IconStar, 
-  IconCpu, 
-  IconFingerprint, 
-  IconPencil, 
-  IconSettings, 
-  IconSparkles 
+import {
+  IconTarget,
+  IconUsers,
+  IconAward,
+  IconBolt,
+  IconGlobe,
+  IconStar,
+  IconCpu,
+  IconFingerprint,
+  IconPencil,
+  IconSettings,
+  IconSparkles
 } from "@tabler/icons-react"
 import IntegrationsSection from "@/components/ui/service-card"
 import { AnimatedGradientBackground } from "@/components/ui/animated-gradient-background"
@@ -212,7 +212,7 @@ export default function HomePage() {
       <Hero />
 
       <Section className="py-20 lg:py-32">
-  
+
         <div className="relative max-w-6xl mx-auto">
           <div className="absolute inset-0 bg-gradient-to-r from-[#7B3FEF]/10 to-[#00D9FF]/10 rounded-3xl blur-3xl"></div>
           <div className="relative  p-8 lg:p-12">
@@ -229,7 +229,7 @@ export default function HomePage() {
                     Transform Ideas Into Reality
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Our cutting-edge solutions bridge the gap between concept and execution, 
+                    Our cutting-edge solutions bridge the gap between concept and execution,
                     delivering experiences that redefine what's possible in digital innovation.
                   </p>
                 </div>
@@ -257,11 +257,11 @@ export default function HomePage() {
                 className="lg:col-span-2"
               >
                 <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
-                  <SplineScene 
+                  <SplineScene
                     scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
                     className="w-full h-full"
                   />
-              
+
                 </div>
               </motion.div>
             </div>
@@ -295,7 +295,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-            {/* <IntegrationsSection /> */}
+      {/* <IntegrationsSection /> */}
 
       <Section>
         <motion.div
@@ -350,21 +350,6 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section className="py-20 flex items-center justify-center">
-        <div className="w-full max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <p className="text-muted-foreground font-medium">Trusted by Industry Leaders</p>
-          </motion.div>
-          {/* <Logomarquee /> */}
-        </div>
-      </Section>
-
       <Section>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -415,7 +400,7 @@ export default function HomePage() {
         <StaggerTestimonials />
       </Section>
 
-      <Footer />
+
     </div>
   )
 }

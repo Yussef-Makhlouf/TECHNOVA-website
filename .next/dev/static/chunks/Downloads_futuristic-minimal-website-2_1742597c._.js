@@ -142,10 +142,11 @@ function Navigation() {
                             className: "flex items-center gap-2 group",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "w-10 h-10 bg-gradient-to-br from-[#7B3FEF] to-[#00D9FF] rounded-lg flex items-center justify-center transition-transform group-hover:scale-110",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-white font-heading text-xl font-bold",
-                                        children: "T"
+                                    className: "relative w-10 h-10 transition-transform group-hover:scale-110",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                        src: "/logos/logo-12.svg",
+                                        alt: "TECHNOVA Logo",
+                                        className: "w-full h-full object-contain"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
                                         lineNumber: 36,
@@ -161,7 +162,7 @@ function Navigation() {
                                     children: "TECHNOVA"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
-                                    lineNumber: 38,
+                                    lineNumber: 42,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -179,7 +180,7 @@ function Navigation() {
                                         children: link.label
                                     }, link.href, false, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
-                                        lineNumber: 44,
+                                        lineNumber: 48,
                                         columnNumber: 15
                                     }, this)),
                                 mounted && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -192,13 +193,13 @@ function Navigation() {
                                             className: "h-5 w-5"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
-                                            lineNumber: 61,
+                                            lineNumber: 65,
                                             columnNumber: 37
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$moon$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Moon$3e$__["Moon"], {
                                             className: "h-5 w-5"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
-                                            lineNumber: 61,
+                                            lineNumber: 65,
                                             columnNumber: 67
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -206,13 +207,13 @@ function Navigation() {
                                             children: "Toggle theme"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
-                                            lineNumber: 62,
+                                            lineNumber: 66,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
-                                    lineNumber: 55,
+                                    lineNumber: 59,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -221,13 +222,13 @@ function Navigation() {
                                     children: "Get Started"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
-                                    lineNumber: 66,
+                                    lineNumber: 70,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
-                            lineNumber: 42,
+                            lineNumber: 46,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -243,13 +244,13 @@ function Navigation() {
                                             className: "h-5 w-5"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
-                                            lineNumber: 83,
+                                            lineNumber: 87,
                                             columnNumber: 37
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$moon$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Moon$3e$__["Moon"], {
                                             className: "h-5 w-5"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
-                                            lineNumber: 83,
+                                            lineNumber: 87,
                                             columnNumber: 67
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -257,13 +258,13 @@ function Navigation() {
                                             children: "Toggle theme"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
-                                            lineNumber: 84,
+                                            lineNumber: 88,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
-                                    lineNumber: 77,
+                                    lineNumber: 81,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -274,24 +275,24 @@ function Navigation() {
                                         size: 24
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
-                                        lineNumber: 88,
+                                        lineNumber: 92,
                                         columnNumber: 25
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
                                         size: 24
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
-                                        lineNumber: 88,
+                                        lineNumber: 92,
                                         columnNumber: 43
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
-                                    lineNumber: 87,
+                                    lineNumber: 91,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
-                            lineNumber: 75,
+                            lineNumber: 79,
                             columnNumber: 11
                         }, this)
                     ]
@@ -312,7 +313,7 @@ function Navigation() {
                                     children: link.label
                                 }, link.href, false, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
-                                    lineNumber: 98,
+                                    lineNumber: 102,
                                     columnNumber: 17
                                 }, this)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -322,18 +323,18 @@ function Navigation() {
                                 children: "Get Started"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
-                                lineNumber: 107,
+                                lineNumber: 111,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
-                        lineNumber: 96,
+                        lineNumber: 100,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/navigation.tsx",
-                    lineNumber: 95,
+                    lineNumber: 99,
                     columnNumber: 11
                 }, this)
             ]
@@ -406,10 +407,11 @@ function Footer() {
                                         className: "flex items-center gap-2 mb-4",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "w-10 h-10 bg-gradient-to-br from-[#7B3FEF] to-[#00D9FF] rounded-lg flex items-center justify-center shadow-lg",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "text-white font-heading text-xl font-bold",
-                                                    children: "T"
+                                                className: "relative w-10 h-10 transition-transform hover:scale-110",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                    src: "/logos/logo-12.svg",
+                                                    alt: "TECHNOVA Logo",
+                                                    className: "w-full h-full object-contain"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
                                                     lineNumber: 16,
@@ -425,7 +427,7 @@ function Footer() {
                                                 children: "TECHNOVA"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                lineNumber: 18,
+                                                lineNumber: 22,
                                                 columnNumber: 15
                                             }, this)
                                         ]
@@ -439,7 +441,7 @@ function Footer() {
                                         children: "Leading the future with innovative technology solutions and Neo-Futurist approach."
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                        lineNumber: 20,
+                                        lineNumber: 24,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -452,12 +454,12 @@ function Footer() {
                                                     size: 18
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                    lineNumber: 28,
+                                                    lineNumber: 32,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                lineNumber: 24,
+                                                lineNumber: 28,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -467,12 +469,12 @@ function Footer() {
                                                     size: 18
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                    lineNumber: 34,
+                                                    lineNumber: 38,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                lineNumber: 30,
+                                                lineNumber: 34,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -482,12 +484,12 @@ function Footer() {
                                                     size: 18
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                    lineNumber: 40,
+                                                    lineNumber: 44,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                lineNumber: 36,
+                                                lineNumber: 40,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -497,18 +499,18 @@ function Footer() {
                                                     size: 18
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                    lineNumber: 46,
+                                                    lineNumber: 50,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                lineNumber: 42,
+                                                lineNumber: 46,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                        lineNumber: 23,
+                                        lineNumber: 27,
                                         columnNumber: 13
                                     }, this)
                                 ]
@@ -524,7 +526,7 @@ function Footer() {
                                         children: "Services"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                        lineNumber: 53,
+                                        lineNumber: 57,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -539,19 +541,19 @@ function Footer() {
                                                             className: "w-1 h-1 rounded-full bg-[#7B3FEF] group-hover:bg-[#00D9FF] transition-colors"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                            lineNumber: 60,
+                                                            lineNumber: 64,
                                                             columnNumber: 19
                                                         }, this),
                                                         "AI Solutions"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                    lineNumber: 56,
+                                                    lineNumber: 60,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                lineNumber: 55,
+                                                lineNumber: 59,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -563,19 +565,19 @@ function Footer() {
                                                             className: "w-1 h-1 rounded-full bg-[#7B3FEF] group-hover:bg-[#00D9FF] transition-colors"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                            lineNumber: 69,
+                                                            lineNumber: 73,
                                                             columnNumber: 19
                                                         }, this),
                                                         "Cloud Infrastructure"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                    lineNumber: 65,
+                                                    lineNumber: 69,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                lineNumber: 64,
+                                                lineNumber: 68,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -587,19 +589,19 @@ function Footer() {
                                                             className: "w-1 h-1 rounded-full bg-[#7B3FEF] group-hover:bg-[#00D9FF] transition-colors"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                            lineNumber: 78,
+                                                            lineNumber: 82,
                                                             columnNumber: 19
                                                         }, this),
                                                         "Cybersecurity"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                    lineNumber: 74,
+                                                    lineNumber: 78,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                lineNumber: 73,
+                                                lineNumber: 77,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -611,31 +613,31 @@ function Footer() {
                                                             className: "w-1 h-1 rounded-full bg-[#7B3FEF] group-hover:bg-[#00D9FF] transition-colors"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                            lineNumber: 87,
+                                                            lineNumber: 91,
                                                             columnNumber: 19
                                                         }, this),
                                                         "Digital Transformation"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                    lineNumber: 83,
+                                                    lineNumber: 87,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                lineNumber: 82,
+                                                lineNumber: 86,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                        lineNumber: 54,
+                                        lineNumber: 58,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                lineNumber: 52,
+                                lineNumber: 56,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -645,7 +647,7 @@ function Footer() {
                                         children: "Company"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                        lineNumber: 96,
+                                        lineNumber: 100,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -660,19 +662,19 @@ function Footer() {
                                                             className: "w-1 h-1 rounded-full bg-[#7B3FEF] group-hover:bg-[#00D9FF] transition-colors"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                            lineNumber: 103,
+                                                            lineNumber: 107,
                                                             columnNumber: 19
                                                         }, this),
                                                         "About Us"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                    lineNumber: 99,
+                                                    lineNumber: 103,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                lineNumber: 98,
+                                                lineNumber: 102,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -684,19 +686,19 @@ function Footer() {
                                                             className: "w-1 h-1 rounded-full bg-[#7B3FEF] group-hover:bg-[#00D9FF] transition-colors"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                            lineNumber: 112,
+                                                            lineNumber: 116,
                                                             columnNumber: 19
                                                         }, this),
                                                         "Careers"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                    lineNumber: 108,
+                                                    lineNumber: 112,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                lineNumber: 107,
+                                                lineNumber: 111,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -708,19 +710,19 @@ function Footer() {
                                                             className: "w-1 h-1 rounded-full bg-[#7B3FEF] group-hover:bg-[#00D9FF] transition-colors"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                            lineNumber: 121,
+                                                            lineNumber: 125,
                                                             columnNumber: 19
                                                         }, this),
                                                         "Case Studies"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                    lineNumber: 117,
+                                                    lineNumber: 121,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                lineNumber: 116,
+                                                lineNumber: 120,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -732,31 +734,31 @@ function Footer() {
                                                             className: "w-1 h-1 rounded-full bg-[#7B3FEF] group-hover:bg-[#00D9FF] transition-colors"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                            lineNumber: 130,
+                                                            lineNumber: 134,
                                                             columnNumber: 19
                                                         }, this),
                                                         "Blog"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                    lineNumber: 126,
+                                                    lineNumber: 130,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                lineNumber: 125,
+                                                lineNumber: 129,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                        lineNumber: 97,
+                                        lineNumber: 101,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                lineNumber: 95,
+                                lineNumber: 99,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -766,7 +768,7 @@ function Footer() {
                                         children: "Contact"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                        lineNumber: 139,
+                                        lineNumber: 143,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -776,21 +778,21 @@ function Footer() {
                                                 children: "123 Tech Street"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                lineNumber: 141,
+                                                lineNumber: 145,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "Innovation District"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                lineNumber: 142,
+                                                lineNumber: 146,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "San Francisco, CA 94105"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                lineNumber: 143,
+                                                lineNumber: 147,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -804,19 +806,19 @@ function Footer() {
                                                             className: "text-[#7B3FEF]"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                            lineNumber: 149,
+                                                            lineNumber: 153,
                                                             columnNumber: 19
                                                         }, this),
                                                         "hello@technova.com"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                    lineNumber: 145,
+                                                    lineNumber: 149,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                lineNumber: 144,
+                                                lineNumber: 148,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -826,24 +828,24 @@ function Footer() {
                                                     children: "+1 (234) 567-890"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                    lineNumber: 154,
+                                                    lineNumber: 158,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                                lineNumber: 153,
+                                                lineNumber: 157,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                        lineNumber: 140,
+                                        lineNumber: 144,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                lineNumber: 138,
+                                lineNumber: 142,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -859,7 +861,7 @@ function Footer() {
                                 className: "gradient-line w-32 mx-auto mb-6"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                lineNumber: 163,
+                                lineNumber: 167,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -871,13 +873,13 @@ function Footer() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                                lineNumber: 164,
+                                lineNumber: 168,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/components/footer.tsx",
-                        lineNumber: 162,
+                        lineNumber: 166,
                         columnNumber: 9
                     }, this)
                 ]
@@ -3758,49 +3760,6 @@ function HomePage() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$components$2f$ui$2f$section$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Section"], {
-                className: "py-20 flex items-center justify-center",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "w-full max-w-6xl",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$24_$40$emo_a8f3e3ab3ce79744232f2639366efd77$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                        initial: {
-                            opacity: 0,
-                            y: 20
-                        },
-                        whileInView: {
-                            opacity: 1,
-                            y: 0
-                        },
-                        transition: {
-                            duration: 0.6
-                        },
-                        viewport: {
-                            once: true
-                        },
-                        className: "text-center mb-12",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-muted-foreground font-medium",
-                            children: "Trusted by Industry Leaders"
-                        }, void 0, false, {
-                            fileName: "[project]/Downloads/futuristic-minimal-website-2/app/page.tsx",
-                            lineNumber: 362,
-                            columnNumber: 13
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/Downloads/futuristic-minimal-website-2/app/page.tsx",
-                        lineNumber: 355,
-                        columnNumber: 11
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/Downloads/futuristic-minimal-website-2/app/page.tsx",
-                    lineNumber: 354,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
-                fileName: "[project]/Downloads/futuristic-minimal-website-2/app/page.tsx",
-                lineNumber: 353,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$components$2f$ui$2f$section$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Section"], {
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$24_$40$emo_a8f3e3ab3ce79744232f2639366efd77$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                     initial: {
                         opacity: 0,
@@ -3828,21 +3787,21 @@ function HomePage() {
                                     children: "Future"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/app/page.tsx",
-                                    lineNumber: 378,
+                                    lineNumber: 363,
                                     columnNumber: 13
                                 }, this),
                                 "?"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/futuristic-minimal-website-2/app/page.tsx",
-                            lineNumber: 376,
+                            lineNumber: 361,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "gradient-line w-32 mx-auto my-8"
                         }, void 0, false, {
                             fileName: "[project]/Downloads/futuristic-minimal-website-2/app/page.tsx",
-                            lineNumber: 381,
+                            lineNumber: 366,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3850,7 +3809,7 @@ function HomePage() {
                             children: "Transform your vision into reality with TECHNOVA's cutting-edge solutions. Let's create something extraordinary together."
                         }, void 0, false, {
                             fileName: "[project]/Downloads/futuristic-minimal-website-2/app/page.tsx",
-                            lineNumber: 382,
+                            lineNumber: 367,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3865,13 +3824,13 @@ function HomePage() {
                                             size: 22
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/app/page.tsx",
-                                            lineNumber: 392,
+                                            lineNumber: 377,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/app/page.tsx",
-                                    lineNumber: 387,
+                                    lineNumber: 372,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -3880,24 +3839,24 @@ function HomePage() {
                                     children: "Explore Solutions"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/app/page.tsx",
-                                    lineNumber: 394,
+                                    lineNumber: 379,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/futuristic-minimal-website-2/app/page.tsx",
-                            lineNumber: 386,
+                            lineNumber: 371,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Downloads/futuristic-minimal-website-2/app/page.tsx",
-                    lineNumber: 369,
+                    lineNumber: 354,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/page.tsx",
-                lineNumber: 368,
+                lineNumber: 353,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$components$2f$ui$2f$section$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Section"], {
@@ -3924,36 +3883,36 @@ function HomePage() {
                                 children: "What Our Clients Say"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/page.tsx",
-                                lineNumber: 412,
+                                lineNumber: 397,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "gradient-line w-24 mx-auto my-6"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/page.tsx",
-                                lineNumber: 413,
+                                lineNumber: 398,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/page.tsx",
-                        lineNumber: 405,
+                        lineNumber: 390,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$components$2f$ui$2f$stagger$2d$testimonials$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["StaggerTestimonials"], {}, void 0, false, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/page.tsx",
-                        lineNumber: 415,
+                        lineNumber: 400,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/page.tsx",
-                lineNumber: 404,
+                lineNumber: 389,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$components$2f$footer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/page.tsx",
-                lineNumber: 418,
+                lineNumber: 403,
                 columnNumber: 7
             }, this)
         ]

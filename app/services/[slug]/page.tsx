@@ -1,7 +1,7 @@
 "use client"
 
 import Navigation from "@/components/navigation"
-import Footer from "@/components/footer"
+
 import { Brain, CheckCircle2, ArrowRight, Zap, Shield, BarChart3 } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
@@ -158,7 +158,7 @@ export default function ServiceDetailPage() {
         </div>
       </section>
 
-      <Footer />
+
     </div>
   )
 }
