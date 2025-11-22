@@ -7,6 +7,7 @@ import { Target, Eye, Award, Users, TrendingUp, Lightbulb } from "lucide-react"
 import { motion } from "framer-motion"
 import { DiagonalCard } from "@/components/diagonal-card"
 import { Globe } from "@/components/globe"
+import { About3 } from "@/components/ui/about-3"
 
 export default function AboutPage() {
   const values = [
@@ -294,6 +295,15 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* <About3 
+        title="About TECHNOVA"
+        description="We are a passionate team of innovators, designers, and developers dedicated to creating cutting-edge digital solutions that transform businesses and shape the future of technology."
+        companiesTitle="Trusted by Industry Leaders"
+        achievementsTitle="Our Impact in Numbers"
+        achievementsDescription="Delivering exceptional results and building lasting partnerships with clients worldwide."
+        achievements={achievements}
+      /> */}
 
       <Footer />
     </div>

@@ -45,6 +45,8 @@ import { AnimatedGradientBackground } from "@/components/ui/animated-gradient-ba
 import { Section } from "@/components/ui/section"
 import { CaseStudyCard } from "@/components/ui/case-study-card"
 import { StaggerTestimonials } from "@/components/ui/stagger-testimonials"
+import Logomarquee from "@/components/logomarquee"
+import { SplineScene } from "@/components/ui/splite"
 
 export default function HomePage() {
   const stats = [
@@ -209,6 +211,64 @@ export default function HomePage() {
 
       <Hero />
 
+      <Section className="py-20 lg:py-32">
+  
+        <div className="relative max-w-6xl mx-auto">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#7B3FEF]/10 to-[#00D9FF]/10 rounded-3xl blur-3xl"></div>
+          <div className="relative  p-8 lg:p-12">
+            <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="space-y-6"
+              >
+                <div>
+                  <h3 className="font-heading text-2xl lg:text-3xl font-bold text-foreground mb-4">
+                    Transform Ideas Into Reality
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Our cutting-edge solutions bridge the gap between concept and execution, 
+                    delivering experiences that redefine what's possible in digital innovation.
+                  </p>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] rounded-full"></div>
+                    <span className="text-sm font-medium text-foreground">AI-Powered Solutions</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] rounded-full"></div>
+                    <span className="text-sm font-medium text-foreground">Seamless Integration</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] rounded-full"></div>
+                    <span className="text-sm font-medium text-foreground">Future-Ready Technology</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="lg:col-span-2"
+              >
+                <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
+                  <SplineScene 
+                    scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+                    className="w-full h-full"
+                  />
+              
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
 
 
       <Section className="bg-gradient-to-b from-background to-muted/30 border-y border-border">
@@ -290,32 +350,18 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section className="py-20 border-y border-border bg-muted/10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <p className="text-muted-foreground font-medium">Trusted by Industry Leaders</p>
-        </motion.div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center max-w-6xl mx-auto">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
-              viewport={{ once: true }}
-              className="flex items-center justify-center p-6 rounded-xl glass-panel border-border hover:border-[#00D9FF]/30 transition-all duration-300 group"
-            >
-              <div className="text-4xl font-bold text-muted-foreground/30 group-hover:text-[#00D9FF]/50 transition-colors duration-300 font-heading">
-                LOGO
-              </div>
-            </motion.div>
-          ))}
+      <Section className="py-20 flex items-center justify-center">
+        <div className="w-full max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <p className="text-muted-foreground font-medium">Trusted by Industry Leaders</p>
+          </motion.div>
+          {/* <Logomarquee /> */}
         </div>
       </Section>
 

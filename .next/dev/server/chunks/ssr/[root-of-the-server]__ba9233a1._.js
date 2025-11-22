@@ -170,23 +170,22 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$m
 const metadata = {
     title: "TECHNOVA | Future-Forward Technology",
     description: "Leading the future with innovative technology solutions. Neo-Futurist approach to digital transformation.",
-    generator: "v0.app",
     icons: {
         icon: [
             {
-                url: "/icon-light-32x32.png",
+                url: "/logo-12.svg",
                 media: "(prefers-color-scheme: light)"
             },
             {
-                url: "/icon-dark-32x32.png",
+                url: "/logo-12.svg",
                 media: "(prefers-color-scheme: dark)"
             },
             {
-                url: "/icon.svg",
+                url: "/logo-12.svg",
                 type: "image/svg+xml"
             }
         ],
-        apple: "/apple-icon.png"
+        apple: "/logo-12.svg"
     }
 };
 function RootLayout({ children }) {
