@@ -253,3 +253,571 @@ Import traces:
 [00:23:30.216] Server  LOG      ✓ Compiled in 1100ms
 [00:24:22.996] Server  LOG      ✓ Compiled in 683ms
 [00:27:57.663] Server  LOG      ✓ Compiled in 234ms
+[00:32:17.398] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/case-studies color: rgb(120, 120, 120) color: inherit {"dp":"/case-studies","o":"http://localhost:3000/case-studies","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763945179025}
+[00:32:24.622] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:3000/blog","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763945186255}
+[00:32:29.873] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/careers color: rgb(120, 120, 120) color: inherit {"dp":"/careers","o":"http://localhost:3000/careers","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763945191478}
+[00:33:15.013] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.036] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\.next\dev\server\chunks\ssr\3201f_next_dist_30ac8021._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.055] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.063] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.067] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.069] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.074] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.079] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.083] Server  ERROR    ⨯ Error: The default export is not a React Component in "/careers/page"
+[00:33:15.096] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.098] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\.next\dev\server\chunks\ssr\3201f_next_dist_30ac8021._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.099] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.102] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.104] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.106] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.108] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.120] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.123] Server  ERROR    ⨯ Error: The default export is not a React Component in "/careers/page"
+[00:33:15.222] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.223] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\.next\dev\server\chunks\ssr\3201f_next_dist_30ac8021._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.224] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.225] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.226] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.227] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.228] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.228] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.229] Server  ERROR    ⨯ Error: The default export is not a React Component in "/careers/page"
+[00:33:15.239] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.241] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\.next\dev\server\chunks\ssr\3201f_next_dist_30ac8021._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.243] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.244] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.245] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.245] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.246] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.247] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:15.248] Server  ERROR    ⨯ Error: The default export is not a React Component in "/careers/page"
+[00:33:16.391] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/careers/page"
+[00:33:29.649] Server  LOG      ✓ Compiled in 170ms
+[00:33:33.551] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:33.553] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\.next\dev\server\chunks\ssr\3201f_next_dist_30ac8021._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:33.554] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:33.556] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:33.557] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:33.559] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:33.560] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:33.563] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:33.565] Server  ERROR    ⨯ Error: The default export is not a React Component in "/careers/page"
+[00:33:33.580] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:33.583] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\.next\dev\server\chunks\ssr\3201f_next_dist_30ac8021._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:33.586] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:33.589] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:33.590] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:33.592] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:33.598] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:33.600] Server  ERROR   C:\Users\yussef makhlouf\Downloads\futuristic-minimal-website-2\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:33:33.603] Server  ERROR    ⨯ Error: The default export is not a React Component in "/careers/page"
+[00:33:34.170] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/careers/page"
+[00:33:44.375] Server  LOG      ✓ Compiled in 163ms
+[00:33:45.434] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:33:47.033] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:33:47.033] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/careers","route":"/careers"}
+[00:33:47.033] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/careers color: rgb(120, 120, 120) color: inherit {"dp":"/careers","o":"http://localhost:3000/careers","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763945268124}
+[00:35:36.464] Server  LOG      ✓ Compiled in 656ms
+[00:36:32.312] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/case-studies color: rgb(120, 120, 120) color: inherit {"dp":"/case-studies","o":"http://localhost:3000/case-studies","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763945433944}
+[00:36:38.408] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:3000/blog","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763945440039}
+[00:36:44.557] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:36:47.238] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:36:47.238] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/blog","route":"/blog"}
+[00:36:47.238] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:3000/blog","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763945448875}
+[00:37:38.687] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about color: rgb(120, 120, 120) color: inherit {"dp":"/about","o":"http://localhost:3000/about","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763945500308}
+[00:37:45.506] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:37:45.506] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:37:45.979] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763945507273}
+[00:37:46.323] Browser WARN    updating from  114 to  120
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.511] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.512] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.513] Browser ASSERT  true
+[00:37:47.514] Browser ASSERT  true
+[00:37:47.514] Browser ASSERT  true
+[00:37:47.514] Browser ASSERT  true
+[00:37:47.514] Browser ASSERT  true
+[00:37:47.514] Browser ASSERT  true
+[00:37:47.514] Browser ASSERT  true
+[00:37:47.514] Browser ASSERT  true
+[00:37:47.514] Browser ASSERT  true
+[00:37:47.514] Browser ASSERT  true
+[00:37:47.514] Browser ASSERT  true
+[00:37:47.514] Browser ASSERT  true
+[00:37:47.514] Browser ASSERT  true
+[00:37:47.514] Browser ASSERT  true
+[00:38:19.152] Server  LOG      ✓ Compiled in 170ms
+[00:38:20.032] Browser ERROR   ./Downloads/futuristic-minimal-website-2/app/page.tsx:404:5
+Parsing ecmascript source code failed
+  402 |
+  403 | <
+> 404 |     </div>
+      |     ^
+  405 |   )
+  406 | }
+  407 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Client Component Browser]
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Client Component SSR]
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Server Component]
+[00:38:20.032] Browser ERROR   ./Downloads/futuristic-minimal-website-2/app/page.tsx:404:6
+Parsing ecmascript source code failed
+  402 |
+  403 | <
+> 404 |     </div>
+      |      ^^^^^
+  405 |   )
+  406 | }
+  407 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Client Component Browser]
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Client Component SSR]
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Server Component]
+[00:38:23.038] Browser ERROR   ./Downloads/futuristic-minimal-website-2/app/page.tsx:404:5
+Parsing ecmascript source code failed
+  402 |
+  403 | <foo
+> 404 |     </div>
+      |     ^
+  405 |   )
+  406 | }
+  407 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Client Component Browser]
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Client Component SSR]
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Server Component]
+[00:38:23.038] Browser ERROR   ./Downloads/futuristic-minimal-website-2/app/page.tsx:404:6
+Parsing ecmascript source code failed
+  402 |
+  403 | <foo
+> 404 |     </div>
+      |      ^^^^^
+  405 |   )
+  406 | }
+  407 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Client Component Browser]
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Client Component SSR]
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Server Component]
+[00:38:27.033] Browser ERROR   ./Downloads/futuristic-minimal-website-2/app/page.tsx:405:5
+Parsing ecmascript source code failed
+  403 |
+  404 | <Footer
+> 405 |     </div>
+      |     ^
+  406 |   )
+  407 | }
+  408 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Client Component Browser]
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Client Component SSR]
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Server Component]
+[00:38:27.033] Browser ERROR   ./Downloads/futuristic-minimal-website-2/app/page.tsx:405:6
+Parsing ecmascript source code failed
+  403 |
+  404 | <Footer
+> 405 |     </div>
+      |      ^^^^^
+  406 |   )
+  407 | }
+  408 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Client Component Browser]
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Client Component SSR]
+    ./Downloads/futuristic-minimal-website-2/app/page.tsx [Server Component]
+[00:38:31.267] Server  WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:38:36.683] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:38:43.217] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:38:43.217] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:38:47.030] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:38:47.030] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:38:47.030] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763945566246}
+[00:38:47.030] Browser WARN    updating from  114 to  120
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.030] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:38:47.031] Browser ASSERT  true
+[00:39:47.063] Server  WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:39:47.757] Browser ERROR   uncaughtError: SyntaxError: Unexpected end of input
+[00:39:54.042] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:40:07.286] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:40:07.286] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:40:07.286] Browser WARN    ImmutableStateInvariantMiddleware took 141ms, which is more than the warning threshold of 32ms. 
+If your state or actions are very large, you may want to disable the middleware as it might cause too much of a slowdown in development mode. See https://redux-toolkit.js.org/api/getDefaultMiddleware for instructions.
+It is disabled in production builds, so you don't need to worry about that.
+[00:40:07.286] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:40:07.286] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:40:07.286] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763945644721}
+[00:40:07.286] Browser WARN    updating from  114 to  120
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.286] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.287] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.288] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:07.289] Browser ASSERT  true
+[00:40:29.805] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services color: rgb(120, 120, 120) color: inherit {"dp":"/services","o":"http://localhost:3000/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763945671373}
+[00:40:37.547] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about color: rgb(120, 120, 120) color: inherit {"dp":"/about","o":"http://localhost:3000/about","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763945679164}

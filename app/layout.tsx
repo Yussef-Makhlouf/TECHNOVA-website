@@ -47,6 +47,8 @@ export const metadata: Metadata = {
   },
 }
 
+import { FooterWrapper } from "@/components/footer-wrapper"
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -72,6 +74,7 @@ export default function RootLayout({
             <div className="relative z-10">
               {children}
             </div>
+            <FooterWrapper />
             <Toaster />
             <Analytics />
           </DataProvider>

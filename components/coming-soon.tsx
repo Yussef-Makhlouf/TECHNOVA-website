@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { ArrowRight, Rocket } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 
 export function ComingSoon({ title = "Coming Soon" }: { title?: string }) {
     return (
@@ -18,9 +18,15 @@ export function ComingSoon({ title = "Coming Soon" }: { title?: string }) {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="mb-8 inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 border border-white/10 backdrop-blur-xl"
+                    className="mb-8 inline-flex items-center justify-center"
                 >
-                    <Rocket className="w-10 h-10 text-primary" />
+                    <div className="relative w-24 h-24 md:w-32 md:h-32">
+                        <img
+                            src="/logos/logo-12.svg"
+                            alt="TECHNOVA Logo"
+                            className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(123,63,239,0.5)]"
+                        />
+                    </div>
                 </motion.div>
 
                 <motion.h1
@@ -38,7 +44,7 @@ export function ComingSoon({ title = "Coming Soon" }: { title?: string }) {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
                 >
-                    We're working hard to bring you something amazing. This page is currently under construction and will be launching soon.
+                    We're crafting something extraordinary. This experience is currently under development and will be unveiled soon.
                 </motion.p>
 
                 <motion.div

@@ -400,7 +400,6 @@ export default function HomePage() {
         <StaggerTestimonials />
       </Section>
 
-
     </div>
   )
 }
