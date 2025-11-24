@@ -6,9 +6,9 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern"
 import { cn } from "@/lib/utils"
 import "./globals.css"
+import { DataProvider } from "@/lib/data-context"
 
-import { PartnersMarquee } from "@/components/partners-marquee"
-import Footer from "@/components/footer"
+import { Toaster } from "sonner"
 
 // Import custom fonts for Neo-Futurist design
 const orbitron = Orbitron({
@@ -56,24 +56,25 @@ export default function RootLayout({
     <html lang="en" className={`${orbitron.variable} ${exo2.variable}`} suppressHydrationWarning>
       <body className={`font-sans antialiased min-h-screen relative`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange={false}>
-          <div className="fixed inset-0 z-0 pointer-events-none">
-            <AnimatedGridPattern
-              numSquares={30}
-              maxOpacity={0.1}
-              duration={3}
-              repeatDelay={1}
-              className={cn(
-                "[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]",
-                "inset-x-0 inset-y-0 h-full w-full skew-y-12 opacity-20 dark:opacity-30",
-              )}
-            />
-          </div>
-          <div className="relative z-10">
-            {children}
-            <PartnersMarquee />
-            <Footer />
-          </div>
-          <Analytics />
+          <DataProvider>
+            <div className="fixed inset-0 z-0 pointer-events-none">
+              <AnimatedGridPattern
+                numSquares={30}
+                maxOpacity={0.1}
+                duration={3}
+                repeatDelay={1}
+                className={cn(
+                  "[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]",
+                  "inset-x-0 inset-y-0 h-full w-full skew-y-12 opacity-20 dark:opacity-30",
+                )}
+              />
+            </div>
+            <div className="relative z-10">
+              {children}
+            </div>
+            <Toaster />
+            <Analytics />
+          </DataProvider>
         </ThemeProvider>
       </body>
     </html>

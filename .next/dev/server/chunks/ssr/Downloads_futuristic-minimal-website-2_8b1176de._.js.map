@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/yussef%20makhlouf/Downloads/futuristic-minimal-website-2/app/dashboard/insights/new/page.tsx"],"sourcesContent":["\"use client\"\r\n\r\nimport { InsightForm } from \"@/components/dashboard/insight-form\"\r\n\r\nexport default function NewInsightPage() {\r\n    return (\r\n        <div className=\"space-y-6\">\r\n            <div>\r\n                <h1 className=\"text-3xl font-bold font-heading tracking-tight\">Publish Insight</h1>\r\n                <p className=\"text-muted-foreground\">Share new industry insights.</p>\r\n            </div>\r\n            <InsightForm />\r\n        </div>\r\n    )\r\n}\r\n"],"names":[],"mappings":";;;;;AAEA;AAFA;;;AAIe,SAAS;IACpB,qBACI,maAAC;QAAI,WAAU;;0BACX,maAAC;;kCACG,maAAC;wBAAG,WAAU;kCAAiD;;;;;;kCAC/D,maAAC;wBAAE,WAAU;kCAAwB;;;;;;;;;;;;0BAEzC,maAAC,gNAAW;;;;;;;;;;;AAGxB"}}]
+}
