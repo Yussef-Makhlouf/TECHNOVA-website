@@ -47,6 +47,7 @@ import { CaseStudyCard } from "@/components/ui/case-study-card"
 import { StaggerTestimonials } from "@/components/ui/stagger-testimonials"
 import Logomarquee from "@/components/logomarquee"
 import { SplineScene } from "@/components/ui/splite"
+import CircularText from "@/components/ui/circle-text"
 
 export default function HomePage() {
   const stats = [
@@ -256,12 +257,38 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="lg:col-span-2"
               >
-                <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
+                <div className="relative h-[500px] lg:h-[600px] rounded-2xl overflow-hidden flex items-center justify-center">
+                  {/* Circular Text - Behind the scene */}
+                  <div
+                    className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none"
+                    style={{ "--radius": "220px" } as React.CSSProperties}
+                  >
+                    <div className="w-full h-full max-w-[600px] max-h-[600px] relative hidden md:block opacity-30">
+                      <CircularText
+                        text="TECHNOVA   INNOVATION   ARTIFICIAL   INTELLIGENCE   "
+                        onHover="speedUp"
+                        spinDuration={30}
+                        className="text-sm font-heading text-[#00D9FF]"
+                      />
+                    </div>
+                    {/* Mobile version */}
+                    <div
+                      className="w-full h-full max-w-[400px] max-h-[400px] relative md:hidden opacity-30"
+                      style={{ "--radius": "160px" } as React.CSSProperties}
+                    >
+                      <CircularText
+                        text="TECHNOVA   INNOVATION   ARTIFICIAL   INTELLIGENCE   "
+                        onHover="speedUp"
+                        spinDuration={30}
+                        className="text-xs font-heading text-[#00D9FF]"
+                      />
+                    </div>
+                  </div>
+
                   <SplineScene
                     scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                    className="w-full h-full"
+                    className="w-full h-full relative z-10"
                   />
-
                 </div>
               </motion.div>
             </div>

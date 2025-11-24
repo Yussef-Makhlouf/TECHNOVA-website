@@ -1,0 +1,39 @@
+.circular-text {
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  /* Let clicks pass through to the scene if needed, but text might need pointer-events: auto */
+}
+
+.circular-text span {
+  position: absolute;
+  display: inline-block;
+  left: 50%;
+  top: 50%;
+  font-size: 14px;
+  /* Default font size */
+  transform-origin: 0 0;
+  /* Important for rotation */
+  backface-visibility: hidden;
+  transition: all 0.5s cubic-bezier(0, 0, 0, 1);
+  white-space: pre;
+  /* Preserve spaces */
+  pointer-events: auto;
+}
+
+@media (min-width: 1024px) {
+  .circular-text span {
+    font-size: 16px;
+  }
+}
