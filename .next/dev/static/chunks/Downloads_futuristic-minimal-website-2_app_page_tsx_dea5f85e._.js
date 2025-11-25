@@ -1,8 +1,8 @@
 (globalThis.TURBOPACK_CHUNK_LISTS || (globalThis.TURBOPACK_CHUNK_LISTS = [])).push({
     script: typeof document === "object" ? document.currentScript : undefined,
     chunks: [
-  "static/chunks/61fd5_@splinetool_react-spline_dist_react-spline_7b5fd6fb.js",
-  "static/chunks/Downloads_futuristic-minimal-website-2_8c5df243._.js",
+  "static/chunks/61fd5_@splinetool_react-spline_dist_react-spline_e2507f60.js",
+  "static/chunks/Downloads_futuristic-minimal-website-2_137117e8._.js",
   "static/chunks/27be6_proj4_e1fe145e._.js",
   "static/chunks/effc8_dotted-map_index_466f39ee.js",
   "static/chunks/7b1e6_recharts_es6_util_792160ee._.js",
@@ -11,7 +11,7 @@
   "static/chunks/7b1e6_recharts_es6_cartesian_bfe4810d._.js",
   "static/chunks/7b1e6_recharts_es6_d0efb00f._.js",
   "static/chunks/bf3f2_d3-scale_src_e348dfe7._.js",
-  "static/chunks/57f28__pnpm_3feb0d4b._.js",
+  "static/chunks/57f28__pnpm_c7b6464a._.js",
   "static/chunks/Downloads_futuristic-minimal-website-2_components_ui_CircularText_c1653b24.css"
 ],
     source: "dynamic"

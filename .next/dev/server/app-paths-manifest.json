@@ -1,6 +1,5 @@
 {
   "/dashboard/careers/page": "app/dashboard/careers/page.js",
-  "/dashboard/case-studies/new/page": "app/dashboard/case-studies/new/page.js",
   "/dashboard/case-studies/page": "app/dashboard/case-studies/page.js",
   "/dashboard/insights/page": "app/dashboard/insights/page.js",
   "/dashboard/page": "app/dashboard/page.js",

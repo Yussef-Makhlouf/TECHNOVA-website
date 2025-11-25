@@ -8,12 +8,6 @@
           "exportedName": "logout",
           "filename": "app/login/actions.ts"
         },
-        "app/dashboard/case-studies/new/page": {
-          "moduleId": "[project]/.next-internal/server/app/dashboard/case-studies/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "logout",
-          "filename": "app/login/actions.ts"
-        },
         "app/dashboard/case-studies/page": {
           "moduleId": "[project]/.next-internal/server/app/dashboard/case-studies/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -47,7 +41,6 @@
       },
       "layer": {
         "app/dashboard/careers/page": "action-browser",
-        "app/dashboard/case-studies/new/page": "action-browser",
         "app/dashboard/case-studies/page": "action-browser",
         "app/dashboard/insights/page": "action-browser",
         "app/dashboard/page": "action-browser",

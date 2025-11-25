@@ -18,7 +18,7 @@ interface ServiceCardProps {
 
 export function ServiceCard({ title, description, image, features, href, index, color }: ServiceCardProps) {
   const isEven = index % 2 === 0
-  
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -27,31 +27,6 @@ export function ServiceCard({ title, description, image, features, href, index, 
       viewport={{ once: true }}
       className="group relative"
     >
-      {/* Free-floating Image - Outside Card */}
-      <div className={`absolute ${isEven ? '-left-8 lg:-left-16' : '-right-8 lg:-right-16'} top-1/2 -translate-y-1/2 z-10 w-32 lg:w-48 opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-110`}>
-        <div className="relative w-full h-32 lg:h-48 rounded-2xl overflow-hidden">
-          <Image
-            src={image}
-            alt={title}
-            fill
-            className="object-cover"
-          />
-          {/* Subtle overlay for depth */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-          
-          {/* Floating accent indicator */}
-          <div 
-            className="absolute -top-2 -right-2 w-8 h-8 lg:w-10 lg:h-10 rounded-xl flex items-center justify-center"
-            style={{ backgroundColor: `${color}30` }}
-          >
-            <div 
-              className="w-4 h-4 lg:w-5 lg:h-5 rounded-full"
-              style={{ backgroundColor: color }}
-            />
-          </div>
-        </div>
-      </div>
-
       {/* Enhanced Card Content */}
       <div className="relative bg-background backdrop-blur-sm rounded-3xl overflow-hidden p-8 lg:p-12 border border-border/20 hover:border-[#7B3FEF]/30 transition-all duration-500">
         {/* Subtle background pattern */}
@@ -65,7 +40,7 @@ export function ServiceCard({ title, description, image, features, href, index, 
           <div className="lg:w-3/5 flex flex-col space-y-6">
             {/* Service Number */}
             <div className="flex items-center gap-4">
-              <span 
+              <span
                 className="text-4xl lg:text-5xl font-bold opacity-20"
                 style={{ color }}
               >
@@ -78,7 +53,7 @@ export function ServiceCard({ title, description, image, features, href, index, 
             <h3 className="font-heading text-3xl lg:text-5xl font-bold text-foreground group-hover:text-[#7B3FEF] transition-colors duration-300 leading-tight">
               {title}
             </h3>
-            
+
             {/* Enhanced Description */}
             <p className="text-muted-foreground leading-relaxed text-lg lg:text-xl max-w-lg">
               {description}
@@ -91,7 +66,7 @@ export function ServiceCard({ title, description, image, features, href, index, 
                   key={featureIndex}
                   className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#7B3FEF]/5 hover:bg-[#7B3FEF]/10 transition-colors duration-300 group/item"
                 >
-                  <div 
+                  <div
                     className="w-2 h-2 rounded-full opacity-60 group-hover/item:opacity-100 transition-opacity duration-300"
                     style={{ backgroundColor: color }}
                   />
@@ -115,9 +90,9 @@ export function ServiceCard({ title, description, image, features, href, index, 
               className={`inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] text-white font-semibold text-lg hover:translate-y-[-4px] transition-all duration-300 group/btn w-fit ${isEven ? '' : 'ml-auto'}`}
             >
               <span>Explore Service</span>
-              <ArrowRight 
-                size={20} 
-                className="transition-transform duration-300 group-hover/btn:translate-x-2" 
+              <ArrowRight
+                size={20}
+                className="transition-transform duration-300 group-hover/btn:translate-x-2"
               />
             </Link>
           </div>
@@ -152,7 +127,7 @@ export function ServiceCard({ title, description, image, features, href, index, 
                 className="absolute inset-4 rounded-full border border-dashed opacity-10"
                 style={{ borderColor: color }}
               />
-              
+
               {/* 3D Floating Image Above Circles */}
               <motion.div
                 animate={{
@@ -165,7 +140,7 @@ export function ServiceCard({ title, description, image, features, href, index, 
                   ease: "easeInOut"
                 }}
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-20 h-20 lg:w-28 lg:h-28 rounded-2xl overflow-hidden shadow-2xl"
-                style={{ 
+                style={{
                   transform: 'translate(-50%, -50%) translateZ(50px)',
                   transformStyle: 'preserve-3d'
                 }}
@@ -179,9 +154,9 @@ export function ServiceCard({ title, description, image, features, href, index, 
                 {/* 3D depth overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               </motion.div>
-              
+
               {/* Center dot - Behind image */}
-              <div 
+              <div
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full z-0"
                 style={{ backgroundColor: color }}
               />
