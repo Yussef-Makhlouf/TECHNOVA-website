@@ -1,7 +1,11 @@
 {
   "pages": {},
   "app": {
+<<<<<<< HEAD:.next/dev/server/app/dashboard/profile/page/next-font-manifest.json
     "[project]/Downloads/futuristic-minimal-website-2/app/dashboard/profile/page": [
+=======
+    "[project]/app/dashboard/insights/page": [
+>>>>>>> 27e2557d8339dca1fe89af0ce37cd75b63bc97f0:.next/dev/server/app/dashboard/insights/page/next-font-manifest.json
       "static/media/9d8c99ccf2e734e7-s.p.b2ed600c.woff2",
       "static/media/a626ed2fbe2db1bf-s.p.45f567a3.woff2"
     ]

@@ -4,36 +4,39 @@ import React, { createContext, useContext, useState, useEffect } from "react"
 import { Brain, Cloud, Shield, Sparkles, Database, Code, Cpu, Network, TrendingUp, Lightbulb, BookOpen } from "lucide-react"
 
 // Define types
-export type Service = {
-    id: string
-    title: string
-    titleAr?: string
-    description: string
-    descriptionAr?: string
-    features: string[]
-    featuresAr?: string[]
+
+type Service = {
+    _id: string
+    name_en: string
+    name_ar: string
+    description_en: string
+    description_ar: string
+    shortDescription_en: string
+    shortDescription_ar: string
+    icon: string
     color: string
-    image: string
-    href: string
-    iconName: string
+    features: { feature_en: string; feature_ar: string }[]
+    images: { imageLink: string }[]
+    slug: string
 }
 
 export type Insight = {
-    id: string
-    title: string
-    titleAr?: string
-    description: string
-    descriptionAr?: string
-    author: string
-    authorAr?: string
-    date: string
-    readTime: string
-    category: string
-    categoryAr?: string
-    color: string
-    href: string
-    iconName: string
-    image?: string
+  _id: string,
+  title: string,
+  titleAr?: string,
+  description: string,
+  descriptionAr?: string,
+  author: string,
+  authorAr?: string,
+  date: string,
+  readTime: string,
+  category: string,
+  categoryAr?: string,
+  color: string,
+  href: string,
+  iconName: string,
+  image?: string
+  createdAt?: string
 }
 
 export type CaseStudy = {
@@ -87,154 +90,10 @@ type DataContextType = {
 
 const DataContext = createContext<DataContextType | undefined>(undefined)
 
-// Initial Data - Technova's Core Departments
-const initialServices: Service[] = [
-    {
-        id: "1",
-        iconName: "Lightbulb",
-        title: "Innovation & Technical Solutions Department",
-        description:
-            "Comprehensive AI-driven solutions and technical development services that transform business operations and create measurable impact.",
-        features: [
-            "AI Solutions & Smart Systems Development",
-            "Web & Application Development",
-            "Technical Training & Capacity Building",
-            "Systems Integration",
-            "Advanced AI Consulting"
-        ],
-        color: "#7B3FEF",
-        image: "/ai-technology-future.png",
-        href: "/services/innovation-technical-solutions",
-    },
-    {
-        id: "2",
-        iconName: "Database",
-        title: "Big Data & Analytics Department",
-        description: "Transform raw data into actionable insights with advanced analytics, predictive modeling, and intelligent business intelligence solutions.",
-        features: [
-            "Data Management & Analytics",
-            "Predictive Modelling & Business Intelligence",
-            "Real-time Data Processing",
-            "Advanced Statistical Analysis"
-        ],
-        color: "#00D9FF",
-        image: "/technology-research-data-analytics.jpg",
-        href: "/services/big-data-analytics",
-    },
-    {
-        id: "3",
-        iconName: "Sparkles",
-        title: "Creative & Digital Production Department",
-        description: "Cutting-edge AI-powered creative solutions including video production, virtual avatars, and interactive digital experiences.",
-        features: [
-            "AI-Driven Video & Image Production",
-            "Virtual Avatars & Digital Twin Development",
-            "Interactive Experiences & Deepfake Solutions",
-            "Creative Content Generation"
-        ],
-        color: "#FF0080",
-        image: "/digital-transformation-business.png",
-        href: "/services/creative-digital-production",
-    },
-    {
-        id: "4",
-        iconName: "TrendingUp",
-        title: "AI Audio Technologies Department",
-        description: "Revolutionary AI audio solutions from text-to-speech and voice cloning to AI-generated music and advanced speech processing.",
-        features: [
-            "Text-to-Speech & Voice Cloning",
-            "Speech-to-Speech Processing",
-            "AI Music & Audio Generation",
-            "Voice Synthesis & Enhancement"
-        ],
-        color: "#00D9FF",
-        image: "/ai-analytics-dashboard.png",
-        href: "/services/ai-audio-technologies",
-    },
-]
+// Initial Data
+const initialServices: Service[] = []
 
-const initialInsights: Insight[] = [
-    {
-        id: "1",
-        iconName: "TrendingUp",
-        title: "Market Trends 2025",
-        description:
-            "Comprehensive analysis of emerging technology trends that will shape the enterprise landscape in 2025.",
-        author: "Research Team",
-        date: "Jan 18, 2025",
-        readTime: "12 min read",
-        category: "Market Analysis",
-        color: "#7B3FEF",
-        href: "/insights/market-trends-2025",
-        image: "/technology-research-data-analytics.jpg",
-    },
-    {
-        id: "2",
-        iconName: "Lightbulb",
-        title: "Innovation in Cloud Computing",
-        description: "How next-generation cloud technologies are enabling unprecedented scalability and performance.",
-        author: "Cloud Team",
-        date: "Jan 16, 2025",
-        readTime: "10 min read",
-        category: "Technology",
-        color: "#00D9FF",
-        href: "/insights/innovation-cloud-computing",
-        image: "/cloud-migration-concept.png",
-    },
-    {
-        id: "3",
-        iconName: "BookOpen",
-        title: "Digital Transformation Framework",
-        description:
-            "A strategic framework for organizations embarking on comprehensive digital transformation initiatives.",
-        author: "Strategy Team",
-        date: "Jan 14, 2025",
-        readTime: "15 min read",
-        category: "Strategy",
-        color: "#7B3FEF",
-        href: "/insights/digital-transformation-framework",
-        image: "/digital-transformation-business.png",
-    },
-    {
-        id: "4",
-        iconName: "TrendingUp",
-        title: "AI Adoption in Healthcare",
-        description: "Examining the impact of artificial intelligence on healthcare delivery and patient outcomes.",
-        author: "Industry Analysts",
-        date: "Jan 12, 2025",
-        readTime: "11 min read",
-        category: "Industry Insights",
-        color: "#00D9FF",
-        href: "/insights/ai-healthcare",
-        image: "/medical-ai.png",
-    },
-    {
-        id: "5",
-        iconName: "Lightbulb",
-        title: "Cybersecurity Best Practices",
-        description: "Essential security strategies for protecting enterprise assets in an increasingly connected world.",
-        author: "Security Team",
-        date: "Jan 10, 2025",
-        readTime: "9 min read",
-        category: "Security",
-        color: "#7B3FEF",
-        href: "/insights/cybersecurity-best-practices",
-        image: "/cybersecurity-network.jpg",
-    },
-    {
-        id: "6",
-        iconName: "BookOpen",
-        title: "The Future of Work",
-        description: "How technology is reshaping workplace dynamics, collaboration, and employee experiences.",
-        author: "Future of Work Team",
-        date: "Jan 8, 2025",
-        readTime: "13 min read",
-        category: "Workforce",
-        color: "#00D9FF",
-        href: "/insights/future-of-work",
-        image: "/professional-woman-ceo-tech.jpg",
-    },
-]
+const initialInsights: Insight[] = []
 
 const initialCaseStudies: CaseStudy[] = [
     {
@@ -387,17 +246,74 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
     const [caseStudies, setCaseStudies] = useState<CaseStudy[]>(initialCaseStudies)
     const [jobs, setJobs] = useState<Job[]>(initialJobs)
 
-    const addService = (service: Omit<Service, "id">) => {
-        const newService = { ...service, id: Math.random().toString(36).substr(2, 9) }
-        setServices([...services, newService])
+        const API_BASE = "https://technoba.vercel.app/api/v1"
+  // 🔥 Fetch services from backend
+    useEffect(() => {
+        const fetchServices = async () => {
+            try {
+                const res = await fetch(`${API_BASE}/services`)
+                const data = await res.json()
+                if (data.success) {
+                    console.log(data.services);
+                    setServices(data.services)
+                }
+            } catch (err) {
+                console.error("Failed to fetch services:", err)
+            }
+        };
+        const fetchInsites = async () => {
+            try {
+                const res = await fetch(`${API_BASE}/blogs`)
+                const data = await res.json()
+              if (data.success && data.blogs) {
+                console.log(data.blogs);
+                
+                const mapped = data.blogs.map((blog: any) => ({
+                    _id: blog._id,
+                    
+                    title: blog.title?.en || "",
+                    titleAr: blog.title?.ar || "",
+
+                    description: blog.content?.en || "",
+                    descriptionAr: blog.content?.ar || "",
+
+                    author: blog.author?.en || "",
+                    authorAr: blog.author?.ar || "",
+
+                    category: blog.category?.en || "",
+                    categoryAr: blog.category?.ar || "",
+
+                    readTime: blog.readTime ? `${blog.readTime} min` : "0 min",
+
+                    date: blog.createdAt,
+                    createdAt: blog.createdAt,
+
+                    image: blog.images?.[0]?.imageLink || ""
+                }))
+
+                setInsights(mapped)
+                }
+            } catch (err) {
+                console.error("Failed to fetch blogs:", err)
+            }
+        }
+
+        fetchServices(),
+        fetchInsites()
+    }, [])
+
+    const addService = (service: Omit<Service, "_id">) => {
+        setServices(prev => [...prev, { ...service, _id: crypto.randomUUID() }])
     }
 
-    const updateService = (id: string, updatedService: Partial<Service>) => {
-        setServices(services.map((s) => (s.id === id ? { ...s, ...updatedService } : s)))
+    const updateService = (id: string, updated: Partial<Service>) => {
+        setServices(prev =>
+            prev.map(s => (s._id === id ? { ...s, ...updated } : s))
+        )
     }
 
     const deleteService = (id: string) => {
-        setServices(services.filter((s) => s.id !== id))
+        setServices(prev => prev.filter(s => s._id !== id))
     }
 
     const addInsight = (insight: Omit<Insight, "id">) => {
@@ -406,11 +322,11 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
     }
 
     const updateInsight = (id: string, updatedInsight: Partial<Insight>) => {
-        setInsights(insights.map((i) => (i.id === id ? { ...i, ...updatedInsight } : i)))
+        setInsights(insights.map((i) => (i._id === id ? { ...i, ...updatedInsight } : i)))
     }
 
     const deleteInsight = (id: string) => {
-        setInsights(insights.filter((i) => i.id !== id))
+        setInsights(insights.filter((i) => i._id !== id))
     }
 
     const addCaseStudy = (study: Omit<CaseStudy, "id">) => {

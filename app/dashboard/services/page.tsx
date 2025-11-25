@@ -89,48 +89,14 @@ export default function ServicesDashboardPage() {
                             </TableRow>
                         ) : (
                             services.map((service) => (
-                                <TableRow key={service.id}>
-                                    <TableCell className="font-medium">
-                                        <div className="space-y-1">
-                                            <div>{service.title}</div>
-                                            {showArabic && (
-                                                isPending ? (
-                                                    <Skeleton className="h-4 w-48" />
-                                                ) : service.titleAr ? (
-                                                    <div className="text-sm text-muted-foreground transition-all duration-300" dir="rtl">
-                                                        {service.titleAr}
-                                                    </div>
-                                                ) : (
-                                                    <div className="text-xs text-muted-foreground/60 italic" dir="rtl">
-                                                        لا يوجد محتوى بالعربية
-                                                    </div>
-                                                )
-                                            )}
-                                        </div>
-                                    </TableCell>
-                                    <TableCell className="max-w-md">
-                                        <div className="space-y-1">
-                                            <div className="truncate">{service.description}</div>
-                                            {showArabic && (
-                                                isPending ? (
-                                                    <Skeleton className="h-4 w-64" />
-                                                ) : service.descriptionAr ? (
-                                                    <div className="text-sm text-muted-foreground truncate transition-all duration-300" dir="rtl">
-                                                        {service.descriptionAr}
-                                                    </div>
-                                                ) : (
-                                                    <div className="text-xs text-muted-foreground/60 italic truncate" dir="rtl">
-                                                        لا يوجد وصف بالعربية
-                                                    </div>
-                                                )
-                                            )}
-                                        </div>
-                                    </TableCell>
-                                    <TableCell>{service.iconName}</TableCell>
+                                <TableRow key={service._id}>
+                                    <TableCell className="font-medium">{service.name_en}</TableCell>
+                                    <TableCell className="max-w-md truncate">{service.shortDescription_en}</TableCell>
+                                    <TableCell>{service.icon}</TableCell>
                                     <TableCell>
                                         <div className="flex gap-1">
                                             <Badge variant="secondary" className="text-xs">EN</Badge>
-                                            {service.titleAr && (
+                                            {service.name_en && (
                                                 <Badge variant="secondary" className="text-xs">AR</Badge>
                                             )}
                                         </div>
@@ -145,11 +111,11 @@ export default function ServicesDashboardPage() {
                                             </DropdownMenuTrigger>
                                             <DropdownMenuContent align="end">
                                                 <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                                                <DropdownMenuItem onClick={() => router.push(`/dashboard/services/${service.id}`)}>
+                                                <DropdownMenuItem onClick={() => router.push(`/dashboard/services/${service._id}`)}>
                                                     <Pencil className="mr-2 h-4 w-4" /> Edit
                                                 </DropdownMenuItem>
                                                 <DropdownMenuSeparator />
-                                                <DropdownMenuItem onClick={() => handleDelete(service.id)} className="text-destructive">
+                                                <DropdownMenuItem onClick={() => handleDelete(service._id)} className="text-destructive">
                                                     <Trash className="mr-2 h-4 w-4" /> Delete
                                                 </DropdownMenuItem>
                                             </DropdownMenuContent>

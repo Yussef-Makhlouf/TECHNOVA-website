@@ -1,19 +1,29 @@
 {
   "node": {
-    "00486cfd7f51161ea5c104407215a1e0d296891340": {
+    "002ffbfec95778323c2fade48a0e7b6615b27e19d7": {
       "workers": {
+<<<<<<< HEAD
+<<<<<<<< HEAD:.next/dev/server/app/dashboard/insights/[id]/page/server-reference-manifest.json
         "app/dashboard/insights/[id]/page": {
           "moduleId": "[project]/Downloads/futuristic-minimal-website-2/.next-internal/server/app/dashboard/insights/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/Downloads/futuristic-minimal-website-2/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+========
+        "app/dashboard/insights/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/insights/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+>>>>>>>> 27e2557d8339dca1fe89af0ce37cd75b63bc97f0:.next/dev/server/app/dashboard/insights/new/page/server-reference-manifest.json
+=======
+        "app/dashboard/insights/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/insights/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+>>>>>>> 27e2557d8339dca1fe89af0ce37cd75b63bc97f0
           "async": false,
           "exportedName": "logout",
-          "filename": "Downloads/futuristic-minimal-website-2/app/login/actions.ts"
+          "filename": "app/login/actions.ts"
         }
       },
       "layer": {
         "app/dashboard/insights/[id]/page": "action-browser"
       },
       "exportedName": "logout",
-      "filename": "Downloads/futuristic-minimal-website-2/app/login/actions.ts"
+      "filename": "app/login/actions.ts"
     }
   },
   "edge": {}

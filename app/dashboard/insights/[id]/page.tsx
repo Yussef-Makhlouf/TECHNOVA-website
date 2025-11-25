@@ -7,7 +7,7 @@ import { useParams } from "next/navigation"
 export default function EditInsightPage() {
     const params = useParams()
     const { insights } = useData()
-    const insight = insights.find((i) => i.id === params.id)
+    const insight = insights.find((i) => i._id === params.id)
 
     if (!insight) {
         return <div>Insight not found</div>

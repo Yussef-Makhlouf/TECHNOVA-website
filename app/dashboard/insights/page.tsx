@@ -90,62 +90,11 @@ export default function InsightsDashboardPage() {
                             </TableRow>
                         ) : (
                             insights.map((insight) => (
-                                <TableRow key={insight.id}>
-                                    <TableCell className="font-medium">
-                                        <div className="space-y-1">
-                                            <div>{insight.title}</div>
-                                            {showArabic && (
-                                                isPending ? (
-                                                    <Skeleton className="h-4 w-48" />
-                                                ) : insight.titleAr ? (
-                                                    <div className="text-sm text-muted-foreground transition-all duration-300" dir="rtl">
-                                                        {insight.titleAr}
-                                                    </div>
-                                                ) : (
-                                                    <div className="text-xs text-muted-foreground/60 italic" dir="rtl">
-                                                        لا يوجد عنوان بالعربية
-                                                    </div>
-                                                )
-                                            )}
-                                        </div>
-                                    </TableCell>
-                                    <TableCell>
-                                        <div className="space-y-1">
-                                            <div>{insight.category}</div>
-                                            {showArabic && (
-                                                isPending ? (
-                                                    <Skeleton className="h-4 w-32" />
-                                                ) : insight.categoryAr ? (
-                                                    <div className="text-sm text-muted-foreground transition-all duration-300" dir="rtl">
-                                                        {insight.categoryAr}
-                                                    </div>
-                                                ) : (
-                                                    <div className="text-xs text-muted-foreground/60 italic" dir="rtl">
-                                                        -
-                                                    </div>
-                                                )
-                                            )}
-                                        </div>
-                                    </TableCell>
-                                    <TableCell>
-                                        <div className="space-y-1">
-                                            <div>{insight.author}</div>
-                                            {showArabic && (
-                                                isPending ? (
-                                                    <Skeleton className="h-4 w-32" />
-                                                ) : insight.authorAr ? (
-                                                    <div className="text-sm text-muted-foreground transition-all duration-300" dir="rtl">
-                                                        {insight.authorAr}
-                                                    </div>
-                                                ) : (
-                                                    <div className="text-xs text-muted-foreground/60 italic" dir="rtl">
-                                                        -
-                                                    </div>
-                                                )
-                                            )}
-                                        </div>
-                                    </TableCell>
-                                    <TableCell>{insight.date}</TableCell>
+                                <TableRow key={insight._id}>
+                                    <TableCell className="font-medium">{insight.title}</TableCell>
+                                    <TableCell>{insight.category}</TableCell>
+                                    <TableCell>{insight.author}</TableCell>
+                                    <TableCell>{insight.createdAt}</TableCell>
                                     <TableCell>
                                         <div className="flex gap-1">
                                             <Badge variant="secondary" className="text-xs">EN</Badge>
@@ -164,11 +113,11 @@ export default function InsightsDashboardPage() {
                                             </DropdownMenuTrigger>
                                             <DropdownMenuContent align="end">
                                                 <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                                                <DropdownMenuItem onClick={() => router.push(`/dashboard/insights/${insight.id}`)}>
+                                                <DropdownMenuItem onClick={() => router.push(`/dashboard/insights/${insight._id}`)}>
                                                     <Pencil className="mr-2 h-4 w-4" /> Edit
                                                 </DropdownMenuItem>
                                                 <DropdownMenuSeparator />
-                                                <DropdownMenuItem onClick={() => handleDelete(insight.id)} className="text-destructive">
+                                                <DropdownMenuItem onClick={() => handleDelete(insight._id)} className="text-destructive">
                                                     <Trash className="mr-2 h-4 w-4" /> Delete
                                                 </DropdownMenuItem>
                                             </DropdownMenuContent>
