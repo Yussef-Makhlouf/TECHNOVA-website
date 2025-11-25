@@ -60,7 +60,7 @@ export default function ServicesDashboardPage() {
 
     const toggleAll = () => {
         setSelectedServices(prev =>
-            prev.length === services.length ? [] : services.map(s => s.id)
+            prev.length === services.length ? [] : services.map(s => s._id)
         )
     }
 
@@ -100,118 +100,137 @@ export default function ServicesDashboardPage() {
                 </div>
             </div>
 
-            <div className="border rounded-lg">
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead className="w-12">
-                                <Checkbox
-                                    checked={selectedServices.length === services.length && services.length > 0}
-                                    onCheckedChange={toggleAll}
-                                    aria-label="Select all"
-                                />
-                            </TableHead>
-                            <TableHead>Title</TableHead>
-                            <TableHead>Description</TableHead>
-                            <TableHead>Icon</TableHead>
-                            <TableHead>Language</TableHead>
-                            <TableHead className="w-[100px]">Actions</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {services.length === 0 ? (
-                            <TableRow>
-                                <TableCell colSpan={6} className="text-center h-24 text-muted-foreground">
-                                    No services found. Add one to get started.
-                                </TableCell>
-                            </TableRow>
-                        ) : (
-                            services.map((service) => (
-                                <TableRow
-                                    key={service.id}
-                                    className={selectedServices.includes(service.id) ? "bg-muted/50" : ""}
-                                >
-                                    <TableCell>
-                                        <Checkbox
-                                            checked={selectedServices.includes(service.id)}
-                                            onCheckedChange={() => toggleService(service.id)}
-                                            aria-label={`Select ${service.title}`}
-                                        />
-                                    </TableCell>
-                                    <TableCell className="font-medium">
-                                        <div className="space-y-1">
-                                            <div>{service.title}</div>
-                                            {showArabic && (
-                                                isPending ? (
-                                                    <Skeleton className="h-4 w-48" />
-                                                ) : service.titleAr ? (
-                                                    <div className="text-sm text-muted-foreground transition-all duration-300" dir="rtl">
-                                                        {service.titleAr}
-                                                    </div>
-                                                ) : (
-                                                    <div className="text-xs text-muted-foreground/60 italic" dir="rtl">
-                                                        لا يوجد محتوى بالعربية
-                                                    </div>
-                                                )
-                                            )}
+<div className="border rounded-lg">
+    <Table>
+        <TableHeader>
+            <TableRow>
+                <TableHead className="w-12">
+                    <Checkbox
+                        checked={selectedServices.length === services.length && services.length > 0}
+                        onCheckedChange={toggleAll}
+                        aria-label="Select all"
+                    />
+                </TableHead>
+                <TableHead>Title</TableHead>
+                <TableHead>Description</TableHead>
+                <TableHead>Icon</TableHead>
+                <TableHead>Language</TableHead>
+                <TableHead className="w-[100px]">Actions</TableHead>
+            </TableRow>
+        </TableHeader>
+
+        <TableBody>
+            {services.length === 0 ? (
+                <TableRow>
+                    <TableCell colSpan={6} className="text-center h-24 text-muted-foreground">
+                        No services found. Add one to get started.
+                    </TableCell>
+                </TableRow>
+            ) : (
+                services.map((service) => (
+                    <TableRow
+                        key={service._id}
+                        className={selectedServices.includes(service._id) ? "bg-muted/50" : ""}
+                    >
+                        {/* Checkbox */}
+                        <TableCell>
+                            <Checkbox
+                                checked={selectedServices.includes(service._id)}
+                                onCheckedChange={() => toggleService(service._id)}
+                                aria-label={`Select ${service.name_en}`}
+                            />
+                        </TableCell>
+
+                        {/* Titles EN + AR */}
+                        <TableCell className="font-medium">
+                            <div className="space-y-1">
+                                <div>{service.name_en}</div>
+
+                                {showArabic && (
+                                    isPending ? (
+                                        <Skeleton className="h-4 w-48" />
+                                    ) : service.name_ar ? (
+                                        <div className="text-sm text-muted-foreground transition-all duration-300" dir="rtl">
+                                            {service.name_ar}
                                         </div>
-                                    </TableCell>
-                                    <TableCell className="max-w-md">
-                                        <div className="space-y-1">
-                                            <div className="truncate">{service.description}</div>
-                                            {showArabic && (
-                                                isPending ? (
-                                                    <Skeleton className="h-4 w-64" />
-                                                ) : service.descriptionAr ? (
-                                                    <div className="text-sm text-muted-foreground truncate transition-all duration-300" dir="rtl">
-                                                        {service.descriptionAr}
-                                                    </div>
-                                                ) : (
-                                                    <div className="text-xs text-muted-foreground/60 italic truncate" dir="rtl">
-                                                        لا يوجد وصف بالعربية
-                                                    </div>
-                                                )
-                                            )}
+                                    ) : (
+                                        <div className="text-xs text-muted-foreground/60 italic" dir="rtl">
+                                            لا يوجد محتوى بالعربية
                                         </div>
-                                    </TableCell>
-                                    <TableCell>{service.iconName}</TableCell>
-                                    <TableCell>
-                                        <div className="flex gap-1">
-                                            <Badge variant="secondary" className="text-xs">EN</Badge>
-                                            {service.titleAr && (
-                                                <Badge variant="secondary" className="text-xs">AR</Badge>
-                                            )}
+                                    )
+                                )}
+                            </div>
+                        </TableCell>
+
+                        {/* Descriptions EN + AR */}
+                        <TableCell className="max-w-md">
+                            <div className="space-y-1">
+                                <div className="truncate">{service.description_en}</div>
+
+                                {showArabic && (
+                                    isPending ? (
+                                        <Skeleton className="h-4 w-64" />
+                                    ) : service.description_ar ? (
+                                        <div className="text-sm text-muted-foreground truncate transition-all duration-300" dir="rtl">
+                                            {service.description_ar}
                                         </div>
-                                    </TableCell>
-                                    <TableCell>
-                                        <DropdownMenu>
-                                            <DropdownMenuTrigger asChild>
-                                                <Button variant="ghost" className="h-8 w-8 p-0">
-                                                    <span className="sr-only">Open menu</span>
-                                                    <MoreHorizontal className="h-4 w-4" />
-                                                </Button>
-                                            </DropdownMenuTrigger>
-                                            <DropdownMenuContent align="end">
-                                                <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                                                <DropdownMenuItem onClick={() => window.open(`/preview/services/${service.id}`, '_blank')}>
-                                                    <Eye className="mr-2 h-4 w-4" /> Preview
-                                                </DropdownMenuItem>
-                                                <DropdownMenuItem onClick={() => router.push(`/dashboard/services/${service.id}`)}>
-                                                    <Pencil className="mr-2 h-4 w-4" /> Edit
-                                                </DropdownMenuItem>
-                                                <DropdownMenuSeparator />
-                                                <DropdownMenuItem onClick={() => handleDelete(service.id)} className="text-destructive">
-                                                    <Trash className="mr-2 h-4 w-4" /> Delete
-                                                </DropdownMenuItem>
-                                            </DropdownMenuContent>
-                                        </DropdownMenu>
-                                    </TableCell>
-                                </TableRow>
-                            ))
-                        )}
-                    </TableBody>
-                </Table>
-            </div>
+                                    ) : (
+                                        <div className="text-xs text-muted-foreground/60 italic truncate" dir="rtl">
+                                            لا يوجد وصف بالعربية
+                                        </div>
+                                    )
+                                )}
+                            </div>
+                        </TableCell>
+
+                        {/* Icon */}
+                        <TableCell>{service.icon}</TableCell>
+
+                        {/* Languages */}
+                        <TableCell>
+                            <div className="flex gap-1">
+                                <Badge variant="secondary" className="text-xs">EN</Badge>
+                                {service.name_ar && (
+                                    <Badge variant="secondary" className="text-xs">AR</Badge>
+                                )}
+                            </div>
+                        </TableCell>
+
+                        {/* Actions */}
+                        <TableCell>
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button variant="ghost" className="h-8 w-8 p-0">
+                                        <span className="sr-only">Open menu</span>
+                                        <MoreHorizontal className="h-4 w-4" />
+                                    </Button>
+                                </DropdownMenuTrigger>
+
+                                <DropdownMenuContent align="end">
+                                    <DropdownMenuLabel>Actions</DropdownMenuLabel>
+
+                                    <DropdownMenuItem onClick={() => router.push(`/dashboard/services/${service._id}`)}>
+                                        <Pencil className="mr-2 h-4 w-4" /> Edit
+                                    </DropdownMenuItem>
+
+                                    <DropdownMenuSeparator />
+
+                                    <DropdownMenuItem
+                                        onClick={() => handleDelete(service._id)}
+                                        className="text-destructive"
+                                    >
+                                        <Trash className="mr-2 h-4 w-4" /> Delete
+                                    </DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+                        </TableCell>
+                    </TableRow>
+                ))
+            )}
+        </TableBody>
+    </Table>
+</div>
+
         </div>
     )
 }

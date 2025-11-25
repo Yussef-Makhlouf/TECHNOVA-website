@@ -15,7 +15,7 @@ export default function ServicesPage() {
 
   const services = servicesData.map(service => ({
     ...service,
-    icon: getIcon(service.iconName)
+    icon: getIcon(service.icon)
   }))
 
   return (

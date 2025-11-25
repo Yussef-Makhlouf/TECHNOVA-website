@@ -7,7 +7,7 @@ import { useParams } from "next/navigation"
 export default function EditServicePage() {
     const params = useParams()
     const { services } = useData()
-    const service = services.find((s) => s.id === params.id)
+    const service = services.find((s) => s._id === params.id)
 
     if (!service) {
         return <div>Service not found</div>
