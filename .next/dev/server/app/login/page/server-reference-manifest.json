@@ -1,19 +1,19 @@
 {
   "node": {
-    "404ad1ec8942fda4c8b369be2fbade37cc899c6763": {
+    "40786360d2e0905e50b9044a3eee7fb68a6e92a37c": {
       "workers": {
         "app/login/page": {
-          "moduleId": "[project]/Downloads/futuristic-minimal-website-2/.next-internal/server/app/login/page/actions.js { ACTIONS_MODULE0 => \"[project]/Downloads/futuristic-minimal-website-2/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "moduleId": "[project]/.next-internal/server/app/login/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "login",
-          "filename": "Downloads/futuristic-minimal-website-2/app/login/actions.ts"
+          "filename": "app/login/actions.ts"
         }
       },
       "layer": {
         "app/login/page": "action-browser"
       },
       "exportedName": "login",
-      "filename": "Downloads/futuristic-minimal-website-2/app/login/actions.ts"
+      "filename": "app/login/actions.ts"
     }
   },
   "edge": {}

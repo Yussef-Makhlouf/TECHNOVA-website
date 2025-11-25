@@ -1,493 +1,1067 @@
-[00:00:01.936] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:02.189] Server  LOG      ✓ Ready in 1680ms
-[00:00:26.459] Server  LOG      ○ Compiling / ...
-[00:00:42.502] Server  WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:00:01.983] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:02.301] Server  LOG      ✓ Ready in 1601ms
+[00:01:08.171] Server  LOG      ○ Compiling / ...
+[00:01:20.622] Server  WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:00:50.767] Server  WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:01:21.871] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:24.983] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:00:51.469] Server  WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:01:24.983] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:00:54.773] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:56.178] Server  WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:01:25.802] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:01:25.802] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:01:25.802] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764044127067}
+[00:01:32.722] Browser WARN    updating from  114 to  120
+[00:01:32.722] Browser ASSERT  true
+[00:01:32.722] Browser ASSERT  true
+[00:01:32.722] Browser ASSERT  true
+[00:01:32.722] Browser ASSERT  true
+[00:01:32.722] Browser ASSERT  true
+[00:01:32.722] Browser ASSERT  true
+[00:01:32.722] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:01:32.723] Browser ASSERT  true
+[00:02:12.674] Server  LOG      ○ Compiling /login ...
+[00:02:14.172] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:14.725] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/login" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="orbitron_9..." suppressHydrationWarning={true}>
+                          <body
+                            className="font-sans antialiased min-h-screen relative"
+-                           cz-shortcut-listen="true"
+                          >
+                  ...
+
+[00:02:14.725] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:02:14.725] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[00:02:14.725] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764044175895}
+[00:02:21.265] Server  WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:00:57.508] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:03.027] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:02:22.152] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:23.653] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:01:03.027] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:02:23.653] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:01:03.493] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:01:03.493] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:01:03.493] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763984880851}
-[00:01:04.133] Browser WARN    updating from  114 to  120
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.463] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.464] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:05.465] Browser ASSERT  true
-[00:01:08.250] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:01:08.250] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:01:11.351] Server  LOG      ○ Compiling /_not-found/page ...
-[00:01:12.620] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:01:12.620] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:01:12.620] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763984888845}
-[00:01:19.927] Browser WARN    updating from  114 to  120
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.927] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:01:19.928] Browser ASSERT  true
-[00:07:48.475] Server  LOG      ✓ Compiled in 399ms
-[00:07:52.810] Server  LOG      ✓ Compiled in 321ms
-[00:07:54.961] Server  LOG      ✓ Compiled in 669ms
-[00:10:30.560] Server  LOG      ✓ Compiled in 560ms
-[00:10:35.138] Browser WARN    updating from  114 to  120
-[00:10:35.138] Browser ASSERT  true
-[00:10:35.138] Browser ASSERT  true
-[00:10:35.138] Browser ASSERT  true
-[00:10:35.138] Browser ASSERT  true
-[00:10:35.138] Browser ASSERT  true
-[00:10:35.138] Browser ASSERT  true
-[00:10:35.138] Browser ASSERT  true
-[00:10:35.138] Browser ASSERT  true
-[00:10:35.138] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.139] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.140] Browser ASSERT  true
-[00:10:35.141] Browser ASSERT  true
-[00:10:35.141] Browser ASSERT  true
-[00:10:35.141] Browser ASSERT  true
-[00:10:35.141] Browser ASSERT  true
-[00:10:35.141] Browser ASSERT  true
-[00:10:35.141] Browser ASSERT  true
-[00:10:35.141] Browser ASSERT  true
-[00:10:35.141] Browser ASSERT  true
-[00:10:35.141] Browser ASSERT  true
-[00:10:35.141] Browser ASSERT  true
-[00:10:35.141] Browser ASSERT  true
-[00:10:35.141] Browser ASSERT  true
-[00:10:35.141] Browser ASSERT  true
-[00:10:35.141] Browser ASSERT  true
-[00:10:35.141] Browser ASSERT  true
-[00:10:35.141] Browser ASSERT  true
-[00:10:35.141] Browser ASSERT  true
-[00:10:35.141] Browser ASSERT  true
-[00:10:35.141] Browser ASSERT  true
-[00:10:35.141] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.142] Browser ASSERT  true
-[00:10:35.523] Browser WARN    updating from  114 to  120
-[00:10:35.523] Browser ASSERT  true
-[00:10:35.523] Browser ASSERT  true
-[00:10:35.523] Browser ASSERT  true
-[00:10:35.523] Browser ASSERT  true
-[00:10:35.523] Browser ASSERT  true
-[00:10:35.523] Browser ASSERT  true
-[00:10:35.523] Browser ASSERT  true
-[00:10:35.523] Browser ASSERT  true
-[00:10:35.523] Browser ASSERT  true
-[00:10:35.523] Browser ASSERT  true
-[00:10:35.523] Browser ASSERT  true
-[00:10:35.523] Browser ASSERT  true
-[00:10:35.523] Browser ASSERT  true
-[00:10:35.523] Browser ASSERT  true
-[00:10:35.523] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.524] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:10:35.525] Browser ASSERT  true
-[00:22:35.621] Server  LOG      ○ Compiling /services ...
-[00:22:40.150] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services color: rgb(120, 120, 120) color: inherit {"dp":"/services","o":"http://localhost:3000/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763986177436}
-[00:23:18.932] Browser LOG     THREE.WebGLRenderer: Context Lost.
-[00:23:19.711] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:23:20.966] Browser LOG     THREE.WebGLRenderer: Context Restored.
-[00:23:26.158] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:23:26.159] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/services","route":"/services"}
-[00:23:26.159] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services color: rgb(120, 120, 120) color: inherit {"dp":"/services","o":"http://localhost:3000/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763986223144}
-[00:25:40.883] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about color: rgb(120, 120, 120) color: inherit {"dp":"/about","o":"http://localhost:3000/about","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763986358192}
+[00:02:25.686] Browser WARN    updating from  114 to  120
+[00:02:25.686] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:02:25.686] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:02:25.686] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764044185875}
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.686] Browser ASSERT  true
+[00:02:25.687] Browser ASSERT  true
+[00:02:25.687] Browser ASSERT  true
+[00:02:25.687] Browser ASSERT  true
+[00:02:25.687] Browser ASSERT  true
+[00:02:25.687] Browser ASSERT  true
+[00:02:25.687] Browser ASSERT  true
+[00:02:25.687] Browser ASSERT  true
+[00:02:25.687] Browser ASSERT  true
+[00:02:25.687] Browser ASSERT  true
+[00:02:29.061] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:29.421] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:02:29.421] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[00:02:29.421] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764044190867}
+[00:02:47.251] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764044208644}
+[00:02:50.851] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764044212273}
+[00:03:00.496] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services/1 color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services/[id]","o":"http://localhost:3000/dashboard/services/1","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764044221919}
+[00:08:48.146] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764044569575}
+[00:09:15.236] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/insights color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/insights","o":"http://localhost:3000/dashboard/insights","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764044596662}
+[00:09:16.047] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764044597473}
+[00:45:17.714] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/data-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:45:17.733] Server  LOG      ✓ Compiled in 355ms
+[00:45:18.681] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:45:19.729] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="orbitron_9..." suppressHydrationWarning={true}>
+                          <body
+                            className="font-sans antialiased min-h-screen relative"
+-                           cz-shortcut-listen="true"
+                          >
+                  ...
+
+[00:45:19.729] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:45:19.729] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/services","route":"/dashboard/services"}
+[00:45:19.729] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764046760613}
+[00:45:21.425] Server  LOG      ✓ Compiled in 249ms
+[00:45:21.714] Browser ERROR   ./lib/data-context.tsx:91:7
+Parsing ecmascript source code failed
+  89 |
+  90 | // Initial Data
+> 91 | const initialServices: Service[] 
+     |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  92 | // = [
+  93 | //     {
+  94 | //         id: "1",
+
+'const' declarations must be initialized
+
+Import trace:
+  Server Component:
+    ./lib/data-context.tsx
+    ./app/layout.tsx
+[00:45:25.781] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/data-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:45:26.113] Server  ERROR   D:\zarp\YOUSEF\TECHNOVA-website\.next\dev\server\chunks\ssr\[root-of-the-server]__baefe487._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:45:26.117] Server  ERROR   D:\zarp\YOUSEF\TECHNOVA-website\.next\dev\server\chunks\ssr\[turbopack]_runtime.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:45:26.119] Server  ERROR   D:\zarp\YOUSEF\TECHNOVA-website\.next\dev\server\chunks\ssr\_bdcbb1a6._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:45:26.208] Server  ERROR   D:\zarp\YOUSEF\TECHNOVA-website\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:45:26.214] Server  ERROR    ⨯ ReferenceError: ج is not defined
+[00:45:26.571] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:45:27.036] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:45:27.037] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/data-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:45:27.037] Browser ERROR   uncaughtError: ReferenceError: ج is not defined
+[00:45:27.038] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:45:27.537] Server  LOG      ✓ Compiled in 157ms
+[00:45:27.748] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:45:28.726] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:45:28.726] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/services","route":"/dashboard/services"}
+[00:45:28.726] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764046769496}
+[00:45:31.489] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/data-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:45:32.083] Server  LOG      ✓ Compiled in 149ms
+[00:45:32.372] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:45:33.714] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:45:33.714] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/services","route":"/dashboard/services"}
+[00:45:33.714] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764046774206}
+[00:45:38.960] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/data-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:45:38.990] Server  LOG      ✓ Compiled in 144ms
+[00:45:39.662] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:45:40.726] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:45:40.726] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/services","route":"/dashboard/services"}
+[00:45:40.726] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764046781378}
+[00:46:06.075] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/data-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:46:06.099] Server  LOG      ✓ Compiled in 221ms
+[00:46:06.897] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:46:07.721] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:46:07.721] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/services","route":"/dashboard/services"}
+[00:46:07.721] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764046808668}
+[00:46:18.584] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/data-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:46:18.611] Server  LOG      ✓ Compiled in 255ms
+[00:46:19.435] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:46:20.712] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:46:20.712] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/services","route":"/dashboard/services"}
+[00:46:20.712] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764046821248}
+[00:46:26.604] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/data-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:46:26.618] Server  LOG      ✓ Compiled in 141ms
+[00:46:27.309] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:46:27.724] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:46:27.724] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/services","route":"/dashboard/services"}
+[00:46:27.724] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764046829011}
+[00:46:31.050] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/data-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:46:31.608] Server  LOG      ✓ Compiled in 149ms
+[00:46:31.817] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:46:32.723] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:46:32.723] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/services","route":"/dashboard/services"}
+[00:46:32.723] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764046833558}
+[00:46:57.752] Server  LOG      ✓ Compiled in 122ms
+[00:47:00.999] Server  LOG      ✓ Compiled in 144ms
+[00:47:55.906] Server  LOG      ✓ Compiled in 243ms
+[00:47:56.723] Browser ERROR   ./app/dashboard/services/page.tsx:30:1
+Parsing ecmascript source code failed
+  28 |    const DataContext = createContext<any>(null)
+  29 |
+> 30 | export function DataProvider({ children }: { children: React.ReactNode }) {
+     | ^^^^^^
+  31 |     const [services, setServices] = useState<Service[]>([])
+  32 |
+  33 |     // ⬇⬇ FETCH DATA FROM BACKEND
+
+'import', and 'export' cannot be used outside of module code
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/services/page.tsx [Client Component Browser]
+    ./app/dashboard/services/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/services/page.tsx [Client Component SSR]
+    ./app/dashboard/services/page.tsx [Server Component]
+[00:48:00.727] Browser ERROR   ./app/dashboard/services/page.tsx:30:1
+Parsing ecmascript source code failed
+  28 |    const DataContext = createContext<any>(null)
+  29 |
+> 30 | export function DataProvider({ children }: { children: React.ReactNode }) {
+     | ^^^^^^
+  31 |     const [services, setServices] = useState<Service[]>([])
+  32 |
+  33 |     // ⬇⬇ FETCH DATA FROM BACKEND
+
+'import', and 'export' cannot be used outside of module code
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/services/page.tsx [Client Component Browser]
+    ./app/dashboard/services/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/services/page.tsx [Client Component SSR]
+    ./app/dashboard/services/page.tsx [Server Component]
+[00:50:03.454] Server  LOG      ✓ Compiled in 157ms
+[00:50:10.554] Server  LOG      ✓ Compiled in 163ms
+[00:50:11.694] Server  LOG      ✓ Compiled in 167ms
+[00:51:29.631] Server  LOG      ✓ Compiled in 152ms
+[00:51:48.718] Server  LOG      ✓ Compiled in 213ms
+[00:51:58.042] Server  LOG      ✓ Compiled in 236ms
+[00:52:03.094] Server  LOG      ✓ Compiled in 156ms
+[00:52:08.044] Server  LOG      ✓ Compiled in 122ms
+[00:52:13.546] Server  LOG      ✓ Compiled in 162ms
+[00:52:18.646] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:52:18.861] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="orbitron_9..." suppressHydrationWarning={true}>
+                          <body
+                            className="font-sans antialiased min-h-screen relative"
+-                           cz-shortcut-listen="true"
+                          >
+                  ...
+
+[00:52:18.972] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:52:18.972] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/services","route":"/dashboard/services"}
+[00:52:18.972] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764047180412}
+[00:52:33.254] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:52:34.721] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:52:34.721] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/services","route":"/dashboard/services"}
+[00:52:34.721] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764047195546}
+[00:54:51.285] Server  LOG      ✓ Compiled in 142ms
+[00:54:51.716] Browser ERROR   ./lib/data-context.tsx:427:12
+Ecmascript file had an error
+  425 |     const [services, setServices] = useState<Service[]>([])
+  426 |     const [insights, setInsights] = useState<Insight[]>([])
+> 427 |     const [caseStudies, setCaseStudies] = useState<CaseStudy[]>([])
+      |            ^^^^^^^^^^^
+  428 |     const [jobs, setJobs] = useState<Job[]>([])
+  429 |     const addService = (service: Omit<Service, "id">) => {
+  430 |         const newService = { ...service, id: Math.random().toString(36).substr(2, 9) }
+
+the name `caseStudies` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./lib/data-context.tsx
+    ./app/layout.tsx
+[00:54:51.716] Browser ERROR   ./lib/data-context.tsx:426:12
+Ecmascript file had an error
+  424 |     const [jobs, setJobs] = useState<Job[]>(initialJobs)
+  425 |     const [services, setServices] = useState<Service[]>([])
+> 426 |     const [insights, setInsights] = useState<Insight[]>([])
+      |            ^^^^^^^^
+  427 |     const [caseStudies, setCaseStudies] = useState<CaseStudy[]>([])
+  428 |     const [jobs, setJobs] = useState<Job[]>([])
+  429 |     const addService = (service: Omit<Service, "id">) => {
+
+the name `insights` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./lib/data-context.tsx
+    ./app/layout.tsx
+[00:54:51.716] Browser ERROR   ./lib/data-context.tsx:428:12
+Ecmascript file had an error
+  426 |     const [insights, setInsights] = useState<Insight[]>([])
+  427 |     const [caseStudies, setCaseStudies] = useState<CaseStudy[]>([])
+> 428 |     const [jobs, setJobs] = useState<Job[]>([])
+      |            ^^^^
+  429 |     const addService = (service: Omit<Service, "id">) => {
+  430 |         const newService = { ...service, id: Math.random().toString(36).substr(2, 9) }
+  431 |         setServices([...services, newService])
+
+the name `jobs` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./lib/data-context.tsx
+    ./app/layout.tsx
+[00:54:51.716] Browser ERROR   ./lib/data-context.tsx:425:12
+Ecmascript file had an error
+  423 |     const [caseStudies, setCaseStudies] = useState<CaseStudy[]>(initialCaseStudies)
+  424 |     const [jobs, setJobs] = useState<Job[]>(initialJobs)
+> 425 |     const [services, setServices] = useState<Service[]>([])
+      |            ^^^^^^^^
+  426 |     const [insights, setInsights] = useState<Insight[]>([])
+  427 |     const [caseStudies, setCaseStudies] = useState<CaseStudy[]>([])
+  428 |     const [jobs, setJobs] = useState<Job[]>([])
+
+the name `services` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./lib/data-context.tsx
+    ./app/layout.tsx
+[00:54:51.716] Browser ERROR   ./lib/data-context.tsx:427:25
+Ecmascript file had an error
+  425 |     const [services, setServices] = useState<Service[]>([])
+  426 |     const [insights, setInsights] = useState<Insight[]>([])
+> 427 |     const [caseStudies, setCaseStudies] = useState<CaseStudy[]>([])
+      |                         ^^^^^^^^^^^^^^
+  428 |     const [jobs, setJobs] = useState<Job[]>([])
+  429 |     const addService = (service: Omit<Service, "id">) => {
+  430 |         const newService = { ...service, id: Math.random().toString(36).substr(2, 9) }
+
+the name `setCaseStudies` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./lib/data-context.tsx
+    ./app/layout.tsx
+[00:54:51.716] Browser ERROR   ./lib/data-context.tsx:426:22
+Ecmascript file had an error
+  424 |     const [jobs, setJobs] = useState<Job[]>(initialJobs)
+  425 |     const [services, setServices] = useState<Service[]>([])
+> 426 |     const [insights, setInsights] = useState<Insight[]>([])
+      |                      ^^^^^^^^^^^
+  427 |     const [caseStudies, setCaseStudies] = useState<CaseStudy[]>([])
+  428 |     const [jobs, setJobs] = useState<Job[]>([])
+  429 |     const addService = (service: Omit<Service, "id">) => {
+
+the name `setInsights` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./lib/data-context.tsx
+    ./app/layout.tsx
+[00:54:51.716] Browser ERROR   ./lib/data-context.tsx:428:18
+Ecmascript file had an error
+  426 |     const [insights, setInsights] = useState<Insight[]>([])
+  427 |     const [caseStudies, setCaseStudies] = useState<CaseStudy[]>([])
+> 428 |     const [jobs, setJobs] = useState<Job[]>([])
+      |                  ^^^^^^^
+  429 |     const addService = (service: Omit<Service, "id">) => {
+  430 |         const newService = { ...service, id: Math.random().toString(36).substr(2, 9) }
+  431 |         setServices([...services, newService])
+
+the name `setJobs` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./lib/data-context.tsx
+    ./app/layout.tsx
+[00:54:51.716] Browser ERROR   ./lib/data-context.tsx:425:22
+Ecmascript file had an error
+  423 |     const [caseStudies, setCaseStudies] = useState<CaseStudy[]>(initialCaseStudies)
+  424 |     const [jobs, setJobs] = useState<Job[]>(initialJobs)
+> 425 |     const [services, setServices] = useState<Service[]>([])
+      |                      ^^^^^^^^^^^
+  426 |     const [insights, setInsights] = useState<Insight[]>([])
+  427 |     const [caseStudies, setCaseStudies] = useState<CaseStudy[]>([])
+  428 |     const [jobs, setJobs] = useState<Job[]>([])
+
+the name `setServices` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./lib/data-context.tsx
+    ./app/layout.tsx
+[00:54:52.864] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/data-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:54:53.685] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:54:54.735] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="orbitron_9..." suppressHydrationWarning={true}>
+                          <body
+                            className="font-sans antialiased min-h-screen relative"
+-                           cz-shortcut-listen="true"
+                          >
+                  ...
+
+[00:54:54.735] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:54:54.735] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/services","route":"/dashboard/services"}
+[00:54:54.735] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764047335898}
+[00:54:57.722] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/data-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:54:57.750] Server  LOG      ✓ Compiled in 146ms
+[00:54:58.684] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:54:59.332] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:54:59.332] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/services","route":"/dashboard/services"}
+[00:54:59.332] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764047340765}
+[00:55:10.335] Server  LOG      ✓ Compiled in 238ms
+[00:55:10.722] Browser ERROR   ./lib/data-context.tsx:459:11
+Ecmascript file had an error
+  457 |     }
+  458 |
+> 459 |     const addService = (service: Omit<Service, "id">) => {
+      |           ^^^^^^^^^^
+  460 |         const newService = { ...service, id: Math.random().toString(36).substr(2, 9) }
+  461 |         setServices([...services, newService])
+  462 |     }
+
+the name `addService` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./lib/data-context.tsx
+    ./app/layout.tsx
+[00:55:10.722] Browser ERROR   ./lib/data-context.tsx:468:11
+Ecmascript file had an error
+  466 |     }
+  467 |
+> 468 |     const deleteService = (id: string) => {
+      |           ^^^^^^^^^^^^^
+  469 |         setServices(services.filter((s) => s._id !== id))
+  470 |     }
+  471 |
+
+the name `deleteService` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./lib/data-context.tsx
+    ./app/layout.tsx
+[00:55:10.722] Browser ERROR   ./lib/data-context.tsx:464:11
+Ecmascript file had an error
+  462 |     }
+  463 |
+> 464 |     const updateService = (id: string, updatedService: Partial<Service>) => {
+      |           ^^^^^^^^^^^^^
+  465 |         setServices(services.map((s) => (s._id === id ? { ...s, ...updatedService } : s)))
+  466 |     }
+  467 |
+
+the name `updateService` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./lib/data-context.tsx
+    ./app/layout.tsx
+[00:55:16.495] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/data-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:55:17.488] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:55:18.717] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:55:18.717] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/services","route":"/dashboard/services"}
+[00:55:18.717] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764047359708}
+[00:55:57.161] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services/6925358feeb5d5c2c2dda8d8 color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services/[id]","o":"http://localhost:3000/dashboard/services/6925358feeb5d5c2c2dda8d8","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764047398597}
+[00:56:01.039] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764047402476}
+[00:57:12.826] Server  LOG      ✓ Compiled in 150ms
+[00:57:37.787] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: object with keys {feature_ar, feature_en, _id}). If you meant to render a collection of children, use an array instead.
+[00:57:42.601] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:57:42.942] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:57:42.942] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/services","route":"/dashboard/services"}
+[00:57:42.942] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764047504385}
+[01:00:05.728] Browser ERROR   ./app/dashboard/services/[id]/page.tsx:60:13
+Parsing ecmascript source code failed
+  58 |
+  59 |         fetchService()
+> 60 |     }, [id])
+     |             ^
+  61 |
+
+Expected '}', got '<eof>'
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/services/[id]/page.tsx [Client Component Browser]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/services/[id]/page.tsx [Client Component SSR]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+[01:00:13.723] Browser ERROR   ./app/dashboard/services/[id]/page.tsx:61:149
+Parsing ecmascript source code failed
+  59 |         fetchService()
+  60 |     }, [id])
+> 61 |     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>, index?: number, lang?: "ar" | "en") => {
+     |                                                                                                                                                     ^
+
+Expected '}', got '<eof>'
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/services/[id]/page.tsx [Client Component Browser]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/services/[id]/page.tsx [Client Component SSR]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+[01:00:14.718] Browser ERROR   ./app/dashboard/services/[id]/page.tsx:62:41
+Parsing ecmascript source code failed
+  60 |     }, [id])
+  61 |     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>, index?: number, lang?: "ar" | "en") => {
+> 62 |         const { name, value } = e.target
+     |                                         ^
+
+Expected '}', got '<eof>'
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/services/[id]/page.tsx [Client Component Browser]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/services/[id]/page.tsx [Client Component SSR]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+[01:00:20.716] Browser ERROR   ./app/dashboard/services/[id]/page.tsx:66:99
+Parsing ecmascript source code failed
+  64 |             setFormData((prev) => {
+  65 |                 if (!prev) return prev
+> 66 |                 const updatedFeatures = [...(lang === "ar" ? prev.features_ar : prev.features_en)]
+     |                                                                                                   ^
+
+Expected '}', got '<eof>'
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/services/[id]/page.tsx [Client Component Browser]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/services/[id]/page.tsx [Client Component SSR]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+[01:00:23.713] Browser ERROR   ./app/dashboard/services/[id]/page.tsx:73:14
+Parsing ecmascript source code failed
+  71 |                     features_en: lang === "en" ? updatedFeatures : prev.features_en,
+  72 |                 }
+> 73 |             }
+     |              ^
+
+Expected ',', got '<eof>'
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/services/[id]/page.tsx [Client Component Browser]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/services/[id]/page.tsx [Client Component SSR]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+[01:00:26.719] Browser ERROR   ./app/dashboard/services/[id]/page.tsx:73:15
+Parsing ecmascript source code failed
+  71 |                     features_en: lang === "en" ? updatedFeatures : prev.features_en,
+  72 |                 }
+> 73 |             })
+     |               ^
+
+Expected '}', got '<eof>'
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/services/[id]/page.tsx [Client Component Browser]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/services/[id]/page.tsx [Client Component SSR]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+[01:00:29.719] Browser ERROR   ./app/dashboard/services/[id]/page.tsx:76:10
+Parsing ecmascript source code failed
+  74 |         } else {
+  75 |             setFormData((prev) => prev ? { ...prev, [name]: value } : prev)
+> 76 |         }
+     |          ^
+
+Expected '}', got '<eof>'
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/services/[id]/page.tsx [Client Component Browser]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/services/[id]/page.tsx [Client Component SSR]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+[01:00:31.716] Browser ERROR   ./app/dashboard/services/[id]/page.tsx:76:10
+Parsing ecmascript source code failed
+  74 |         } else {
+  75 |             setFormData((prev) => prev ? { ...prev, [name]: value } : prev)
+> 76 |         }
+     |          ^
+  77 |         
+
+Expected '}', got '<eof>'
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/services/[id]/page.tsx [Client Component Browser]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/services/[id]/page.tsx [Client Component SSR]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+[01:00:33.726] Browser ERROR   ./app/dashboard/services/[id]/page.tsx:77:6
+Parsing ecmascript source code failed
+  75 |             setFormData((prev) => prev ? { ...prev, [name]: value } : prev)
+  76 |         }
+> 77 |     }
+     |      ^
+
+Expected '}', got '<eof>'
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/services/[id]/page.tsx [Client Component Browser]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/services/[id]/page.tsx [Client Component SSR]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+[01:00:34.722] Browser ERROR   ./app/dashboard/services/[id]/page.tsx:81:30
+Parsing ecmascript source code failed
+  79 |     const handleSubmit = async (e: React.FormEvent) => {
+  80 |         e.preventDefault()
+> 81 |         if (!formData) return
+     |                              ^
+
+Expected '}', got '<eof>'
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/services/[id]/page.tsx [Client Component Browser]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/services/[id]/page.tsx [Client Component SSR]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+[01:00:41.717] Browser ERROR   ./app/dashboard/services/[id]/page.tsx:87:63
+Parsing ecmascript source code failed
+  85 |             description_ar: formData.description_ar,
+  86 |             description_en: formData.description_en,
+> 87 |             shortDescription_ar: formData.shortDescription_ar,
+     |                                                               ^
+
+Unexpected token `<eof>`. Expected identifier, string literal, numeric literal or [ for the computed key
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/services/[id]/page.tsx [Client Component Browser]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/services/[id]/page.tsx [Client Component SSR]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+[01:00:42.715] Browser ERROR   ./app/dashboard/services/[id]/page.tsx:87:63
+Parsing ecmascript source code failed
+  85 |             description_ar: formData.description_ar,
+  86 |             description_en: formData.description_en,
+> 87 |             shortDescription_ar: formData.shortDescription_ar,
+     |                                                               ^
+  88 |             
+
+Unexpected token `<eof>`. Expected identifier, string literal, numeric literal or [ for the computed key
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/services/[id]/page.tsx [Client Component Browser]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/services/[id]/page.tsx [Client Component SSR]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+[01:00:44.723] Browser ERROR   ./app/dashboard/services/[id]/page.tsx:88:63
+Parsing ecmascript source code failed
+  86 |             description_en: formData.description_en,
+  87 |             shortDescription_ar: formData.shortDescription_ar,
+> 88 |             shortDescription_en: formData.shortDescription_en,
+     |                                                               ^
+
+Unexpected token `<eof>`. Expected identifier, string literal, numeric literal or [ for the computed key
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/services/[id]/page.tsx [Client Component Browser]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/services/[id]/page.tsx [Client Component SSR]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+[01:00:45.719] Browser ERROR   ./app/dashboard/services/[id]/page.tsx:90:33
+Parsing ecmascript source code failed
+  88 |             shortDescription_en: formData.shortDescription_en,
+  89 |             color: formData.color,
+> 90 |             icon: formData.icon,    
+     |                                 ^
+
+Unexpected token `<eof>`. Expected identifier, string literal, numeric literal or [ for the computed key
+
+Import traces:
+  Client Component Browser:
+    ./app/dashboard/services/[id]/page.tsx [Client Component Browser]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/dashboard/services/[id]/page.tsx [Client Component SSR]
+    ./app/dashboard/services/[id]/page.tsx [Server Component]
+[01:00:48.439] Server  LOG      ✓ Compiled in 149ms
+[01:01:55.763] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/data-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:01:55.787] Server  LOG      ✓ Compiled in 138ms
+[01:01:56.667] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:57.691] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/data-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:01:57.691] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="orbitron_9..." suppressHydrationWarning={true}>
+                          <body
+                            className="font-sans antialiased min-h-screen relative"
+-                           cz-shortcut-listen="true"
+                          >
+                  ...
+
+[01:01:57.691] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:01:57.691] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/services","route":"/dashboard/services"}
+[01:01:57.691] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764047758506}
+[01:01:57.692] Browser ERROR   Failed to fetch services: {}
+[01:01:58.130] Server  LOG      ✓ Compiled in 140ms
+[01:01:58.496] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:59.517] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/data-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:01:59.517] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:01:59.517] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/services","route":"/dashboard/services"}
+[01:01:59.517] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764047760262}
+[01:01:59.517] Browser ERROR   Failed to fetch services: {}
+[01:01:59.970] Server  LOG      ✓ Compiled in 149ms
+[01:02:00.155] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:02:00.720] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:02:00.720] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/services","route":"/dashboard/services"}
+[01:02:00.720] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764047761872}
+[01:02:00.720] Browser LOG     []
+[01:02:01.946] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/data-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:02:02.388] Server  LOG      ✓ Compiled in 138ms
+[01:02:02.653] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:02:03.722] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:02:03.722] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/services","route":"/dashboard/services"}
+[01:02:03.722] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764047764444}
+[01:02:03.722] Browser LOG     []
+[01:02:08.552] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/data-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:02:09.027] Server  LOG      ✓ Compiled in 115ms
+[01:02:09.239] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:02:09.651] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:02:09.651] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/services","route":"/dashboard/services"}
+[01:02:09.651] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/services color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/services","o":"http://localhost:3000/dashboard/services","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764047771048}
+[01:02:09.652] Browser LOG     [{"__v":0,"_id":"6925358feeb5d5c2c2dda8d8","aggregateRating_ratingValue":0,"aggregateRating_reviewCount":0,"color":" #7B3FEF","createdAt":"2025-11-25T04:50:23.764Z","customId":"uhga7","description_ar":"نقدّم لك حلول ذكاء اصطناعي شاملة تشمل الأتمتة الذكية، والتحليلات التنبؤية، ومعالجة اللغة الطبيعية، ورؤية الحاسوب، إضافة إلى تطوير نماذج تعلم عميق متقدمة تعزز من كفاءة عملك وتنقل مؤسستك إلى مستوى جديد من التطور.","description_en":"Transform your business with intelligent automation, predictive analytics, and advanced machine learning models.","features":[{"_id":"6925358feeb5d5c2c2dda8d9","feature_ar":"معالجة اللغة الطبيعية (NLP)","feature_en":"Natural Language Processing (NLP)"},{"_id":"6925358feeb5d5c2c2dda8da","feature_ar":"رؤية الحاسوب (Computer Vision)","feature_en":"Computer Vision"},{"_id":"6925358feeb5d5c2c2dda8db","feature_ar":"التحليلات التنبؤية","feature_en":"Predictive Analytics"},{"_id":"6925358feeb5d5c2c2dda8dc","feature_ar":"نماذج التعلم العميق","feature_en":"Deep Learning Models"}],"icon":" Brain","images":[{"_id":"6925358feeb5d5c2c2dda8dd","imageLink":"https://ik.imagekit.io/6t9jvr8ri/Technova/Services/uhga7/ai-analytics-dashboard_ssN5WOlMI.png","public_id":"6925358d5c7cd75eb82b33be"}],"name_ar":"الذكاء الاصطناعي وتعلم الآلة","name_en":"AI & Machine Learning","reviews":[],"serviceType":" AI","shortDescription_ar":"حلول ذكاء اصطناعي متقدمة تساعدك في أتمتة أعمالك وتحليل البيانات والتنبؤ بالنتائج.","shortDescription_en":"\"Transform your business with intelligent automation, predictive analytics, and advanced machine learning models.\"","slug":"ai_and_machine_learning","updatedAt":"2025-11-25T04:50:23.764Z"}]

@@ -65,10 +65,10 @@ export default function ServicesDashboardPage() {
                             </TableRow>
                         ) : (
                             services.map((service) => (
-                                <TableRow key={service.id}>
-                                    <TableCell className="font-medium">{service.title}</TableCell>
-                                    <TableCell className="max-w-md truncate">{service.description}</TableCell>
-                                    <TableCell>{service.iconName}</TableCell>
+                                <TableRow key={service._id}>
+                                    <TableCell className="font-medium">{service.name_en}</TableCell>
+                                    <TableCell className="max-w-md truncate">{service.shortDescription_en}</TableCell>
+                                    <TableCell>{service.icon}</TableCell>
                                     <TableCell>
                                         <DropdownMenu>
                                             <DropdownMenuTrigger asChild>
@@ -79,11 +79,11 @@ export default function ServicesDashboardPage() {
                                             </DropdownMenuTrigger>
                                             <DropdownMenuContent align="end">
                                                 <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                                                <DropdownMenuItem onClick={() => router.push(`/dashboard/services/${service.id}`)}>
+                                                <DropdownMenuItem onClick={() => router.push(`/dashboard/services/${service._id}`)}>
                                                     <Pencil className="mr-2 h-4 w-4" /> Edit
                                                 </DropdownMenuItem>
                                                 <DropdownMenuSeparator />
-                                                <DropdownMenuItem onClick={() => handleDelete(service.id)} className="text-destructive">
+                                                <DropdownMenuItem onClick={() => handleDelete(service._id)} className="text-destructive">
                                                     <Trash className="mr-2 h-4 w-4" /> Delete
                                                 </DropdownMenuItem>
                                             </DropdownMenuContent>
