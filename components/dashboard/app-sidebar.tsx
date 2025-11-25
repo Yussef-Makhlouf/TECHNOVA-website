@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import {
     Sidebar,
     SidebarContent,
@@ -21,15 +22,24 @@ import {
     Users,
     Settings,
     LogOut,
+    Moon,
+    Sun,
 } from "lucide-react"
 import Link from "next/link"
 import { useRouter, usePathname } from "next/navigation"
 import { logout } from "@/app/login/actions"
 import { Logo } from "@/components/ui/logo"
+import { useTheme } from "next-themes"
 
 export function AppSidebar() {
     const pathname = usePathname()
     const router = useRouter()
+    const { theme, setTheme } = useTheme()
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
 
     const handleLogout = async () => {
         await logout()
@@ -99,6 +109,21 @@ export function AppSidebar() {
             </SidebarContent>
             <SidebarFooter className="border-t border-border/50 p-4">
                 <SidebarMenu>
+                    {mounted && (
+                        <SidebarMenuItem>
+                            <SidebarMenuButton
+                                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                                tooltip={theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
+                            >
+                                {theme === "dark" ? (
+                                    <Sun className="transition-transform duration-200" />
+                                ) : (
+                                    <Moon className="transition-transform duration-200" />
+                                )}
+                                <span>{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>
+                            </SidebarMenuButton>
+                        </SidebarMenuItem>
+                    )}
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild tooltip="Profile Settings">
                             <Link href="/dashboard/profile">

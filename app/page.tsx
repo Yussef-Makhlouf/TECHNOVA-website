@@ -50,6 +50,7 @@ import { SplineScene } from "@/components/ui/splite"
 import CircularText from "@/components/ui/circle-text"
 import { WhyTechnovaSection } from "@/components/ui/why-technova-section"
 import { ProcessSection } from "@/components/ui/process-section"
+import { Features3 } from "@/components/ui/features-3"
 
 export default function HomePage() {
   const stats = [
@@ -379,7 +380,8 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <WhyTechnovaSection />
+      {/* <WhyTechnovaSection /> */}
+<Features3 /> 
 
       <ProcessSection />
 

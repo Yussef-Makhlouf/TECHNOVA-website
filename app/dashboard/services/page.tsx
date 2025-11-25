@@ -19,21 +19,34 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Plus, MoreHorizontal, Pencil, Trash, Languages } from "lucide-react"
+import { Plus, MoreHorizontal, Pencil, Trash, Languages, Eye } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Badge } from "@/components/ui/badge"
 import { Skeleton } from "@/components/ui/skeleton"
+import { Checkbox } from "@/components/ui/checkbox"
+import { BulkActionsBar } from "@/components/dashboard/bulk-actions-bar"
+import { toast } from "sonner"
 
 export default function ServicesDashboardPage() {
     const { services, deleteService } = useData()
     const router = useRouter()
     const [showArabic, setShowArabic] = useState(true)
     const [isPending, startTransition] = useTransition()
+    const [selectedServices, setSelectedServices] = useState<string[]>([])
 
     const handleDelete = (id: string) => {
         if (confirm("Are you sure you want to delete this service?")) {
             deleteService(id)
+            toast.success("Service deleted successfully")
+        }
+    }
+
+    const handleBulkDelete = () => {
+        if (confirm(`Are you sure you want to delete ${selectedServices.length} service(s)?`)) {
+            selectedServices.forEach(id => deleteService(id))
+            setSelectedServices([])
+            toast.success(`${selectedServices.length} service(s) deleted successfully`)
         }
     }
 
@@ -43,8 +56,30 @@ export default function ServicesDashboardPage() {
         })
     }
 
+    const toggleService = (id: string) => {
+        setSelectedServices(prev =>
+            prev.includes(id) ? prev.filter(serviceId => serviceId !== id) : [...prev, id]
+        )
+    }
+
+    const toggleAll = () => {
+        setSelectedServices(prev =>
+            prev.length === services.length ? [] : services.map(s => s.id)
+        )
+    }
+
+    const clearSelection = () => {
+        setSelectedServices([])
+    }
+
     return (
         <div className="space-y-6">
+            <BulkActionsBar
+                selectedCount={selectedServices.length}
+                onClearSelection={clearSelection}
+                onDelete={handleBulkDelete}
+            />
+
             <div className="flex items-center justify-between">
                 <div>
                     <h1 className="text-3xl font-bold font-heading tracking-tight">Services</h1>
@@ -73,6 +108,13 @@ export default function ServicesDashboardPage() {
                 <Table>
                     <TableHeader>
                         <TableRow>
+                            <TableHead className="w-12">
+                                <Checkbox
+                                    checked={selectedServices.length === services.length && services.length > 0}
+                                    onCheckedChange={toggleAll}
+                                    aria-label="Select all"
+                                />
+                            </TableHead>
                             <TableHead>Title</TableHead>
                             <TableHead>Description</TableHead>
                             <TableHead>Icon</TableHead>
@@ -83,13 +125,23 @@ export default function ServicesDashboardPage() {
                     <TableBody>
                         {services.length === 0 ? (
                             <TableRow>
-                                <TableCell colSpan={5} className="text-center h-24 text-muted-foreground">
+                                <TableCell colSpan={6} className="text-center h-24 text-muted-foreground">
                                     No services found. Add one to get started.
                                 </TableCell>
                             </TableRow>
                         ) : (
                             services.map((service) => (
-                                <TableRow key={service.id}>
+                                <TableRow
+                                    key={service.id}
+                                    className={selectedServices.includes(service.id) ? "bg-muted/50" : ""}
+                                >
+                                    <TableCell>
+                                        <Checkbox
+                                            checked={selectedServices.includes(service.id)}
+                                            onCheckedChange={() => toggleService(service.id)}
+                                            aria-label={`Select ${service.title}`}
+                                        />
+                                    </TableCell>
                                     <TableCell className="font-medium">
                                         <div className="space-y-1">
                                             <div>{service.title}</div>
@@ -145,6 +197,9 @@ export default function ServicesDashboardPage() {
                                             </DropdownMenuTrigger>
                                             <DropdownMenuContent align="end">
                                                 <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                                                <DropdownMenuItem onClick={() => window.open(`/preview/services/${service.id}`, '_blank')}>
+                                                    <Eye className="mr-2 h-4 w-4" /> Preview
+                                                </DropdownMenuItem>
                                                 <DropdownMenuItem onClick={() => router.push(`/dashboard/services/${service.id}`)}>
                                                     <Pencil className="mr-2 h-4 w-4" /> Edit
                                                 </DropdownMenuItem>
