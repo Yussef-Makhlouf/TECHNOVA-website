@@ -58,13 +58,18 @@ export default function FeaturesAdvanced() {
           viewport={{ once: true }}
           onMouseEnter={() => setActiveTab(index)}
           className={cn(
-            "group relative p-6 rounded-2xl border-2 border-border bg-card backdrop-blur-sm transition-all duration-300 hover:border-transparent hover:shadow-xl",
+            "group relative p-6 border border-border bg-card backdrop-blur-sm transition-all duration-300 hover:border-transparent hover:shadow-xl",
             activeTab === index && "border-transparent shadow-xl",
           )}
           style={{
             boxShadow: activeTab === index ? "0 20px 50px rgba(123, 63, 239, 0.3)" : undefined,
+            clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 2rem), calc(100% - 2rem) 100%, 0 100%)',
           }}
         >
+          {/* Corner Decoration */}
+          <div
+            className="absolute w-16 h-16 bottom-[-2.8rem] right-[-2.8rem] rotate-45 bg-primary/10 border-t border-l border-primary/30 group-hover:bg-primary/20 group-hover:border-primary/50 transition-colors z-20"
+          />
           <div
             className={cn(
               "absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br",
