@@ -14,27 +14,33 @@ export default function AboutPage() {
   const values = [
     {
       icon: Lightbulb,
-      title: "Innovation",
-      description: "We constantly push boundaries and explore new technologies to deliver cutting-edge solutions.",
-      color: "#7B3FEF",
-    },
-    {
-      icon: Users,
-      title: "Collaboration",
-      description: "We believe in the power of teamwork and building strong partnerships with our clients.",
-      color: "#00D9FF",
-    },
-    {
-      icon: Award,
-      title: "Excellence",
-      description: "We are committed to delivering the highest quality in everything we do.",
+      title: "Creativity",
+      description: "We believe creativity is the foundation of effective solutions. We develop ideas rooted in cultural and market understanding to create meaningful and distinctive experiences.",
       color: "#7B3FEF",
     },
     {
       icon: TrendingUp,
-      title: "Growth",
-      description: "We foster continuous learning and development for our team and clients.",
+      title: "Sustainable Innovation",
+      description: "We build intelligent solutions that are scalable and long-lasting, designed to evolve and remain valuable over time.",
       color: "#00D9FF",
+    },
+    {
+      icon: Users,
+      title: "Ethical Values",
+      description: "We believe in AI that enhances human capability, not replaces it. Our priority is the protection of data, transparency, and respect for privacy.",
+      color: "#FF0080",
+    },
+    {
+      icon: Award,
+      title: "Success Partnership",
+      description: "We invest in long-term partnerships built on trust and shared goals. We work side-by-side with our partners from concept to execution to measurable impact.",
+      color: "#FFD700",
+    },
+    {
+      icon: Award,
+      title: "Excellence in Execution",
+      description: "We commit to precision, professionalism, and measurable outcomes. Every project we deliver reflects high standards of quality and institutional rigor.",
+      color: "#00FF94",
     },
   ]
 
@@ -76,7 +82,7 @@ export default function AboutPage() {
             </h1>
             <div className="gradient-line w-32 mx-auto my-6" />
             <p className="text-xl text-muted-foreground leading-relaxed">
-              We are a team of passionate technologists dedicated to building the future of digital innovation.
+              A leading technology company specializing in integrating artificial intelligence with innovative digital solutions.
             </p>
           </motion.div>
         </div>
@@ -101,9 +107,8 @@ export default function AboutPage() {
                 <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground">Our Vision</h2>
               </div>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                To be the global leader in technology innovation, empowering businesses to thrive in the digital age
-                through cutting-edge solutions and transformative strategies that shape the future of industries
-                worldwide.
+                To lead the integration of AI and innovation in the world, creating smart, sustainable, and secure solutions
+                that empower organizations and individuals to thrive in the digital age.
               </p>
             </motion.div>
 
@@ -146,9 +151,9 @@ export default function AboutPage() {
                 <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground">Our Mission</h2>
               </div>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                To deliver innovative, scalable, and secure technology solutions that drive measurable business value.
-                We partner with our clients to understand their unique challenges and create tailored solutions that
-                exceed expectations.
+                We design AI-driven solutions that enhance efficiency, increase value, and create measurable impact.
+                We transform data into insight, insight into experience, and experience into sustainable success with a firm
+                commitment to privacy and human-centered innovation.
               </p>
             </motion.div>
 

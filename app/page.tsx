@@ -48,6 +48,8 @@ import { StaggerTestimonials } from "@/components/ui/stagger-testimonials"
 import Logomarquee from "@/components/logomarquee"
 import { SplineScene } from "@/components/ui/splite"
 import CircularText from "@/components/ui/circle-text"
+import { WhyTechnovaSection } from "@/components/ui/why-technova-section"
+import { ProcessSection } from "@/components/ui/process-section"
 
 export default function HomePage() {
   const stats = [
@@ -376,6 +378,10 @@ export default function HomePage() {
           </Link>
         </div>
       </Section>
+
+      <WhyTechnovaSection />
+
+      <ProcessSection />
 
       <Section>
         <motion.div

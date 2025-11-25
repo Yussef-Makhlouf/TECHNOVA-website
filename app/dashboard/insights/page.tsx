@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useTransition } from "react"
 import { useData } from "@/lib/data-context"
 import { Button } from "@/components/ui/button"
 import {
@@ -18,18 +19,28 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Plus, MoreHorizontal, Pencil, Trash } from "lucide-react"
+import { Plus, MoreHorizontal, Pencil, Trash, Languages } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import { Badge } from "@/components/ui/badge"
+import { Skeleton } from "@/components/ui/skeleton"
 
 export default function InsightsDashboardPage() {
     const { insights, deleteInsight } = useData()
     const router = useRouter()
+    const [showArabic, setShowArabic] = useState(true)
+    const [isPending, startTransition] = useTransition()
 
     const handleDelete = (id: string) => {
         if (confirm("Are you sure you want to delete this insight?")) {
             deleteInsight(id)
         }
+    }
+
+    const handleToggleLanguage = () => {
+        startTransition(() => {
+            setShowArabic(!showArabic)
+        })
     }
 
     return (
@@ -39,11 +50,23 @@ export default function InsightsDashboardPage() {
                     <h1 className="text-3xl font-bold font-heading tracking-tight">Insights</h1>
                     <p className="text-muted-foreground">Manage your industry insights and articles.</p>
                 </div>
-                <Button asChild>
-                    <Link href="/dashboard/insights/new">
-                        <Plus className="mr-2 h-4 w-4" /> Add New
-                    </Link>
-                </Button>
+                <div className="flex gap-2">
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={handleToggleLanguage}
+                        className="gap-2"
+                        disabled={isPending}
+                    >
+                        <Languages className="h-4 w-4" />
+                        {showArabic ? "عربي" : "EN"}
+                    </Button>
+                    <Button asChild>
+                        <Link href="/dashboard/insights/new">
+                            <Plus className="mr-2 h-4 w-4" /> Add New
+                        </Link>
+                    </Button>
+                </div>
             </div>
 
             <div className="border rounded-lg">
@@ -54,23 +77,83 @@ export default function InsightsDashboardPage() {
                             <TableHead>Category</TableHead>
                             <TableHead>Author</TableHead>
                             <TableHead>Date</TableHead>
+                            <TableHead>Language</TableHead>
                             <TableHead className="w-[100px]">Actions</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         {insights.length === 0 ? (
                             <TableRow>
-                                <TableCell colSpan={5} className="text-center h-24 text-muted-foreground">
+                                <TableCell colSpan={6} className="text-center h-24 text-muted-foreground">
                                     No insights found. Add one to get started.
                                 </TableCell>
                             </TableRow>
                         ) : (
                             insights.map((insight) => (
                                 <TableRow key={insight.id}>
-                                    <TableCell className="font-medium">{insight.title}</TableCell>
-                                    <TableCell>{insight.category}</TableCell>
-                                    <TableCell>{insight.author}</TableCell>
+                                    <TableCell className="font-medium">
+                                        <div className="space-y-1">
+                                            <div>{insight.title}</div>
+                                            {showArabic && (
+                                                isPending ? (
+                                                    <Skeleton className="h-4 w-48" />
+                                                ) : insight.titleAr ? (
+                                                    <div className="text-sm text-muted-foreground transition-all duration-300" dir="rtl">
+                                                        {insight.titleAr}
+                                                    </div>
+                                                ) : (
+                                                    <div className="text-xs text-muted-foreground/60 italic" dir="rtl">
+                                                        لا يوجد عنوان بالعربية
+                                                    </div>
+                                                )
+                                            )}
+                                        </div>
+                                    </TableCell>
+                                    <TableCell>
+                                        <div className="space-y-1">
+                                            <div>{insight.category}</div>
+                                            {showArabic && (
+                                                isPending ? (
+                                                    <Skeleton className="h-4 w-32" />
+                                                ) : insight.categoryAr ? (
+                                                    <div className="text-sm text-muted-foreground transition-all duration-300" dir="rtl">
+                                                        {insight.categoryAr}
+                                                    </div>
+                                                ) : (
+                                                    <div className="text-xs text-muted-foreground/60 italic" dir="rtl">
+                                                        -
+                                                    </div>
+                                                )
+                                            )}
+                                        </div>
+                                    </TableCell>
+                                    <TableCell>
+                                        <div className="space-y-1">
+                                            <div>{insight.author}</div>
+                                            {showArabic && (
+                                                isPending ? (
+                                                    <Skeleton className="h-4 w-32" />
+                                                ) : insight.authorAr ? (
+                                                    <div className="text-sm text-muted-foreground transition-all duration-300" dir="rtl">
+                                                        {insight.authorAr}
+                                                    </div>
+                                                ) : (
+                                                    <div className="text-xs text-muted-foreground/60 italic" dir="rtl">
+                                                        -
+                                                    </div>
+                                                )
+                                            )}
+                                        </div>
+                                    </TableCell>
                                     <TableCell>{insight.date}</TableCell>
+                                    <TableCell>
+                                        <div className="flex gap-1">
+                                            <Badge variant="secondary" className="text-xs">EN</Badge>
+                                            {insight.titleAr && (
+                                                <Badge variant="secondary" className="text-xs">AR</Badge>
+                                            )}
+                                        </div>
+                                    </TableCell>
                                     <TableCell>
                                         <DropdownMenu>
                                             <DropdownMenuTrigger asChild>
@@ -100,3 +183,4 @@ export default function InsightsDashboardPage() {
         </div>
     )
 }
+

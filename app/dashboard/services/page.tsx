@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useTransition } from "react"
 import { useData } from "@/lib/data-context"
 import { Button } from "@/components/ui/button"
 import {
@@ -18,18 +19,28 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Plus, MoreHorizontal, Pencil, Trash } from "lucide-react"
+import { Plus, MoreHorizontal, Pencil, Trash, Languages } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import { Badge } from "@/components/ui/badge"
+import { Skeleton } from "@/components/ui/skeleton"
 
 export default function ServicesDashboardPage() {
     const { services, deleteService } = useData()
     const router = useRouter()
+    const [showArabic, setShowArabic] = useState(true)
+    const [isPending, startTransition] = useTransition()
 
     const handleDelete = (id: string) => {
         if (confirm("Are you sure you want to delete this service?")) {
             deleteService(id)
         }
+    }
+
+    const handleToggleLanguage = () => {
+        startTransition(() => {
+            setShowArabic(!showArabic)
+        })
     }
 
     return (
@@ -39,11 +50,23 @@ export default function ServicesDashboardPage() {
                     <h1 className="text-3xl font-bold font-heading tracking-tight">Services</h1>
                     <p className="text-muted-foreground">Manage your service offerings.</p>
                 </div>
-                <Button asChild>
-                    <Link href="/dashboard/services/new">
-                        <Plus className="mr-2 h-4 w-4" /> Add New
-                    </Link>
-                </Button>
+                <div className="flex gap-2">
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={handleToggleLanguage}
+                        className="gap-2"
+                        disabled={isPending}
+                    >
+                        <Languages className="h-4 w-4" />
+                        {showArabic ? "عربي" : "EN"}
+                    </Button>
+                    <Button asChild>
+                        <Link href="/dashboard/services/new">
+                            <Plus className="mr-2 h-4 w-4" /> Add New
+                        </Link>
+                    </Button>
+                </div>
             </div>
 
             <div className="border rounded-lg">
@@ -53,22 +76,65 @@ export default function ServicesDashboardPage() {
                             <TableHead>Title</TableHead>
                             <TableHead>Description</TableHead>
                             <TableHead>Icon</TableHead>
+                            <TableHead>Language</TableHead>
                             <TableHead className="w-[100px]">Actions</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         {services.length === 0 ? (
                             <TableRow>
-                                <TableCell colSpan={4} className="text-center h-24 text-muted-foreground">
+                                <TableCell colSpan={5} className="text-center h-24 text-muted-foreground">
                                     No services found. Add one to get started.
                                 </TableCell>
                             </TableRow>
                         ) : (
                             services.map((service) => (
                                 <TableRow key={service.id}>
-                                    <TableCell className="font-medium">{service.title}</TableCell>
-                                    <TableCell className="max-w-md truncate">{service.description}</TableCell>
+                                    <TableCell className="font-medium">
+                                        <div className="space-y-1">
+                                            <div>{service.title}</div>
+                                            {showArabic && (
+                                                isPending ? (
+                                                    <Skeleton className="h-4 w-48" />
+                                                ) : service.titleAr ? (
+                                                    <div className="text-sm text-muted-foreground transition-all duration-300" dir="rtl">
+                                                        {service.titleAr}
+                                                    </div>
+                                                ) : (
+                                                    <div className="text-xs text-muted-foreground/60 italic" dir="rtl">
+                                                        لا يوجد محتوى بالعربية
+                                                    </div>
+                                                )
+                                            )}
+                                        </div>
+                                    </TableCell>
+                                    <TableCell className="max-w-md">
+                                        <div className="space-y-1">
+                                            <div className="truncate">{service.description}</div>
+                                            {showArabic && (
+                                                isPending ? (
+                                                    <Skeleton className="h-4 w-64" />
+                                                ) : service.descriptionAr ? (
+                                                    <div className="text-sm text-muted-foreground truncate transition-all duration-300" dir="rtl">
+                                                        {service.descriptionAr}
+                                                    </div>
+                                                ) : (
+                                                    <div className="text-xs text-muted-foreground/60 italic truncate" dir="rtl">
+                                                        لا يوجد وصف بالعربية
+                                                    </div>
+                                                )
+                                            )}
+                                        </div>
+                                    </TableCell>
                                     <TableCell>{service.iconName}</TableCell>
+                                    <TableCell>
+                                        <div className="flex gap-1">
+                                            <Badge variant="secondary" className="text-xs">EN</Badge>
+                                            {service.titleAr && (
+                                                <Badge variant="secondary" className="text-xs">AR</Badge>
+                                            )}
+                                        </div>
+                                    </TableCell>
                                     <TableCell>
                                         <DropdownMenu>
                                             <DropdownMenuTrigger asChild>

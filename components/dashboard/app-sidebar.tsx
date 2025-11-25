@@ -62,6 +62,11 @@ export function AppSidebar() {
             url: "/dashboard/careers",
             icon: Users,
         },
+        {
+            title: "Create User",
+            url: "/dashboard/users/create",
+            icon: Users,
+        },
     ]
 
     return (
@@ -95,9 +100,11 @@ export function AppSidebar() {
             <SidebarFooter className="border-t border-border/50 p-4">
                 <SidebarMenu>
                     <SidebarMenuItem>
-                        <SidebarMenuButton>
-                            <Settings />
-                            <span>Settings</span>
+                        <SidebarMenuButton asChild tooltip="Profile Settings">
+                            <Link href="/dashboard/profile">
+                                <Settings />
+                                <span>Profile Settings</span>
+                            </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                     <SidebarMenuItem>

@@ -6,69 +6,25 @@ import { Linkedin, Twitter, Mail } from "lucide-react"
 export function TeamSection() {
   const team = [
     {
-      name: "Sarah Chen",
-      role: "Chief Executive Officer",
-      image: "/professional-woman-ceo-tech.jpg",
-      bio: "Visionary leader with 15+ years in tech innovation",
+      name: "Mubarak Almenhali",
+      role: "CEO / Founder – Strategic Vision & Partnerships UAE",
+      image: "/professional-engineering-leader.png",
+      bio: "Emirati official with over 20 years of experience in sports management, public relations, and regulatory system development. Currently serving as Director of the Technical Department at UAE Jiu-Jitsu Federation since 2019, leading national teams, clubs, and championships with over 90 athletes. At Technova, he leads institutional partnerships and expansion across key public sectors in the UAE and GCC.",
       social: {
         linkedin: "#",
         twitter: "#",
-        email: "sarah@technova.com",
+        email: "mubarak@technova.com",
       },
     },
     {
-      name: "Marcus Rodriguez",
-      role: "Chief Technology Officer",
-      image: "/professional-man-cto-technology.jpg",
-      bio: "Expert in AI and cloud architecture solutions",
+      name: "Salem Alotaibi",
+      role: "Co-Founder & Chief Technology Officer (CTO) UAE | GCC Region",
+      image: "/professional-man-ai-researcher.jpg",
+      bio: "Recognized AI Strategist and Generative AI Solutions Architect based in Kuwait, leading applied artificial intelligence transformation across government, enterprise, academic, and media sectors in the GCC. With more than 20 years of technology leadership and 5 years specialized in applied AI, he enables organizations to adopt generative and advanced AI capabilities in scalable, sustainable ways aligned with operational impact.",
       social: {
         linkedin: "#",
         twitter: "#",
-        email: "marcus@technova.com",
-      },
-    },
-    {
-      name: "Aisha Patel",
-      role: "Head of Design",
-      image: "/professional-woman-designer-creative.jpg",
-      bio: "Award-winning designer specializing in UX innovation",
-      social: {
-        linkedin: "#",
-        twitter: "#",
-        email: "aisha@technova.com",
-      },
-    },
-    {
-      name: "James Kim",
-      role: "VP of Engineering",
-      image: "/professional-man-engineer-technology.jpg",
-      bio: "Leading engineering teams to build scalable solutions",
-      social: {
-        linkedin: "#",
-        twitter: "#",
-        email: "james@technova.com",
-      },
-    },
-    {
-      name: "Elena Volkov",
-      role: "Head of AI Research",
-      image: "/professional-woman-scientist-ai-researcher.jpg",
-      bio: "PhD in Machine Learning, pioneering AI innovations",
-      social: {
-        linkedin: "#",
-        twitter: "#",
-        email: "elena@technova.com",
-      },
-    },
-    {
-      name: "David Okonkwo",
-      role: "Chief Security Officer",
-      image: "/professional-man-cybersecurity-expert.jpg",
-      bio: "Cybersecurity expert protecting digital assets",
-      social: {
-        linkedin: "#",
-        twitter: "#",
-        email: "david@technova.com",
+        email: "salem@technova.com",
       },
     },
   ]
@@ -93,7 +49,7 @@ export function TeamSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {team.map((member, index) => (
             <motion.div
               key={index}

@@ -248,127 +248,68 @@ var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.sign
 "use client";
 ;
 const DataContext = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createContext"])(undefined);
-// Initial Data
+// Initial Data - Technova's Core Departments
 const initialServices = [
     {
         id: "1",
-        iconName: "Brain",
-        title: "AI & Machine Learning",
-        description: "Transform your business with intelligent automation, predictive analytics, and advanced machine learning models.",
+        iconName: "Lightbulb",
+        title: "Innovation & Technical Solutions Department",
+        description: "Comprehensive AI-driven solutions and technical development services that transform business operations and create measurable impact.",
         features: [
-            "Natural Language Processing",
-            "Computer Vision",
-            "Predictive Analytics",
-            "Deep Learning Models"
+            "AI Solutions & Smart Systems Development",
+            "Web & Application Development",
+            "Technical Training & Capacity Building",
+            "Systems Integration",
+            "Advanced AI Consulting"
         ],
         color: "#7B3FEF",
-        image: "/ai-analytics-dashboard.png",
-        href: "/services/ai-machine-learning"
+        image: "/ai-technology-future.png",
+        href: "/services/innovation-technical-solutions"
     },
     {
         id: "2",
-        iconName: "Cloud",
-        title: "Cloud Infrastructure",
-        description: "Build scalable, resilient cloud architectures that grow with your business needs.",
+        iconName: "Database",
+        title: "Big Data & Analytics Department",
+        description: "Transform raw data into actionable insights with advanced analytics, predictive modeling, and intelligent business intelligence solutions.",
         features: [
-            "Cloud Migration",
-            "Multi-Cloud Strategy",
-            "Infrastructure as Code",
-            "DevOps Integration"
+            "Data Management & Analytics",
+            "Predictive Modelling & Business Intelligence",
+            "Real-time Data Processing",
+            "Advanced Statistical Analysis"
         ],
         color: "#00D9FF",
-        image: "/cloud-migration-concept.png",
-        href: "/services/cloud-infrastructure"
+        image: "/technology-research-data-analytics.jpg",
+        href: "/services/big-data-analytics"
     },
     {
         id: "3",
-        iconName: "Shield",
-        title: "Cybersecurity",
-        description: "Comprehensive security solutions to protect your digital assets from evolving threats.",
+        iconName: "Sparkles",
+        title: "Creative & Digital Production Department",
+        description: "Cutting-edge AI-powered creative solutions including video production, virtual avatars, and interactive digital experiences.",
         features: [
-            "Threat Detection",
-            "Security Audits",
-            "Compliance Management",
-            "Incident Response"
+            "AI-Driven Video & Image Production",
+            "Virtual Avatars & Digital Twin Development",
+            "Interactive Experiences & Deepfake Solutions",
+            "Creative Content Generation"
         ],
-        color: "#7B3FEF",
-        image: "/cybersecurity-digital-protection.png",
-        href: "/services/cybersecurity"
+        color: "#FF0080",
+        image: "/digital-transformation-business.png",
+        href: "/services/creative-digital-production"
     },
     {
         id: "4",
-        iconName: "Sparkles",
-        title: "Digital Transformation",
-        description: "Modernize your business processes with cutting-edge digital solutions and strategies.",
+        iconName: "TrendingUp",
+        title: "AI Audio Technologies Department",
+        description: "Revolutionary AI audio solutions from text-to-speech and voice cloning to AI-generated music and advanced speech processing.",
         features: [
-            "Process Automation",
-            "Digital Strategy",
-            "Change Management",
-            "Innovation Consulting"
+            "Text-to-Speech & Voice Cloning",
+            "Speech-to-Speech Processing",
+            "AI Music & Audio Generation",
+            "Voice Synthesis & Enhancement"
         ],
         color: "#00D9FF",
-        image: "/digital-transformation-technology.png",
-        href: "/services/digital-transformation"
-    },
-    {
-        id: "5",
-        iconName: "Database",
-        title: "Data Engineering",
-        description: "Build robust data pipelines and analytics platforms for data-driven decision making.",
-        features: [
-            "Data Warehousing",
-            "ETL Pipelines",
-            "Real-time Analytics",
-            "Data Governance"
-        ],
-        color: "#7B3FEF",
-        image: "/data-analytics-visualization.png",
-        href: "/services/data-engineering"
-    },
-    {
-        id: "6",
-        iconName: "Code",
-        title: "Custom Software Development",
-        description: "Tailored software solutions designed to meet your unique business requirements.",
-        features: [
-            "Web Applications",
-            "Mobile Apps",
-            "API Development",
-            "Legacy Modernization"
-        ],
-        color: "#00D9FF",
-        image: "/software-development-coding.png",
-        href: "/services/custom-software"
-    },
-    {
-        id: "7",
-        iconName: "Cpu",
-        title: "IoT Solutions",
-        description: "Connect and optimize your physical assets with intelligent IoT implementations.",
-        features: [
-            "Device Integration",
-            "Edge Computing",
-            "IoT Analytics",
-            "Smart Automation"
-        ],
-        color: "#7B3FEF",
-        image: "/iot-smart-devices-connected.png",
-        href: "/services/iot-solutions"
-    },
-    {
-        id: "8",
-        iconName: "Network",
-        title: "Enterprise Integration",
-        description: "Seamlessly connect your systems and applications for unified business operations.",
-        features: [
-            "API Management",
-            "System Integration",
-            "Microservices",
-            "Event-Driven Architecture"
-        ],
-        color: "#00D9FF",
-        image: "/enterprise-system-integration.png",
-        href: "/services/enterprise-integration"
+        image: "/ai-analytics-dashboard.png",
+        href: "/services/ai-audio-technologies"
     }
 ];
 const initialInsights = [
@@ -751,7 +692,7 @@ function DataProvider({ children }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/Downloads/futuristic-minimal-website-2/lib/data-context.tsx",
-        lineNumber: 462,
+        lineNumber: 443,
         columnNumber: 9
     }, this);
 }
