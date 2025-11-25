@@ -66,11 +66,11 @@ export default function InsightsDashboardPage() {
                             </TableRow>
                         ) : (
                             insights.map((insight) => (
-                                <TableRow key={insight.id}>
+                                <TableRow key={insight._id}>
                                     <TableCell className="font-medium">{insight.title}</TableCell>
                                     <TableCell>{insight.category}</TableCell>
                                     <TableCell>{insight.author}</TableCell>
-                                    <TableCell>{insight.date}</TableCell>
+                                    <TableCell>{insight.createdAt}</TableCell>
                                     <TableCell>
                                         <DropdownMenu>
                                             <DropdownMenuTrigger asChild>
@@ -81,11 +81,11 @@ export default function InsightsDashboardPage() {
                                             </DropdownMenuTrigger>
                                             <DropdownMenuContent align="end">
                                                 <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                                                <DropdownMenuItem onClick={() => router.push(`/dashboard/insights/${insight.id}`)}>
+                                                <DropdownMenuItem onClick={() => router.push(`/dashboard/insights/${insight._id}`)}>
                                                     <Pencil className="mr-2 h-4 w-4" /> Edit
                                                 </DropdownMenuItem>
                                                 <DropdownMenuSeparator />
-                                                <DropdownMenuItem onClick={() => handleDelete(insight.id)} className="text-destructive">
+                                                <DropdownMenuItem onClick={() => handleDelete(insight._id)} className="text-destructive">
                                                     <Trash className="mr-2 h-4 w-4" /> Delete
                                                 </DropdownMenuItem>
                                             </DropdownMenuContent>

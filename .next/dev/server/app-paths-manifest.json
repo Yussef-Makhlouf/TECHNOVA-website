@@ -1,0 +1,11 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/dashboard/insights/[id]/page": "app/dashboard/insights/[id]/page.js",
+  "/dashboard/insights/new/page": "app/dashboard/insights/new/page.js",
+  "/dashboard/insights/page": "app/dashboard/insights/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/dashboard/services/new/page": "app/dashboard/services/new/page.js",
+  "/dashboard/services/page": "app/dashboard/services/page.js",
+  "/page": "app/page.js",
+  "/services/page": "app/services/page.js"
+}
