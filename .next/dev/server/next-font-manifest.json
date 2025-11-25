@@ -1,14 +1,6 @@
 {
   "app": {
-    "[project]/Downloads/futuristic-minimal-website-2/app/about/page": [
-      "static/media/9d8c99ccf2e734e7-s.p.b2ed600c.woff2",
-      "static/media/a626ed2fbe2db1bf-s.p.45f567a3.woff2"
-    ],
-    "[project]/Downloads/futuristic-minimal-website-2/app/dashboard/case-studies/page": [
-      "static/media/9d8c99ccf2e734e7-s.p.b2ed600c.woff2",
-      "static/media/a626ed2fbe2db1bf-s.p.45f567a3.woff2"
-    ],
-    "[project]/Downloads/futuristic-minimal-website-2/app/dashboard/insights/page": [
+    "[project]/Downloads/futuristic-minimal-website-2/app/dashboard/page": [
       "static/media/9d8c99ccf2e734e7-s.p.b2ed600c.woff2",
       "static/media/a626ed2fbe2db1bf-s.p.45f567a3.woff2"
     ],
@@ -17,10 +9,6 @@
       "static/media/a626ed2fbe2db1bf-s.p.45f567a3.woff2"
     ],
     "[project]/Downloads/futuristic-minimal-website-2/app/page": [
-      "static/media/9d8c99ccf2e734e7-s.p.b2ed600c.woff2",
-      "static/media/a626ed2fbe2db1bf-s.p.45f567a3.woff2"
-    ],
-    "[project]/Downloads/futuristic-minimal-website-2/app/services/page": [
       "static/media/9d8c99ccf2e734e7-s.p.b2ed600c.woff2",
       "static/media/a626ed2fbe2db1bf-s.p.45f567a3.woff2"
     ]

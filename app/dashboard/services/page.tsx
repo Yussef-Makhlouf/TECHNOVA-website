@@ -36,18 +36,14 @@ export default function ServicesDashboardPage() {
     const [selectedServices, setSelectedServices] = useState<string[]>([])
 
     const handleDelete = (id: string) => {
-        if (confirm("Are you sure you want to delete this service?")) {
-            deleteService(id)
-            toast.success("Service deleted successfully")
-        }
+        deleteService(id)
+        toast.success("Service deleted successfully")
     }
 
     const handleBulkDelete = () => {
-        if (confirm(`Are you sure you want to delete ${selectedServices.length} service(s)?`)) {
-            selectedServices.forEach(id => deleteService(id))
-            setSelectedServices([])
-            toast.success(`${selectedServices.length} service(s) deleted successfully`)
-        }
+        selectedServices.forEach(id => deleteService(id))
+        setSelectedServices([])
+        toast.success(`${selectedServices.length} service(s) deleted successfully`)
     }
 
     const handleToggleLanguage = () => {

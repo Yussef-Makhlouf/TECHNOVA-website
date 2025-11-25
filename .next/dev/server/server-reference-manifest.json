@@ -2,14 +2,8 @@
   "node": {
     "00486cfd7f51161ea5c104407215a1e0d296891340": {
       "workers": {
-        "app/dashboard/case-studies/page": {
-          "moduleId": "[project]/Downloads/futuristic-minimal-website-2/.next-internal/server/app/dashboard/case-studies/page/actions.js { ACTIONS_MODULE0 => \"[project]/Downloads/futuristic-minimal-website-2/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "logout",
-          "filename": "Downloads/futuristic-minimal-website-2/app/login/actions.ts"
-        },
-        "app/dashboard/insights/page": {
-          "moduleId": "[project]/Downloads/futuristic-minimal-website-2/.next-internal/server/app/dashboard/insights/page/actions.js { ACTIONS_MODULE0 => \"[project]/Downloads/futuristic-minimal-website-2/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+        "app/dashboard/page": {
+          "moduleId": "[project]/Downloads/futuristic-minimal-website-2/.next-internal/server/app/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/Downloads/futuristic-minimal-website-2/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "logout",
           "filename": "Downloads/futuristic-minimal-website-2/app/login/actions.ts"
@@ -22,8 +16,7 @@
         }
       },
       "layer": {
-        "app/dashboard/case-studies/page": "action-browser",
-        "app/dashboard/insights/page": "action-browser",
+        "app/dashboard/page": "action-browser",
         "app/dashboard/services/page": "action-browser"
       },
       "filename": "Downloads/futuristic-minimal-website-2/app/login/actions.ts",
