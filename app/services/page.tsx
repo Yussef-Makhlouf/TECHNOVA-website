@@ -13,9 +13,14 @@ import { ServiceCard } from "@/components/service-card"
 export default function ServicesPage() {
   const { services: servicesData } = useData()
 
-  const services = servicesData.map(service => ({
-    ...service,
-    icon: getIcon(service.icon)
+  const services = servicesData.map((service, index) => ({
+    title: service.name_en,
+    description: service.shortDescription_en,
+    image: service.images[0]?.imageLink || "",
+    features: service.features.map(f => f.feature_en),
+    href: `/services/${service.slug}`,
+    color: service.color,
+    index
   }))
 
   return (
@@ -55,13 +60,13 @@ export default function ServicesPage() {
 
       {/* Services Grid */}
       <section className="py-20 lg:py-32 relative overflow-hidden">
-     
+
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
 
 
           <div className="grid grid-cols-1 gap-8 lg:gap-12">
             {services.map((service, index) => (
-              <ServiceCard key={index} {...service} index={index} />
+              <ServiceCard title={""} description={""} image={""} features={[]} href={""} index={0} color={""} />
             ))}
           </div>
         </div>
@@ -128,6 +133,6 @@ export default function ServicesPage() {
       </section>
 
 
-    </div>
+    </div >
   )
 }
