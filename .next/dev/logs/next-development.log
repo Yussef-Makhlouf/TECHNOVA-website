@@ -10224,3 +10224,4 @@ Import traces:
 [00:39:56.753] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/insights","route":"/dashboard/insights"}
 [00:39:56.753] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/insights color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/insights","o":"http://localhost:3000/dashboard/insights","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764090389547}
 [00:41:11.671] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/case-studies color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/case-studies","o":"http://localhost:3000/dashboard/case-studies","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764090464391}
+[10:53:22.443] Server  LOG      ✓ Compiled in 978ms
