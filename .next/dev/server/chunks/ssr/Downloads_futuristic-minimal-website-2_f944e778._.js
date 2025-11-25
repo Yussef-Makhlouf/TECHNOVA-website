@@ -48,9 +48,24 @@ async function login(data) {
         };
     }
     const { email, password } = result.data;
-    if (email === __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$lib$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["FAKE_CREDENTIALS"].email && password === __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$lib$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["FAKE_CREDENTIALS"].password) {
-        // Set cookie
-        (await (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cookies"])()).set(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$lib$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AUTH_COOKIE_NAME"], __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$lib$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AUTH_COOKIE_VALUE"], {
+    // Use userStore to verify credentials
+    // We need to import userStore dynamically or ensure it's available on server
+    // Since this is a server action, it runs on server.
+    // However, importing from a file that has global state might be tricky in Next.js server actions due to isolation.
+    // But for a simple demo with "use server", module level variables might persist or might not depending on deployment.
+    // For local dev, it usually works but might reset on recompile.
+    // We'll import it at the top level, but for now let's assume standard import works.
+    const { userStore } = await __turbopack_context__.A("[project]/Downloads/futuristic-minimal-website-2/lib/user-store.ts [app-rsc] (ecmascript, async loader)");
+    const user = userStore.verifyCredentials(email, password);
+    if (user) {
+        // Set cookie with user email/id to identify them
+        // In a real app, use a signed JWT or session ID
+        const cookieValue = JSON.stringify({
+            id: user.id,
+            email: user.email,
+            role: user.role
+        });
+        (await (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cookies"])()).set(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$lib$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AUTH_COOKIE_NAME"], cookieValue, {
             httpOnly: true,
             secure: ("TURBOPACK compile-time value", "development") === "production",
             sameSite: "lax",

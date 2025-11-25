@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useTransition } from "react"
 import { useData } from "@/lib/data-context"
 import { Button } from "@/components/ui/button"
 import {
@@ -18,18 +19,28 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Plus, MoreHorizontal, Pencil, Trash } from "lucide-react"
+import { Plus, MoreHorizontal, Pencil, Trash, Languages } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import { Badge } from "@/components/ui/badge"
+import { Skeleton } from "@/components/ui/skeleton"
 
 export default function CareersDashboardPage() {
     const { jobs, deleteJob } = useData()
     const router = useRouter()
+    const [showArabic, setShowArabic] = useState(true)
+    const [isPending, startTransition] = useTransition()
 
     const handleDelete = (id: string) => {
         if (confirm("Are you sure you want to delete this job opening?")) {
             deleteJob(id)
         }
+    }
+
+    const handleToggleLanguage = () => {
+        startTransition(() => {
+            setShowArabic(!showArabic)
+        })
     }
 
     return (
@@ -39,11 +50,23 @@ export default function CareersDashboardPage() {
                     <h1 className="text-3xl font-bold font-heading tracking-tight">Careers</h1>
                     <p className="text-muted-foreground">Manage job openings.</p>
                 </div>
-                <Button asChild>
-                    <Link href="/dashboard/careers/new">
-                        <Plus className="mr-2 h-4 w-4" /> Post Job
-                    </Link>
-                </Button>
+                <div className="flex gap-2">
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={handleToggleLanguage}
+                        className="gap-2"
+                        disabled={isPending}
+                    >
+                        <Languages className="h-4 w-4" />
+                        {showArabic ? "عربي" : "EN"}
+                    </Button>
+                    <Button asChild>
+                        <Link href="/dashboard/careers/new">
+                            <Plus className="mr-2 h-4 w-4" /> Post Job
+                        </Link>
+                    </Button>
+                </div>
             </div>
 
             <div className="border rounded-lg">
@@ -54,23 +77,94 @@ export default function CareersDashboardPage() {
                             <TableHead>Department</TableHead>
                             <TableHead>Location</TableHead>
                             <TableHead>Type</TableHead>
+                            <TableHead>Language</TableHead>
                             <TableHead className="w-[100px]">Actions</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         {jobs.length === 0 ? (
                             <TableRow>
-                                <TableCell colSpan={5} className="text-center h-24 text-muted-foreground">
+                                <TableCell colSpan={6} className="text-center h-24 text-muted-foreground">
                                     No job openings found. Post one to get started.
                                 </TableCell>
                             </TableRow>
                         ) : (
                             jobs.map((job) => (
                                 <TableRow key={job.id}>
-                                    <TableCell className="font-medium">{job.title}</TableCell>
-                                    <TableCell>{job.department}</TableCell>
-                                    <TableCell>{job.location}</TableCell>
-                                    <TableCell>{job.type}</TableCell>
+                                    <TableCell className="font-medium">
+                                        <div className="space-y-1">
+                                            <div>{job.title}</div>
+                                            {showArabic && (
+                                                isPending ? (
+                                                    <Skeleton className="h-4 w-48" />
+                                                ) : job.titleAr ? (
+                                                    <div className="text-sm text-muted-foreground transition-all duration-300" dir="rtl">
+                                                        {job.titleAr}
+                                                    </div>
+                                                ) : (
+                                                    <div className="text-xs text-muted-foreground/60 italic" dir="rtl">
+                                                        لا يوجد عنوان بالعربية
+                                                    </div>
+                                                )
+                                            )}
+                                        </div>
+                                    </TableCell>
+                                    <TableCell>
+                                        <div className="space-y-1">
+                                            <div>{job.department}</div>
+                                            {showArabic && (
+                                                isPending ? (
+                                                    <Skeleton className="h-4 w-32" />
+                                                ) : job.departmentAr ? (
+                                                    <div className="text-sm text-muted-foreground transition-all duration-300" dir="rtl">
+                                                        {job.departmentAr}
+                                                    </div>
+                                                ) : (
+                                                    <div className="text-xs text-muted-foreground/60 italic" dir="rtl">-</div>
+                                                )
+                                            )}
+                                        </div>
+                                    </TableCell>
+                                    <TableCell>
+                                        <div className="space-y-1">
+                                            <div>{job.location}</div>
+                                            {showArabic && (
+                                                isPending ? (
+                                                    <Skeleton className="h-4 w-32" />
+                                                ) : job.locationAr ? (
+                                                    <div className="text-sm text-muted-foreground transition-all duration-300" dir="rtl">
+                                                        {job.locationAr}
+                                                    </div>
+                                                ) : (
+                                                    <div className="text-xs text-muted-foreground/60 italic" dir="rtl">-</div>
+                                                )
+                                            )}
+                                        </div>
+                                    </TableCell>
+                                    <TableCell>
+                                        <div className="space-y-1">
+                                            <div>{job.type}</div>
+                                            {showArabic && (
+                                                isPending ? (
+                                                    <Skeleton className="h-4 w-32" />
+                                                ) : job.typeAr ? (
+                                                    <div className="text-sm text-muted-foreground transition-all duration-300" dir="rtl">
+                                                        {job.typeAr}
+                                                    </div>
+                                                ) : (
+                                                    <div className="text-xs text-muted-foreground/60 italic" dir="rtl">-</div>
+                                                )
+                                            )}
+                                        </div>
+                                    </TableCell>
+                                    <TableCell>
+                                        <div className="flex gap-1">
+                                            <Badge variant="secondary" className="text-xs">EN</Badge>
+                                            {job.titleAr && (
+                                                <Badge variant="secondary" className="text-xs">AR</Badge>
+                                            )}
+                                        </div>
+                                    </TableCell>
                                     <TableCell>
                                         <DropdownMenu>
                                             <DropdownMenuTrigger asChild>

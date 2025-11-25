@@ -251,88 +251,6 @@ const DataContext = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project
 // Initial Data
 const initialServices = [];
 const initialInsights = [];
-// [
-//     {
-//         id: "1",
-//         iconName: "TrendingUp",
-//         title: "Market Trends 2025",
-//         description:
-//             "Comprehensive analysis of emerging technology trends that will shape the enterprise landscape in 2025.",
-//         author: "Research Team",
-//         date: "Jan 18, 2025",
-//         readTime: "12 min read",
-//         category: "Market Analysis",
-//         color: "#7B3FEF",
-//         href: "/insights/market-trends-2025",
-//         image: "/technology-research-data-analytics.jpg",
-//     },
-//     {
-//         id: "2",
-//         iconName: "Lightbulb",
-//         title: "Innovation in Cloud Computing",
-//         description: "How next-generation cloud technologies are enabling unprecedented scalability and performance.",
-//         author: "Cloud Team",
-//         date: "Jan 16, 2025",
-//         readTime: "10 min read",
-//         category: "Technology",
-//         color: "#00D9FF",
-//         href: "/insights/innovation-cloud-computing",
-//         image: "/cloud-migration-concept.png",
-//     },
-//     {
-//         id: "3",
-//         iconName: "BookOpen",
-//         title: "Digital Transformation Framework",
-//         description:
-//             "A strategic framework for organizations embarking on comprehensive digital transformation initiatives.",
-//         author: "Strategy Team",
-//         date: "Jan 14, 2025",
-//         readTime: "15 min read",
-//         category: "Strategy",
-//         color: "#7B3FEF",
-//         href: "/insights/digital-transformation-framework",
-//         image: "/digital-transformation-business.png",
-//     },
-//     {
-//         id: "4",
-//         iconName: "TrendingUp",
-//         title: "AI Adoption in Healthcare",
-//         description: "Examining the impact of artificial intelligence on healthcare delivery and patient outcomes.",
-//         author: "Industry Analysts",
-//         date: "Jan 12, 2025",
-//         readTime: "11 min read",
-//         category: "Industry Insights",
-//         color: "#00D9FF",
-//         href: "/insights/ai-healthcare",
-//         image: "/medical-ai.png",
-//     },
-//     {
-//         id: "5",
-//         iconName: "Lightbulb",
-//         title: "Cybersecurity Best Practices",
-//         description: "Essential security strategies for protecting enterprise assets in an increasingly connected world.",
-//         author: "Security Team",
-//         date: "Jan 10, 2025",
-//         readTime: "9 min read",
-//         category: "Security",
-//         color: "#7B3FEF",
-//         href: "/insights/cybersecurity-best-practices",
-//         image: "/cybersecurity-network.jpg",
-//     },
-//     {
-//         id: "6",
-//         iconName: "BookOpen",
-//         title: "The Future of Work",
-//         description: "How technology is reshaping workplace dynamics, collaboration, and employee experiences.",
-//         author: "Future of Work Team",
-//         date: "Jan 8, 2025",
-//         readTime: "13 min read",
-//         category: "Workforce",
-//         color: "#00D9FF",
-//         href: "/insights/future-of-work",
-//         image: "/professional-woman-ceo-tech.jpg",
-//     },
-// ]
 const initialCaseStudies = [
     {
         id: "1",
@@ -535,7 +453,7 @@ function DataProvider({ children }) {
     const [insights, setInsights] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(initialInsights);
     const [caseStudies, setCaseStudies] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(initialCaseStudies);
     const [jobs, setJobs] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(initialJobs);
-    const API_BASE = "http://localhost:8080/api/v1";
+    const API_BASE = "https://technoba.vercel.app/api/v1";
     // 🔥 Fetch services from backend
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "DataProvider.useEffect": ()=>{
@@ -684,7 +602,7 @@ function DataProvider({ children }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/lib/data-context.tsx",
-        lineNumber: 444,
+        lineNumber: 359,
         columnNumber: 9
     }, this);
 }

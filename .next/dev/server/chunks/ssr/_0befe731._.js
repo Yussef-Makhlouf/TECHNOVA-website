@@ -20,7 +20,7 @@ const FAKE_CREDENTIALS = {
 "[project]/app/login/actions.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-/* __next_internal_action_entry_do_not_use__ [{"002ffbfec95778323c2fade48a0e7b6615b27e19d7":"logout","40786360d2e0905e50b9044a3eee7fb68a6e92a37c":"login"},"",""] */ __turbopack_context__.s([
+/* __next_internal_action_entry_do_not_use__ [{"00751cb60d5dbe0503fc7f8ce404a35109ed477e9c":"logout","40db24ea2f485bebc97f35e9fe8b84c73d5b638cee":"login"},"",""] */ __turbopack_context__.s([
     "login",
     ()=>login,
     "logout",
@@ -48,9 +48,24 @@ async function login(data) {
         };
     }
     const { email, password } = result.data;
-    if (email === __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["FAKE_CREDENTIALS"].email && password === __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["FAKE_CREDENTIALS"].password) {
-        // Set cookie
-        (await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cookies"])()).set(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AUTH_COOKIE_NAME"], __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AUTH_COOKIE_VALUE"], {
+    // Use userStore to verify credentials
+    // We need to import userStore dynamically or ensure it's available on server
+    // Since this is a server action, it runs on server.
+    // However, importing from a file that has global state might be tricky in Next.js server actions due to isolation.
+    // But for a simple demo with "use server", module level variables might persist or might not depending on deployment.
+    // For local dev, it usually works but might reset on recompile.
+    // We'll import it at the top level, but for now let's assume standard import works.
+    const { userStore } = await __turbopack_context__.A("[project]/lib/user-store.ts [app-rsc] (ecmascript, async loader)");
+    const user = userStore.verifyCredentials(email, password);
+    if (user) {
+        // Set cookie with user email/id to identify them
+        // In a real app, use a signed JWT or session ID
+        const cookieValue = JSON.stringify({
+            id: user.id,
+            email: user.email,
+            role: user.role
+        });
+        (await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cookies"])()).set(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AUTH_COOKIE_NAME"], cookieValue, {
             httpOnly: true,
             secure: ("TURBOPACK compile-time value", "development") === "production",
             sameSite: "lax",
@@ -77,8 +92,8 @@ async function logout() {
     login,
     logout
 ]);
-(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(login, "40786360d2e0905e50b9044a3eee7fb68a6e92a37c", null);
-(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(logout, "002ffbfec95778323c2fade48a0e7b6615b27e19d7", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(login, "40db24ea2f485bebc97f35e9fe8b84c73d5b638cee", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(logout, "00751cb60d5dbe0503fc7f8ce404a35109ed477e9c", null);
 }),
 "[project]/.next-internal/server/app/dashboard/insights/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript) <locals>", ((__turbopack_context__) => {
 "use strict";
@@ -91,7 +106,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$login$2f$actions$2e$t
 "use strict";
 
 __turbopack_context__.s([
-    "002ffbfec95778323c2fade48a0e7b6615b27e19d7",
+    "00751cb60d5dbe0503fc7f8ce404a35109ed477e9c",
     ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$login$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["logout"]
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f2e$next$2d$internal$2f$server$2f$app$2f$dashboard$2f$insights$2f$page$2f$actions$2e$js__$7b$__ACTIONS_MODULE0__$3d3e$__$225b$project$5d2f$app$2f$login$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$2922$__$7d$__$5b$app$2d$rsc$5d$__$28$server__actions__loader$2c$__ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i('[project]/.next-internal/server/app/dashboard/insights/page/actions.js { ACTIONS_MODULE0 => "[project]/app/login/actions.ts [app-rsc] (ecmascript)" } [app-rsc] (server actions loader, ecmascript) <locals>');

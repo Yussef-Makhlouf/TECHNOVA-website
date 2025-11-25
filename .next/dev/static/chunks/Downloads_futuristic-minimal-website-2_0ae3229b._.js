@@ -380,69 +380,25 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$m
 function TeamSection() {
     const team = [
         {
-            name: "Sarah Chen",
-            role: "Chief Executive Officer",
-            image: "/professional-woman-ceo-tech.jpg",
-            bio: "Visionary leader with 15+ years in tech innovation",
+            name: "Mubarak Almenhali",
+            role: "CEO / Founder – Strategic Vision & Partnerships UAE",
+            image: "/professional-engineering-leader.png",
+            bio: "Emirati official with over 20 years of experience in sports management, public relations, and regulatory system development. Currently serving as Director of the Technical Department at UAE Jiu-Jitsu Federation since 2019, leading national teams, clubs, and championships with over 90 athletes. At Technova, he leads institutional partnerships and expansion across key public sectors in the UAE and GCC.",
             social: {
                 linkedin: "#",
                 twitter: "#",
-                email: "sarah@technova.com"
+                email: "mubarak@technova.com"
             }
         },
         {
-            name: "Marcus Rodriguez",
-            role: "Chief Technology Officer",
-            image: "/professional-man-cto-technology.jpg",
-            bio: "Expert in AI and cloud architecture solutions",
+            name: "Salem Alotaibi",
+            role: "Co-Founder & Chief Technology Officer (CTO) UAE | GCC Region",
+            image: "/professional-man-ai-researcher.jpg",
+            bio: "Recognized AI Strategist and Generative AI Solutions Architect based in Kuwait, leading applied artificial intelligence transformation across government, enterprise, academic, and media sectors in the GCC. With more than 20 years of technology leadership and 5 years specialized in applied AI, he enables organizations to adopt generative and advanced AI capabilities in scalable, sustainable ways aligned with operational impact.",
             social: {
                 linkedin: "#",
                 twitter: "#",
-                email: "marcus@technova.com"
-            }
-        },
-        {
-            name: "Aisha Patel",
-            role: "Head of Design",
-            image: "/professional-woman-designer-creative.jpg",
-            bio: "Award-winning designer specializing in UX innovation",
-            social: {
-                linkedin: "#",
-                twitter: "#",
-                email: "aisha@technova.com"
-            }
-        },
-        {
-            name: "James Kim",
-            role: "VP of Engineering",
-            image: "/professional-man-engineer-technology.jpg",
-            bio: "Leading engineering teams to build scalable solutions",
-            social: {
-                linkedin: "#",
-                twitter: "#",
-                email: "james@technova.com"
-            }
-        },
-        {
-            name: "Elena Volkov",
-            role: "Head of AI Research",
-            image: "/professional-woman-scientist-ai-researcher.jpg",
-            bio: "PhD in Machine Learning, pioneering AI innovations",
-            social: {
-                linkedin: "#",
-                twitter: "#",
-                email: "elena@technova.com"
-            }
-        },
-        {
-            name: "David Okonkwo",
-            role: "Chief Security Officer",
-            image: "/professional-man-cybersecurity-expert.jpg",
-            bio: "Cybersecurity expert protecting digital assets",
-            social: {
-                linkedin: "#",
-                twitter: "#",
-                email: "david@technova.com"
+                email: "salem@technova.com"
             }
         }
     ];
@@ -453,14 +409,14 @@ function TeamSection() {
                 className: "absolute top-1/4 right-0 w-96 h-96 bg-[#7B3FEF]/10 dark:bg-[#7B3FEF]/10 rounded-full blur-3xl"
             }, void 0, false, {
                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                lineNumber: 78,
+                lineNumber: 34,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute bottom-1/4 left-0 w-96 h-96 bg-[#00D9FF]/10 dark:bg-[#00D9FF]/10 rounded-full blur-3xl"
             }, void 0, false, {
                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                lineNumber: 79,
+                lineNumber: 35,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -488,14 +444,14 @@ function TeamSection() {
                                 children: "Meet Our Team"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                                lineNumber: 89,
+                                lineNumber: 45,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "gradient-line w-24 mx-auto my-6"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                                lineNumber: 90,
+                                lineNumber: 46,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -503,17 +459,17 @@ function TeamSection() {
                                 children: "Talented individuals driving innovation and excellence in everything we do."
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                                lineNumber: 91,
+                                lineNumber: 47,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                        lineNumber: 82,
+                        lineNumber: 38,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
+                        className: "grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto",
                         children: team.map((member, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$24_$40$emo_a8f3e3ab3ce79744232f2639366efd77$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                                 initial: {
                                     opacity: 0,
@@ -543,14 +499,14 @@ function TeamSection() {
                                                     className: "w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                                                    lineNumber: 109,
+                                                    lineNumber: 65,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                                                    lineNumber: 115,
+                                                    lineNumber: 71,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -564,12 +520,12 @@ function TeamSection() {
                                                                 className: "text-foreground"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                                                                lineNumber: 123,
+                                                                lineNumber: 79,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                                                            lineNumber: 119,
+                                                            lineNumber: 75,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -580,12 +536,12 @@ function TeamSection() {
                                                                 className: "text-foreground"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                                                                lineNumber: 129,
+                                                                lineNumber: 85,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                                                            lineNumber: 125,
+                                                            lineNumber: 81,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -596,24 +552,24 @@ function TeamSection() {
                                                                 className: "text-foreground"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                                                                lineNumber: 135,
+                                                                lineNumber: 91,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                                                            lineNumber: 131,
+                                                            lineNumber: 87,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                                                    lineNumber: 118,
+                                                    lineNumber: 74,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                                            lineNumber: 108,
+                                            lineNumber: 64,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -624,7 +580,7 @@ function TeamSection() {
                                                     children: member.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                                                    lineNumber: 142,
+                                                    lineNumber: 98,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -632,7 +588,7 @@ function TeamSection() {
                                                     children: member.role
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                                                    lineNumber: 143,
+                                                    lineNumber: 99,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -640,41 +596,41 @@ function TeamSection() {
                                                     children: member.bio
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                                                    lineNumber: 144,
+                                                    lineNumber: 100,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                                            lineNumber: 141,
+                                            lineNumber: 97,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                                    lineNumber: 106,
+                                    lineNumber: 62,
                                     columnNumber: 15
                                 }, this)
                             }, index, false, {
                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                                lineNumber: 98,
+                                lineNumber: 54,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                        lineNumber: 96,
+                        lineNumber: 52,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-                lineNumber: 81,
+                lineNumber: 37,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/futuristic-minimal-website-2/components/team-section.tsx",
-        lineNumber: 77,
+        lineNumber: 33,
         columnNumber: 5
     }, this);
 }
@@ -1100,27 +1056,33 @@ function AboutPage() {
     const values = [
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lightbulb$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Lightbulb$3e$__["Lightbulb"],
-            title: "Innovation",
-            description: "We constantly push boundaries and explore new technologies to deliver cutting-edge solutions.",
-            color: "#7B3FEF"
-        },
-        {
-            icon: __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"],
-            title: "Collaboration",
-            description: "We believe in the power of teamwork and building strong partnerships with our clients.",
-            color: "#00D9FF"
-        },
-        {
-            icon: __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Award$3e$__["Award"],
-            title: "Excellence",
-            description: "We are committed to delivering the highest quality in everything we do.",
+            title: "Creativity",
+            description: "We believe creativity is the foundation of effective solutions. We develop ideas rooted in cultural and market understanding to create meaningful and distinctive experiences.",
             color: "#7B3FEF"
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trending$2d$up$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TrendingUp$3e$__["TrendingUp"],
-            title: "Growth",
-            description: "We foster continuous learning and development for our team and clients.",
+            title: "Sustainable Innovation",
+            description: "We build intelligent solutions that are scalable and long-lasting, designed to evolve and remain valuable over time.",
             color: "#00D9FF"
+        },
+        {
+            icon: __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"],
+            title: "Ethical Values",
+            description: "We believe in AI that enhances human capability, not replaces it. Our priority is the protection of data, transparency, and respect for privacy.",
+            color: "#FF0080"
+        },
+        {
+            icon: __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Award$3e$__["Award"],
+            title: "Success Partnership",
+            description: "We invest in long-term partnerships built on trust and shared goals. We work side-by-side with our partners from concept to execution to measurable impact.",
+            color: "#FFD700"
+        },
+        {
+            icon: __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Award$3e$__["Award"],
+            title: "Excellence in Execution",
+            description: "We commit to precision, professionalism, and measurable outcomes. Every project we deliver reflects high standards of quality and institutional rigor.",
+            color: "#00FF94"
         }
     ];
     const achievements = [
@@ -1154,7 +1116,7 @@ function AboutPage() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$components$2f$navigation$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                lineNumber: 52,
+                lineNumber: 58,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1164,21 +1126,21 @@ function AboutPage() {
                         className: "absolute inset-0 bg-gradient-to-b from-[#0A2463]/10 via-transparent to-transparent"
                     }, void 0, false, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                        lineNumber: 55,
+                        lineNumber: 61,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute top-20 left-10 w-96 h-96 bg-[#7B3FEF]/10 rounded-full blur-3xl"
                     }, void 0, false, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                        lineNumber: 56,
+                        lineNumber: 62,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute top-40 right-20 w-80 h-80 bg-[#00D9FF]/10 rounded-full blur-3xl"
                     }, void 0, false, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                        lineNumber: 57,
+                        lineNumber: 63,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1204,12 +1166,12 @@ function AboutPage() {
                                         children: "About Us"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                        lineNumber: 67,
+                                        lineNumber: 73,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                    lineNumber: 66,
+                                    lineNumber: 72,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -1222,45 +1184,45 @@ function AboutPage() {
                                             children: "TECHNOVA"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                            lineNumber: 73,
+                                            lineNumber: 79,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                    lineNumber: 71,
+                                    lineNumber: 77,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "gradient-line w-32 mx-auto my-6"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                    lineNumber: 77,
+                                    lineNumber: 83,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-xl text-muted-foreground leading-relaxed",
-                                    children: "We are a team of passionate technologists dedicated to building the future of digital innovation."
+                                    children: "A leading technology company specializing in integrating artificial intelligence with innovative digital solutions."
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                    lineNumber: 78,
+                                    lineNumber: 84,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                            lineNumber: 60,
+                            lineNumber: 66,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                        lineNumber: 59,
+                        lineNumber: 65,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                lineNumber: 54,
+                lineNumber: 60,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1270,7 +1232,7 @@ function AboutPage() {
                         className: "absolute top-0 right-1/4 w-96 h-96 bg-[#00D9FF]/5 rounded-full blur-3xl"
                     }, void 0, false, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                        lineNumber: 86,
+                        lineNumber: 92,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1303,7 +1265,7 @@ function AboutPage() {
                                                     className: "text-[#7B3FEF]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                                    lineNumber: 100,
+                                                    lineNumber: 106,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1311,27 +1273,27 @@ function AboutPage() {
                                                     children: "Our Vision"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                                    lineNumber: 101,
+                                                    lineNumber: 107,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                            lineNumber: 99,
+                                            lineNumber: 105,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-muted-foreground leading-relaxed text-lg",
-                                            children: "To be the global leader in technology innovation, empowering businesses to thrive in the digital age through cutting-edge solutions and transformative strategies that shape the future of industries worldwide."
+                                            children: "To lead the integration of AI and innovation in the world, creating smart, sustainable, and secure solutions that empower organizations and individuals to thrive in the digital age."
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                            lineNumber: 103,
+                                            lineNumber: 109,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                    lineNumber: 92,
+                                    lineNumber: 98,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$24_$40$emo_a8f3e3ab3ce79744232f2639366efd77$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1355,7 +1317,7 @@ function AboutPage() {
                                             className: "absolute inset-0 bg-gradient-to-br from-[#7B3FEF]/20 to-[#00D9FF]/20 rounded-full blur-3xl animate-pulse"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                            lineNumber: 118,
+                                            lineNumber: 123,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1366,18 +1328,18 @@ function AboutPage() {
                                                 className: "w-full h-full object-cover"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                                lineNumber: 128,
+                                                lineNumber: 133,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                            lineNumber: 119,
+                                            lineNumber: 124,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                    lineNumber: 111,
+                                    lineNumber: 116,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$24_$40$emo_a8f3e3ab3ce79744232f2639366efd77$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1405,7 +1367,7 @@ function AboutPage() {
                                                     className: "text-[#00D9FF]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                                    lineNumber: 145,
+                                                    lineNumber: 150,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1413,44 +1375,44 @@ function AboutPage() {
                                                     children: "Our Mission"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                                    lineNumber: 146,
+                                                    lineNumber: 151,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                            lineNumber: 144,
+                                            lineNumber: 149,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-muted-foreground leading-relaxed text-lg",
-                                            children: "To deliver innovative, scalable, and secure technology solutions that drive measurable business value. We partner with our clients to understand their unique challenges and create tailored solutions that exceed expectations."
+                                            children: "We design AI-driven solutions that enhance efficiency, increase value, and create measurable impact. We transform data into insight, insight into experience, and experience into sustainable success with a firm commitment to privacy and human-centered innovation."
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                            lineNumber: 148,
+                                            lineNumber: 153,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                    lineNumber: 137,
+                                    lineNumber: 142,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                            lineNumber: 89,
+                            lineNumber: 95,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                        lineNumber: 88,
+                        lineNumber: 94,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                lineNumber: 85,
+                lineNumber: 91,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1460,7 +1422,7 @@ function AboutPage() {
                         className: "absolute bottom-0 left-1/4 w-96 h-96 bg-[#7B3FEF]/5 rounded-full blur-3xl"
                     }, void 0, false, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                        lineNumber: 160,
+                        lineNumber: 165,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1469,12 +1431,12 @@ function AboutPage() {
                             className: "scale-75"
                         }, void 0, false, {
                             fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                            lineNumber: 164,
+                            lineNumber: 169,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                        lineNumber: 163,
+                        lineNumber: 168,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1502,14 +1464,14 @@ function AboutPage() {
                                         children: "Our Values"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                        lineNumber: 175,
+                                        lineNumber: 180,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "gradient-line w-24 mx-auto my-6"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                        lineNumber: 176,
+                                        lineNumber: 181,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1517,13 +1479,13 @@ function AboutPage() {
                                         children: "The principles that guide everything we do and shape our company culture."
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                        lineNumber: 177,
+                                        lineNumber: 182,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                lineNumber: 168,
+                                lineNumber: 173,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1533,24 +1495,24 @@ function AboutPage() {
                                         index: index
                                     }, index, false, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                        lineNumber: 184,
+                                        lineNumber: 189,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                lineNumber: 182,
+                                lineNumber: 187,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                        lineNumber: 167,
+                        lineNumber: 172,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                lineNumber: 159,
+                lineNumber: 164,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1560,7 +1522,7 @@ function AboutPage() {
                         className: "absolute top-1/4 right-0 w-96 h-96 bg-[#00D9FF]/5 rounded-full blur-3xl"
                     }, void 0, false, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                        lineNumber: 191,
+                        lineNumber: 196,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1588,14 +1550,14 @@ function AboutPage() {
                                         children: "Our Journey"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                        lineNumber: 201,
+                                        lineNumber: 206,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "gradient-line w-24 mx-auto my-6"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                        lineNumber: 202,
+                                        lineNumber: 207,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1603,13 +1565,13 @@ function AboutPage() {
                                         children: "Key milestones that shaped our path to becoming industry leaders."
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                        lineNumber: 203,
+                                        lineNumber: 208,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                lineNumber: 194,
+                                lineNumber: 199,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1621,7 +1583,7 @@ function AboutPage() {
                                             className: "hidden lg:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#7B3FEF] via-[#00D9FF] to-[#7B3FEF] opacity-30"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                            lineNumber: 211,
+                                            lineNumber: 216,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1685,17 +1647,17 @@ function AboutPage() {
                                                                     children: milestone.year
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                                                    lineNumber: 261,
+                                                                    lineNumber: 266,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                                                lineNumber: 254,
+                                                                lineNumber: 259,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                                            lineNumber: 253,
+                                                            lineNumber: 258,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1708,7 +1670,7 @@ function AboutPage() {
                                                                         children: milestone.title
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                                                        lineNumber: 270,
+                                                                        lineNumber: 275,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1716,57 +1678,57 @@ function AboutPage() {
                                                                         children: milestone.description
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                                                        lineNumber: 271,
+                                                                        lineNumber: 276,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                                                lineNumber: 269,
+                                                                lineNumber: 274,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                                            lineNumber: 268,
+                                                            lineNumber: 273,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, index, true, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                                    lineNumber: 244,
+                                                    lineNumber: 249,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                            lineNumber: 213,
+                                            lineNumber: 218,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                    lineNumber: 209,
+                                    lineNumber: 214,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                lineNumber: 208,
+                                lineNumber: 213,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                        lineNumber: 193,
+                        lineNumber: 198,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                lineNumber: 190,
+                lineNumber: 195,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$components$2f$team$2d$section$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TeamSection"], {}, void 0, false, {
                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                lineNumber: 282,
+                lineNumber: 287,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1776,7 +1738,7 @@ function AboutPage() {
                         className: "absolute top-0 left-1/4 w-96 h-96 bg-[#7B3FEF]/5 rounded-full blur-3xl"
                     }, void 0, false, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                        lineNumber: 285,
+                        lineNumber: 290,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1804,14 +1766,14 @@ function AboutPage() {
                                         children: "Our Achievements"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                        lineNumber: 295,
+                                        lineNumber: 300,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "gradient-line w-24 mx-auto my-6"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                        lineNumber: 296,
+                                        lineNumber: 301,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1819,13 +1781,13 @@ function AboutPage() {
                                         children: "Numbers that reflect our commitment to excellence and client success."
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                        lineNumber: 297,
+                                        lineNumber: 302,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                lineNumber: 288,
+                                lineNumber: 293,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1855,7 +1817,7 @@ function AboutPage() {
                                                     children: achievement.value
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                                    lineNumber: 313,
+                                                    lineNumber: 318,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$futuristic$2d$minimal$2d$website$2d$2$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1863,41 +1825,41 @@ function AboutPage() {
                                                     children: achievement.label
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                                    lineNumber: 316,
+                                                    lineNumber: 321,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                            lineNumber: 312,
+                                            lineNumber: 317,
                                             columnNumber: 17
                                         }, this)
                                     }, index, false, {
                                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                        lineNumber: 304,
+                                        lineNumber: 309,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                                lineNumber: 302,
+                                lineNumber: 307,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                        lineNumber: 287,
+                        lineNumber: 292,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-                lineNumber: 284,
+                lineNumber: 289,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/futuristic-minimal-website-2/app/about/page.tsx",
-        lineNumber: 51,
+        lineNumber: 57,
         columnNumber: 5
     }, this);
 }
