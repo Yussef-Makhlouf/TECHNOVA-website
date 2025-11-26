@@ -9,6 +9,7 @@ import { DiagonalCard } from "@/components/diagonal-card"
 import { Globe } from "@/components/globe"
 import { About3 } from "@/components/ui/about-3"
 import { PartnersMarquee } from "@/components/partners-marquee"
+import LogosMarquee from "@/components/logos-marquee"
 
 export default function AboutPage() {
   const values = [
@@ -326,8 +327,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-
-
+      <LogosMarquee />
 
     </div>
   )

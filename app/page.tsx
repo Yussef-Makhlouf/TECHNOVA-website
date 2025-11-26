@@ -51,6 +51,7 @@ import CircularText from "@/components/ui/circle-text"
 import { WhyTechnovaSection } from "@/components/ui/why-technova-section"
 import { ProcessSection } from "@/components/ui/process-section"
 import { Features3 } from "@/components/ui/features-3"
+import LogosMarquee from "@/components/logos-marquee"
 
 export default function HomePage() {
   const stats = [
@@ -58,30 +59,6 @@ export default function HomePage() {
     { value: "98%", label: "Client Satisfaction" },
     { value: "50+", label: "Expert Team Members" },
     { value: "15+", label: "Years Experience" },
-  ]
-
-  const services = [
-    {
-      icon: Brain,
-      title: "AI & Machine Learning",
-      description: "Advanced artificial intelligence solutions that transform data into actionable insights.",
-      gradient: "from-[#7B3FEF] to-[#9D5FFF]",
-      color: "#7B3FEF",
-    },
-    {
-      icon: Shield,
-      title: "Cybersecurity",
-      description: "Enterprise-grade security solutions protecting your digital assets 24/7.",
-      gradient: "from-[#00D9FF] to-[#00B8D4]",
-      color: "#00D9FF",
-    },
-    {
-      icon: Code,
-      title: "Custom Development",
-      description: "Tailored software solutions built with cutting-edge technologies.",
-      gradient: "from-[#7B3FEF] to-[#00D9FF]",
-      color: "#7B3FEF",
-    },
   ]
 
   const combinedFeatures = [
@@ -184,27 +161,6 @@ export default function HomePage() {
       category: "Financial Technology",
       href: "/case-studies/fintech-revolution",
       color: "#7B3FEF",
-    },
-  ]
-
-  const testimonials = [
-    {
-      quote: "TECHNOVA transformed our entire digital infrastructure. The results exceeded all expectations.",
-      author: "Sarah Johnson",
-      role: "CEO, TechCorp",
-      avatar: "/placeholder.svg?height=60&width=60",
-    },
-    {
-      quote: "Their AI solutions gave us a competitive edge we never thought possible. Truly next-generation.",
-      author: "Michael Chen",
-      role: "CTO, InnovateAI",
-      avatar: "/placeholder.svg?height=60&width=60",
-    },
-    {
-      quote: "Working with TECHNOVA was seamless. They delivered beyond our requirements and on time.",
-      author: "Emily Rodriguez",
-      role: "VP of Engineering, DataFlow",
-      avatar: "/placeholder.svg?height=60&width=60",
     },
   ]
 
@@ -381,7 +337,7 @@ export default function HomePage() {
       </Section>
 
       {/* <WhyTechnovaSection /> */}
-<Features3 /> 
+      <Features3 />
 
       <ProcessSection />
 
@@ -434,6 +390,8 @@ export default function HomePage() {
         </motion.div>
         <StaggerTestimonials />
       </Section>
+
+      <LogosMarquee />
 
     </div>
   )
