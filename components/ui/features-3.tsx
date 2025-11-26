@@ -3,7 +3,7 @@ import { Zap, Shield, Users, Rocket, Brain, Globe } from 'lucide-react'
 
 export function Features3() {
     return (
-        <section className="bg-gray-50 py-16 md:py-32 dark:bg-transparent">
+        <section className="py-0">
             <div className="mx-auto max-w-3xl lg:max-w-6xl px-6">
                 <div className="relative">
                     <div className="relative z-10 grid grid-cols-6 gap-4">
