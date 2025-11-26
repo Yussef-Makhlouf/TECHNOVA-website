@@ -4,15 +4,18 @@ import { Linkedin, Twitter, Github, Mail } from "lucide-react"
 export default function Footer() {
   return (
     <footer className="relative bg-card border-t border-border mt-20 overflow-hidden">
-      {/* Pattern Background */}
-      <div
-        className="absolute inset-0 opacity-5 mix-blend-overlay"
-        style={{
-          backgroundImage: "url('/pattern/pattern1.png')",
-          backgroundSize: "400px 400px",
-          backgroundRepeat: "repeat",
-        }}
-      />
+      {/* Pattern Background with Gradient Overlay */}
+      <div className="absolute inset-0">
+        <div
+          className="absolute inset-0 opacity-[.09] dark:opacity-[.09]"
+          style={{
+            backgroundImage: "url('/pattern/pattern2.png')",
+            backgroundSize: "300px 300px",
+            backgroundRepeat: "repeat",
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background/40" />
+      </div>
 
       <div className="container mx-auto px-4 lg:px-8 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
