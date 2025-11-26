@@ -13,9 +13,14 @@ import { ServiceCard } from "@/components/service-card"
 export default function ServicesPage() {
   const { services: servicesData } = useData()
 
-  const services = servicesData.map(service => ({
-    ...service,
-    icon: getIcon(service.icon)
+  const services = servicesData.map((service, index) => ({
+    title: service.name_en,
+    description: service.shortDescription_en,
+    image: service.images[0]?.imageLink || "",
+    features: service.features.map(f => f.feature_en),
+    href: `/services/${service.slug}`,
+    color: service.color,
+    index
   }))
 
   return (
@@ -55,29 +60,13 @@ export default function ServicesPage() {
 
       {/* Services Grid */}
       <section className="py-20 lg:py-32 relative overflow-hidden">
-        <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Our Services
-            </h2>
-            <div className="h-1 w-32 mx-auto my-6 bg-gradient-to-r from-primary to-accent rounded-full" />
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-              Explore our comprehensive range of technology solutions designed to transform your business
-            </p>
-          </motion.div>
+
 
           <div className="grid grid-cols-1 gap-8 lg:gap-12">
             {services.map((service, index) => (
-              <ServiceCard key={index} {...service} index={index} />
+              <ServiceCard title={""} description={""} image={""} features={[]} href={""} index={0} color={""} />
             ))}
           </div>
         </div>
@@ -120,7 +109,7 @@ export default function ServicesPage() {
               <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
                 Ready to Transform Your Business?
               </h2>
-              <div className="h-1 w-32 mx-auto my-6 bg-gradient-to-r from-primary to-accent rounded-full" />
+              <div className="h-1 w-32 mx-auto my-6 rounded-full" />
               <p className="text-xl text-muted-foreground leading-relaxed mb-8">
                 Let's discuss how our services can help you achieve your digital transformation goals.
               </p>
@@ -144,6 +133,6 @@ export default function ServicesPage() {
       </section>
 
 
-    </div>
+    </div >
   )
 }

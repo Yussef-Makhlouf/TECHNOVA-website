@@ -3,12 +3,12 @@ import { Zap, Shield, Users, Rocket, Brain, Globe } from 'lucide-react'
 
 export function Features3() {
     return (
-        <section className="bg-gray-50 py-16 md:py-32 dark:bg-transparent">
+        <section className="py-0">
             <div className="mx-auto max-w-3xl lg:max-w-6xl px-6">
                 <div className="relative">
                     <div className="relative z-10 grid grid-cols-6 gap-4">
                         {/* Feature 1: End-to-End Solutions */}
-                        <Card className="relative col-span-full flex overflow-hidden sm:col-span-3 lg:col-span-2 hover:shadow-lg transition-shadow duration-300 bg-transparent">
+                        <Card className="relative col-span-full flex overflow-hidden sm:col-span-3 lg:col-span-2 hover:shadow-lg transition-shadow duration-300 bg-card/30 backdrop-blur-md">
                             <CardContent className="relative m-auto size-fit pt-8 pb-6 px-4">
                                 <div className="relative flex items-center justify-center mb-6">
                                     <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-[#7B3FEF]/20 to-[#00D9FF]/20 border-2 border-[#7B3FEF]/30">
@@ -25,7 +25,7 @@ export function Features3() {
                         </Card>
 
                         {/* Feature 2: Enterprise-Grade Security */}
-                        <Card className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2 hover:shadow-lg transition-shadow duration-300 bg-transparent">
+                        <Card className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2 hover:shadow-lg transition-shadow duration-300 bg-card/30 backdrop-blur-md">
                             <CardContent className="pt-8 pb-6 px-4">
                                 <div className="relative mx-auto flex aspect-square h-20 w-20 rounded-full border-2 border-[#7B3FEF]/30 items-center justify-center">
                                     <Shield className="h-10 w-10 text-[#7B3FEF]" />
@@ -42,7 +42,7 @@ export function Features3() {
                         </Card>
 
                         {/* Feature 3: Scalable Architecture */}
-                        <Card className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2 hover:shadow-lg transition-shadow duration-300 bg-transparent">
+                        <Card className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2 hover:shadow-lg transition-shadow duration-300 bg-card/30 backdrop-blur-md">
                             <CardContent className="pt-8 pb-6 px-4">
                                 <div className="relative mx-auto flex aspect-square h-20 w-20 rounded-full border-2 border-[#7B3FEF]/30 items-center justify-center">
                                     <Zap className="h-10 w-10 text-[#00D9FF]" />
@@ -59,7 +59,7 @@ export function Features3() {
                         </Card>
 
                         {/* Feature 4: AI-Powered Innovation */}
-                        <Card className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-3 hover:shadow-lg transition-shadow duration-300 bg-transparent">
+                        <Card className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-3 hover:shadow-lg transition-shadow duration-300 bg-card/30 backdrop-blur-md">
                             <CardContent className="grid pt-6 sm:grid-cols-2 gap-6">
                                 <div className="relative z-10 flex flex-col justify-center space-y-6">
                                     <div className="relative flex aspect-square size-16 rounded-full border-2 border-[#7B3FEF]/30 items-center justify-center">
@@ -88,7 +88,7 @@ export function Features3() {
                         </Card>
 
                         {/* Feature 5: Global Expertise */}
-                        <Card className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-3 hover:shadow-lg transition-shadow duration-300 bg-transparent">
+                        <Card className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-3 hover:shadow-lg transition-shadow duration-300 bg-card/30 backdrop-blur-md">
                             <CardContent className="grid h-full pt-6 sm:grid-cols-2 gap-6">
                                 <div className="relative z-10 flex flex-col justify-center space-y-6">
                                     <div className="relative flex aspect-square size-16 rounded-full border-2 border-[#7B3FEF]/30 items-center justify-center">
@@ -120,7 +120,7 @@ export function Features3() {
                         </Card>
 
                         {/* Feature 6: Global Reach */}
-                        <Card className="relative col-span-full overflow-hidden sm:col-span-6 lg:col-span-6 hover:shadow-lg transition-shadow duration-300 bg-transparent">
+                        <Card className="relative col-span-full overflow-hidden sm:col-span-6 lg:col-span-6 hover:shadow-lg transition-shadow duration-300 bg-card/30 backdrop-blur-md">
                             <CardContent className="pt-8 pb-6 px-6">
                                 <div className="flex flex-col md:flex-row items-center gap-8">
                                     <div className="relative flex aspect-square h-24 w-24 rounded-full border-2 border-[#7B3FEF]/30 bg-gradient-to-br from-[#7B3FEF]/10 to-[#00D9FF]/10 items-center justify-center flex-shrink-0">

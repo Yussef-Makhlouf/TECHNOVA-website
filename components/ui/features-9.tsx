@@ -12,16 +12,16 @@ export function Features() {
           <div className="p-6 sm:p-12">
             <span className="text-muted-foreground flex items-center gap-2">
               <MapIcon className="size-4" />
-              Real time location tracking
+              AI-Powered Assistance
             </span>
 
-            <p className="mt-8 text-2xl font-semibold">Advanced tracking system, Instantly locate all your assets.</p>
+            <p className="mt-8 text-2xl font-semibold">Intelligent chatbot system, Get instant answers to all your questions.</p>
           </div>
 
           <div aria-hidden className="relative">
             <div className="absolute inset-0 z-10 m-auto size-fit">
               <div className="rounded-(--radius) bg-background dark:bg-muted z-[1] relative flex size-fit w-fit items-center gap-2 border px-3 py-1 text-xs font-medium shadow-md shadow-black/5">
-                <span className="text-lg">🇨🇩</span> Last connection from DR Congo
+                <span className="text-lg">🤖</span> AI Assistant Active Worldwide
               </div>
               <div className="rounded-(--radius) bg-background absolute inset-2 -bottom-2 mx-auto border px-3 py-4 text-xs font-medium shadow-md shadow-black/5 dark:bg-zinc-900"></div>
             </div>
@@ -36,10 +36,10 @@ export function Features() {
           <div className="relative z-10">
             <span className="text-muted-foreground flex items-center gap-2">
               <MessageCircle className="size-4" />
-              Email and web support
+              24/7 Chat Support
             </span>
 
-            <p className="my-8 text-2xl font-semibold">Reach out via email or web for any assistance you need.</p>
+            <p className="my-8 text-2xl font-semibold">Connect with AI chatbot anytime for instant support and guidance.</p>
           </div>
           <div aria-hidden className="flex flex-col gap-8">
             <div>
@@ -50,31 +50,31 @@ export function Features() {
                 <span className="text-muted-foreground text-xs">Sat 22 Feb</span>
               </div>
               <div className="rounded-(--radius) bg-background mt-1.5 w-3/5 border p-3 text-xs">
-                Hey, I'm having trouble with my account.
+                How can I integrate the chatbot into my website?
               </div>
             </div>
 
             <div>
               <div className="rounded-(--radius) mb-1 ml-auto w-3/5 bg-blue-600 p-3 text-xs text-white">
-                Molestiae numquam debitis et ullam distinctio provident nobis repudiandae deleniti necessitatibus.
+             chatbot can be easily integrated with just a few lines of code. I'll guide you through the process step by step!
               </div>
               <span className="text-muted-foreground block text-right text-xs">Now</span>
             </div>
           </div>
         </div>
         <div className="col-span-full border-y p-12">
-          <p className="text-center text-4xl font-semibold lg:text-7xl">99.99% Uptime</p>
+          <p className="text-center text-4xl font-semibold lg:text-7xl">24/7 Availability</p>
         </div>
         <div className="relative col-span-full">
           <div className="absolute z-10 max-w-lg px-6 pr-12 pt-6 md:px-12 md:pt-12">
             <span className="text-muted-foreground flex items-center gap-2">
               <Activity className="size-4" />
-              Activity feed
+              Conversation Analytics
             </span>
 
             <p className="my-8 text-2xl font-semibold">
-              Monitor your application's activity in real-time.{" "}
-              <span className="text-muted-foreground"> Instantly identify and resolve issues.</span>
+              Track chatbot conversations in real-time.{" "}
+              <span className="text-muted-foreground"> Analyze user interactions and improve responses.</span>
             </p>
           </div>
           <MonitoringChart />

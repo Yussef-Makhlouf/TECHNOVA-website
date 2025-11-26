@@ -1,28 +1,6 @@
 {
   "node": {
-    "00751cb60d5dbe0503fc7f8ce404a35109ed477e9c": {
-      "workers": {
-        "app/dashboard/page": {
-          "moduleId": "[project]/.next-internal/server/app/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "logout",
-          "filename": "app/login/actions.ts"
-        },
-        "app/dashboard/services/page": {
-          "moduleId": "[project]/.next-internal/server/app/dashboard/services/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "logout",
-          "filename": "app/login/actions.ts"
-        }
-      },
-      "layer": {
-        "app/dashboard/page": "action-browser",
-        "app/dashboard/services/page": "action-browser"
-      },
-      "filename": "app/login/actions.ts",
-      "exportedName": "logout"
-    },
-    "40db24ea2f485bebc97f35e9fe8b84c73d5b638cee": {
+    "4021114db1399508535f143c354a2a006dca8de014": {
       "workers": {
         "app/login/page": {
           "moduleId": "[project]/.next-internal/server/app/login/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
@@ -39,5 +17,5 @@
     }
   },
   "edge": {},
-  "encryptionKey": "LltC9w7Sacgb0p3Ww0u6HbxUr5kgNG2tvW3Bs80DwKs="
+  "encryptionKey": "t21K06+FCMMJi1doVNP8MZ7NRKtnAKqEmZ/jweSAn6Y="
 }

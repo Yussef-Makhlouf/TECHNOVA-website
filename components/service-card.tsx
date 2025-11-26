@@ -28,7 +28,12 @@ export function ServiceCard({ title, description, image, features, href, index, 
       className="group relative"
     >
       {/* Enhanced Card Content */}
-      <div className="relative bg-background backdrop-blur-sm rounded-3xl overflow-hidden p-8 lg:p-12 border border-border/20 hover:border-[#7B3FEF]/30 transition-all duration-500">
+      <div
+        className="relative bg-background backdrop-blur-sm rounded-3xl overflow-hidden p-8 lg:p-12 border border-border/20 hover:border-[#7B3FEF]/30 transition-all duration-500"
+        style={{
+          clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 2rem), calc(100% - 2rem) 100%, 0 100%)',
+        }}
+      >
         {/* Subtle background pattern */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#7B3FEF]/5 to-transparent rounded-full blur-3xl" />
@@ -163,6 +168,15 @@ export function ServiceCard({ title, description, image, features, href, index, 
             </div>
           </div>
         </div>
+
+        {/* Corner Decoration */}
+        <div
+          className="absolute w-16 h-16 bottom-[-2.8rem] right-[-2.8rem] rotate-45 border-t border-l transition-colors"
+          style={{
+            backgroundColor: `${color}20`, // 20% opacity
+            borderColor: `${color}50` // 50% opacity
+          }}
+        />
       </div>
     </motion.div>
   )

@@ -74,7 +74,17 @@ export function WhyTechnovaSection() {
                             viewport={{ once: true }}
                             className="group relative"
                         >
-                            <div className="h-full bg-card/50 backdrop-blur-sm border border-white/5 rounded-3xl p-8 hover:bg-card/80 hover:border-white/10 transition-all duration-500 hover:shadow-2xl hover:shadow-[#00D9FF]/10">
+                            <div
+                                className="h-full bg-card/50 backdrop-blur-sm border border-white/5 p-8 hover:bg-card/80 hover:border-white/10 transition-all duration-500 hover:shadow-2xl hover:shadow-[#00D9FF]/10 relative overflow-hidden"
+                                style={{
+                                    clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 2rem), calc(100% - 2rem) 100%, 0 100%)',
+                                }}
+                            >
+                                {/* Corner Decoration */}
+                                <div
+                                    className="absolute w-16 h-16 bottom-[-2.8rem] right-[-2.8rem] rotate-45 bg-white/5 border-t border-l border-white/10 group-hover:bg-white/10 group-hover:border-white/20 transition-colors z-20"
+                                />
+
                                 <div
                                     className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
                                     style={{

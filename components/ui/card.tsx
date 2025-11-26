@@ -2,16 +2,24 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
-function Card({ className, ...props }: React.ComponentProps<'div'>) {
+function Card({ className, children, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       data-slot="card"
       className={cn(
-        'bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm',
+        'group relative bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm transition-all duration-300 hover:border-primary/50',
         className,
       )}
+      style={{
+        clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 2rem), calc(100% - 2rem) 100%, 0 100%)',
+      }}
       {...props}
-    />
+    >
+      {children}
+      <div
+        className="absolute w-16 h-16 bottom-[-2.8rem] right-[-2.8rem] rotate-45 bg-primary/10 border-t border-l border-primary/30 group-hover:bg-primary/20 group-hover:border-primary/50 transition-colors"
+      />
+    </div>
   )
 }
 

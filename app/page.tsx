@@ -51,6 +51,7 @@ import CircularText from "@/components/ui/circle-text"
 import { WhyTechnovaSection } from "@/components/ui/why-technova-section"
 import { ProcessSection } from "@/components/ui/process-section"
 import { Features3 } from "@/components/ui/features-3"
+import LogosMarquee from "@/components/logos-marquee"
 
 export default function HomePage() {
   const stats = [
@@ -58,30 +59,6 @@ export default function HomePage() {
     { value: "98%", label: "Client Satisfaction" },
     { value: "50+", label: "Expert Team Members" },
     { value: "15+", label: "Years Experience" },
-  ]
-
-  const services = [
-    {
-      icon: Brain,
-      title: "AI & Machine Learning",
-      description: "Advanced artificial intelligence solutions that transform data into actionable insights.",
-      gradient: "from-[#7B3FEF] to-[#9D5FFF]",
-      color: "#7B3FEF",
-    },
-    {
-      icon: Shield,
-      title: "Cybersecurity",
-      description: "Enterprise-grade security solutions protecting your digital assets 24/7.",
-      gradient: "from-[#00D9FF] to-[#00B8D4]",
-      color: "#00D9FF",
-    },
-    {
-      icon: Code,
-      title: "Custom Development",
-      description: "Tailored software solutions built with cutting-edge technologies.",
-      gradient: "from-[#7B3FEF] to-[#00D9FF]",
-      color: "#7B3FEF",
-    },
   ]
 
   const combinedFeatures = [
@@ -187,39 +164,68 @@ export default function HomePage() {
     },
   ]
 
-  const testimonials = [
-    {
-      quote: "TECHNOVA transformed our entire digital infrastructure. The results exceeded all expectations.",
-      author: "Sarah Johnson",
-      role: "CEO, TechCorp",
-      avatar: "/placeholder.svg?height=60&width=60",
-    },
-    {
-      quote: "Their AI solutions gave us a competitive edge we never thought possible. Truly next-generation.",
-      author: "Michael Chen",
-      role: "CTO, InnovateAI",
-      avatar: "/placeholder.svg?height=60&width=60",
-    },
-    {
-      quote: "Working with TECHNOVA was seamless. They delivered beyond our requirements and on time.",
-      author: "Emily Rodriguez",
-      role: "VP of Engineering, DataFlow",
-      avatar: "/placeholder.svg?height=60&width=60",
-    },
-  ]
-
   return (
     <div className="min-h-screen relative">
       <AnimatedGradientBackground />
       <Navigation />
 
+      {/* Hero Section */}
       <Hero />
 
+      {/* Stats Section - Re-enabled */}
+      <Section className="py-16 lg:py-20 border-y border-border/50">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center relative group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-[#7B3FEF]/5 to-[#00D9FF]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative p-6">
+                  <div className="font-heading text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] bg-clip-text text-transparent mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="text-muted-foreground text-sm font-medium">{stat.label}</div>
+                  <div className="w-12 h-1 bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] mx-auto mt-4 rounded-full" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </Section>
+
+      {/* Innovation in Action Section */}
       <Section className="py-20 lg:py-32">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <div className="inline-block mb-4">
+            <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#7B3FEF]/10 to-[#00D9FF]/10 border border-[#7B3FEF]/20 text-sm font-medium text-[#7B3FEF]">
+              Innovation in Action
+            </span>
+          </div>
+          <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            Transform Ideas Into Reality
+          </h2>
+          <div className="gradient-line w-24 mx-auto my-6" />
+        </motion.div>
 
         <div className="relative max-w-6xl mx-auto">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#7B3FEF]/10 to-[#00D9FF]/10 rounded-3xl blur-3xl"></div>
-          <div className="relative  p-8 lg:p-12">
+          <div className="relative p-8 lg:p-12">
             <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
@@ -229,9 +235,6 @@ export default function HomePage() {
                 className="space-y-6"
               >
                 <div>
-                  <h3 className="font-heading text-2xl lg:text-3xl font-bold text-foreground mb-4">
-                    Transform Ideas Into Reality
-                  </h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Our cutting-edge solutions bridge the gap between concept and execution,
                     delivering experiences that redefine what's possible in digital innovation.
@@ -299,35 +302,8 @@ export default function HomePage() {
         </div>
       </Section>
 
-
-
-      <Section className="bg-gradient-to-b from-background to-muted/30 border-y border-border">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="text-center relative group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#7B3FEF]/5 to-[#00D9FF]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative p-6">
-                <div className="font-heading text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] bg-clip-text text-transparent mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-muted-foreground text-sm font-medium">{stat.label}</div>
-                <div className="w-12 h-1 bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] mx-auto mt-4 rounded-full" />
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </Section>
-
-      {/* <IntegrationsSection /> */}
-
-      <Section>
+      {/* Our Core Services Section */}
+      <Section className="py-20 lg:py-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -335,7 +311,35 @@ export default function HomePage() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">Our Core Principles</h2>
+          <div className="inline-block mb-4">
+            <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#00D9FF]/10 to-[#7B3FEF]/10 border border-[#00D9FF]/20 text-sm font-medium text-[#00D9FF]">
+              What We Offer
+            </span>
+          </div>
+          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">Our Core Services</h2>
+          <div className="gradient-line w-24 mx-auto my-6" />
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+            Comprehensive solutions designed to propel your business into the future.
+          </p>
+        </motion.div>
+        <Features3 />
+      </Section>
+
+      {/* What Sets Us Apart Section */}
+      <Section className="py-20 lg:py-32">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <div className="inline-block mb-4">
+            <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#7B3FEF]/10 to-[#00D9FF]/10 border border-[#7B3FEF]/20 text-sm font-medium text-[#7B3FEF]">
+              Our DNA
+            </span>
+          </div>
+          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">What Sets Us Apart</h2>
           <div className="gradient-line w-24 mx-auto my-6" />
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
             The values and capabilities that drive our success and define our commitment to excellence.
@@ -344,9 +348,54 @@ export default function HomePage() {
         <FeaturesSectionWithHoverEffects features={combinedFeatures} />
       </Section>
 
-      <Features />
+      {/* Our Proven Process Section */}
+      <Section className="py-20 lg:py-32">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <div className="inline-block mb-4">
+            <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#00D9FF]/10 to-[#7B3FEF]/10 border border-[#00D9FF]/20 text-sm font-medium text-[#00D9FF]">
+              How We Work
+            </span>
+          </div>
+          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">Our Proven Process</h2>
+          <div className="gradient-line w-24 mx-auto my-6" />
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+            A systematic approach to delivering exceptional results, every time.
+          </p>
+        </motion.div>
+        <ProcessSection />
+      </Section>
 
-      <Section className="bg-gradient-to-b from-muted/20 to-background">
+      {/* AI-Powered Solutions Section */}
+      <Section className="py-20 lg:py-32">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <div className="inline-block mb-4">
+            <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#7B3FEF]/10 to-[#00D9FF]/10 border border-[#7B3FEF]/20 text-sm font-medium text-[#7B3FEF]">
+              Intelligent Technology
+            </span>
+          </div>
+          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">AI-Powered Solutions</h2>
+          <div className="gradient-line w-24 mx-auto my-6" />
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+            Harness the power of artificial intelligence to transform your business operations.
+          </p>
+        </motion.div>
+        <Features />
+      </Section>
+
+      {/* Featured Projects Section - Re-enabled */}
+      <Section className="py-20 lg:py-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -361,6 +410,9 @@ export default function HomePage() {
           </div>
           <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">Featured Projects</h2>
           <div className="gradient-line w-24 mx-auto my-6" />
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+            Real-world examples of how we've helped businesses achieve extraordinary results.
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
@@ -380,18 +432,37 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* <WhyTechnovaSection /> */}
-<Features3 /> 
-
-      <ProcessSection />
-
-      <Section>
+      {/* Testimonials Section */}
+      <Section className="py-20 lg:py-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-center mb-16"
+        >
+          <div className="inline-block mb-4">
+            <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#7B3FEF]/10 to-[#00D9FF]/10 border border-[#7B3FEF]/20 text-sm font-medium text-[#7B3FEF]">
+              Client Feedback
+            </span>
+          </div>
+          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">What Our Clients Say</h2>
+          <div className="gradient-line w-24 mx-auto my-6" />
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+            Trusted by leading organizations worldwide.
+          </p>
+        </motion.div>
+        <StaggerTestimonials />
+      </Section>
+
+      {/* CTA Section */}
+      <Section className="py-20 lg:py-32">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center"
         >
           <h2 className="font-heading text-4xl lg:text-6xl font-bold text-foreground mb-4 leading-tight">
             Ready to Build the{" "}
@@ -421,19 +492,8 @@ export default function HomePage() {
         </motion.div>
       </Section>
 
-      <Section>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">What Our Clients Say</h2>
-          <div className="gradient-line w-24 mx-auto my-6" />
-        </motion.div>
-        <StaggerTestimonials />
-      </Section>
+      {/* Partners Marquee */}
+      <LogosMarquee />
 
     </div>
   )
