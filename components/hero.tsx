@@ -30,7 +30,7 @@ export function Hero() {
             <span className="font-medium text-foreground">The Future is Now</span>
           </div>
 
-          <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight max-w-5xl mx-auto leading-tight">
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight max-w-5xl mx-auto leading-tight">
             <span className="text-foreground">Redefining Digital</span>
             <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF]">
@@ -41,7 +41,7 @@ export function Hero() {
           <div className="gradient-line w-32 my-4" />
 
           {/* Subtext */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light px-4">
             TECHNOVA bridges the gap between imagination and reality. We build space-age digital experiences that propel
             your business into the next dimension.
           </p>

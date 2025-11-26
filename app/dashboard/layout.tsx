@@ -23,7 +23,7 @@ export default function DashboardLayout({
     const pathSegments = pathname.split("/").filter((segment) => segment !== "")
 
     return (
-        <SidebarProvider>
+        <SidebarProvider defaultOpen={false}>
             <AppSidebar />
             <div className="flex flex-col flex-1 min-h-screen bg-background">
                 <header className="flex h-16 shrink-0 items-center gap-2 border-b border-border/50 px-4 bg-background/50 backdrop-blur-sm sticky top-0 z-10">
