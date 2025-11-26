@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 node_modules
 .next/
-=======
 # dependencies
 node_modules
 /.pnp
@@ -33,4 +31,3 @@ ts-debug.log*
 
 # vercel
 .vercel
->>>>>>> b7b18c2ca408ca4f296083ce0b1efc1c01a14669
