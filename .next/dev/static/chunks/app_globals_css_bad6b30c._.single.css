@@ -637,21 +637,8 @@
     top: 100%;
   }
 
-<<<<<<< HEAD
-  .-right-2 {
-    right: calc(var(--spacing) * -2);
-  }
-
   .-right-4 {
     right: calc(var(--spacing) * -4);
-  }
-
-  .-right-8 {
-    right: calc(var(--spacing) * -8);
-=======
-  .-right-4 {
-    right: calc(var(--spacing) * -4);
->>>>>>> 279aa10eabdf2f38fc4999f11c0c41baa782540c
   }
 
   .-right-12 {
@@ -984,10 +971,6 @@
     margin-top: calc(var(--spacing) * 16);
   }
 
-  .mt-16 {
-    margin-top: calc(var(--spacing) * 16);
-  }
-
   .mt-20 {
     margin-top: calc(var(--spacing) * 20);
   }
@@ -1227,25 +1210,9 @@
     height: calc(var(--spacing) * 10);
   }
 
-<<<<<<< HEAD
-  .size-12 {
-    width: calc(var(--spacing) * 12);
-    height: calc(var(--spacing) * 12);
-  }
-
   .size-16 {
     width: calc(var(--spacing) * 16);
     height: calc(var(--spacing) * 16);
-  }
-
-  .size-32 {
-    width: calc(var(--spacing) * 32);
-    height: calc(var(--spacing) * 32);
-=======
-  .size-16 {
-    width: calc(var(--spacing) * 16);
-    height: calc(var(--spacing) * 16);
->>>>>>> 279aa10eabdf2f38fc4999f11c0c41baa782540c
   }
 
   .size-auto {
@@ -1601,13 +1568,6 @@
 
   .w-48 {
     width: calc(var(--spacing) * 48);
-<<<<<<< HEAD
-  }
-
-  .w-56 {
-    width: calc(var(--spacing) * 56);
-=======
->>>>>>> 279aa10eabdf2f38fc4999f11c0c41baa782540c
   }
 
   .w-64 {
@@ -7331,27 +7291,6 @@
   @media (min-width: 40rem) {
     .sm\:col-span-6 {
       grid-column: span 6 / span 6;
-<<<<<<< HEAD
-    }
-  }
-
-  @media (min-width: 40rem) {
-    .sm\:-my-6 {
-      margin-block: calc(var(--spacing) * -6);
-    }
-  }
-
-  @media (min-width: 40rem) {
-    .sm\:-mr-6 {
-      margin-right: calc(var(--spacing) * -6);
-    }
-  }
-
-  @media (min-width: 40rem) {
-    .sm\:ml-6 {
-      margin-left: calc(var(--spacing) * 6);
-=======
->>>>>>> 279aa10eabdf2f38fc4999f11c0c41baa782540c
     }
   }
 
@@ -7844,12 +7783,6 @@
   @media (min-width: 64rem) {
     .lg\:w-auto {
       width: auto;
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:max-w-6xl {
-      max-width: var(--container-6xl);
     }
   }
 
