@@ -118,7 +118,7 @@ if (values.imageFile) {
         formData.append(`status[${i}][label_ar]`, s.labelAr || "")
     })
 
-    const res = await fetch("http://localhost:8080/api/v1/case_study/add", {
+    const res = await fetch("https://technoba.vercel.app/api/v1/case_study/add", {
         method: "POST",
         body: formData
     })
