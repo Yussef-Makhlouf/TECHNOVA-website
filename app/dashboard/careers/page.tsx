@@ -24,17 +24,26 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Badge } from "@/components/ui/badge"
 import { Skeleton } from "@/components/ui/skeleton"
+import { Checkbox } from "@/components/ui/checkbox"
+import { BulkActionsBar } from "@/components/dashboard/bulk-actions-bar"
+import { toast } from "sonner"
 
 export default function CareersDashboardPage() {
     const { jobs, deleteJob } = useData()
     const router = useRouter()
     const [showArabic, setShowArabic] = useState(true)
     const [isPending, startTransition] = useTransition()
+    const [selectedJobs, setSelectedJobs] = useState<string[]>([])
 
     const handleDelete = (id: string) => {
-        if (confirm("Are you sure you want to delete this job opening?")) {
-            deleteJob(id)
-        }
+        deleteJob(id)
+        toast.success("Job deleted successfully")
+    }
+
+    const handleBulkDelete = () => {
+        selectedJobs.forEach(id => deleteJob(id))
+        setSelectedJobs([])
+        toast.success(`${selectedJobs.length} job(s) deleted successfully`)
     }
 
     const handleToggleLanguage = () => {
@@ -43,8 +52,29 @@ export default function CareersDashboardPage() {
         })
     }
 
+    const toggleJob = (id: string) => {
+        setSelectedJobs(prev =>
+            prev.includes(id) ? prev.filter(jobId => jobId !== id) : [...prev, id]
+        )
+    }
+
+    const toggleAll = () => {
+        setSelectedJobs(prev =>
+            prev.length === jobs.length ? [] : jobs.map(j => j.id)
+        )
+    }
+
+    const clearSelection = () => {
+        setSelectedJobs([])
+    }
+
     return (
         <div className="space-y-6">
+            <BulkActionsBar
+                selectedCount={selectedJobs.length}
+                onClearSelection={clearSelection}
+                onDelete={handleBulkDelete}
+            />
             <div className="flex items-center justify-between">
                 <div>
                     <h1 className="text-3xl font-bold font-heading tracking-tight">Careers</h1>
@@ -73,6 +103,13 @@ export default function CareersDashboardPage() {
                 <Table>
                     <TableHeader>
                         <TableRow>
+                            <TableHead className="w-12">
+                                <Checkbox
+                                    checked={selectedJobs.length === jobs.length && jobs.length > 0}
+                                    onCheckedChange={toggleAll}
+                                    aria-label="Select all"
+                                />
+                            </TableHead>
                             <TableHead>Title</TableHead>
                             <TableHead>Department</TableHead>
                             <TableHead>Location</TableHead>
@@ -84,13 +121,23 @@ export default function CareersDashboardPage() {
                     <TableBody>
                         {jobs.length === 0 ? (
                             <TableRow>
-                                <TableCell colSpan={6} className="text-center h-24 text-muted-foreground">
+                                <TableCell colSpan={7} className="text-center h-24 text-muted-foreground">
                                     No job openings found. Post one to get started.
                                 </TableCell>
                             </TableRow>
                         ) : (
                             jobs.map((job) => (
-                                <TableRow key={job.id}>
+                                <TableRow
+                                    key={job.id}
+                                    className={selectedJobs.includes(job.id) ? "bg-muted/50" : ""}
+                                >
+                                    <TableCell>
+                                        <Checkbox
+                                            checked={selectedJobs.includes(job.id)}
+                                            onCheckedChange={() => toggleJob(job.id)}
+                                            aria-label={`Select ${job.title}`}
+                                        />
+                                    </TableCell>
                                     <TableCell className="font-medium">
                                         <div className="space-y-1">
                                             <div>{job.title}</div>

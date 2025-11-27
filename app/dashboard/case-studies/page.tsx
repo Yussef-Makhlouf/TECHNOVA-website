@@ -24,17 +24,26 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Badge } from "@/components/ui/badge"
 import { Skeleton } from "@/components/ui/skeleton"
+import { Checkbox } from "@/components/ui/checkbox"
+import { BulkActionsBar } from "@/components/dashboard/bulk-actions-bar"
+import { toast } from "sonner"
 
 export default function CaseStudiesDashboardPage() {
     const { caseStudies, deleteCaseStudy } = useData()
     const router = useRouter()
     const [showArabic, setShowArabic] = useState(true)
     const [isPending, startTransition] = useTransition()
+    const [selectedStudies, setSelectedStudies] = useState<string[]>([])
 
     const handleDelete = (id: string) => {
-        if (confirm("Are you sure you want to delete this case study?")) {
-            deleteCaseStudy(id)
-        }
+        deleteCaseStudy(id)
+        toast.success("Case study deleted successfully")
+    }
+
+    const handleBulkDelete = () => {
+        selectedStudies.forEach(id => deleteCaseStudy(id))
+        setSelectedStudies([])
+        toast.success(`${selectedStudies.length} case stud${selectedStudies.length === 1 ? 'y' : 'ies'} deleted successfully`)
     }
 
     const handleToggleLanguage = () => {
@@ -43,8 +52,29 @@ export default function CaseStudiesDashboardPage() {
         })
     }
 
+    const toggleStudy = (id: string) => {
+        setSelectedStudies(prev =>
+            prev.includes(id) ? prev.filter(studyId => studyId !== id) : [...prev, id]
+        )
+    }
+
+    const toggleAll = () => {
+        setSelectedStudies(prev =>
+            prev.length === caseStudies.length ? [] : caseStudies.map(s => s.id)
+        )
+    }
+
+    const clearSelection = () => {
+        setSelectedStudies([])
+    }
+
     return (
         <div className="space-y-6">
+            <BulkActionsBar
+                selectedCount={selectedStudies.length}
+                onClearSelection={clearSelection}
+                onDelete={handleBulkDelete}
+            />
             <div className="flex items-center justify-between">
                 <div>
                     <h1 className="text-3xl font-bold font-heading tracking-tight">Case Studies</h1>
@@ -73,6 +103,13 @@ export default function CaseStudiesDashboardPage() {
                 <Table>
                     <TableHeader>
                         <TableRow>
+                            <TableHead className="w-12">
+                                <Checkbox
+                                    checked={selectedStudies.length === caseStudies.length && caseStudies.length > 0}
+                                    onCheckedChange={toggleAll}
+                                    aria-label="Select all"
+                                />
+                            </TableHead>
                             <TableHead>Title</TableHead>
                             <TableHead>Institute</TableHead>
                             <TableHead>Category</TableHead>
@@ -83,13 +120,23 @@ export default function CaseStudiesDashboardPage() {
                     <TableBody>
                         {caseStudies.length === 0 ? (
                             <TableRow>
-                                <TableCell colSpan={5} className="text-center h-24 text-muted-foreground">
+                                <TableCell colSpan={6} className="text-center h-24 text-muted-foreground">
                                     No case studies found. Add one to get started.
                                 </TableCell>
                             </TableRow>
                         ) : (
                             caseStudies.map((study) => (
-                                <TableRow key={study.id}>
+                                <TableRow
+                                    key={study.id}
+                                    className={selectedStudies.includes(study.id) ? "bg-muted/50" : ""}
+                                >
+                                    <TableCell>
+                                        <Checkbox
+                                            checked={selectedStudies.includes(study.id)}
+                                            onCheckedChange={() => toggleStudy(study.id)}
+                                            aria-label={`Select ${study.title}`}
+                                        />
+                                    </TableCell>
                                     <TableCell className="font-medium">
                                         <div className="space-y-1">
                                             <div>{study.title}</div>

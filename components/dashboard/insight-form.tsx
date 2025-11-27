@@ -87,24 +87,26 @@ export function InsightForm({ initialData, isEditing = false }: InsightFormProps
         }
     }
 
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        const insightData = {
-            ...values,
-            color: values.color || "#7B3FEF",
-            iconName: values.iconName || "Lightbulb",
-            href: initialData?.href || `/insights/${values.title.toLowerCase().replace(/\s+/g, "-")}`,
-        }
+    async function onSubmit(values: z.infer<typeof formSchema>) {
+        try {
+            const insightData = {
+                ...values,
+                color: values.color || "#7B3FEF",
+                iconName: values.iconName || "Lightbulb",
+                href: initialData?.href || `/insights/${values.title.toLowerCase().replace(/\s+/g, "-")}`,
+            }
 
-        if (isEditing && initialData) {
-            updateInsight(initialData.id, insightData)
-            toast.success("Insight updated successfully")
-        } else {
-            addInsight(insightData)
-            toast.success("Insight created successfully")
-        }
+            if (isEditing && initialData) {
+                await updateInsight(initialData._id, insightData)
+            } else {
+                await addInsight(insightData)
+            }
 
-        router.push("/dashboard/insights")
-        router.refresh()
+            router.push("/dashboard/insights")
+            router.refresh()
+        } catch (error) {
+            // Error already handled by data context
+        }
     }
 
     return (

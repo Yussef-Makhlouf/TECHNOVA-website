@@ -28,18 +28,20 @@ const formSchema = z.object({
     title: z.string().min(2, {
         message: "Title must be at least 2 characters.",
     }),
-    titleAr: z.string().optional(),
+    titleAr: z.string().min(2, {
+        message: "Arabic title must be at least 2 characters.",
+    }),
     description: z.string().min(10, {
         message: "Description must be at least 10 characters.",
     }),
-    descriptionAr: z.string().optional(),
+    descriptionAr: z.string().min(10, {
+        message: "Arabic description must be at least 10 characters.",
+    }),
     features: z.array(z.string()).min(1, "At least one feature is required"),
     featuresAr: z.array(z.string()).optional(),
     iconName: z.string().optional(),
     color: z.string().optional(),
-    image: z.string().min(1, {
-        message: "Image is required.",
-    }),
+    image: z.string().optional(), // Optional because it's not required when editing
 })
 
 interface ServiceFormProps {
@@ -128,51 +130,74 @@ function FeatureInput({
 export function ServiceForm({ initialData, isEditing = false }: ServiceFormProps) {
     const { addService, updateService } = useData()
     const router = useRouter()
+    const [imageFile, setImageFile] = useState<File | null>(null)
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            title: initialData?.title || "",
-            titleAr: initialData?.titleAr || "",
-            description: initialData?.description || "",
-            descriptionAr: initialData?.descriptionAr || "",
-            features: initialData?.features || [],
-            featuresAr: initialData?.featuresAr || [],
+            title: initialData?.name_en || "",
+            titleAr: initialData?.name_ar || "",
+            description: initialData?.description_en || "",
+            descriptionAr: initialData?.description_ar || "",
+            // Convert features from API format to form format
+            features: initialData?.features?.map(f => f.feature_en) || [],
+            featuresAr: initialData?.features?.map(f => f.feature_ar) || [],
             // Default values for hidden fields
-            iconName: initialData?.iconName || "Brain",
+            iconName: initialData?.icon || "Brain",
             color: initialData?.color || "#7B3FEF",
-            image: initialData?.image || "",
+            image: initialData?.images?.[0]?.imageLink || "",
         },
     })
 
     const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0]
         if (file) {
+            setImageFile(file) // Store the actual file
             const imageUrl = URL.createObjectURL(file)
-            form.setValue("image", imageUrl)
+            form.setValue("image", imageUrl) // Store preview URL for display
         }
     }
 
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        const cleanValues = {
-            ...values,
-            features: values.features.filter(f => f.trim() !== ""),
-            featuresAr: (values.featuresAr?.filter((f): f is string => !!f && f.trim() !== "") || []),
-            href: initialData?.href || `/services/${values.title.toLowerCase().replace(/\s+/g, "-")}`,
-            color: values.color || "#7B3FEF",
-            iconName: values.iconName || "Brain",
-        }
+    async function onSubmit(values: z.infer<typeof formSchema>) {
+        try {
+            // For new services, image is required
+            if (!isEditing && !values.image && !imageFile) {
+                toast.error("Please upload an image")
+                return
+            }
 
-        if (isEditing && initialData) {
-            updateService(initialData.id, cleanValues)
-            toast.success("Service updated successfully")
-        } else {
-            addService(cleanValues)
-            toast.success("Service created successfully")
-        }
+            // Map form fields to API expected format
+            const serviceData = {
+                name_en: values.title,
+                name_ar: values.titleAr,
+                description_en: values.description,
+                description_ar: values.descriptionAr,
+                shortDescription_en: values.description.substring(0, 100), // Use first 100 chars as short description
+                shortDescription_ar: values.descriptionAr.substring(0, 100),
+                icon: values.iconName || "Brain",
+                color: values.color || "#7B3FEF",
+                features: values.features
+                    .filter(f => f.trim() !== "")
+                    .map((feature_en, index) => ({
+                        feature_en,
+                        feature_ar: values.featuresAr?.[index] || ""
+                    })),
+                slug: values.title.toLowerCase().replace(/\s+/g, "-")
+            }
 
-        router.push("/dashboard/services")
-        router.refresh()
+            if (isEditing && initialData) {
+                // Pass imageFile if a new image was uploaded
+                await updateService(initialData._id, serviceData as any, imageFile || undefined)
+            } else {
+                // Pass the file object to addService
+                await addService(serviceData as any, imageFile!)
+            }
+
+            router.push("/dashboard/services")
+            router.refresh()
+        } catch (error) {
+            // Error already handled by data context
+        }
     }
 
     return (

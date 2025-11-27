@@ -6,8 +6,9 @@ import Footer from "@/components/footer"
 export function FooterWrapper() {
     const pathname = usePathname()
     const isDashboard = pathname?.startsWith("/dashboard")
+    const isAuthPage = pathname === "/login" || pathname === "/reset-password"
 
-    if (isDashboard) {
+    if (isDashboard || isAuthPage) {
         return null
     }
 

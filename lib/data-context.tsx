@@ -2,8 +2,12 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react"
 import { Brain, Cloud, Shield, Sparkles, Database, Code, Cpu, Network, TrendingUp, Lightbulb, BookOpen } from "lucide-react"
+import { caseStudiesAPI, servicesAPI, blogsAPI } from "./api-service"
+import { CreateBlogRequest } from "./api-types"
+import { toast } from "sonner"
 
 // Define types
+
 
 type Service = {
     _id: string
@@ -20,23 +24,25 @@ type Service = {
     slug: string
 }
 
+export type { Service }
+
 export type Insight = {
-  _id: string,
-  title: string,
-  titleAr?: string,
-  description: string,
-  descriptionAr?: string,
-  author: string,
-  authorAr?: string,
-  date: string,
-  readTime: string,
-  category: string,
-  categoryAr?: string,
-  color: string,
-  href: string,
-  iconName: string,
-  image?: string
-  createdAt?: string
+    _id: string,
+    title: string,
+    titleAr?: string,
+    description: string,
+    descriptionAr?: string,
+    author: string,
+    authorAr?: string,
+    date: string,
+    readTime: string,
+    category: string,
+    categoryAr?: string,
+    color: string,
+    href: string,
+    iconName: string,
+    image?: string
+    createdAt?: string
 }
 
 export type CaseStudy = {
@@ -49,7 +55,7 @@ export type CaseStudy = {
     categoryAr?: string
     description: string
     descriptionAr?: string
-    stats: { value: string; label: string; labelAr?: string }[]
+    status: { value: string; label: string; labelAr?: string }[]
     image: string
     color: string
     href: string
@@ -74,8 +80,8 @@ type DataContextType = {
     insights: Insight[]
     caseStudies: CaseStudy[]
     jobs: Job[]
-    addService: (service: Omit<Service, "id">) => void
-    updateService: (id: string, service: Partial<Service>) => void
+    addService: (service: Omit<Service, "id">, imageFile?: File) => void
+    updateService: (id: string, service: Partial<Service>, imageFile?: File) => void
     deleteService: (id: string) => void
     addInsight: (insight: Omit<Insight, "id">) => void
     updateInsight: (id: string, insight: Partial<Insight>) => void
@@ -95,150 +101,9 @@ const initialServices: Service[] = []
 
 const initialInsights: Insight[] = []
 
-const initialCaseStudies: CaseStudy[] = [
-    {
-        id: "1",
-        title: "Global Bank Digital Transformation",
-        institute: "Fortune 500 Financial Institution",
-        category: "Digital Transformation",
-        description: "Complete digital overhaul of legacy banking systems, implementing cloud infrastructure and AI-powered customer service.",
-        stats: [
-            { value: "60%", label: "Cost Reduction" },
-            { value: "3x", label: "Faster Processing" },
-            { value: "95%", label: "Customer Satisfaction" },
-        ],
-        image: "/modern-banking-technology.jpg",
-        color: "#7B3FEF",
-        href: "/case-studies/global-bank-transformation",
-    },
-    {
-        id: "2",
-        title: "E-Commerce Platform Scaling",
-        institute: "Leading Retail Brand",
-        category: "Cloud Infrastructure",
-        description: "Migrated e-commerce platform to cloud, implementing auto-scaling and microservices architecture.",
-        stats: [
-            { value: "10x", label: "Traffic Capacity" },
-            { value: "99.99%", label: "Uptime" },
-            { value: "40%", label: "Cost Savings" },
-        ],
-        image: "/e-commerce-cloud-platform.jpg",
-        color: "#00D9FF",
-        href: "/case-studies/ecommerce-scaling",
-    },
-    {
-        id: "3",
-        title: "Healthcare AI Diagnostics",
-        institute: "Medical Research Institute",
-        category: "AI & Machine Learning",
-        description: "Developed AI-powered diagnostic system for early disease detection using deep learning models.",
-        stats: [
-            { value: "94%", label: "Accuracy Rate" },
-            { value: "70%", label: "Faster Diagnosis" },
-            { value: "50K+", label: "Patients Helped" },
-        ],
-        image: "/medical-ai.png",
-        color: "#7B3FEF",
-        href: "/case-studies/healthcare-ai",
-    },
-    {
-        id: "4",
-        title: "Smart Manufacturing IoT",
-        institute: "Industrial Manufacturing Corp",
-        category: "IoT Solutions",
-        description: "Implemented IoT sensors and predictive maintenance system across manufacturing facilities.",
-        stats: [
-            { value: "45%", label: "Downtime Reduction" },
-            { value: "$2M", label: "Annual Savings" },
-            { value: "85%", label: "Efficiency Gain" },
-        ],
-        image: "/smart-factory-iot.jpg",
-        color: "#00D9FF",
-        href: "/case-studies/smart-manufacturing",
-    },
-    {
-        id: "5",
-        title: "Cybersecurity Infrastructure",
-        institute: "Tech Startup Unicorn",
-        category: "Cybersecurity",
-        description: "Built comprehensive security infrastructure with threat detection and incident response systems.",
-        stats: [
-            { value: "100%", label: "Threat Prevention" },
-            { value: "24/7", label: "Monitoring" },
-            { value: "0", label: "Security Breaches" },
-        ],
-        image: "/cybersecurity-network.jpg",
-        color: "#7B3FEF",
-        href: "/case-studies/cybersecurity-infrastructure",
-    },
-    {
-        id: "6",
-        title: "Supply Chain Optimization",
-        institute: "Global Logistics Company",
-        category: "Data Engineering",
-        description: "Created real-time analytics platform for supply chain visibility and optimization.",
-        stats: [
-            { value: "35%", label: "Faster Delivery" },
-            { value: "25%", label: "Cost Reduction" },
-            { value: "100%", label: "Visibility" },
-        ],
-        image: "/supply-chain-analytics.jpg",
-        color: "#00D9FF",
-        href: "/case-studies/supply-chain-optimization",
-    },
-]
+const initialCaseStudies: CaseStudy[] = []
+const initialJobs: Job[] = []
 
-const initialJobs: Job[] = [
-    {
-        id: "1",
-        title: "Senior AI Engineer",
-        department: "Engineering",
-        location: "San Francisco, CA",
-        type: "Full-time",
-        description:
-            "Build cutting-edge AI solutions for enterprise clients using the latest machine learning technologies.",
-    },
-    {
-        id: "2",
-        title: "Cloud Solutions Architect",
-        department: "Engineering",
-        location: "Remote",
-        type: "Full-time",
-        description: "Design and implement scalable cloud architectures for Fortune 500 companies.",
-    },
-    {
-        id: "3",
-        title: "Cybersecurity Analyst",
-        department: "Security",
-        location: "New York, NY",
-        type: "Full-time",
-        description: "Protect our clients from evolving cyber threats with advanced security solutions.",
-    },
-    {
-        id: "4",
-        title: "Product Manager",
-        department: "Product",
-        location: "San Francisco, CA",
-        type: "Full-time",
-        description: "Lead product strategy and development for our enterprise software solutions.",
-    },
-    {
-        id: "5",
-        title: "UX/UI Designer",
-        department: "Design",
-        location: "Remote",
-        type: "Full-time",
-        description: "Create beautiful, intuitive user experiences for our technology platforms.",
-    },
-    {
-        id: "6",
-        title: "DevOps Engineer",
-        department: "Engineering",
-        location: "Austin, TX",
-        type: "Full-time",
-        description: "Build and maintain CI/CD pipelines and infrastructure automation.",
-    },
-]
 
 export function DataProvider({ children }: { children: React.ReactNode }) {
     const [services, setServices] = useState<Service[]>(initialServices)
@@ -246,100 +111,388 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
     const [caseStudies, setCaseStudies] = useState<CaseStudy[]>(initialCaseStudies)
     const [jobs, setJobs] = useState<Job[]>(initialJobs)
 
-        const API_BASE = "https://technoba.vercel.app/api/v1"
-  // 🔥 Fetch services from backend
+    // 🔥 Fetch services from backend
     useEffect(() => {
         const fetchServices = async () => {
             try {
-                const res = await fetch(`${API_BASE}/services`)
-                const data = await res.json()
-                if (data.success) {
-                    console.log(data.services);
-                    setServices(data.services)
+                const res = await servicesAPI.getAll()
+                if (res.success) {
+                    const mapped = res.services.map(s => ({
+                        _id: s._id,
+                        name_en: s.name_en,
+                        name_ar: s.name_ar,
+                        description_en: s.description_en,
+                        description_ar: s.description_ar,
+                        shortDescription_en: s.shortDescription_en,
+                        shortDescription_ar: s.shortDescription_ar,
+                        icon: s.icon,
+                        color: s.color,
+                        features: s.features.map(f => ({ feature_en: f.feature_en, feature_ar: f.feature_ar })),
+                        images: s.images.map(i => ({ imageLink: i.imageLink })),
+                        slug: s.slug
+                    }))
+                    setServices(mapped)
                 }
             } catch (err) {
                 console.error("Failed to fetch services:", err)
             }
         };
-        const fetchInsites = async () => {
+
+        const fetchInsights = async () => {
             try {
-                const res = await fetch(`${API_BASE}/blogs`)
-                const data = await res.json()
-              if (data.success && data.blogs) {
-                console.log(data.blogs);
-                
-                const mapped = data.blogs.map((blog: any) => ({
-                    _id: blog._id,
-                    
-                    title: blog.title?.en || "",
-                    titleAr: blog.title?.ar || "",
-
-                    description: blog.content?.en || "",
-                    descriptionAr: blog.content?.ar || "",
-
-                    author: blog.author?.en || "",
-                    authorAr: blog.author?.ar || "",
-
-                    category: blog.category?.en || "",
-                    categoryAr: blog.category?.ar || "",
-
-                    readTime: blog.readTime ? `${blog.readTime} min` : "0 min",
-
-                    date: blog.createdAt,
-                    createdAt: blog.createdAt,
-
-                    image: blog.images?.[0]?.imageLink || ""
-                }))
-
-                setInsights(mapped)
+                const res = await blogsAPI.getAll()
+                if (res.success) {
+                    const mapped = res.blogs.map((blog) => ({
+                        _id: blog._id,
+                        title: blog.title?.en || "",
+                        titleAr: blog.title?.ar || "",
+                        description: blog.content?.en || "",
+                        descriptionAr: blog.content?.ar || "",
+                        author: blog.author?.en || "",
+                        authorAr: blog.author?.ar || "",
+                        category: blog.category?.en || "",
+                        categoryAr: blog.category?.ar || "",
+                        readTime: blog.readTime ? `${blog.readTime} min` : "0 min",
+                        date: blog.createdAt,
+                        createdAt: blog.createdAt,
+                        image: blog.images?.[0]?.imageLink || "",
+                        color: "#7B3FEF", // Default color as it's not in API
+                        href: `/insights/${blog.slug || blog._id}`,
+                        iconName: "BookOpen" // Default icon
+                    }))
+                    setInsights(mapped)
                 }
             } catch (err) {
                 console.error("Failed to fetch blogs:", err)
             }
         }
 
-        fetchServices(),
-        fetchInsites()
+        const fetchCaseStudies = async () => {
+            try {
+                const res = await caseStudiesAPI.getAll()
+                if (res.success) {
+                    const mapped = res.caseStudies.map((study) => ({
+                        id: study._id,
+                        title: study.title_en || "",
+                        titleAr: study.title_ar || "",
+                        institute: study.institute_en || "",
+                        instituteAr: study.institute_ar || "",
+                        category: study.category_en || "",
+                        categoryAr: study.category_ar || "",
+                        description: study.description_en || "",
+                        descriptionAr: study.description_ar || "",
+                        status: study.status?.map((s) => ({
+                            value: s.value,
+                            label: s.label_en,
+                            labelAr: s.label_ar
+                        })) || [],
+                        image: study.images?.[0]?.imageLink || "",
+                        color: study.color || "#7B3FEF",
+                        href: `/case-studies/${study._id}`,
+                    }))
+                    setCaseStudies(mapped)
+                }
+            } catch (err) {
+                console.error("Failed to fetch case studies:", err)
+            }
+        }
+
+        fetchServices()
+        fetchInsights()
+        fetchCaseStudies()
     }, [])
 
-    const addService = (service: Omit<Service, "_id">) => {
-        setServices(prev => [...prev, { ...service, _id: crypto.randomUUID() }])
+    const addService = async (service: Omit<Service, "_id">, imageFile?: File) => {
+        try {
+            const apiData = {
+                name_en: service.name_en,
+                name_ar: service.name_ar,
+                description_en: service.description_en,
+                description_ar: service.description_ar,
+                shortDescription_en: service.shortDescription_en,
+                shortDescription_ar: service.shortDescription_ar,
+                icon: service.icon,
+                color: service.color,
+                features: service.features,
+                slug: service.slug
+            }
+            const res = await servicesAPI.create(apiData, imageFile)
+            if (res.success) {
+                // Use the complete service data from API response
+                const newService: Service = {
+                    _id: res.service._id,
+                    name_en: res.service.name_en,
+                    name_ar: res.service.name_ar,
+                    description_en: res.service.description_en,
+                    description_ar: res.service.description_ar,
+                    shortDescription_en: res.service.shortDescription_en,
+                    shortDescription_ar: res.service.shortDescription_ar,
+                    icon: res.service.icon,
+                    color: res.service.color,
+                    features: res.service.features,
+                    images: res.service.images,
+                    slug: res.service.slug
+                }
+                setServices(prev => [...prev, newService])
+                toast.success("Service created successfully")
+            }
+        } catch (err) {
+            console.error("Failed to create service:", err)
+            toast.error("Failed to create service")
+        }
     }
 
-    const updateService = (id: string, updated: Partial<Service>) => {
-        setServices(prev =>
-            prev.map(s => (s._id === id ? { ...s, ...updated } : s))
-        )
+    const updateService = async (id: string, updated: Partial<Service>, imageFile?: File) => {
+        try {
+            // Optimistic update
+            setServices(prev =>
+                prev.map(s => (s._id === id ? { ...s, ...updated } : s))
+            )
+
+            const apiData: any = {}
+            if (updated.name_en) apiData.name_en = updated.name_en
+            if (updated.name_ar) apiData.name_ar = updated.name_ar
+            if (updated.description_en) apiData.description_en = updated.description_en
+            if (updated.description_ar) apiData.description_ar = updated.description_ar
+            if (updated.shortDescription_en) apiData.shortDescription_en = updated.shortDescription_en
+            if (updated.shortDescription_ar) apiData.shortDescription_ar = updated.shortDescription_ar
+            if (updated.icon) apiData.icon = updated.icon
+            if (updated.color) apiData.color = updated.color
+            if (updated.features) apiData.features = updated.features
+            if (updated.slug) apiData.slug = updated.slug
+
+            const res = await servicesAPI.update(id, apiData, imageFile)
+
+            // Update with the actual response data
+            if (res.success) {
+                setServices(prev =>
+                    prev.map(s => s._id === id ? {
+                        _id: res.service._id,
+                        name_en: res.service.name_en,
+                        name_ar: res.service.name_ar,
+                        description_en: res.service.description_en,
+                        description_ar: res.service.description_ar,
+                        shortDescription_en: res.service.shortDescription_en,
+                        shortDescription_ar: res.service.shortDescription_ar,
+                        icon: res.service.icon,
+                        color: res.service.color,
+                        features: res.service.features,
+                        images: res.service.images,
+                        slug: res.service.slug
+                    } : s)
+                )
+            }
+
+            toast.success("Service updated successfully")
+        } catch (err) {
+            // Revert on error (would need deep clone or re-fetch to be perfect, but this is simple)
+            console.error("Failed to update service:", err)
+            toast.error("Failed to update service")
+            // Ideally re-fetch services here to ensure consistency
+        }
     }
 
-    const deleteService = (id: string) => {
-        setServices(prev => prev.filter(s => s._id !== id))
+    const deleteService = async (id: string) => {
+        try {
+            setServices(prev => prev.filter(s => s._id !== id))
+            await servicesAPI.delete(id)
+            toast.success("Service deleted successfully")
+        } catch (err) {
+            console.error("Failed to delete service:", err)
+            toast.error("Failed to delete service")
+            // Re-fetch or revert
+        }
     }
 
-    const addInsight = (insight: Omit<Insight, "id">) => {
-        const newInsight = { ...insight, id: Math.random().toString(36).substr(2, 9) }
-        setInsights([...insights, newInsight])
+    const addInsight = async (insight: Omit<Insight, "id">) => {
+        try {
+            const apiData: CreateBlogRequest = {
+                title: {
+                    en: insight.title,
+                    ar: insight.titleAr
+                },
+                content: {
+                    en: insight.description,
+                    ar: insight.descriptionAr
+                },
+                author: {
+                    en: insight.author,
+                    ar: insight.authorAr
+                },
+                category: {
+                    en: insight.category,
+                    ar: insight.categoryAr
+                },
+                readTime: parseInt(insight.readTime) || 5,
+                images: insight.image ? [{ imageLink: insight.image }] : []
+            }
+
+            const res = await blogsAPI.create(apiData)
+            if (res.success) {
+                const newInsight = {
+                    ...insight,
+                    _id: res.blog._id,
+                    date: res.blog.createdAt,
+                    createdAt: res.blog.createdAt
+                }
+                setInsights(prev => [...prev, newInsight])
+                toast.success("Insight created successfully")
+            }
+        } catch (err) {
+            console.error("Failed to create insight:", err)
+            toast.error("Failed to create insight")
+        }
     }
 
-    const updateInsight = (id: string, updatedInsight: Partial<Insight>) => {
-        setInsights(insights.map((i) => (i._id === id ? { ...i, ...updatedInsight } : i)))
+    const updateInsight = async (id: string, updatedInsight: Partial<Insight>) => {
+        try {
+            setInsights(insights.map((i) => (i._id === id ? { ...i, ...updatedInsight } : i)))
+
+            const apiData: any = {}
+            if (updatedInsight.title || updatedInsight.titleAr) {
+                apiData.title = {
+                    en: updatedInsight.title,
+                    ar: updatedInsight.titleAr
+                }
+            }
+            if (updatedInsight.description || updatedInsight.descriptionAr) {
+                apiData.content = {
+                    en: updatedInsight.description,
+                    ar: updatedInsight.descriptionAr
+                }
+            }
+            if (updatedInsight.author || updatedInsight.authorAr) {
+                apiData.author = {
+                    en: updatedInsight.author,
+                    ar: updatedInsight.authorAr
+                }
+            }
+            if (updatedInsight.category || updatedInsight.categoryAr) {
+                apiData.category = {
+                    en: updatedInsight.category,
+                    ar: updatedInsight.categoryAr
+                }
+            }
+            if (updatedInsight.image) apiData.images = [{ imageLink: updatedInsight.image }]
+
+            await blogsAPI.update(id, apiData)
+            toast.success("Insight updated successfully")
+        } catch (err) {
+            console.error("Failed to update insight:", err)
+            toast.error("Failed to update insight")
+        }
     }
 
-    const deleteInsight = (id: string) => {
-        setInsights(insights.filter((i) => i._id !== id))
+    const deleteInsight = async (id: string) => {
+        try {
+            setInsights(insights.filter((i) => i._id !== id))
+            await blogsAPI.delete(id)
+            toast.success("Insight deleted successfully")
+        } catch (err) {
+            console.error("Failed to delete insight:", err)
+            toast.error("Failed to delete insight")
+        }
     }
 
-    const addCaseStudy = (study: Omit<CaseStudy, "id">) => {
-        const newStudy = { ...study, id: Math.random().toString(36).substr(2, 9) }
-        setCaseStudies([...caseStudies, newStudy])
+    const addCaseStudy = async (study: Omit<CaseStudy, "id">) => {
+        try {
+            const apiData = {
+                title_en: study.title,
+                title_ar: study.titleAr,
+                institute_en: study.institute,
+                institute_ar: study.instituteAr,
+                category_en: study.category,
+                category_ar: study.categoryAr,
+                description_en: study.description,
+                description_ar: study.descriptionAr,
+                status: (study.status || []).map(s => ({
+                    value: s.value,
+                    label_en: s.label,
+                    label_ar: s.labelAr
+                })),
+                images: study.image ? [{ imageLink: study.image }] : [],
+                color: study.color || "#7B3FEF",
+            }
+
+            const response = await caseStudiesAPI.create(apiData)
+            if (response.success) {
+                const mapped = {
+                    id: response.caseStudy._id,
+                    title: response.caseStudy.title_en || "",
+                    titleAr: response.caseStudy.title_ar || "",
+                    institute: response.caseStudy.institute_en || "",
+                    instituteAr: response.caseStudy.institute_ar || "",
+                    category: response.caseStudy.category_en || "",
+                    categoryAr: response.caseStudy.category_ar || "",
+                    description: response.caseStudy.description_en || "",
+                    descriptionAr: response.caseStudy.description_ar || "",
+                    status: response.caseStudy.status?.map((s: { value: string; label_en: string; label_ar?: string }) => ({
+                        value: s.value,
+                        label: s.label_en,
+                        labelAr: s.label_ar
+                    })) || [],
+                    image: response.caseStudy.images?.[0]?.imageLink || "",
+                    color: response.caseStudy.color || "#7B3FEF",
+                    href: `/case-studies/${response.caseStudy._id}`,
+                }
+                setCaseStudies([...caseStudies, mapped])
+                toast.success("Case study created successfully")
+            }
+        } catch (err) {
+            console.error("Failed to create case study:", err)
+            toast.error("Failed to create case study")
+            throw err
+        }
     }
 
-    const updateCaseStudy = (id: string, updatedStudy: Partial<CaseStudy>) => {
-        setCaseStudies(caseStudies.map((s) => (s.id === id ? { ...s, ...updatedStudy } : s)))
+    const updateCaseStudy = async (id: string, updatedStudy: Partial<CaseStudy>) => {
+        try {
+            // Optimistic update
+            setCaseStudies(caseStudies.map((s) => (s.id === id ? { ...s, ...updatedStudy } : s)))
+
+            const apiData: any = {}
+            if (updatedStudy.title) apiData.title_en = updatedStudy.title
+            if (updatedStudy.titleAr) apiData.title_ar = updatedStudy.titleAr
+            if (updatedStudy.institute) apiData.institute_en = updatedStudy.institute
+            if (updatedStudy.instituteAr) apiData.institute_ar = updatedStudy.instituteAr
+            if (updatedStudy.category) apiData.category_en = updatedStudy.category
+            if (updatedStudy.categoryAr) apiData.category_ar = updatedStudy.categoryAr
+            if (updatedStudy.description) apiData.description_en = updatedStudy.description
+            if (updatedStudy.descriptionAr) apiData.description_ar = updatedStudy.descriptionAr
+            if (updatedStudy.image) apiData.images = [{ imageLink: updatedStudy.image }]
+            if (updatedStudy.color) apiData.color = updatedStudy.color
+            if (updatedStudy.status) {
+                apiData.status = updatedStudy.status.map(s => ({
+                    value: s.value,
+                    label_en: s.label,
+                    label_ar: s.labelAr
+                }))
+            }
+
+            await caseStudiesAPI.update(id, apiData)
+            toast.success("Case study updated successfully")
+        } catch (err) {
+            // Revert on error
+            setCaseStudies(caseStudies)
+            console.error("Failed to update case study:", err)
+            toast.error("Failed to update case study")
+            throw err
+        }
     }
 
-    const deleteCaseStudy = (id: string) => {
-        setCaseStudies(caseStudies.filter((s) => s.id !== id))
+    const deleteCaseStudy = async (id: string) => {
+        try {
+            // Optimistic delete
+            setCaseStudies(caseStudies.filter((s) => s.id !== id))
+            await caseStudiesAPI.delete(id)
+            toast.success("Case study deleted successfully")
+        } catch (err) {
+            // Revert on error
+            setCaseStudies(caseStudies)
+            console.error("Failed to delete case study:", err)
+            toast.error("Failed to delete case study")
+            throw err
+        }
     }
 
     const addJob = (job: Omit<Job, "id">) => {
@@ -388,3 +541,8 @@ export function useData() {
     }
     return context
 }
+
+
+
+
+

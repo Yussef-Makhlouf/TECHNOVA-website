@@ -30,12 +30,14 @@ import { useRouter, usePathname } from "next/navigation"
 import { logout } from "@/app/login/actions"
 import { Logo } from "@/components/ui/logo"
 import { useTheme } from "next-themes"
+import { useSidebar } from "@/components/ui/sidebar"
 
 export function AppSidebar() {
     const pathname = usePathname()
     const router = useRouter()
     const { theme, setTheme } = useTheme()
     const [mounted, setMounted] = useState(false)
+    const { state } = useSidebar()
 
     useEffect(() => {
         setMounted(true)
@@ -73,16 +75,26 @@ export function AppSidebar() {
             icon: Users,
         },
         {
-            title: "Create User",
-            url: "/dashboard/users/create",
+            title: "Users",
+            url: "/dashboard/users",
             icon: Users,
         },
     ]
 
     return (
-        <Sidebar collapsible="icon">
+        <Sidebar collapsible="icon" className="border-r border-border/50">
             <SidebarHeader className="border-b border-border/50 p-4">
-                <Logo size="md" />
+                {state === "collapsed" ? (
+                    <div className="flex items-center justify-center">
+                        <img
+                            src="/logos/logo-12.svg"
+                            alt="TECHNOVA"
+                            className="w-8 h-8 transition-transform hover:scale-110"
+                        />
+                    </div>
+                ) : (
+                    <Logo size="md" />
+                )}
             </SidebarHeader>
             <SidebarContent>
                 <SidebarGroup>
@@ -95,9 +107,10 @@ export function AppSidebar() {
                                         asChild
                                         isActive={pathname === item.url || pathname.startsWith(`${item.url}/`)}
                                         tooltip={item.title}
+                                        className="transition-all duration-200"
                                     >
                                         <Link href={item.url}>
-                                            <item.icon />
+                                            <item.icon className="shrink-0" />
                                             <span>{item.title}</span>
                                         </Link>
                                     </SidebarMenuButton>
