@@ -35,15 +35,21 @@ export default function InsightsDashboardPage() {
     const [isPending, startTransition] = useTransition()
     const [selectedInsights, setSelectedInsights] = useState<string[]>([])
 
-    const handleDelete = (id: string) => {
-        deleteInsight(id)
-        toast.success("Insight deleted successfully")
+    const handleDelete = async (id: string) => {
+        try {
+            await deleteInsight(id)
+        } catch (error) {
+            // Error already handled by data context
+        }
     }
 
-    const handleBulkDelete = () => {
-        selectedInsights.forEach(id => deleteInsight(id))
-        setSelectedInsights([])
-        toast.success(`${selectedInsights.length} insight(s) deleted successfully`)
+    const handleBulkDelete = async () => {
+        try {
+            await Promise.all(selectedInsights.map(id => deleteInsight(id)))
+            setSelectedInsights([])
+        } catch (error) {
+            // Errors already handled by data context
+        }
     }
 
     const handleToggleLanguage = () => {

@@ -42,7 +42,7 @@ const formSchema = z.object({
         message: "Image is required.",
     }),
     color: z.string().optional(),
-    stats: z.array(
+    status: z.array(
         z.object({
             value: z.string().min(1, "Value is required"),
             label: z.string().min(1, "Label is required"),
@@ -74,13 +74,13 @@ export function CaseStudyForm({ initialData, isEditing = false }: CaseStudyFormP
             // Default values for hidden fields
             color: initialData?.color || "#7B3FEF",
             image: initialData?.image || "",
-            stats: initialData?.stats || [{ value: "", label: "", labelAr: "" }],
+            status: initialData?.status || [{ value: "", label: "", labelAr: "" }],
         },
     })
 
     const { fields, append, remove } = useFieldArray({
         control: form.control,
-        name: "stats",
+        name: "status",
     })
 
     const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -293,7 +293,7 @@ export function CaseStudyForm({ initialData, isEditing = false }: CaseStudyFormP
                             <div className="flex gap-4 items-start">
                                 <FormField
                                     control={form.control}
-                                    name={`stats.${index}.value`}
+                                    name={`status.${index}.value`}
                                     render={({ field }) => (
                                         <FormItem className="flex-1">
                                             <FormLabel className="text-xs">Value</FormLabel>
@@ -318,7 +318,7 @@ export function CaseStudyForm({ initialData, isEditing = false }: CaseStudyFormP
                             <div className="grid grid-cols-2 gap-4">
                                 <FormField
                                     control={form.control}
-                                    name={`stats.${index}.label`}
+                                    name={`status.${index}.label`}
                                     render={({ field }) => (
                                         <FormItem>
                                             <FormLabel className="text-xs">Label (English)</FormLabel>
@@ -331,7 +331,7 @@ export function CaseStudyForm({ initialData, isEditing = false }: CaseStudyFormP
                                 />
                                 <FormField
                                     control={form.control}
-                                    name={`stats.${index}.labelAr`}
+                                    name={`status.${index}.labelAr`}
                                     render={({ field }) => (
                                         <FormItem>
                                             <FormLabel className="text-xs">Label (Arabic)</FormLabel>
@@ -345,7 +345,7 @@ export function CaseStudyForm({ initialData, isEditing = false }: CaseStudyFormP
                             </div>
                         </div>
                     ))}
-                    <FormMessage>{form.formState.errors.stats?.root?.message}</FormMessage>
+                    <FormMessage>{form.formState.errors.status?.root?.message}</FormMessage>
                 </div>
 
                 <Button type="submit">{isEditing ? "Update Case Study" : "Create Case Study"}</Button>
@@ -353,3 +353,4 @@ export function CaseStudyForm({ initialData, isEditing = false }: CaseStudyFormP
         </Form>
     )
 }
+

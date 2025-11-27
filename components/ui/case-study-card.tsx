@@ -13,7 +13,7 @@ interface CaseStudy {
   title: string
   institute: string
   description: string
-  stats: Stat[]
+  status: Stat[]
   image: string
   category: string
   href: string
@@ -65,7 +65,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ study, index }) =>
         <p className="text-muted-foreground mb-6 leading-relaxed">{study.description}</p>
 
         <div className="grid grid-cols-3 gap-4 mb-6 text-center">
-          {study.stats.map((stat, i) => (
+          {study.status?.map((stat, i) => (
             <div key={i}>
               <p className="font-heading text-2xl font-bold" style={{ color: 'var(--accent-color)' }}>
                 {stat.value}

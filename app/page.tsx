@@ -1,6 +1,7 @@
 "use client"
 
 import Navigation from "@/components/navigation"
+import { useData } from "@/lib/data-context"
 
 import { Hero } from "@/components/hero"
 import Link from "next/link"
@@ -119,50 +120,8 @@ export default function HomePage() {
     },
   ]
 
-  const caseStudies = [
-    {
-      title: "Healthcare AI Diagnostics",
-      institute: "Medical Research Institute",
-      description: "Developed an AI-powered diagnostic system for early disease detection using deep learning models.",
-      stats: [
-        { value: "94%", label: "Accuracy Rate" },
-        { value: "70%", label: "Faster Diagnosis" },
-        { value: "50K+", label: "Patients Helped" },
-      ],
-      image: "/ai-analytics-dashboard.png",
-      category: "AI & Machine Learning",
-      href: "/case-studies/healthcare-ai",
-      color: "#7B3FEF",
-    },
-    {
-      title: "Smart Manufacturing IoT",
-      institute: "Industrial Manufacturing Corp",
-      description: "Implemented IoT sensors and a predictive maintenance system across manufacturing facilities.",
-      stats: [
-        { value: "45%", label: "Downtime Reduction" },
-        { value: "$2M", label: "Annual Savings" },
-        { value: "85%", label: "Efficiency Gain" },
-      ],
-      image: "/neon-ecommerce-website.jpg",
-      category: "IoT Solutions",
-      href: "/case-studies/smart-manufacturing",
-      color: "#00D9FF",
-    },
-    {
-      title: "FinTech Revolution",
-      institute: "Global Bank Inc.",
-      description: "Engineered a secure, scalable, and high-performance trading platform, increasing transaction speed by 300%.",
-      stats: [
-        { value: "300%", label: "Faster Transactions" },
-        { value: "99.9%", label: "Uptime" },
-        { value: "10M+", label: "Daily Transactions" },
-      ],
-      image: "/fintech-dashboard-ui.jpg",
-      category: "Financial Technology",
-      href: "/case-studies/fintech-revolution",
-      color: "#7B3FEF",
-    },
-  ]
+  const { caseStudies } = useData()
+  const displayedCaseStudies = caseStudies.slice(0, 3)
 
   return (
     <div className="min-h-screen relative">
@@ -416,7 +375,7 @@ export default function HomePage() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
-          {caseStudies.map((study, index) => (
+          {displayedCaseStudies.map((study, index) => (
             <CaseStudyCard key={index} study={study} index={index} />
           ))}
         </div>
