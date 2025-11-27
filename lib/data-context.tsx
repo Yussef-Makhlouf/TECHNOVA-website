@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react"
 import { Brain, Cloud, Shield, Sparkles, Database, Code, Cpu, Network, TrendingUp, Lightbulb, BookOpen } from "lucide-react"
-import { caseStudiesAPI, servicesAPI, blogsAPI } from "./api-service"
+import { caseStudiesAPI, servicesAPI, blogsAPI,jobsAPI } from "./api-service"
 import { CreateBlogRequest } from "./api-types"
 import { toast } from "sonner"
 
@@ -57,11 +57,13 @@ export type CaseStudy = {
     descriptionAr?: string
     status: { value: string; label: string; labelAr?: string }[]
     image: string
+    imageFile?: File | null // file on frontend only
     color: string
     href: string
+    
 }
 
-export type Job = {
+export type Careers = {
     id: string
     title: string
     titleAr?: string
@@ -79,7 +81,7 @@ type DataContextType = {
     services: Service[]
     insights: Insight[]
     caseStudies: CaseStudy[]
-    jobs: Job[]
+    jobs: Careers[]
     addService: (service: Omit<Service, "id">, imageFile?: File) => void
     updateService: (id: string, service: Partial<Service>, imageFile?: File) => void
     deleteService: (id: string) => void
@@ -89,8 +91,8 @@ type DataContextType = {
     addCaseStudy: (study: Omit<CaseStudy, "id">) => void
     updateCaseStudy: (id: string, study: Partial<CaseStudy>) => void
     deleteCaseStudy: (id: string) => void
-    addJob: (job: Omit<Job, "id">) => void
-    updateJob: (id: string, job: Partial<Job>) => void
+    addJob: (job: Omit<Careers, "id">) => void
+    updateJob: (id: string, job: Partial<Careers>) => void
     deleteJob: (id: string) => void
 }
 
@@ -102,14 +104,14 @@ const initialServices: Service[] = []
 const initialInsights: Insight[] = []
 
 const initialCaseStudies: CaseStudy[] = []
-const initialJobs: Job[] = []
+const initialJobs: Careers[] = []
 
 
 export function DataProvider({ children }: { children: React.ReactNode }) {
     const [services, setServices] = useState<Service[]>(initialServices)
     const [insights, setInsights] = useState<Insight[]>(initialInsights)
     const [caseStudies, setCaseStudies] = useState<CaseStudy[]>(initialCaseStudies)
-    const [jobs, setJobs] = useState<Job[]>(initialJobs)
+    const [jobs, setJobs] = useState<Careers[]>(initialJobs)
 
     // 🔥 Fetch services from backend
     useEffect(() => {
@@ -137,7 +139,7 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
                 console.error("Failed to fetch services:", err)
             }
         };
-
+        
         const fetchInsights = async () => {
             try {
                 const res = await blogsAPI.getAll()
@@ -197,9 +199,36 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
             }
         }
 
+        const fetchCareers = async () => {
+            try {
+                const res = await jobsAPI.getAll()
+                    
+                if (res.careers) {
+                    const mapped = res.careers.map(c => ({
+                        id: c._id,
+                        title: c.title_en,
+                        titleAr: c.title_ar,
+                        department: c.department_en,
+                        departmentAr: c.department_ar,
+                        location: c.location_en,
+                        locationAr: c.location_ar,
+                        type: c.type_en,
+                        typeAr: c.type_ar,
+                        description: c.description_en,
+                        descriptionAr: c.description_ar,
+                    }))
+                    setJobs(mapped)
+                }
+            } catch (err) {
+                console.error("Failed to fetch careers:", err)
+            }
+        }
+
+
         fetchServices()
         fetchInsights()
         fetchCaseStudies()
+        fetchCareers()
     }, [])
 
     const addService = async (service: Omit<Service, "_id">, imageFile?: File) => {
@@ -394,91 +423,103 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
         }
     }
 
-    const addCaseStudy = async (study: Omit<CaseStudy, "id">) => {
-        try {
-            const apiData = {
-                title_en: study.title,
-                title_ar: study.titleAr,
-                institute_en: study.institute,
-                institute_ar: study.instituteAr,
-                category_en: study.category,
-                category_ar: study.categoryAr,
-                description_en: study.description,
-                description_ar: study.descriptionAr,
-                status: (study.status || []).map(s => ({
-                    value: s.value,
-                    label_en: s.label,
-                    label_ar: s.labelAr
-                })),
-                images: study.image ? [{ imageLink: study.image }] : [],
-                color: study.color || "#7B3FEF",
-            }
-
-            const response = await caseStudiesAPI.create(apiData)
-            if (response.success) {
-                const mapped = {
-                    id: response.caseStudy._id,
-                    title: response.caseStudy.title_en || "",
-                    titleAr: response.caseStudy.title_ar || "",
-                    institute: response.caseStudy.institute_en || "",
-                    instituteAr: response.caseStudy.institute_ar || "",
-                    category: response.caseStudy.category_en || "",
-                    categoryAr: response.caseStudy.category_ar || "",
-                    description: response.caseStudy.description_en || "",
-                    descriptionAr: response.caseStudy.description_ar || "",
-                    status: response.caseStudy.status?.map((s: { value: string; label_en: string; label_ar?: string }) => ({
-                        value: s.value,
-                        label: s.label_en,
-                        labelAr: s.label_ar
-                    })) || [],
-                    image: response.caseStudy.images?.[0]?.imageLink || "",
-                    color: response.caseStudy.color || "#7B3FEF",
-                    href: `/case-studies/${response.caseStudy._id}`,
-                }
-                setCaseStudies([...caseStudies, mapped])
-                toast.success("Case study created successfully")
-            }
-        } catch (err) {
-            console.error("Failed to create case study:", err)
-            toast.error("Failed to create case study")
-            throw err
+const addCaseStudy = async (study: Omit<CaseStudy, "id">) => {
+    try {
+        const apiData = {
+            title_en: study.title,
+            title_ar: study.titleAr,
+            institute_en: study.institute,
+            institute_ar: study.instituteAr,
+            category_en: study.category,
+            category_ar: study.categoryAr,
+            description_en: study.description,
+            description_ar: study.descriptionAr,
+            status: (study.status || []).map(s => ({
+                value: s.value,
+                label_en: s.label,
+                label_ar: s.labelAr
+            })),
+            images: study.image ? [{ imageLink: study.image }] : [],
+            color: study.color || "#7B3FEF",
         }
-    }
 
-    const updateCaseStudy = async (id: string, updatedStudy: Partial<CaseStudy>) => {
-        try {
-            // Optimistic update
-            setCaseStudies(caseStudies.map((s) => (s.id === id ? { ...s, ...updatedStudy } : s)))
+        const response = await caseStudiesAPI.create(apiData)
 
-            const apiData: any = {}
-            if (updatedStudy.title) apiData.title_en = updatedStudy.title
-            if (updatedStudy.titleAr) apiData.title_ar = updatedStudy.titleAr
-            if (updatedStudy.institute) apiData.institute_en = updatedStudy.institute
-            if (updatedStudy.instituteAr) apiData.institute_ar = updatedStudy.instituteAr
-            if (updatedStudy.category) apiData.category_en = updatedStudy.category
-            if (updatedStudy.categoryAr) apiData.category_ar = updatedStudy.categoryAr
-            if (updatedStudy.description) apiData.description_en = updatedStudy.description
-            if (updatedStudy.descriptionAr) apiData.description_ar = updatedStudy.descriptionAr
-            if (updatedStudy.image) apiData.images = [{ imageLink: updatedStudy.image }]
-            if (updatedStudy.color) apiData.color = updatedStudy.color
-            if (updatedStudy.status) {
-                apiData.status = updatedStudy.status.map(s => ({
+        if (response.success) {
+
+            const mapped: CaseStudy = {
+                id: response.caseStudy._id,
+                title: response.caseStudy.title_en || "",
+                titleAr: response.caseStudy.title_ar || "",
+                institute: response.caseStudy.institute_en || "",
+                instituteAr: response.caseStudy.institute_ar || "",
+                category: response.caseStudy.category_en || "",
+                categoryAr: response.caseStudy.category_ar || "",
+                description: response.caseStudy.description_en || "",
+                descriptionAr: response.caseStudy.description_ar || "",
+                status: response.caseStudy.status?.map((s: any) => ({
                     value: s.value,
-                    label_en: s.label,
-                    label_ar: s.labelAr
-                }))
+                    label: s.label_en,
+                    labelAr: s.label_ar
+                })) || [],
+                image: response.caseStudy.images?.[0]?.imageLink || "",
+                imageFile: null,
+                color: response.caseStudy.color || "#7B3FEF",
+                href: `/case-studies/${response.caseStudy._id}`,
             }
 
-            await caseStudiesAPI.update(id, apiData)
-            toast.success("Case study updated successfully")
-        } catch (err) {
-            // Revert on error
-            setCaseStudies(caseStudies)
-            console.error("Failed to update case study:", err)
-            toast.error("Failed to update case study")
-            throw err
+            setCaseStudies([...caseStudies, mapped])
+            toast.success("Case study created successfully")
         }
+    } catch (err) {
+        console.error("Failed to create case study:", err)
+        toast.error("Failed to create case study")
+        throw err
     }
+}
+
+
+const updateCaseStudy = async (id: string, updatedStudy: Partial<CaseStudy>) => {
+    try {
+        // Optimistic update
+        setCaseStudies(caseStudies.map((s) => (s.id === id ? { ...s, ...updatedStudy } : s)))
+
+        const apiData: any = {}
+
+        if (updatedStudy.title) apiData.title_en = updatedStudy.title
+        if (updatedStudy.titleAr) apiData.title_ar = updatedStudy.titleAr
+        if (updatedStudy.institute) apiData.institute_en = updatedStudy.institute
+        if (updatedStudy.instituteAr) apiData.institute_ar = updatedStudy.instituteAr
+        if (updatedStudy.category) apiData.category_en = updatedStudy.category
+        if (updatedStudy.categoryAr) apiData.category_ar = updatedStudy.categoryAr
+        if (updatedStudy.description) apiData.description_en = updatedStudy.description
+        if (updatedStudy.descriptionAr) apiData.description_ar = updatedStudy.descriptionAr
+
+        // image: correctly map
+        if (updatedStudy.image) {
+            apiData.images = [{ imageLink: updatedStudy.image }]
+        }
+
+        if (updatedStudy.color) apiData.color = updatedStudy.color
+
+        if (updatedStudy.status) {
+            apiData.status = updatedStudy.status.map(s => ({
+                value: s.value,
+                label_en: s.label,
+                label_ar: s.labelAr
+            }))
+        }
+
+        await caseStudiesAPI.update(id, apiData)
+        toast.success("Case study updated successfully")
+    } catch (err) {
+        setCaseStudies(caseStudies)
+        console.error("Failed to update case study:", err)
+        toast.error("Failed to update case study")
+        throw err
+    }
+}
+
 
     const deleteCaseStudy = async (id: string) => {
         try {
@@ -495,17 +536,29 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
         }
     }
 
-    const addJob = (job: Omit<Job, "id">) => {
-        const newJob = { ...job, id: Math.random().toString(36).substr(2, 9) }
-        setJobs([...jobs, newJob])
-    }
+async function addJob(job: any) {
+    const res = await fetch("/api/careers", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(job),
+    })
 
-    const updateJob = (id: string, updatedJob: Partial<Job>) => {
+    const data = await res.json()
+
+    if (!res.ok) throw new Error(data.message || "Failed to create job")
+
+    setJobs(prev => [...prev, data.career])
+}
+
+
+    const updateJob = (id: string, updatedJob: Partial<Careers>) => {
         setJobs(jobs.map((j) => (j.id === id ? { ...j, ...updatedJob } : j)))
     }
 
-    const deleteJob = (id: string) => {
-        setJobs(jobs.filter((j) => j.id !== id))
+    async function deleteJob(id: string) {
+    const res = await jobsAPI.delete(id)
+    if (!res || res.success === false) throw new Error(res?.message || "Delete failed")
+    setJobs(prev => prev.filter(j => j.id !== id))
     }
 
     return (

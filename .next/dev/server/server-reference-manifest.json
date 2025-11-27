@@ -1,19 +1,97 @@
 {
   "node": {
-    "4021114db1399508535f143c354a2a006dca8de014": {
+    "002c4b060b864d8795d04171f64e80b34e71f0ab96": {
       "workers": {
-        "app/login/page": {
-          "moduleId": "[project]/.next-internal/server/app/login/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+        "app/dashboard/careers/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/careers/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
-          "exportedName": "login",
+          "exportedName": "logout",
+          "filename": "app/login/actions.ts"
+        },
+        "app/dashboard/careers/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/careers/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logout",
+          "filename": "app/login/actions.ts"
+        },
+        "app/dashboard/careers/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/careers/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logout",
+          "filename": "app/login/actions.ts"
+        },
+        "app/dashboard/case-studies/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/case-studies/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logout",
+          "filename": "app/login/actions.ts"
+        },
+        "app/dashboard/case-studies/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/case-studies/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logout",
+          "filename": "app/login/actions.ts"
+        },
+        "app/dashboard/case-studies/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/case-studies/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logout",
+          "filename": "app/login/actions.ts"
+        },
+        "app/dashboard/insights/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/insights/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logout",
+          "filename": "app/login/actions.ts"
+        },
+        "app/dashboard/services/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/services/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logout",
+          "filename": "app/login/actions.ts"
+        },
+        "app/dashboard/users/create/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/users/create/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/dashboard/users/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logout",
+          "filename": "app/login/actions.ts"
+        },
+        "app/dashboard/users/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/users/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logout",
           "filename": "app/login/actions.ts"
         }
       },
       "layer": {
-        "app/login/page": "action-browser"
+        "app/dashboard/careers/[id]/page": "action-browser",
+        "app/dashboard/careers/new/page": "action-browser",
+        "app/dashboard/careers/page": "action-browser",
+        "app/dashboard/case-studies/[id]/page": "action-browser",
+        "app/dashboard/case-studies/new/page": "action-browser",
+        "app/dashboard/case-studies/page": "action-browser",
+        "app/dashboard/insights/page": "action-browser",
+        "app/dashboard/services/page": "action-browser",
+        "app/dashboard/users/create/page": "action-browser",
+        "app/dashboard/users/page": "action-browser"
       },
       "filename": "app/login/actions.ts",
-      "exportedName": "login"
+      "exportedName": "logout"
+    },
+    "402aa277dc064db20369b668650b719f41108d6177": {
+      "workers": {
+        "app/dashboard/users/create/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/users/create/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/dashboard/users/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createUser",
+          "filename": "app/dashboard/users/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/users/create/page": "action-browser"
+      },
+      "filename": "app/dashboard/users/actions.ts",
+      "exportedName": "createUser"
     }
   },
   "edge": {},

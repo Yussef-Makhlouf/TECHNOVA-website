@@ -15,9 +15,11 @@ interface CaseStudy {
   description: string
   status: Stat[]
   image: string
+  images: string
   category: string
   href: string
   color: string
+
 }
 
 interface CaseStudyCardProps {

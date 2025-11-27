@@ -22,10 +22,11 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
-import { useData, Job } from "@/lib/data-context"
+import { useData, Careers } from "@/lib/data-context"
 import { useRouter } from "next/navigation"
 import { toast } from "sonner"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { jobsAPI } from "@/lib/api-service"
 
 const formSchema = z.object({
     title: z.string().min(2, {
@@ -51,12 +52,11 @@ const formSchema = z.object({
 })
 
 interface JobFormProps {
-    initialData?: Job
+    initialData?: Careers
     isEditing?: boolean
 }
 
 export function JobForm({ initialData, isEditing = false }: JobFormProps) {
-    const { addJob, updateJob } = useData()
     const router = useRouter()
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -75,18 +75,39 @@ export function JobForm({ initialData, isEditing = false }: JobFormProps) {
         },
     })
 
-    function onSubmit(values: z.infer<typeof formSchema>) {
+   async function onSubmit(values: z.infer<typeof formSchema>) {
+    const payload = {
+        title_en: values.title,
+        title_ar: values.titleAr,
+        department_en: values.department,
+        department_ar: values.departmentAr,
+        location_en: values.location,
+        location_ar: values.locationAr,
+        type_en: values.type,
+        type_ar: values.typeAr,
+        description_en: values.description,
+        description_ar: values.descriptionAr,
+    }
+
+    try {
         if (isEditing && initialData) {
-            updateJob(initialData.id, values)
+            await jobsAPI.update(initialData.id, payload)
             toast.success("Job updated successfully")
+            router.push("/dashboard/careers")
+            router.refresh()
         } else {
-            addJob(values)
+            await jobsAPI.create(payload)
             toast.success("Job created successfully")
         }
 
-        router.push("/dashboard/careers")
-        router.refresh()
+    
+    } catch (err) {
+        toast.error("Failed to save job")
+        console.error(err)
     }
+}
+
+
 
     return (
         <Form {...form}>

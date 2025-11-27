@@ -22,7 +22,8 @@ import {
     APIError
 } from "./api-errors"
 
-const API_BASE_URL = "https://technoba.vercel.app/api/v1"
+const API_BASE_URL = "http://localhost:8080/api/v1"
+// const API_BASE_URL = "https://technoba.vercel.app/api/v1"
 const TOKEN_KEY = "technova_auth_token"
 
 /**
@@ -408,24 +409,24 @@ export const caseStudiesAPI = {
  * Jobs API
  */
 export const jobsAPI = {
-    getAll: async (): Promise<{ success: boolean; jobs: JobAPI[] }> => {
-        return apiClient.get("/jobs")
+    getAll: async (): Promise<{ success: boolean; careers: JobAPI[] }> => {
+        return apiClient.get("/career")
     },
 
-    getById: async (id: string): Promise<{ success: boolean; job: JobAPI }> => {
-        return apiClient.get(`/jobs/${id}`)
+    getById: async (id: string): Promise<{ success: boolean; careers: JobAPI }> => {
+        return apiClient.get(`/career/${id}`)
     },
 
-    create: async (data: CreateJobRequest): Promise<{ success: boolean; job: JobAPI }> => {
-        return apiClient.post("/jobs", data)
+    create: async (data: CreateJobRequest): Promise<{ success: boolean; careers: JobAPI }> => {
+        return apiClient.post("/career", data)
     },
 
-    update: async (id: string, data: UpdateJobRequest): Promise<{ success: boolean; job: JobAPI }> => {
-        return apiClient.put(`/jobs/${id}`, data)
+    update: async (id: string, data: UpdateJobRequest): Promise<{ success: boolean; careers: JobAPI }> => {
+        return apiClient.put(`/career/${id}`, data)
     },
 
     delete: async (id: string): Promise<{ success: boolean; message: string }> => {
-        return apiClient.delete(`/jobs/${id}`)
+        return apiClient.delete(`/career/${id}`)
     },
 }
 

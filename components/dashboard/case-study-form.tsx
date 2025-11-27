@@ -37,10 +37,13 @@ const formSchema = z.object({
     description: z.string().min(10, {
         message: "Description must be at least 10 characters.",
     }),
+    imageFile: z.any().optional(),
+
     descriptionAr: z.string().optional(),
     image: z.string().min(1, {
         message: "Image is required.",
     }),
+    
     color: z.string().optional(),
     status: z.array(
         z.object({
@@ -71,9 +74,8 @@ export function CaseStudyForm({ initialData, isEditing = false }: CaseStudyFormP
             categoryAr: initialData?.categoryAr || "",
             description: initialData?.description || "",
             descriptionAr: initialData?.descriptionAr || "",
-            // Default values for hidden fields
+            image: initialData?.image || "",            // Default values for hidden fields
             color: initialData?.color || "#7B3FEF",
-            image: initialData?.image || "",
             status: initialData?.status || [{ value: "", label: "", labelAr: "" }],
         },
     })
@@ -91,24 +93,46 @@ export function CaseStudyForm({ initialData, isEditing = false }: CaseStudyFormP
         }
     }
 
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        const caseStudyData = {
-            ...values,
-            color: values.color || "#7B3FEF",
-            href: initialData?.href || `/case-studies/${values.title.toLowerCase().replace(/\s+/g, "-")}`,
-        }
+async function onSubmit(values: z.infer<typeof formSchema>) {
+    const formData = new FormData()
 
-        if (isEditing && initialData) {
-            updateCaseStudy(initialData.id, caseStudyData)
-            toast.success("Case Study updated successfully")
-        } else {
-            addCaseStudy(caseStudyData)
-            toast.success("Case Study created successfully")
-        }
+    formData.append("title_en", values.title)
+    formData.append("title_ar", values.titleAr || "")
+    formData.append("institute_en", values.institute)
+    formData.append("institute_ar", values.instituteAr || "")
+    formData.append("category_en", values.category)
+    formData.append("category_ar", values.categoryAr || "")
+    formData.append("description_en", values.description)
+    formData.append("description_ar", values.descriptionAr || "")
+    formData.append("color", values.color || "#7B3FEF")
 
-        router.push("/dashboard/case-studies")
-        router.refresh()
+    // ⭐ FIX: send file — NOT preview URL
+if (values.imageFile) {
+    formData.append("images", values.imageFile);
+}
+
+    // ⭐ FIX: send status array properly
+    values.status.forEach((s, i) => {
+        formData.append(`status[${i}][value]`, s.value)
+        formData.append(`status[${i}][label_en]`, s.label)
+        formData.append(`status[${i}][label_ar]`, s.labelAr || "")
+    })
+
+    const res = await fetch("http://localhost:8080/api/v1/case_study/add", {
+        method: "POST",
+        body: formData
+    })
+
+    const data = await res.json()
+
+    if (!res.ok) {
+        toast.error(data.message || "Failed")
+        return
     }
+
+    toast.success("Case Study created successfully")
+    router.push("/dashboard/case-studies")
+}
 
     return (
         <Form {...form}>
@@ -240,40 +264,58 @@ export function CaseStudyForm({ initialData, isEditing = false }: CaseStudyFormP
 
                 {/* Hidden fields for color */}
                 <input type="hidden" {...form.register("color")} />
+<FormField
+    control={form.control}
+    name="image"
+    render={({ field }) => (
+        <FormItem>
+            <FormLabel>Case Study Image</FormLabel>
+            <FormControl>
+                <div className="space-y-4">
 
-                <FormField
-                    control={form.control}
-                    name="image"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Case Study Image</FormLabel>
-                            <FormControl>
-                                <div className="space-y-4">
-                                    <Input
-                                        type="file"
-                                        accept="image/*"
-                                        onChange={handleImageUpload}
-                                    />
-                                    {field.value && (
-                                        <div className="relative w-full h-48 rounded-lg overflow-hidden border">
-                                            <img
-                                                src={field.value}
-                                                alt="Preview"
-                                                className="object-cover w-full h-full"
-                                            />
-                                        </div>
-                                    )}
-                                    {/* Hidden input to store the URL */}
-                                    <input type="hidden" {...field} />
-                                </div>
-                            </FormControl>
-                            <FormDescription>
-                                Upload a cover image for the case study.
-                            </FormDescription>
-                            <FormMessage />
-                        </FormItem>
+                    {/* File input - NEVER controlled */}
+             <Input
+    type="file"
+    accept="image/*"
+    onChange={(e) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+
+        // Store file (for API upload)
+        form.setValue("imageFile", file);
+
+        // Show preview
+        const reader = new FileReader();
+        reader.onload = () => {
+            form.setValue("image", reader.result as string);
+        }
+        reader.readAsDataURL(file);
+    }}
+/>
+
+
+                    {/* Preview */}
+                    {field.value && (
+                        <div className="relative w-full h-48 rounded-lg overflow-hidden border">
+                            <img
+                                src={field.value}
+                                alt="Preview"
+                                className="object-cover w-full h-full"
+                            />
+                        </div>
                     )}
-                />
+
+                </div>
+            </FormControl>
+
+            <FormDescription>
+                Upload a cover image for the case study.
+            </FormDescription>
+            <FormMessage />
+        </FormItem>
+    )}
+/>
+
 
                 <div className="space-y-4">
                     <div className="flex items-center justify-between">
