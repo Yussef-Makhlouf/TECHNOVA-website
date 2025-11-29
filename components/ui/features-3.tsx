@@ -1,7 +1,11 @@
+'use client'
+
 import { Card, CardContent } from '@/components/ui/card'
 import { Zap, Shield, Users, Rocket, Brain, Globe } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 export function Features3() {
+    const t = useTranslations('features3')
     return (
         <section className="py-0">
             <div className="mx-auto max-w-3xl lg:max-w-6xl px-6">
@@ -16,10 +20,10 @@ export function Features3() {
                                     </div>
                                 </div>
                                 <h2 className="mt-4 text-center text-2xl font-semibold bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] bg-clip-text text-transparent">
-                                    End-to-End Solutions
+                                    {t('endToEnd.title')}
                                 </h2>
                                 <p className="mt-3 text-center text-foreground/80 text-sm">
-                                    Complete technology solutions from consultation to deployment and support
+                                    {t('endToEnd.description')}
                                 </p>
                             </CardContent>
                         </Card>
@@ -32,10 +36,10 @@ export function Features3() {
                                 </div>
                                 <div className="relative z-10 mt-6 space-y-2 text-center">
                                     <h2 className="text-2xl font-semibold transition bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] bg-clip-text text-transparent">
-                                        Enterprise Security
+                                        {t('enterpriseSecurity.title')}
                                     </h2>
                                     <p className="text-foreground/80 text-sm">
-                                        Bank-level security protocols with 24/7 monitoring and threat detection
+                                        {t('enterpriseSecurity.description')}
                                     </p>
                                 </div>
                             </CardContent>
@@ -49,10 +53,10 @@ export function Features3() {
                                 </div>
                                 <div className="relative z-10 mt-6 space-y-2 text-center">
                                     <h2 className="text-2xl font-semibold bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] bg-clip-text text-transparent">
-                                        Lightning Fast
+                                        {t('lightningFast.title')}
                                     </h2>
                                     <p className="text-foreground/80 text-sm">
-                                        Optimized infrastructure ensuring peak performance at scale
+                                        {t('lightningFast.description')}
                                     </p>
                                 </div>
                             </CardContent>
@@ -67,10 +71,10 @@ export function Features3() {
                                     </div>
                                     <div className="space-y-2">
                                         <h2 className="text-2xl font-semibold bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] bg-clip-text text-transparent">
-                                            AI-Powered Intelligence
+                                            {t('aiPowered.title')}
                                         </h2>
                                         <p className="text-foreground/80 text-sm">
-                                            Cutting-edge AI and machine learning integration for smarter solutions
+                                            {t('aiPowered.description')}
                                         </p>
                                     </div>
                                 </div>
@@ -96,10 +100,10 @@ export function Features3() {
                                     </div>
                                     <div className="space-y-2">
                                         <h2 className="text-2xl font-semibold bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] bg-clip-text text-transparent">
-                                            Expert Team Support
+                                            {t('expertTeam.title')}
                                         </h2>
                                         <p className="text-foreground/80 text-sm">
-                                            Dedicated specialists available 24/7 to ensure your success
+                                            {t('expertTeam.description')}
                                         </p>
                                     </div>
                                 </div>
@@ -128,10 +132,10 @@ export function Features3() {
                                     </div>
                                     <div className="flex-1 text-center md:text-left space-y-3">
                                         <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] bg-clip-text text-transparent">
-                                            Global Reach, Local Expertise
+                                            {t('globalReach.title')}
                                         </h2>
                                         <p className="text-foreground/80 text-base md:text-lg max-w-3xl">
-                                            Serving clients across the Middle East and beyond with cutting-edge technology solutions tailored to regional needs and international standards
+                                            {t('globalReach.description')}
                                         </p>
                                     </div>
                                 </div>

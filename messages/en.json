@@ -471,39 +471,89 @@
                 },
                 "successPartnership": {
                     "title": "Success Partnership",
-                    "description": "We invest in long-term partnerships built on trust and shared goals. We work side-by-side with our partners from concept to execution to measurable impact."
+                    "description": "Comprehensive technology solutions designed to accelerate your digital transformation and drive business growth."
                 },
-                "excellence": {
-                    "title": "Excellence in Execution",
-                    "description": "We commit to precision, professionalism, and measurable outcomes. Every project we deliver reflects high standards of quality and institutional rigor."
+                "whyChoose": {
+                    "title": "Why Choose Our Services",
+                    "description": "Experience the difference with our enterprise-grade solutions"
+                },
+                "cta": {
+                    "title": "Ready to Transform Your Business?",
+                    "description": "Let's discuss how our services can help you achieve your digital transformation goals.",
+                    "getStarted": "Get Started",
+                    "viewCaseStudies": "View Case Studies"
                 }
-            }
-        },
-        "journey": {
-            "title": "Our Journey",
-            "description": "Key milestones that shaped our path to becoming industry leaders.",
-            "milestones": [
-                {
-                    "year": "2010",
-                    "title": "Founded",
-                    "description": "TECHNOVA was established with a vision to revolutionize the technology landscape and help businesses embrace digital transformation."
+            },
+            "contactPage": {
+                "hero": {
+                    "badge": "Contact Us",
+                    "title": "Get in Touch",
+                    "description": "We'd love to hear from you. Fill out the form below and we'll get back to you shortly."
                 },
-                {
-                    "year": "2015",
-                    "title": "Global Expansion",
-                    "description": "Expanded operations to serve clients across 25+ countries, establishing ourselves as a trusted global technology partner."
+                "form": {
+                    "name": "Name",
+                    "email": "Email",
+                    "phone": "Phone",
+                    "title": "Our Mission",
+                    "description": "We design AI-driven solutions that enhance efficiency, increase value, and create measurable impact. We transform data into insight, insight into experience, and experience into sustainable success with a firm commitment to privacy and human-centered innovation."
                 },
-                {
-                    "year": "2020",
-                    "title": "AI Innovation Hub",
-                    "description": "Launched our dedicated AI and Machine Learning division, pioneering advanced solutions for enterprise clients."
+                "values": {
+                    "title": "Our Values",
+                    "description": "The principles that guide everything we do and shape our company culture.",
+                    "items": {
+                        "creativity": {
+                            "title": "Creativity",
+                            "description": "We believe creativity is the foundation of effective solutions. We develop ideas rooted in cultural and market understanding to create meaningful and distinctive experiences."
+                        },
+                        "sustainableInnovation": {
+                            "title": "Sustainable Innovation",
+                            "description": "We build intelligent solutions that are scalable and long-lasting, designed to evolve and remain valuable over time."
+                        },
+                        "ethicalValues": {
+                            "title": "Ethical Values",
+                            "description": "We believe in AI that enhances human capability, not replaces it. Our priority is the protection of data, transparency, and respect for privacy."
+                        },
+                        "successPartnership": {
+                            "title": "Success Partnership",
+                            "description": "We invest in long-term partnerships built on trust and shared goals. We work side-by-side with our partners from concept to execution to measurable impact."
+                        },
+                        "excellence": {
+                            "title": "Excellence in Execution",
+                            "description": "We commit to precision, professionalism, and measurable outcomes. Every project we deliver reflects high standards of quality and institutional rigor."
+                        },
+                        "globalPresence": {
+                            "title": "Global Presence",
+                            "description": "We have a global presence with a team of experts who are committed to delivering the best possible results for our clients."
+                        }
+                    }
                 },
-                {
-                    "year": "2025",
-                    "title": "Industry Leader",
-                    "description": "Recognized as a leading technology innovator with 500+ successful projects and 98% client satisfaction rate."
+                "journey": {
+                    "title": "Our Journey",
+                    "description": "Key milestones that shaped our path to becoming industry leaders.",
+                    "milestones": [
+                        {
+                            "year": "2010",
+                            "title": "Founded",
+                            "description": "TECHNOVA was established with a vision to revolutionize the technology landscape and help businesses embrace digital transformation."
+                        },
+                        {
+                            "year": "2015",
+                            "title": "Global Expansion",
+                            "description": "Expanded operations to serve clients across 25+ countries, establishing ourselves as a trusted global technology partner."
+                        },
+                        {
+                            "year": "2020",
+                            "title": "AI Innovation Hub",
+                            "description": "Launched our dedicated AI and Machine Learning division, pioneering advanced solutions for enterprise clients."
+                        },
+                        {
+                            "year": "2025",
+                            "title": "Industry Leader",
+                            "description": "Recognized as a leading technology innovator with 500+ successful projects and 98% client satisfaction rate."
+                        }
+                    ]
                 }
-            ],
+            },
             "insightsPage": {
                 "hero": {
                     "badge": "Industry Insights",
@@ -588,258 +638,88 @@
                     "about": "About",
                     "contact": "Contact"
                 }
-            }
-       
-   
-        
-    },
-    "servicesPage": {
-        "hero": {
-            "badge": "Our Services",
-            "title": "TECHNOVA",
-            "titleHighlight": "Services",
-            "description": "Comprehensive technology solutions designed to accelerate your digital transformation and drive business growth."
-        },
-        "whyChoose": {
-            "title": "Why Choose Our Services",
-            "description": "Experience the difference with our enterprise-grade solutions"
-        },
-        "cta": {
-            "title": "Ready to Transform Your Business?",
-            "description": "Let's discuss how our services can help you achieve your digital transformation goals.",
-            "getStarted": "Get Started",
-            "viewCaseStudies": "View Case Studies"
-        }
-    },
-    "contactPage": {
-        "hero": {
-            "badge": "Contact Us",
-            "title": "Get in Touch",
-            "description": "We'd love to hear from you. Fill out the form below and we'll get back to you shortly."
-        },
-        "form": {
-            "name": "Name",
-            "email": "Email",
-            "phone": "Phone",
-            "title": "Our Mission",
-            "description": "We design AI-driven solutions that enhance efficiency, increase value, and create measurable impact. We transform data into insight, insight into experience, and experience into sustainable success with a firm commitment to privacy and human-centered innovation."
-        },
-        "values": {
-            "title": "Our Values",
-            "description": "The principles that guide everything we do and shape our company culture.",
-            "items": {
-                "creativity": {
-                    "title": "Creativity",
-                    "description": "We believe creativity is the foundation of effective solutions. We develop ideas rooted in cultural and market understanding to create meaningful and distinctive experiences."
+            },
+            "resetPasswordPage": {
+                "title": "Reset Password",
+                "description": "Enter your email to receive a password reset link",
+                "form": {
+                    "email": "Email",
+                    "submit": "Send Reset Link",
+                    "submitting": "Sending Link..."
                 },
-                "sustainableInnovation": {
-                    "title": "Sustainable Innovation",
-                    "description": "We build intelligent solutions that are scalable and long-lasting, designed to evolve and remain valuable over time."
+                "success": {
+                    "title": "Check your email",
+                    "description": "We have sent a password reset link to",
+                    "tryAnother": "Try another email"
                 },
-                "ethicalValues": {
-                    "title": "Ethical Values",
-                    "description": "We believe in AI that enhances human capability, not replaces it. Our priority is the protection of data, transparency, and respect for privacy."
+                "footer": {
+                    "backToLogin": "Back to Login"
                 },
-                "successPartnership": {
-                    "title": "Success Partnership",
-                    "description": "We invest in long-term partnerships built on trust and shared goals. We work side-by-side with our partners from concept to execution to measurable impact."
-                },
-                "excellence": {
-                    "title": "Excellence in Execution",
-                    "description": "We commit to precision, professionalism, and measurable outcomes. Every project we deliver reflects high standards of quality and institutional rigor."
-                },
-                "globalPresence": {
-                    "title": "Global Presence",
-                    "description": "We have a global presence with a team of experts who are committed to delivering the best possible results for our clients."
+                "validation": {
+                    "invalidEmail": "Please enter a valid email address."
                 }
-            }
-        },
-        "journey": {
-            "title": "Our Journey",
-            "description": "Key milestones that shaped our path to becoming industry leaders.",
-            "milestones": [
-                {
-                    "year": "2010",
-                    "title": "Founded",
-                    "description": "TECHNOVA was established with a vision to revolutionize the technology landscape and help businesses embrace digital transformation."
+            },
+            "features3": {
+                "endToEnd": {
+                    "title": "End-to-End Solutions",
+                    "description": "Complete technology solutions from consultation to deployment and support"
                 },
-                {
-                    "year": "2015",
-                    "title": "Global Expansion",
-                    "description": "Expanded operations to serve clients across 25+ countries, establishing ourselves as a trusted global technology partner."
+                "enterpriseSecurity": {
+                    "title": "Enterprise Security",
+                    "description": "Bank-level security protocols with 24/7 monitoring and threat detection"
                 },
-                {
-                    "year": "2020",
-                    "title": "AI Innovation Hub",
-                    "description": "Launched our dedicated AI and Machine Learning division, pioneering advanced solutions for enterprise clients."
+                "lightningFast": {
+                    "title": "Lightning Fast",
+                    "description": "Optimized infrastructure ensuring peak performance at scale"
                 },
-                {
-                    "year": "2025",
-                    "title": "Industry Leader",
-                    "description": "Recognized as a leading technology innovator with 500+ successful projects and 98% client satisfaction rate."
+                "aiPowered": {
+                    "title": "AI-Powered Intelligence",
+                    "description": "Cutting-edge AI and machine learning integration for smarter solutions"
+                },
+                "expertTeam": {
+                    "title": "Expert Team Support",
+                    "description": "Dedicated specialists available 24/7 to ensure your success"
+                },
+                "globalReach": {
+                    "title": "Global Reach, Local Expertise",
+                    "description": "Serving clients across the Middle East and beyond with cutting-edge technology solutions tailored to regional needs and international standards"
                 }
-            ]
-        }
-    },
-    "insightsPage": {
-        "hero": {
-            "badge": "Industry Insights",
-            "title": "TECHNOVA",
-            "titleHighlight": "Insights",
-            "description": "In-depth analysis, research, and thought leadership on technology trends shaping the future of business."
-        },
-        "categories": {
-            "all": "All",
-            "marketAnalysis": "Market Analysis",
-            "technology": "Technology",
-            "strategy": "Strategy",
-            "industryInsights": "Industry Insights",
-            "security": "Security",
-            "workforce": "Workforce"
-        },
-        "featured": {
-            "badge": "Featured Insight",
-            "title": "Latest Research",
-            "readMore": "Read Insight",
-            "by": "By"
-        },
-        "cta": {
-            "title": "Stay Ahead of the Curve",
-            "description": "Subscribe to our insights newsletter and receive the latest research and analysis directly in your inbox.",
-            "subscribe": "Subscribe Now",
-            "viewCaseStudies": "View Case Studies"
-        }
-    },
-    "careersPage": {
-        "hero": {
-            "title": "Join Our Team",
-            "description": "Build the future of technology with a team of passionate innovators and industry leaders."
-        },
-        "benefits": {
-            "title": "Why Join TECHNOVA?",
-            "description": "We offer more than just a job – we provide a platform for growth, innovation, and impact.",
-            "items": {
-                "health": {
-                    "title": "Health & Wellness",
-                    "description": "Comprehensive health insurance and wellness programs"
+            },
+            "featuresAdvanced": {
+                "realTimeMonitoring": {
+                    "title": "Real-time Monitoring",
+                    "description": "Track system performance with advanced analytics"
                 },
-                "growth": {
-                    "title": "Growth Opportunities",
-                    "description": "Continuous learning and career development programs"
+                "enterpriseSecurity": {
+                    "title": "Enterprise Security",
+                    "description": "Military-grade encryption and protection"
                 },
-                "culture": {
-                    "title": "Collaborative Culture",
-                    "description": "Work with talented teams on cutting-edge projects"
+                "lightningFast": {
+                    "title": "Lightning Fast",
+                    "description": "Optimized performance for instant response"
                 },
-                "compensation": {
-                    "title": "Competitive Compensation",
-                    "description": "Industry-leading salaries and performance bonuses"
-                }
+                "globalNetwork": {
+                    "title": "Global Network",
+                    "description": "Distributed infrastructure worldwide"
+                },
+                "support247": {
+                    "title": "24/7 Support",
+                    "description": "Round-the-clock expert assistance"
+                },
+                "description": "We believe in AI that enhances human capability, not replaces it. Our priority is the protection of data, transparency, and respect for privacy."
+            },
+            "successPartnership": {
+                "title": "Success Partnership",
+                "description": "We invest in long-term partnerships built on trust and shared goals. We work side-by-side with our partners from concept to execution to measurable impact."
+            },
+            "excellence": {
+                "title": "Excellence in Execution",
+                "description": "We commit to precision, professionalism, and measurable outcomes. Every project we deliver reflects high standards of quality and institutional rigor."
+            },
+            "globalPresence": {
+                "title": "Global Presence",
+                "description": "We have a global presence with a team of experts who are committed to delivering the best possible results for our clients."
             }
-        },
-        "openPositions": {
-            "title": "Open Positions",
-            "description": "Find your next opportunity and join our mission to build the future.",
-            "apply": "Apply Now"
         }
-    },
-    "loginPage": {
-        "welcome": {
-            "title": "Welcome back!",
-            "subtitle": "Please enter your details to access the dashboard"
-        },
-        "form": {
-            "email": "Email",
-            "password": "Password",
-            "forgotPassword": "Forgot password?",
-            "submit": "Log in",
-            "submitting": "Signing in..."
-        },
-        "errors": {
-            "invalidCredentials": "Invalid email or password. Please try again.",
-            "generic": "Something went wrong. Please try again."
-        },
-        "success": "Login successful",
-        "links": {
-            "home": "Home",
-            "about": "About",
-            "contact": "Contact"
-        }
-    },
-    "resetPasswordPage": {
-        "title": "Reset Password",
-        "description": "Enter your email to receive a password reset link",
-        "form": {
-            "email": "Email",
-            "submit": "Send Reset Link",
-            "submitting": "Sending Link..."
-        },
-        "success": {
-            "title": "Check your email",
-            "description": "We have sent a password reset link to",
-            "tryAnother": "Try another email"
-        },
-        "footer": {
-            "backToLogin": "Back to Login"
-        },
-        "validation": {
-            "invalidEmail": "Please enter a valid email address."
-        }
-    },
-    "features3": {
-        "endToEnd": {
-            "title": "End-to-End Solutions",
-            "description": "Complete technology solutions from consultation to deployment and support"
-        },
-        "enterpriseSecurity": {
-            "title": "Enterprise Security",
-            "description": "Bank-level security protocols with 24/7 monitoring and threat detection"
-        },
-        "lightningFast": {
-            "title": "Lightning Fast",
-            "description": "Optimized infrastructure ensuring peak performance at scale"
-        },
-        "aiPowered": {
-            "title": "AI-Powered Intelligence",
-            "description": "Cutting-edge AI and machine learning integration for smarter solutions"
-        },
-        "expertTeam": {
-            "title": "Expert Team Support",
-            "description": "Dedicated specialists available 24/7 to ensure your success"
-        },
-        "globalReach": {
-            "title": "Global Reach, Local Expertise",
-            "description": "Serving clients across the Middle East and beyond with cutting-edge technology solutions tailored to regional needs and international standards"
-        }
-    },
-    "featuresAdvanced": {
-        "realTimeMonitoring": {
-            "title": "Real-time Monitoring",
-            "description": "Track system performance with advanced analytics"
-        },
-        "enterpriseSecurity": {
-            "title": "Enterprise Security",
-            "description": "Military-grade encryption and protection"
-        },
-        "lightningFast": {
-            "title": "Lightning Fast",
-            "description": "Optimized performance for instant response"
-        },
-        "globalNetwork": {
-            "title": "Global Network",
-            "description": "Distributed infrastructure worldwide"
-        },
-        "support247": {
-            "title": "24/7 Support",
-            "description": "Round-the-clock expert assistance"
-        },
-        "advancedAnalytics": {
-            "title": "Advanced Analytics",
-            "description": "Deep insights into your data"
-        }
-    },
-    "worldMap": {
-        "altText": "world map",
-        "companyName": "TECHNOVA"
     }
-}}
+}

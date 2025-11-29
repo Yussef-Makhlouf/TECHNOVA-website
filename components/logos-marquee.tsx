@@ -1,8 +1,10 @@
 "use client"
 
 import Marquee from "react-fast-marquee"
+import { useTranslations } from 'next-intl'
 
 export default function LogosMarquee() {
+    const t = useTranslations('logosMarquee')
     const logos = [
         "/logos/logo-1.svg",
         "/logos/logo-2.svg",
@@ -26,11 +28,11 @@ export default function LogosMarquee() {
             <div className="container mx-auto px-4 lg:px-8 relative z-10 mb-12">
                 <div className="text-center">
                     <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-3">
-                        Trusted By Industry Leaders
+                        {t('title')}
                     </h2>
                     <div className="gradient-line w-24 mx-auto my-4" />
                     <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                        Partnering with innovative companies worldwide to deliver cutting-edge solutions
+                        {t('description')}
                     </p>
                 </div>
             </div>
