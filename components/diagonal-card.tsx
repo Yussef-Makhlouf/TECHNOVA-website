@@ -14,6 +14,7 @@ interface DiagonalCardProps {
   color?: string
   index?: number
   href?: string
+  id?: string | number
   className?: string
 }
 
@@ -25,6 +26,7 @@ export function DiagonalCard({
   color = "#7B3FEF",
   index = 0,
   href,
+  id,
   className,
 }: DiagonalCardProps) {
   const CardContent = (
