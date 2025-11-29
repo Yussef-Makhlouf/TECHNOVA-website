@@ -17,7 +17,7 @@ import { Input } from "@/components/ui/input"
 import { toast } from "sonner"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Loader2, Eye, EyeOff, KeyRound } from "lucide-react"
-import { updatePassword } from "@/app/dashboard/users/actions"
+import { updatePassword } from "@/app/[locale]/dashboard/users/actions"
 
 const passwordFormSchema = z.object({
     currentPassword: z.string().min(1, "Current password is required"),
