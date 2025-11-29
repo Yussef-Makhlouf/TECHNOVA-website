@@ -1,3 +1,10 @@
+/**
+ * API Service Layer - Organized API endpoints for all resources
+ * 
+ * This file provides a clean interface for all API operations.
+ * Separated into logical sections for better organization.
+ */
+
 import {
     APIResponse,
     ServiceAPI,
@@ -16,213 +23,19 @@ import {
     LoginResponse,
     PaginationParams
 } from "./api-types"
-import {
-    createErrorFromResponse,
-    NetworkError,
-    APIError
-} from "./api-errors"
+import { apiClient } from "./api-client"
 
-const API_BASE_URL = "https://technoba.vercel.app/api/v1"
 const TOKEN_KEY = "technova_auth_token"
 
 /**
- * API Client Configuration
- */
-interface RequestConfig extends RequestInit {
-    params?: Record<string, string | number | boolean>
-}
-
-/**
- * Centralized API Client
- */
-class APIClient {
-    private baseURL: string
-
-    constructor(baseURL: string) {
-        this.baseURL = baseURL
-    }
-
-    /**
-     * Get authentication token from storage
-     */
-    private getToken(): string | null {
-        if (typeof window === "undefined") return null
-        return localStorage.getItem(TOKEN_KEY)
-    }
-
-    /**
-     * Set authentication token
-     */
-    setToken(token: string): void {
-        if (typeof window !== "undefined") {
-            localStorage.setItem(TOKEN_KEY, token)
-        }
-    }
-
-    /**
-     * Remove authentication token
-     */
-    removeToken(): void {
-        if (typeof window !== "undefined") {
-            localStorage.removeItem(TOKEN_KEY)
-        }
-    }
-
-    /**
-     * Build headers with authentication
-     */
-    private buildHeaders(customHeaders?: HeadersInit): HeadersInit {
-        const headers: Record<string, string> = {
-            "Content-Type": "application/json",
-            ...(customHeaders as Record<string, string>),
-        }
-
-        const token = this.getToken()
-        if (token) {
-            headers["Authorization"] = `Bearer ${token}`
-        }
-
-        return headers
-    }
-
-    /**
-     * Build URL with query parameters
-     */
-    private buildURL(endpoint: string, params?: Record<string, string | number | boolean>): string {
-        const url = new URL(`${this.baseURL}${endpoint}`)
-
-        if (params) {
-            Object.entries(params).forEach(([key, value]) => {
-                url.searchParams.append(key, String(value))
-            })
-        }
-
-        return url.toString()
-    }
-
-    /**
-     * Handle API response
-     */
-    private async handleResponse<T>(response: Response): Promise<T> {
-        // Handle network errors
-        if (!response.ok) {
-            let errorMessage = "An error occurred"
-
-            try {
-                const errorData = await response.json()
-                errorMessage = errorData.message || errorData.error || errorMessage
-            } catch {
-                // If response is not JSON, use status text
-                errorMessage = response.statusText || errorMessage
-            }
-
-            throw createErrorFromResponse(response.status, errorMessage)
-        }
-
-        // Parse successful response
-        try {
-            const data = await response.json()
-            return data
-        } catch (error) {
-            throw new APIError("Failed to parse response")
-        }
-    }
-
-    /**
-     * Generic request method
-     */
-    private async request<T>(
-        endpoint: string,
-        config: RequestConfig = {}
-    ): Promise<T> {
-        const { params, headers, ...restConfig } = config
-
-        try {
-            const url = this.buildURL(endpoint, params)
-            const response = await fetch(url, {
-                ...restConfig,
-                headers: this.buildHeaders(headers),
-            })
-
-            return await this.handleResponse<T>(response)
-        } catch (error) {
-            // Handle network errors
-            if (error instanceof TypeError && error.message.includes("fetch")) {
-                throw new NetworkError()
-            }
-            throw error
-        }
-    }
-
-    /**
-     * GET request
-     */
-    async get<T>(endpoint: string, params?: Record<string, string | number | boolean>): Promise<T> {
-        return this.request<T>(endpoint, { method: "GET", params })
-    }
-
-    /**
-     * POST request
-     */
-    async post<T>(endpoint: string, data?: any): Promise<T> {
-        return this.request<T>(endpoint, {
-            method: "POST",
-            body: JSON.stringify(data),
-        })
-    }
-
-    /**
-     * PUT request
-     */
-    async put<T>(endpoint: string, data?: any): Promise<T> {
-        return this.request<T>(endpoint, {
-            method: "PUT",
-            body: JSON.stringify(data),
-        })
-    }
-
-    /**
-     * DELETE request
-     */
-    async delete<T>(endpoint: string): Promise<T> {
-        return this.request<T>(endpoint, { method: "DELETE" })
-    }
-
-    /**
-     * Upload file (multipart/form-data)
-     */
-    async upload<T>(endpoint: string, formData: FormData): Promise<T> {
-        const token = this.getToken()
-        const headers: Record<string, string> = {}
-
-        if (token) {
-            headers["Authorization"] = `Bearer ${token}`
-        }
-
-        try {
-            const response = await fetch(`${this.baseURL}${endpoint}`, {
-                method: "POST",
-                headers,
-                body: formData,
-            })
-
-            return await this.handleResponse<T>(response)
-        } catch (error) {
-            if (error instanceof TypeError && error.message.includes("fetch")) {
-                throw new NetworkError()
-            }
-            throw error
-        }
-    }
-}
-
-// Create singleton instance
-const apiClient = new APIClient(API_BASE_URL)
-
-/**
- * Authentication API
+ * ============================================================================
+ * AUTHENTICATION API
+ * ============================================================================
  */
 export const authAPI = {
+    /**
+     * Login user
+     */
     login: async (credentials: LoginRequest): Promise<LoginResponse> => {
         const response = await apiClient.post<LoginResponse>("/auth/login", credentials)
 
@@ -234,27 +47,60 @@ export const authAPI = {
         return response
     },
 
+    /**
+     * Logout user
+     */
     logout: (): void => {
         apiClient.removeToken()
+        apiClient.clearCache() // Clear all cached data on logout
     },
 
+    /**
+     * Get current token
+     */
     getToken: (): string | null => {
-        return apiClient["getToken"]()
+        return apiClient['getToken']()
     },
+
+    /**
+     * Check if user is authenticated
+     */
+    isAuthenticated: (): boolean => {
+        return !!apiClient['getToken']()
+    }
 }
 
 /**
- * Services API
+ * ============================================================================
+ * SERVICES API
+ * ============================================================================
  */
 export const servicesAPI = {
-    getAll: async (): Promise<{ success: boolean; services: ServiceAPI[] }> => {
-        return apiClient.get("/services")
+    /**
+     * Get all services
+     * @param skipCache - Skip cache and fetch fresh data
+     */
+    getAll: async (skipCache: boolean = false): Promise<{ success: boolean; services: ServiceAPI[] }> => {
+        return apiClient.get("/services", undefined, { skipCache })
     },
 
-    getById: async (id: string): Promise<{ success: boolean; service: ServiceAPI }> => {
-        return apiClient.get(`/services/${id}`)
+    /**
+     * Get service by ID
+     */
+    getById: async (id: string, skipCache: boolean = false): Promise<{ success: boolean; service: ServiceAPI }> => {
+        return apiClient.get(`/services/${id}`, undefined, { skipCache })
     },
 
+    /**
+     * Get service by slug
+     */
+    getBySlug: async (slug: string, skipCache: boolean = false): Promise<{ success: boolean; service: ServiceAPI }> => {
+        return apiClient.get(`/services/slug/${slug}`, undefined, { skipCache })
+    },
+
+    /**
+     * Create new service
+     */
     create: async (data: any, imageFile?: File): Promise<{ success: boolean; service: ServiceAPI }> => {
         // If there's an image file, use FormData
         if (imageFile) {
@@ -288,6 +134,9 @@ export const servicesAPI = {
         return apiClient.post("/services/add", data)
     },
 
+    /**
+     * Update service
+     */
     update: async (id: string, data: any, imageFile?: File): Promise<{ success: boolean; service: ServiceAPI }> => {
         // If there's an image file, use FormData
         if (imageFile) {
@@ -314,14 +163,19 @@ export const servicesAPI = {
             // Append the image file
             formData.append("images", imageFile)
 
-            // Use upload method with PUT
-            const token = apiClient["getToken"]()
-            const headers: Record<string, string> = {}
+            // Use custom fetch for PUT with FormData
+            const token = apiClient['getToken']()
+            const headers: Record<string, string> = {
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '0'
+            }
+
             if (token) {
                 headers["Authorization"] = `Bearer ${token}`
             }
 
-            const response = await fetch(`${API_BASE_URL}/services/${id}`, {
+            const response = await fetch(`https://technoba.vercel.app/api/v1/services/${id}`, {
                 method: "PUT",
                 headers,
                 body: formData,
@@ -335,104 +189,206 @@ export const servicesAPI = {
                 } catch {
                     errorMessage = response.statusText || errorMessage
                 }
-                throw createErrorFromResponse(response.status, errorMessage)
+                throw new Error(errorMessage)
             }
 
-            return await response.json()
+            const result = await response.json()
+
+            // Clear cache after update
+            apiClient.clearCache()
+
+            return result
         }
 
         // Fallback to JSON if no image
         return apiClient.put(`/services/${id}`, data)
     },
 
+    /**
+     * Delete service
+     */
     delete: async (id: string): Promise<{ success: boolean; message: string }> => {
         return apiClient.delete(`/services/${id}`)
     },
 
+    /**
+     * Delete multiple services
+     */
     deleteMultiple: async (ids: string[]): Promise<{ success: boolean; message: string }> => {
         return apiClient.post("/services/multi", { ids })
     },
+
+    /**
+     * Prefetch services (load in background)
+     */
+    prefetch: async (): Promise<void> => {
+        await apiClient.prefetch("/services")
+    }
 }
 
 /**
- * Blogs/Insights API
+ * ============================================================================
+ * BLOGS/INSIGHTS API
+ * ============================================================================
  */
 export const blogsAPI = {
-    getAll: async (): Promise<{ success: boolean; blogs: BlogAPI[] }> => {
-        return apiClient.get("/blogs")
+    /**
+     * Get all blogs
+     */
+    getAll: async (skipCache: boolean = false): Promise<{ success: boolean; blogs: BlogAPI[] }> => {
+        return apiClient.get("/blogs", undefined, { skipCache })
     },
 
-    getById: async (id: string): Promise<{ success: boolean; blog: BlogAPI }> => {
-        return apiClient.get(`/blogs/${id}`)
+    /**
+     * Get blog by ID
+     */
+    getById: async (id: string, skipCache: boolean = false): Promise<{ success: boolean; blog: BlogAPI }> => {
+        return apiClient.get(`/blogs/${id}`, undefined, { skipCache })
     },
 
+    /**
+     * Get blog by slug
+     */
+    getBySlug: async (slug: string, skipCache: boolean = false): Promise<{ success: boolean; blog: BlogAPI }> => {
+        return apiClient.get(`/blogs/slug/${slug}`, undefined, { skipCache })
+    },
+
+    /**
+     * Create new blog
+     */
     create: async (data: CreateBlogRequest): Promise<{ success: boolean; blog: BlogAPI }> => {
         return apiClient.post("/blogs/add", data)
     },
 
+    /**
+     * Update blog
+     */
     update: async (id: string, data: UpdateBlogRequest): Promise<{ success: boolean; blog: BlogAPI }> => {
         return apiClient.put(`/blogs/${id}`, data)
     },
 
+    /**
+     * Delete blog
+     */
     delete: async (id: string): Promise<{ success: boolean; message: string }> => {
         return apiClient.delete(`/blogs/${id}`)
     },
+
+    /**
+     * Prefetch blogs
+     */
+    prefetch: async (): Promise<void> => {
+        await apiClient.prefetch("/blogs")
+    }
 }
 
 /**
- * Case Studies API
+ * ============================================================================
+ * CASE STUDIES API
+ * ============================================================================
  */
 export const caseStudiesAPI = {
-    getAll: async (): Promise<{ success: boolean; caseStudies: CaseStudyAPI[] }> => {
-        return apiClient.get("/case_study")
+    /**
+     * Get all case studies
+     */
+    getAll: async (skipCache: boolean = false): Promise<{ success: boolean; caseStudies: CaseStudyAPI[] }> => {
+        return apiClient.get("/case_study", undefined, { skipCache })
     },
 
-    getById: async (id: string): Promise<{ success: boolean; caseStudy: CaseStudyAPI }> => {
-        return apiClient.get(`/case_study/${id}`)
+    /**
+     * Get case study by ID
+     */
+    getById: async (id: string, skipCache: boolean = false): Promise<{ success: boolean; caseStudy: CaseStudyAPI }> => {
+        return apiClient.get(`/case_study/${id}`, undefined, { skipCache })
     },
 
+    /**
+     * Create new case study
+     */
     create: async (data: CreateCaseStudyRequest): Promise<{ success: boolean; caseStudy: CaseStudyAPI }> => {
         return apiClient.post("/case_study/add", data)
     },
 
+    /**
+     * Update case study
+     */
     update: async (id: string, data: UpdateCaseStudyRequest): Promise<{ success: boolean; caseStudy: CaseStudyAPI }> => {
         return apiClient.put(`/case_study/${id}`, data)
     },
 
+    /**
+     * Delete case study
+     */
     delete: async (id: string): Promise<{ success: boolean; message: string }> => {
         return apiClient.delete(`/case_study/${id}`)
     },
+
+    /**
+     * Prefetch case studies
+     */
+    prefetch: async (): Promise<void> => {
+        await apiClient.prefetch("/case_study")
+    }
 }
 
 /**
- * Jobs API
+ * ============================================================================
+ * JOBS API
+ * ============================================================================
  */
 export const jobsAPI = {
-    getAll: async (): Promise<{ success: boolean; jobs: JobAPI[] }> => {
-        return apiClient.get("/jobs")
+    /**
+     * Get all jobs
+     */
+    getAll: async (skipCache: boolean = false): Promise<{ success: boolean; jobs: JobAPI[] }> => {
+        return apiClient.get("/jobs", undefined, { skipCache })
     },
 
-    getById: async (id: string): Promise<{ success: boolean; job: JobAPI }> => {
-        return apiClient.get(`/jobs/${id}`)
+    /**
+     * Get job by ID
+     */
+    getById: async (id: string, skipCache: boolean = false): Promise<{ success: boolean; job: JobAPI }> => {
+        return apiClient.get(`/jobs/${id}`, undefined, { skipCache })
     },
 
+    /**
+     * Create new job
+     */
     create: async (data: CreateJobRequest): Promise<{ success: boolean; job: JobAPI }> => {
         return apiClient.post("/jobs", data)
     },
 
+    /**
+     * Update job
+     */
     update: async (id: string, data: UpdateJobRequest): Promise<{ success: boolean; job: JobAPI }> => {
         return apiClient.put(`/jobs/${id}`, data)
     },
 
+    /**
+     * Delete job
+     */
     delete: async (id: string): Promise<{ success: boolean; message: string }> => {
         return apiClient.delete(`/jobs/${id}`)
     },
+
+    /**
+     * Prefetch jobs
+     */
+    prefetch: async (): Promise<void> => {
+        await apiClient.prefetch("/jobs")
+    }
 }
 
 /**
- * Image Upload API
+ * ============================================================================
+ * IMAGE UPLOAD API
+ * ============================================================================
  */
 export const uploadAPI = {
+    /**
+     * Upload single image
+     */
     uploadImage: async (file: File): Promise<{ success: boolean; imageUrl: string }> => {
         const formData = new FormData()
         formData.append("image", file)
@@ -440,6 +396,9 @@ export const uploadAPI = {
         return apiClient.upload("/upload/image", formData)
     },
 
+    /**
+     * Upload multiple images
+     */
     uploadImages: async (files: File[]): Promise<{ success: boolean; imageUrls: string[] }> => {
         const formData = new FormData()
         files.forEach((file) => {
@@ -448,6 +407,38 @@ export const uploadAPI = {
 
         return apiClient.upload("/upload/images", formData)
     },
+}
+
+/**
+ * ============================================================================
+ * UTILITY FUNCTIONS
+ * ============================================================================
+ */
+
+/**
+ * Prefetch all common data (useful for initial page load)
+ */
+export const prefetchAllData = async (): Promise<void> => {
+    await Promise.all([
+        servicesAPI.prefetch(),
+        blogsAPI.prefetch(),
+        caseStudiesAPI.prefetch(),
+        jobsAPI.prefetch()
+    ])
+}
+
+/**
+ * Clear all API cache
+ */
+export const clearAllCache = (): void => {
+    apiClient.clearCache()
+}
+
+/**
+ * Get cache statistics
+ */
+export const getCacheStats = () => {
+    return apiClient.getCacheStats()
 }
 
 // Export the client for advanced usage

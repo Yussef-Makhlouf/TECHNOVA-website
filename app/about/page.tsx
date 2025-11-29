@@ -2,7 +2,7 @@
 
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
-import { TeamSection } from "@/components/team-section"
+// import { TeamSection } from "@/components/team-section"
 import { Target, Eye, Award, Users, TrendingUp, Lightbulb } from "lucide-react"
 import { motion } from "framer-motion"
 import { DiagonalCard } from "@/components/diagonal-card"
@@ -285,9 +285,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <TeamSection />
+      {/* <TeamSection /> */}
 
-      <section className="py-20 lg:py-32 relative overflow-hidden">
+      {/* <section className="py-20 lg:py-32 relative overflow-hidden">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#7B3FEF]/5 rounded-full blur-3xl" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -325,7 +325,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <LogosMarquee />
 

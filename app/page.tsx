@@ -132,7 +132,7 @@ export default function HomePage() {
       <Hero />
 
       {/* Stats Section - Re-enabled */}
-      <Section className="py-16 lg:py-20 border-y border-border/50">
+      {/* <Section className="py-16 lg:py-20 border-y border-border/50">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -161,7 +161,7 @@ export default function HomePage() {
             ))}
           </div>
         </motion.div>
-      </Section>
+      </Section> */}
 
       {/* Innovation in Action Section */}
       <Section className="py-20 lg:py-32">
@@ -354,7 +354,7 @@ export default function HomePage() {
       </Section>
 
       {/* Featured Projects Section - Re-enabled */}
-      <Section className="py-20 lg:py-32">
+      {/* <Section className="py-20 lg:py-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -389,7 +389,7 @@ export default function HomePage() {
             <ArrowRight size={20} />
           </Link>
         </div>
-      </Section>
+      </Section> */}
 
       {/* Testimonials Section */}
       <Section className="py-20 lg:py-32">

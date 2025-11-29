@@ -1,10 +1,8 @@
 "use client"
 // Force rebuild
 
-import { useEffect, useState } from "react"
 import { useParams } from "next/navigation"
-import { caseStudiesAPI } from "@/lib/api-service"
-import { CaseStudyAPI } from "@/lib/api-types"
+import { useCaseStudy } from "@/lib/use-api"
 import Navigation from "@/components/navigation"
 import { motion } from "framer-motion"
 import { ArrowLeft, Calendar, Building2, Tag, TrendingUp } from "lucide-react"
@@ -14,32 +12,9 @@ import { Button } from "@/components/ui/button"
 export default function CaseStudyDetailsPage() {
     const params = useParams()
     const id = params.id as string
-    const [caseStudy, setCaseStudy] = useState<CaseStudyAPI | null>(null)
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState<string | null>(null)
 
-    useEffect(() => {
-        const fetchCaseStudy = async () => {
-            try {
-                setLoading(true)
-                const res = await caseStudiesAPI.getById(id)
-                if (res.success) {
-                    setCaseStudy(res.caseStudy)
-                } else {
-                    setError("Failed to load case study")
-                }
-            } catch (err) {
-                console.error("Error fetching case study:", err)
-                setError("An error occurred while loading the case study")
-            } finally {
-                setLoading(false)
-            }
-        }
-
-        if (id) {
-            fetchCaseStudy()
-        }
-    }, [id])
+    // Use the custom hook for better performance and caching
+    const { data: caseStudy, loading, error, refetch } = useCaseStudy(id)
 
     if (loading) {
         return (

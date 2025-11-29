@@ -112,7 +112,7 @@ export default function CareersPage() {
       </section>
 
       {/* Team */}
-      <section className="py-20 lg:py-24">
+      {/* <section className="py-20 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -152,7 +152,7 @@ export default function CareersPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Open Positions */}
       <section className="py-20 lg:py-24 bg-muted/30 dark:bg-card/10">
