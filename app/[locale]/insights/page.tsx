@@ -8,16 +8,32 @@ import { ArrowRight, Calendar, Clock } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { DiagonalCard } from "@/components/diagonal-card"
+import { useTranslations, useLocale } from "next-intl"
 
 export default function InsightsPage() {
+  const t = useTranslations('insightsPage')
+  const locale = useLocale()
+  const isRtl = locale === 'ar'
   const { insights: insightsData } = useData()
 
   const insights = insightsData.map(insight => ({
     ...insight,
+    title: isRtl ? insight.titleAr || insight.title : insight.title,
+    description: isRtl ? insight.descriptionAr || insight.description : insight.description,
+    author: isRtl ? insight.authorAr || insight.author : insight.author,
+    category: isRtl ? insight.categoryAr || insight.category : insight.category,
     icon: getIcon(insight.iconName)
   }))
 
-  const categories = ["All", "Market Analysis", "Technology", "Strategy", "Industry Insights", "Security", "Workforce"]
+  const categories = [
+    t('categories.all'),
+    t('categories.marketAnalysis'),
+    t('categories.technology'),
+    t('categories.strategy'),
+    t('categories.industryInsights'),
+    t('categories.security'),
+    t('categories.workforce')
+  ]
 
   return (
     <div className="min-h-screen bg-background">
@@ -38,16 +54,16 @@ export default function InsightsPage() {
           >
             <div className="inline-block mb-6">
               <span className="px-4 py-2 rounded-full glass-panel border border-border text-sm font-medium text-accent">
-                Industry Insights
+                {t('hero.badge')}
               </span>
             </div>
             <h1 className="font-heading text-5xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-              TECHNOVA{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Insights</span>
+              {t('hero.title')}{" "}
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">{t('hero.titleHighlight')}</span>
             </h1>
             <div className="h-1 w-32 mx-auto my-6 bg-gradient-to-r from-primary to-accent rounded-full" />
             <p className="text-xl text-muted-foreground leading-relaxed">
-              In-depth analysis, research, and thought leadership on technology trends shaping the future of business.
+              {t('hero.description')}
             </p>
           </motion.div>
         </div>
@@ -86,9 +102,9 @@ export default function InsightsPage() {
               className="mb-12"
             >
               <div className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary mb-4">
-                Featured Insight
+                {t('featured.badge')}
               </div>
-              <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground">Latest Research</h2>
+              <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground">{t('featured.title')}</h2>
             </motion.div>
 
             <motion.div
@@ -131,12 +147,12 @@ export default function InsightsPage() {
                   <p className="text-muted-foreground leading-relaxed mb-6">{insights[0].description}</p>
 
                   <div className="flex items-center justify-between">
-                    <span className="text-muted-foreground text-sm">By {insights[0].author}</span>
+                    <span className="text-muted-foreground text-sm">{t('featured.by')} {insights[0].author}</span>
                     <Link
                       href={insights[0].href || "#"}
                       className="inline-flex items-center gap-2 text-accent hover:gap-3 transition-all duration-300 font-medium group-hover:text-accent"
                     >
-                      Read Insight
+                      {t('featured.readMore')}
                       <ArrowRight size={16} />
                     </Link>
                   </div>
@@ -175,25 +191,24 @@ export default function InsightsPage() {
           >
             <div className="glass-panel p-12 lg:p-16 rounded-3xl border border-border dark:bg-card/30">
               <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                Stay Ahead of the Curve
+                {t('cta.title')}
               </h2>
               <div className="h-1 w-32 mx-auto my-6 bg-gradient-to-r from-primary to-accent rounded-full" />
               <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                Subscribe to our insights newsletter and receive the latest research and analysis directly in your
-                inbox.
+                {t('cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/contact"
                   className="px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-accent text-white font-medium hover:shadow-xl hover:shadow-accent/30 transition-all duration-300 hover:-translate-y-1"
                 >
-                  Subscribe Now
+                  {t('cta.subscribe')}
                 </Link>
                 <Link
                   href="/case-studies"
                   className="px-8 py-4 rounded-xl glass-panel border border-border hover:border-accent text-foreground font-medium transition-all duration-300 hover:-translate-y-1 dark:bg-card/30"
                 >
-                  View Case Studies
+                  {t('cta.viewCaseStudies')}
                 </Link>
               </div>
             </div>

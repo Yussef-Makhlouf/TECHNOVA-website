@@ -5,11 +5,14 @@ import { useState, useEffect } from "react"
 import { Menu, X, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
+import { LanguageSwitcher } from "@/components/language-switcher"
+import { useTranslations } from "next-intl"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const t = useTranslations('navigation')
 
   // Avoid hydration mismatch
   useEffect(() => {
@@ -17,13 +20,13 @@ export default function Navigation() {
   }, [])
 
   const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/services", label: "Services" },
-    { href: "/about", label: "About" },
-    { href: "/case-studies", label: "Case Studies" },
-    { href: "/blog", label: "Insights" },
-    { href: "/careers", label: "Careers" },
-    { href: "/contact", label: "Contact" },
+    { href: "/", label: t('home') },
+    { href: "/services", label: t('services') },
+    { href: "/about", label: t('about') },
+    { href: "/case-studies", label: t('caseStudies') },
+    { href: "/blog", label: t('insights') },
+    { href: "/careers", label: t('careers') },
+    { href: "/contact", label: t('contact') },
   ]
 
   return (
@@ -56,39 +59,45 @@ export default function Navigation() {
 
             {/* Theme Toggle */}
             {mounted && (
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="rounded-full"
-              >
-                {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-                <span className="sr-only">Toggle theme</span>
-              </Button>
+              <>
+                <LanguageSwitcher />
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className="rounded-full"
+                >
+                  {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+                  <span className="sr-only">{t('toggleTheme')}</span>
+                </Button>
+              </>
             )}
 
             <Link
               href="/contact"
               className="px-6 py-2.5 bg-[#7B3FEF] text-white rounded-lg hover:bg-[#6B2FDF] transition-all duration-300 hover:shadow-lg hover:shadow-[#7B3FEF]/30 text-sm font-medium"
             >
-              Get Started
+              {t('getStarted')}
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-4 lg:hidden">
             {mounted && (
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="rounded-full"
-              >
-                {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-                <span className="sr-only">Toggle theme</span>
-              </Button>
+              <>
+                <LanguageSwitcher />
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className="rounded-full"
+                >
+                  {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+                  <span className="sr-only">{t('toggleTheme')}</span>
+                </Button>
+              </>
             )}
-            <button onClick={() => setIsOpen(!isOpen)} className="text-foreground p-2" aria-label="Toggle menu">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-foreground p-2" aria-label={t('toggleMenu')}>
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -113,7 +122,7 @@ export default function Navigation() {
                 onClick={() => setIsOpen(false)}
                 className="px-6 py-2.5 bg-[#7B3FEF] text-white rounded-lg hover:bg-[#6B2FDF] transition-all duration-300 text-center"
               >
-                Get Started
+                {t('getStarted')}
               </Link>
             </div>
           </div>

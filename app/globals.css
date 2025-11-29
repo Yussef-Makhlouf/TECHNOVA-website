@@ -240,3 +240,41 @@
 .floating-tile:hover {
   transform: translateY(-8px) scale(1.02);
 }
+/* Arabic Font Support */
+.font-arabic {
+  font-family: var(--font-arabic), var(--font-sans);
+}
+
+.font-arabic h1,
+.font-arabic h2,
+.font-arabic h3,
+.font-arabic h4,
+.font-arabic h5,
+.font-arabic h6 {
+  font-family: var(--font-arabic);
+}
+
+/* RTL Support */
+[dir=\"rtl\"] {
+  direction: rtl;
+}
+
+[dir=\"rtl\"] .text-left {
+  text-align: right;
+}
+
+[dir=\"rtl\"] .text-right {
+  text-align: left;
+}
+
+/* Ensure proper spacing for RTL */
+[dir=\"rtl\"] .ml-2 {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+[dir=\"rtl\"] .mr-2 {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+

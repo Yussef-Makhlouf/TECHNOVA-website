@@ -4,75 +4,20 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { useTranslations } from "next-intl"
 
 const SQRT_5000 = Math.sqrt(5000)
 
-const testimonials = [
-  {
-    tempId: 0,
-    testimonial: "My favorite solution in the market. We work 5x faster with TECHNOVA.",
-    by: "Alex, CEO at TechCorp",
-    imgSrc: "https://i.pravatar.cc/150?img=1",
-  },
-  {
-    tempId: 1,
-    testimonial: "I'm confident my data is safe with TECHNOVA. I can't say that about other providers.",
-    by: "Dan, CTO at SecureNet",
-    imgSrc: "https://i.pravatar.cc/150?img=2",
-  },
-  {
-    tempId: 2,
-    testimonial: "I know it's cliche, but we were lost before we found TECHNOVA. Can't thank you guys enough!",
-    by: "Stephanie, COO at InnovateCo",
-    imgSrc: "https://i.pravatar.cc/150?img=3",
-  },
-  {
-    tempId: 3,
-    testimonial: "TECHNOVA's products make planning for the future seamless. Can't recommend them enough!",
-    by: "Marie, CFO at FuturePlanning",
-    imgSrc: "https://i.pravatar.cc/150?img=4",
-  },
-  {
-    tempId: 4,
-    testimonial: "If I could give 11 stars, I'd give 12.",
-    by: "Andre, Head of Design at CreativeSolutions",
-    imgSrc: "https://i.pravatar.cc/150?img=5",
-  },
-  {
-    tempId: 5,
-    testimonial: "SO SO SO HAPPY WE FOUND YOU GUYS!!!! I'd bet you've saved me 100 hours so far.",
-    by: "Jeremy, Product Manager at TimeWise",
-    imgSrc: "https://i.pravatar.cc/150?img=6",
-  },
-  {
-    tempId: 6,
-    testimonial: "Took some convincing, but now that we're on TECHNOVA, we're never going back.",
-    by: "Pam, Marketing Director at BrandBuilders",
-    imgSrc: "https://i.pravatar.cc/150?img=7",
-  },
-  {
-    tempId: 7,
-    testimonial: "I would be lost without TECHNOVA's in-depth analytics. The ROI is EASILY 100X for us.",
-    by: "Daniel, Data Scientist at AnalyticsPro",
-    imgSrc: "https://i.pravatar.cc/150?img=8",
-  },
-  {
-    tempId: 8,
-    testimonial: "It's just the best. Period.",
-    by: "Fernando, UX Designer at UserFirst",
-    imgSrc: "https://i.pravatar.cc/150?img=9",
-  },
-  {
-    tempId: 9,
-    testimonial: "I switched 5 years ago and never looked back.",
-    by: "Andy, DevOps Engineer at CloudMasters",
-    imgSrc: "https://i.pravatar.cc/150?img=10",
-  },
-]
+interface TestimonialItem {
+  tempId: number
+  testimonial: string
+  by: string
+  imgSrc: string
+}
 
 interface TestimonialCardProps {
   position: number
-  testimonial: (typeof testimonials)[0]
+  testimonial: TestimonialItem
   handleMove: (steps: number) => void
   cardSize: number
 }
@@ -135,8 +80,20 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ position, testimonial
 }
 
 export const StaggerTestimonials: React.FC = () => {
+  const t = useTranslations('testimonialsItems')
   const [cardSize, setCardSize] = useState(365)
-  const [testimonialsList, setTestimonialsList] = useState(testimonials)
+  const [testimonialsList, setTestimonialsList] = useState<TestimonialItem[]>([])
+
+  useEffect(() => {
+    const items = t.raw('items') as { text: string; author: string }[]
+    const formattedTestimonials = items.map((item, index) => ({
+      tempId: index,
+      testimonial: item.text,
+      by: item.author,
+      imgSrc: `https://i.pravatar.cc/150?img=${index + 1}`,
+    }))
+    setTestimonialsList(formattedTestimonials)
+  }, [t])
 
   const handleMove = (steps: number) => {
     const newList = [...testimonialsList]
@@ -167,6 +124,8 @@ export const StaggerTestimonials: React.FC = () => {
     return () => window.removeEventListener("resize", updateSize)
   }, [])
 
+  if (testimonialsList.length === 0) return null
+
   return (
     <div className="relative w-full overflow-hidden " style={{ height: 600 }}>
       {testimonialsList.map((testimonial, index) => {
@@ -190,7 +149,7 @@ export const StaggerTestimonials: React.FC = () => {
             "bg-background border-2 border-border hover:bg-primary hover:text-primary-foreground",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
           )}
-          aria-label="Previous testimonial"
+          aria-label={t('previous')}
         >
           <ChevronLeft />
         </button>
@@ -201,7 +160,7 @@ export const StaggerTestimonials: React.FC = () => {
             "bg-background border-2 border-border hover:bg-primary hover:text-primary-foreground",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
           )}
-          aria-label="Next testimonial"
+          aria-label={t('next')}
         >
           <ChevronRight />
         </button>

@@ -19,16 +19,18 @@ import { Logo } from "@/components/ui/logo"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { KeyRound, Mail, ArrowLeft, Loader2, CheckCircle2 } from "lucide-react"
 import Link from "next/link"
-
-const formSchema = z.object({
-    email: z.string().email({
-        message: "Please enter a valid email address.",
-    }),
-})
+import { useTranslations } from "next-intl"
 
 export default function ResetPasswordPage() {
+    const t = useTranslations('resetPasswordPage')
     const [isLoading, setIsLoading] = useState(false)
     const [isSubmitted, setIsSubmitted] = useState(false)
+
+    const formSchema = z.object({
+        email: z.string().email({
+            message: t('validation.invalidEmail'),
+        }),
+    })
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -43,7 +45,7 @@ export default function ResetPasswordPage() {
         await new Promise((resolve) => setTimeout(resolve, 1500))
         setIsLoading(false)
         setIsSubmitted(true)
-        toast.success("Reset link sent to your email")
+        toast.success(t('success.title'))
     }
 
     return (
@@ -57,9 +59,9 @@ export default function ResetPasswordPage() {
                     <div className="flex justify-center mb-2">
                         <Logo size="lg" href={undefined} />
                     </div>
-                    <CardTitle className="text-2xl font-bold tracking-tight">Reset Password</CardTitle>
+                    <CardTitle className="text-2xl font-bold tracking-tight">{t('title')}</CardTitle>
                     <CardDescription>
-                        Enter your email to receive a password reset link
+                        {t('description')}
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -68,12 +70,12 @@ export default function ResetPasswordPage() {
                             <div className="flex justify-center">
                                 <CheckCircle2 className="w-16 h-16 text-green-500" />
                             </div>
-                            <h3 className="text-lg font-medium">Check your email</h3>
+                            <h3 className="text-lg font-medium">{t('success.title')}</h3>
                             <p className="text-muted-foreground text-sm">
-                                We have sent a password reset link to <span className="font-medium text-foreground">{form.getValues("email")}</span>
+                                {t('success.description')} <span className="font-medium text-foreground">{form.getValues("email")}</span>
                             </p>
                             <Button variant="outline" className="w-full mt-4" onClick={() => setIsSubmitted(false)}>
-                                Try another email
+                                {t('success.tryAnother')}
                             </Button>
                         </div>
                     ) : (
@@ -84,7 +86,7 @@ export default function ResetPasswordPage() {
                                     name="email"
                                     render={({ field }) => (
                                         <FormItem>
-                                            <FormLabel>Email</FormLabel>
+                                            <FormLabel>{t('form.email')}</FormLabel>
                                             <FormControl>
                                                 <div className="relative">
                                                     <Mail className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
@@ -99,10 +101,10 @@ export default function ResetPasswordPage() {
                                     {isLoading ? (
                                         <>
                                             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                                            Sending Link...
+                                            {t('form.submitting')}
                                         </>
                                     ) : (
-                                        "Send Reset Link"
+                                        t('form.submit')
                                     )}
                                 </Button>
                             </form>
@@ -115,7 +117,7 @@ export default function ResetPasswordPage() {
                         className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
                     >
                         <ArrowLeft className="mr-2 h-4 w-4" />
-                        Back to Login
+                        {t('footer.backToLogin')}
                     </Link>
                 </CardFooter>
             </Card>

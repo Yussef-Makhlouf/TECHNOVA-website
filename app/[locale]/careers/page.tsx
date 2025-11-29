@@ -7,59 +7,45 @@ import { Briefcase, MapPin, Clock, ArrowRight, Users, Heart, Zap, Trophy } from 
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { DiagonalCard } from "@/components/diagonal-card"
+import { useTranslations, useLocale } from "next-intl"
 
 export default function CareersPage() {
+  const t = useTranslations('careersPage')
+  const locale = useLocale()
+  const isRtl = locale === 'ar'
+  const { jobs: jobsData } = useData()
+
+  const jobs = jobsData.map(job => ({
+    ...job,
+    title: isRtl ? job.titleAr || job.title : job.title,
+    department: isRtl ? job.departmentAr || job.department : job.department,
+    location: isRtl ? job.locationAr || job.location : job.location,
+    type: isRtl ? job.typeAr || job.type : job.type,
+    description: isRtl ? job.descriptionAr || job.description : job.description,
+  }))
+
   const benefits = [
     {
       icon: Heart,
-      title: "Health & Wellness",
-      description: "Comprehensive health insurance and wellness programs",
+      title: t('benefits.items.health.title'),
+      description: t('benefits.items.health.description'),
     },
     {
       icon: Zap,
-      title: "Growth Opportunities",
-      description: "Continuous learning and career development programs",
+      title: t('benefits.items.growth.title'),
+      description: t('benefits.items.growth.description'),
     },
     {
       icon: Users,
-      title: "Collaborative Culture",
-      description: "Work with talented teams on cutting-edge projects",
+      title: t('benefits.items.culture.title'),
+      description: t('benefits.items.culture.description'),
     },
     {
       icon: Trophy,
-      title: "Competitive Compensation",
-      description: "Industry-leading salaries and performance bonuses",
+      title: t('benefits.items.compensation.title'),
+      description: t('benefits.items.compensation.description'),
     },
   ]
-
-  const team = [
-    {
-      name: "Sarah Chen",
-      role: "Chief Technology Officer",
-      image: "/professional-woman-tech-executive.png",
-      bio: "15+ years leading technology innovation",
-    },
-    {
-      name: "Michael Rodriguez",
-      role: "Head of AI Research",
-      image: "/professional-man-ai-researcher.jpg",
-      bio: "PhD in Machine Learning, 50+ publications",
-    },
-    {
-      name: "Emily Watson",
-      role: "Director of Cybersecurity",
-      image: "/professional-woman-cybersecurity.jpg",
-      bio: "Certified security expert, 12+ years experience",
-    },
-    {
-      name: "David Kim",
-      role: "VP of Engineering",
-      image: "/professional-engineering-leader.png",
-      bio: "Built and scaled engineering teams globally",
-    },
-  ]
-
-  const { jobs } = useData()
 
   return (
     <div className="min-h-screen bg-background">
@@ -78,10 +64,10 @@ export default function CareersPage() {
             className="max-w-3xl mx-auto text-center"
           >
             <h1 className="font-heading text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Join Our Team
+              {t('hero.title')}
             </h1>
             <p className="text-xl text-foreground/70 leading-relaxed">
-              Build the future of technology with a team of passionate innovators and industry leaders.
+              {t('hero.description')}
             </p>
           </motion.div>
         </div>
@@ -97,9 +83,9 @@ export default function CareersPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">Why Join TECHNOVA?</h2>
+            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">{t('benefits.title')}</h2>
             <p className="text-foreground/70 text-lg max-w-2xl mx-auto leading-relaxed">
-              We offer more than just a job – we provide a platform for growth, innovation, and impact.
+              {t('benefits.description')}
             </p>
           </motion.div>
 
@@ -111,49 +97,6 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Team */}
-      {/* <section className="py-20 lg:py-24">
-        <div className="container mx-auto px-4 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">Meet Our Leadership</h2>
-            <p className="text-foreground/70 text-lg max-w-2xl mx-auto leading-relaxed">
-              Learn from industry experts and visionary leaders who are shaping the future of technology.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group"
-              >
-                <div className="relative mb-4 overflow-hidden rounded-2xl">
-                  <img
-                    src={member.image || "/placeholder.svg"}
-                    alt={member.name}
-                    className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#020817] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-                <h3 className="font-heading text-xl font-bold text-foreground mb-1">{member.name}</h3>
-                <p className="text-[#00D9FF] text-sm mb-2">{member.role}</p>
-                <p className="text-foreground/60 text-sm">{member.bio}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
       {/* Open Positions */}
       <section className="py-20 lg:py-24 bg-muted/30 dark:bg-card/10">
         <div className="container mx-auto px-4 lg:px-8">
@@ -164,9 +107,9 @@ export default function CareersPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">Open Positions</h2>
+            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">{t('openPositions.title')}</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-              Find your next opportunity and join our mission to build the future.
+              {t('openPositions.description')}
             </p>
           </motion.div>
 
@@ -203,7 +146,7 @@ export default function CareersPage() {
                     href="#"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 font-medium whitespace-nowrap"
                   >
-                    Apply Now
+                    {t('openPositions.apply')}
                     <ArrowRight size={16} />
                   </Link>
                 </div>

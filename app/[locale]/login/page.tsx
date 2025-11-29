@@ -9,6 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Eye, EyeOff, Sparkles } from "lucide-react"
 import { login } from "./actions"
 import { toast } from "sonner"
+import { useTranslations } from "next-intl"
 
 interface PupilProps {
     size?: number
@@ -165,6 +166,7 @@ const EyeBall = ({
 }
 
 export default function LoginPage() {
+    const t = useTranslations('loginPage')
     const router = useRouter()
     const [showPassword, setShowPassword] = useState(false)
     const [email, setEmail] = useState("")
@@ -296,15 +298,15 @@ export default function LoginPage() {
         try {
             const result = await login({ email, password })
             if (result.success) {
-                toast.success("Login successful")
+                toast.success(t('success'))
                 router.push("/dashboard")
             } else {
-                setError(result.error || "Invalid email or password. Please try again.")
-                toast.error(result.error || "Invalid credentials")
+                setError(result.error || t('errors.invalidCredentials'))
+                toast.error(result.error || t('errors.invalidCredentials'))
             }
         } catch (error) {
-            setError("Something went wrong. Please try again.")
-            toast.error("Something went wrong. Please try again.")
+            setError(t('errors.generic'))
+            toast.error(t('errors.generic'))
         } finally {
             setIsLoading(false)
         }
@@ -496,13 +498,13 @@ export default function LoginPage() {
 
                 <div className="relative z-20 flex items-center gap-8 text-sm text-white/60">
                     <a href="/" className="hover:text-white transition-colors">
-                        Home
+                        {t('links.home')}
                     </a>
                     <a href="/about" className="hover:text-white transition-colors">
-                        About
+                        {t('links.about')}
                     </a>
                     <a href="/contact" className="hover:text-white transition-colors">
-                        Contact
+                        {t('links.contact')}
                     </a>
                 </div>
 
@@ -525,14 +527,14 @@ export default function LoginPage() {
 
                     {/* Header */}
                     <div className="text-center mb-10">
-                        <h1 className="text-3xl font-bold tracking-tight mb-2">Welcome back!</h1>
-                        <p className="text-muted-foreground text-sm">Please enter your details to access the dashboard</p>
+                        <h1 className="text-3xl font-bold tracking-tight mb-2">{t('welcome.title')}</h1>
+                        <p className="text-muted-foreground text-sm">{t('welcome.subtitle')}</p>
                     </div>
 
                     {/* Login Form */}
                     <form onSubmit={handleSubmit} className="space-y-5">
                         <div className="space-y-2">
-                            <Label htmlFor="email" className="text-sm font-medium">Email</Label>
+                            <Label htmlFor="email" className="text-sm font-medium">{t('form.email')}</Label>
                             <Input
                                 id="email"
                                 type="email"
@@ -548,7 +550,7 @@ export default function LoginPage() {
                         </div>
 
                         <div className="space-y-2">
-                            <Label htmlFor="password" className="text-sm font-medium">Password</Label>
+                            <Label htmlFor="password" className="text-sm font-medium">{t('form.password')}</Label>
                             <div className="relative">
                                 <Input
                                     id="password"
@@ -578,7 +580,7 @@ export default function LoginPage() {
                                 href="/reset-password"
                                 className="text-sm text-[#7B3FEF] hover:underline font-medium"
                             >
-                                Forgot password?
+                                {t('form.forgotPassword')}
                             </a>
                         </div>
 
@@ -594,11 +596,11 @@ export default function LoginPage() {
                             size="lg"
                             disabled={isLoading}
                         >
-                            {isLoading ? "Signing in..." : "Log in"}
+                            {isLoading ? t('form.submitting') : t('form.submit')}
                         </Button>
                     </form>
 
-               
+
                 </div>
             </div>
         </div>

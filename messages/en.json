@@ -1,0 +1,845 @@
+{
+    "hero": {
+        "badge": "The Future is Now",
+        "title": {
+            "part1": "Redefining Digital",
+            "part2": "Evolution"
+        },
+        "subtitle": "TECHNOVA bridges the gap between imagination and reality. We build space-age digital experiences that propel your business into the next dimension.",
+        "cta": {
+            "primary": "Start Your Journey",
+            "secondary": "Explore Services"
+        }
+    },
+    "innovation": {
+        "badge": "Innovation in Action",
+        "title": "Transform Ideas Into Reality",
+        "description": "Our cutting-edge solutions bridge the gap between concept and execution, delivering experiences that redefine what's possible in digital innovation.",
+        "features": {
+            "ai": "AI-Powered Solutions",
+            "integration": "Seamless Integration",
+            "technology": "Future-Ready Technology"
+        }
+    },
+    "services": {
+        "badge": "What We Offer",
+        "title": "Our Core Services",
+        "description": "Comprehensive solutions designed to propel your business into the future."
+    },
+    "features": {
+        "badge": "Our DNA",
+        "title": "What Sets Us Apart",
+        "description": "The values and capabilities that drive our success and define our commitment to excellence.",
+        "items": {
+            "innovation": {
+                "title": "Innovation First",
+                "description": "We push boundaries and challenge conventions to deliver breakthrough solutions."
+            },
+            "clientCentric": {
+                "title": "Client-Centric",
+                "description": "Your success is our mission. We build lasting partnerships, not just projects."
+            },
+            "excellence": {
+                "title": "Excellence",
+                "description": "We maintain the highest standards in every line of code and every interaction."
+            },
+            "performance": {
+                "title": "Lightning Performance",
+                "description": "Optimized solutions that deliver results at unprecedented speed."
+            },
+            "global": {
+                "title": "Global Reach",
+                "description": "Scalable infrastructure serving clients across 50+ countries."
+            },
+            "award": {
+                "title": "Award-Winning",
+                "description": "Recognized industry leader with multiple innovation awards."
+            },
+            "powerful": {
+                "title": "Powerful",
+                "description": "Enterprise-grade solutions supporting entire development ecosystems."
+            },
+            "security": {
+                "title": "Security",
+                "description": "Bank-level security protecting your valuable digital assets."
+            },
+            "customization": {
+                "title": "Customization",
+                "description": "Flexible solutions tailored to your unique business needs."
+            },
+            "control": {
+                "title": "Control",
+                "description": "Complete control over your infrastructure and data."
+            },
+            "ai": {
+                "title": "Built for AI",
+                "description": "AI-ready infrastructure designed for the future."
+            }
+        }
+    },
+    "process": {
+        "badge": "How We Work",
+        "title": "Our Proven Process",
+        "description": "A systematic approach to delivering exceptional results, every time."
+    },
+    "ai": {
+        "badge": "Intelligent Technology",
+        "title": "AI-Powered Solutions",
+        "description": "Harness the power of artificial intelligence to transform your business operations.",
+        "chatbot": {
+            "badge": "AI-Powered Assistance",
+            "title": "Intelligent chatbot system, Get instant answers to all your questions.",
+            "mapLabel": "AI Assistant Active Worldwide",
+            "supportBadge": "24/7 Chat Support",
+            "supportTitle": "Connect with AI chatbot anytime for instant support and guidance.",
+            "availability": "24/7 Availability",
+            "analyticsBadge": "Conversation Analytics",
+            "analyticsTitle": "Track chatbot conversations in real-time.",
+            "analyticsSubtitle": "Analyze user interactions and improve responses.",
+            "conversation": {
+                "question": "How can I integrate the chatbot into my website?",
+                "answer": "chatbot can be easily integrated with just a few lines of code. I'll guide you through the process step by step!",
+                "date": "Sat 22 Feb",
+                "time": "Now"
+            }
+        }
+    },
+    "testimonials": {
+        "badge": "Client Feedback",
+        "title": "What Our Clients Say",
+        "description": "Trusted by leading organizations worldwide."
+    },
+    "cta": {
+        "title": {
+            "part1": "Ready to Build the",
+            "part2": "Future",
+            "part3": "?"
+        },
+        "description": "Transform your vision into reality with TECHNOVA's cutting-edge solutions. Let's create something extraordinary together.",
+        "buttons": {
+            "primary": "Start Your Project",
+            "secondary": "Explore Solutions"
+        }
+    },
+    "navigation": {
+        "home": "Home",
+        "services": "Services",
+        "about": "About",
+        "caseStudies": "Case Studies",
+        "insights": "Insights",
+        "careers": "Careers",
+        "contact": "Contact",
+        "getStarted": "Get Started",
+        "toggleMenu": "Toggle menu",
+        "toggleTheme": "Toggle theme"
+    },
+    "footer": {
+        "description": "Leading the future with innovative technology solutions and Neo-Futurist approach.",
+        "servicesTitle": "Services",
+        "companyTitle": "Company",
+        "contactTitle": "Contact",
+        "copyright": "All rights reserved. Built with passion for the future.",
+        "links": {
+            "aiSolutions": "AI Solutions",
+            "cloudInfrastructure": "Cloud Infrastructure",
+            "cybersecurity": "Cybersecurity",
+            "digitalTransformation": "Digital Transformation",
+            "aboutUs": "About Us",
+            "careers": "Careers",
+            "caseStudies": "Case Studies",
+            "blog": "Blog"
+        },
+        "contactInfo": {
+            "address1": "123 Tech Street",
+            "address2": "Innovation District",
+            "address3": "San Francisco, CA 94105"
+        }
+    },
+    "testimonialsItems": {
+        "previous": "Previous testimonial",
+        "next": "Next testimonial",
+        "items": [
+            {
+                "text": "My favorite solution in the market. We work 5x faster with TECHNOVA.",
+                "author": "Alex, CEO at TechCorp"
+            },
+            {
+                "text": "I'm confident my data is safe with TECHNOVA. I can't say that about other providers.",
+                "author": "Dan, CTO at SecureNet"
+            },
+            {
+                "text": "I know it's cliche, but we were lost before we found TECHNOVA. Can't thank you guys enough!",
+                "author": "Stephanie, COO at InnovateCo"
+            },
+            {
+                "text": "TECHNOVA's products make planning for the future seamless. Can't recommend them enough!",
+                "author": "Marie, CFO at FuturePlanning"
+            },
+            {
+                "text": "If I could give 11 stars, I'd give 12.",
+                "author": "Andre, Head of Design at CreativeSolutions"
+            },
+            {
+                "text": "SO SO SO HAPPY WE FOUND YOU GUYS!!!! I'd bet you've saved me 100 hours so far.",
+                "author": "Jeremy, Product Manager at TimeWise"
+            },
+            {
+                "text": "Took some convincing, but now that we're on TECHNOVA, we're never going back.",
+                "author": "Pam, Marketing Director at BrandBuilders"
+            },
+            {
+                "text": "I would be lost without TECHNOVA's in-depth analytics. The ROI is EASILY 100X for us.",
+                "author": "Daniel, Data Scientist at AnalyticsPro"
+            },
+            {
+                "text": "It's just the best. Period.",
+                "author": "Fernando, UX Designer at UserFirst"
+            },
+            {
+                "text": "I switched 5 years ago and never looked back.",
+                "author": "Andy, DevOps Engineer at CloudMasters"
+            }
+        ]
+    },
+    "processSteps": {
+        "steps": [
+            {
+                "title": "Discovery",
+                "description": "Deep analysis & requirements."
+            },
+            {
+                "title": "Architecture",
+                "description": "Tailored technical planning."
+            },
+            {
+                "title": "Development",
+                "description": "Intuitive design & robust code."
+            },
+            {
+                "title": "Testing",
+                "description": "Rigorous optimization."
+            },
+            {
+                "title": "Launch",
+                "description": "Seamless deployment."
+            },
+            {
+                "title": "Support",
+                "description": "Training & long-term care."
+            }
+        ]
+    },
+    "servicesPage": {
+        "hero": {
+            "badge": "Our Services",
+            "title": "TECHNOVA",
+            "titleHighlight": "Services",
+            "description": "Comprehensive technology solutions designed to accelerate your digital transformation and drive business growth."
+        },
+        "whyChoose": {
+            "title": "Why Choose Our Services",
+            "description": "Experience the difference with our enterprise-grade solutions"
+        },
+        "cta": {
+            "title": "Ready to Transform Your Business?",
+            "description": "Let's discuss how our services can help you achieve your digital transformation goals.",
+            "getStarted": "Get Started",
+            "viewCaseStudies": "View Case Studies"
+        }
+    },
+    "contactPage": {
+        "hero": {
+            "badge": "Contact Us",
+            "title": "Get in Touch",
+            "description": "We'd love to hear from you. Fill out the form below and we'll get back to you shortly."
+        },
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "phone": "Phone",
+            "service": "Service",
+            "message": "Message",
+            "submit": "Send Message",
+            "submitting": "Sending...",
+            "success": "Message sent successfully!",
+            "error": "Something went wrong. Please try again."
+        },
+        "info": {},
+        "ai": {
+            "title": "Built for AI",
+            "description": "AI-ready infrastructure designed for the future."
+        }
+    },
+    "process": {
+        "badge": "How We Work",
+        "title": "Our Proven Process",
+        "description": "A systematic approach to delivering exceptional results, every time."
+    },
+    "ai": {
+        "badge": "Intelligent Technology",
+        "title": "AI-Powered Solutions",
+        "description": "Harness the power of artificial intelligence to transform your business operations.",
+        "chatbot": {
+            "badge": "AI-Powered Assistance",
+            "title": "Intelligent chatbot system, Get instant answers to all your questions.",
+            "mapLabel": "AI Assistant Active Worldwide",
+            "supportBadge": "24/7 Chat Support",
+            "supportTitle": "Connect with AI chatbot anytime for instant support and guidance.",
+            "availability": "24/7 Availability",
+            "analyticsBadge": "Conversation Analytics",
+            "analyticsTitle": "Track chatbot conversations in real-time.",
+            "analyticsSubtitle": "Analyze user interactions and improve responses.",
+            "conversation": {
+                "question": "How can I integrate the chatbot into my website?",
+                "answer": "chatbot can be easily integrated with just a few lines of code. I'll guide you through the process step by step!",
+                "date": "Sat 22 Feb",
+                "time": "Now"
+            }
+        }
+    },
+    "testimonials": {
+        "badge": "Client Feedback",
+        "title": "What Our Clients Say",
+        "description": "Trusted by leading organizations worldwide."
+    },
+    "cta": {
+        "title": {
+            "part1": "Ready to Build the",
+            "part2": "Future",
+            "part3": "?"
+        },
+        "description": "Transform your vision into reality with TECHNOVA's cutting-edge solutions. Let's create something extraordinary together.",
+        "buttons": {
+            "primary": "Start Your Project",
+            "secondary": "Explore Solutions"
+        }
+    },
+    "navigation": {
+        "home": "Home",
+        "services": "Services",
+        "about": "About",
+        "caseStudies": "Case Studies",
+        "insights": "Insights",
+        "careers": "Careers",
+        "contact": "Contact",
+        "getStarted": "Get Started",
+        "toggleMenu": "Toggle menu",
+        "toggleTheme": "Toggle theme"
+    },
+    "footer": {
+        "description": "Leading the future with innovative technology solutions and Neo-Futurist approach.",
+        "servicesTitle": "Services",
+        "companyTitle": "Company",
+        "contactTitle": "Contact",
+        "copyright": "All rights reserved. Built with passion for the future.",
+        "links": {
+            "aiSolutions": "AI Solutions",
+            "cloudInfrastructure": "Cloud Infrastructure",
+            "cybersecurity": "Cybersecurity",
+            "digitalTransformation": "Digital Transformation",
+            "aboutUs": "About Us",
+            "careers": "Careers",
+            "caseStudies": "Case Studies",
+            "blog": "Blog"
+        },
+        "contactInfo": {
+            "address1": "123 Tech Street",
+            "address2": "Innovation District",
+            "address3": "San Francisco, CA 94105"
+        }
+    },
+    "testimonialsItems": {
+        "previous": "Previous testimonial",
+        "next": "Next testimonial",
+        "items": [
+            {
+                "text": "My favorite solution in the market. We work 5x faster with TECHNOVA.",
+                "author": "Alex, CEO at TechCorp"
+            },
+            {
+                "text": "I'm confident my data is safe with TECHNOVA. I can't say that about other providers.",
+                "author": "Dan, CTO at SecureNet"
+            },
+            {
+                "text": "I know it's cliche, but we were lost before we found TECHNOVA. Can't thank you guys enough!",
+                "author": "Stephanie, COO at InnovateCo"
+            },
+            {
+                "text": "TECHNOVA's products make planning for the future seamless. Can't recommend them enough!",
+                "author": "Marie, CFO at FuturePlanning"
+            },
+            {
+                "text": "If I could give 11 stars, I'd give 12.",
+                "author": "Andre, Head of Design at CreativeSolutions"
+            },
+            {
+                "text": "SO SO SO HAPPY WE FOUND YOU GUYS!!!! I'd bet you've saved me 100 hours so far.",
+                "author": "Jeremy, Product Manager at TimeWise"
+            },
+            {
+                "text": "Took some convincing, but now that we're on TECHNOVA, we're never going back.",
+                "author": "Pam, Marketing Director at BrandBuilders"
+            },
+            {
+                "text": "I would be lost without TECHNOVA's in-depth analytics. The ROI is EASILY 100X for us.",
+                "author": "Daniel, Data Scientist at AnalyticsPro"
+            },
+            {
+                "text": "It's just the best. Period.",
+                "author": "Fernando, UX Designer at UserFirst"
+            },
+            {
+                "text": "I switched 5 years ago and never looked back.",
+                "author": "Andy, DevOps Engineer at CloudMasters"
+            }
+        ]
+    },
+    "processSteps": {
+        "steps": [
+            {
+                "title": "Discovery",
+                "description": "Deep analysis & requirements."
+            },
+            {
+                "title": "Architecture",
+                "description": "Tailored technical planning."
+            },
+            {
+                "title": "Development",
+                "description": "Intuitive design & robust code."
+            },
+            {
+                "title": "Testing",
+                "description": "Rigorous optimization."
+            },
+            {
+                "title": "Launch",
+                "description": "Seamless deployment."
+            },
+            {
+                "title": "Support",
+                "description": "Training & long-term care."
+            }
+        ]
+    },
+    "servicesPage": {
+        "hero": {
+            "badge": "Our Services",
+            "title": "TECHNOVA",
+            "titleHighlight": "Services",
+            "description": "Comprehensive technology solutions designed to accelerate your digital transformation and drive business growth."
+        },
+        "whyChoose": {
+            "title": "Why Choose Our Services",
+            "description": "Experience the difference with our enterprise-grade solutions"
+        },
+        "cta": {
+            "title": "Ready to Transform Your Business?",
+            "description": "Let's discuss how our services can help you achieve your digital transformation goals.",
+            "getStarted": "Get Started",
+            "viewCaseStudies": "View Case Studies"
+        }
+    },
+    "contactPage": {
+        "hero": {
+            "badge": "Contact Us",
+            "title": "Get in Touch",
+            "description": "We'd love to hear from you. Fill out the form below and we'll get back to you shortly."
+        },
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "phone": "Phone",
+            "title": "Our Mission",
+            "description": "We design AI-driven solutions that enhance efficiency, increase value, and create measurable impact. We transform data into insight, insight into experience, and experience into sustainable success with a firm commitment to privacy and human-centered innovation."
+        },
+        "values": {
+            "title": "Our Values",
+            "description": "The principles that guide everything we do and shape our company culture.",
+            "items": {
+                "creativity": {
+                    "title": "Creativity",
+                    "description": "We believe creativity is the foundation of effective solutions. We develop ideas rooted in cultural and market understanding to create meaningful and distinctive experiences."
+                },
+                "sustainableInnovation": {
+                    "title": "Sustainable Innovation",
+                    "description": "We build intelligent solutions that are scalable and long-lasting, designed to evolve and remain valuable over time."
+                },
+                "ethicalValues": {
+                    "title": "Ethical Values",
+                    "description": "We believe in AI that enhances human capability, not replaces it. Our priority is the protection of data, transparency, and respect for privacy."
+                },
+                "successPartnership": {
+                    "title": "Success Partnership",
+                    "description": "We invest in long-term partnerships built on trust and shared goals. We work side-by-side with our partners from concept to execution to measurable impact."
+                },
+                "excellence": {
+                    "title": "Excellence in Execution",
+                    "description": "We commit to precision, professionalism, and measurable outcomes. Every project we deliver reflects high standards of quality and institutional rigor."
+                }
+            }
+        },
+        "journey": {
+            "title": "Our Journey",
+            "description": "Key milestones that shaped our path to becoming industry leaders.",
+            "milestones": [
+                {
+                    "year": "2010",
+                    "title": "Founded",
+                    "description": "TECHNOVA was established with a vision to revolutionize the technology landscape and help businesses embrace digital transformation."
+                },
+                {
+                    "year": "2015",
+                    "title": "Global Expansion",
+                    "description": "Expanded operations to serve clients across 25+ countries, establishing ourselves as a trusted global technology partner."
+                },
+                {
+                    "year": "2020",
+                    "title": "AI Innovation Hub",
+                    "description": "Launched our dedicated AI and Machine Learning division, pioneering advanced solutions for enterprise clients."
+                },
+                {
+                    "year": "2025",
+                    "title": "Industry Leader",
+                    "description": "Recognized as a leading technology innovator with 500+ successful projects and 98% client satisfaction rate."
+                }
+            ],
+            "insightsPage": {
+                "hero": {
+                    "badge": "Industry Insights",
+                    "title": "TECHNOVA",
+                    "titleHighlight": "Insights",
+                    "description": "In-depth analysis, research, and thought leadership on technology trends shaping the future of business."
+                },
+                "categories": {
+                    "all": "All",
+                    "marketAnalysis": "Market Analysis",
+                    "technology": "Technology",
+                    "strategy": "Strategy",
+                    "industryInsights": "Industry Insights",
+                    "security": "Security",
+                    "workforce": "Workforce"
+                },
+                "featured": {
+                    "badge": "Featured Insight",
+                    "title": "Latest Research",
+                    "readMore": "Read Insight",
+                    "by": "By"
+                },
+                "cta": {
+                    "title": "Stay Ahead of the Curve",
+                    "description": "Subscribe to our insights newsletter and receive the latest research and analysis directly in your inbox.",
+                    "subscribe": "Subscribe Now",
+                    "viewCaseStudies": "View Case Studies"
+                }
+            },
+            "careersPage": {
+                "hero": {
+                    "title": "Join Our Team",
+                    "description": "Build the future of technology with a team of passionate innovators and industry leaders."
+                },
+                "benefits": {
+                    "title": "Why Join TECHNOVA?",
+                    "description": "We offer more than just a job – we provide a platform for growth, innovation, and impact.",
+                    "items": {
+                        "health": {
+                            "title": "Health & Wellness",
+                            "description": "Comprehensive health insurance and wellness programs"
+                        },
+                        "growth": {
+                            "title": "Growth Opportunities",
+                            "description": "Continuous learning and career development programs"
+                        },
+                        "culture": {
+                            "title": "Collaborative Culture",
+                            "description": "Work with talented teams on cutting-edge projects"
+                        },
+                        "compensation": {
+                            "title": "Competitive Compensation",
+                            "description": "Industry-leading salaries and performance bonuses"
+                        }
+                    }
+                },
+                "openPositions": {
+                    "title": "Open Positions",
+                    "description": "Find your next opportunity and join our mission to build the future.",
+                    "apply": "Apply Now"
+                }
+            },
+            "loginPage": {
+                "welcome": {
+                    "title": "Welcome back!",
+                    "subtitle": "Please enter your details to access the dashboard"
+                },
+                "form": {
+                    "email": "Email",
+                    "password": "Password",
+                    "forgotPassword": "Forgot password?",
+                    "submit": "Log in",
+                    "submitting": "Signing in..."
+                },
+                "errors": {
+                    "invalidCredentials": "Invalid email or password. Please try again.",
+                    "generic": "Something went wrong. Please try again."
+                },
+                "success": "Login successful",
+                "links": {
+                    "home": "Home",
+                    "about": "About",
+                    "contact": "Contact"
+                }
+            }
+       
+   
+        
+    },
+    "servicesPage": {
+        "hero": {
+            "badge": "Our Services",
+            "title": "TECHNOVA",
+            "titleHighlight": "Services",
+            "description": "Comprehensive technology solutions designed to accelerate your digital transformation and drive business growth."
+        },
+        "whyChoose": {
+            "title": "Why Choose Our Services",
+            "description": "Experience the difference with our enterprise-grade solutions"
+        },
+        "cta": {
+            "title": "Ready to Transform Your Business?",
+            "description": "Let's discuss how our services can help you achieve your digital transformation goals.",
+            "getStarted": "Get Started",
+            "viewCaseStudies": "View Case Studies"
+        }
+    },
+    "contactPage": {
+        "hero": {
+            "badge": "Contact Us",
+            "title": "Get in Touch",
+            "description": "We'd love to hear from you. Fill out the form below and we'll get back to you shortly."
+        },
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "phone": "Phone",
+            "title": "Our Mission",
+            "description": "We design AI-driven solutions that enhance efficiency, increase value, and create measurable impact. We transform data into insight, insight into experience, and experience into sustainable success with a firm commitment to privacy and human-centered innovation."
+        },
+        "values": {
+            "title": "Our Values",
+            "description": "The principles that guide everything we do and shape our company culture.",
+            "items": {
+                "creativity": {
+                    "title": "Creativity",
+                    "description": "We believe creativity is the foundation of effective solutions. We develop ideas rooted in cultural and market understanding to create meaningful and distinctive experiences."
+                },
+                "sustainableInnovation": {
+                    "title": "Sustainable Innovation",
+                    "description": "We build intelligent solutions that are scalable and long-lasting, designed to evolve and remain valuable over time."
+                },
+                "ethicalValues": {
+                    "title": "Ethical Values",
+                    "description": "We believe in AI that enhances human capability, not replaces it. Our priority is the protection of data, transparency, and respect for privacy."
+                },
+                "successPartnership": {
+                    "title": "Success Partnership",
+                    "description": "We invest in long-term partnerships built on trust and shared goals. We work side-by-side with our partners from concept to execution to measurable impact."
+                },
+                "excellence": {
+                    "title": "Excellence in Execution",
+                    "description": "We commit to precision, professionalism, and measurable outcomes. Every project we deliver reflects high standards of quality and institutional rigor."
+                },
+                "globalPresence": {
+                    "title": "Global Presence",
+                    "description": "We have a global presence with a team of experts who are committed to delivering the best possible results for our clients."
+                }
+            }
+        },
+        "journey": {
+            "title": "Our Journey",
+            "description": "Key milestones that shaped our path to becoming industry leaders.",
+            "milestones": [
+                {
+                    "year": "2010",
+                    "title": "Founded",
+                    "description": "TECHNOVA was established with a vision to revolutionize the technology landscape and help businesses embrace digital transformation."
+                },
+                {
+                    "year": "2015",
+                    "title": "Global Expansion",
+                    "description": "Expanded operations to serve clients across 25+ countries, establishing ourselves as a trusted global technology partner."
+                },
+                {
+                    "year": "2020",
+                    "title": "AI Innovation Hub",
+                    "description": "Launched our dedicated AI and Machine Learning division, pioneering advanced solutions for enterprise clients."
+                },
+                {
+                    "year": "2025",
+                    "title": "Industry Leader",
+                    "description": "Recognized as a leading technology innovator with 500+ successful projects and 98% client satisfaction rate."
+                }
+            ]
+        }
+    },
+    "insightsPage": {
+        "hero": {
+            "badge": "Industry Insights",
+            "title": "TECHNOVA",
+            "titleHighlight": "Insights",
+            "description": "In-depth analysis, research, and thought leadership on technology trends shaping the future of business."
+        },
+        "categories": {
+            "all": "All",
+            "marketAnalysis": "Market Analysis",
+            "technology": "Technology",
+            "strategy": "Strategy",
+            "industryInsights": "Industry Insights",
+            "security": "Security",
+            "workforce": "Workforce"
+        },
+        "featured": {
+            "badge": "Featured Insight",
+            "title": "Latest Research",
+            "readMore": "Read Insight",
+            "by": "By"
+        },
+        "cta": {
+            "title": "Stay Ahead of the Curve",
+            "description": "Subscribe to our insights newsletter and receive the latest research and analysis directly in your inbox.",
+            "subscribe": "Subscribe Now",
+            "viewCaseStudies": "View Case Studies"
+        }
+    },
+    "careersPage": {
+        "hero": {
+            "title": "Join Our Team",
+            "description": "Build the future of technology with a team of passionate innovators and industry leaders."
+        },
+        "benefits": {
+            "title": "Why Join TECHNOVA?",
+            "description": "We offer more than just a job – we provide a platform for growth, innovation, and impact.",
+            "items": {
+                "health": {
+                    "title": "Health & Wellness",
+                    "description": "Comprehensive health insurance and wellness programs"
+                },
+                "growth": {
+                    "title": "Growth Opportunities",
+                    "description": "Continuous learning and career development programs"
+                },
+                "culture": {
+                    "title": "Collaborative Culture",
+                    "description": "Work with talented teams on cutting-edge projects"
+                },
+                "compensation": {
+                    "title": "Competitive Compensation",
+                    "description": "Industry-leading salaries and performance bonuses"
+                }
+            }
+        },
+        "openPositions": {
+            "title": "Open Positions",
+            "description": "Find your next opportunity and join our mission to build the future.",
+            "apply": "Apply Now"
+        }
+    },
+    "loginPage": {
+        "welcome": {
+            "title": "Welcome back!",
+            "subtitle": "Please enter your details to access the dashboard"
+        },
+        "form": {
+            "email": "Email",
+            "password": "Password",
+            "forgotPassword": "Forgot password?",
+            "submit": "Log in",
+            "submitting": "Signing in..."
+        },
+        "errors": {
+            "invalidCredentials": "Invalid email or password. Please try again.",
+            "generic": "Something went wrong. Please try again."
+        },
+        "success": "Login successful",
+        "links": {
+            "home": "Home",
+            "about": "About",
+            "contact": "Contact"
+        }
+    },
+    "resetPasswordPage": {
+        "title": "Reset Password",
+        "description": "Enter your email to receive a password reset link",
+        "form": {
+            "email": "Email",
+            "submit": "Send Reset Link",
+            "submitting": "Sending Link..."
+        },
+        "success": {
+            "title": "Check your email",
+            "description": "We have sent a password reset link to",
+            "tryAnother": "Try another email"
+        },
+        "footer": {
+            "backToLogin": "Back to Login"
+        },
+        "validation": {
+            "invalidEmail": "Please enter a valid email address."
+        }
+    },
+    "features3": {
+        "endToEnd": {
+            "title": "End-to-End Solutions",
+            "description": "Complete technology solutions from consultation to deployment and support"
+        },
+        "enterpriseSecurity": {
+            "title": "Enterprise Security",
+            "description": "Bank-level security protocols with 24/7 monitoring and threat detection"
+        },
+        "lightningFast": {
+            "title": "Lightning Fast",
+            "description": "Optimized infrastructure ensuring peak performance at scale"
+        },
+        "aiPowered": {
+            "title": "AI-Powered Intelligence",
+            "description": "Cutting-edge AI and machine learning integration for smarter solutions"
+        },
+        "expertTeam": {
+            "title": "Expert Team Support",
+            "description": "Dedicated specialists available 24/7 to ensure your success"
+        },
+        "globalReach": {
+            "title": "Global Reach, Local Expertise",
+            "description": "Serving clients across the Middle East and beyond with cutting-edge technology solutions tailored to regional needs and international standards"
+        }
+    },
+    "featuresAdvanced": {
+        "realTimeMonitoring": {
+            "title": "Real-time Monitoring",
+            "description": "Track system performance with advanced analytics"
+        },
+        "enterpriseSecurity": {
+            "title": "Enterprise Security",
+            "description": "Military-grade encryption and protection"
+        },
+        "lightningFast": {
+            "title": "Lightning Fast",
+            "description": "Optimized performance for instant response"
+        },
+        "globalNetwork": {
+            "title": "Global Network",
+            "description": "Distributed infrastructure worldwide"
+        },
+        "support247": {
+            "title": "24/7 Support",
+            "description": "Round-the-clock expert assistance"
+        },
+        "advancedAnalytics": {
+            "title": "Advanced Analytics",
+            "description": "Deep insights into your data"
+        }
+    },
+    "worldMap": {
+        "altText": "world map",
+        "companyName": "TECHNOVA"
+    }
+}}

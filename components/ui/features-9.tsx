@@ -3,8 +3,11 @@ import { Activity, MapIcon, MessageCircle } from "lucide-react"
 import DottedMap from "dotted-map"
 import { Area, AreaChart, CartesianGrid } from "recharts"
 import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
+import { useTranslations } from 'next-intl'
 
 export function Features() {
+  const t = useTranslations('ai.chatbot')
+
   return (
     <section className="px-4 py-16 md:py-32">
       <div className="mx-auto grid max-w-5xl border md:grid-cols-2">
@@ -12,16 +15,16 @@ export function Features() {
           <div className="p-6 sm:p-12">
             <span className="text-muted-foreground flex items-center gap-2">
               <MapIcon className="size-4" />
-              AI-Powered Assistance
+              {t('badge')}
             </span>
 
-            <p className="mt-8 text-2xl font-semibold">Intelligent chatbot system, Get instant answers to all your questions.</p>
+            <p className="mt-8 text-2xl font-semibold">{t('title')}</p>
           </div>
 
           <div aria-hidden className="relative">
             <div className="absolute inset-0 z-10 m-auto size-fit">
               <div className="rounded-(--radius) bg-background dark:bg-muted z-[1] relative flex size-fit w-fit items-center gap-2 border px-3 py-1 text-xs font-medium shadow-md shadow-black/5">
-                <span className="text-lg">🤖</span> AI Assistant Active Worldwide
+                <span className="text-lg">🤖</span> {t('mapLabel')}
               </div>
               <div className="rounded-(--radius) bg-background absolute inset-2 -bottom-2 mx-auto border px-3 py-4 text-xs font-medium shadow-md shadow-black/5 dark:bg-zinc-900"></div>
             </div>
@@ -36,10 +39,10 @@ export function Features() {
           <div className="relative z-10">
             <span className="text-muted-foreground flex items-center gap-2">
               <MessageCircle className="size-4" />
-              24/7 Chat Support
+              {t('supportBadge')}
             </span>
 
-            <p className="my-8 text-2xl font-semibold">Connect with AI chatbot anytime for instant support and guidance.</p>
+            <p className="my-8 text-2xl font-semibold">{t('supportTitle')}</p>
           </div>
           <div aria-hidden className="flex flex-col gap-8">
             <div>
@@ -47,34 +50,34 @@ export function Features() {
                 <span className="flex justify-center items-center size-5 rounded-full border">
                   <span className="size-3 rounded-full bg-primary" />
                 </span>
-                <span className="text-muted-foreground text-xs">Sat 22 Feb</span>
+                <span className="text-muted-foreground text-xs">{t('conversation.date')}</span>
               </div>
               <div className="rounded-(--radius) bg-background mt-1.5 w-3/5 border p-3 text-xs">
-                How can I integrate the chatbot into my website?
+                {t('conversation.question')}
               </div>
             </div>
 
             <div>
               <div className="rounded-(--radius) mb-1 ml-auto w-3/5 bg-blue-600 p-3 text-xs text-white">
-             chatbot can be easily integrated with just a few lines of code. I'll guide you through the process step by step!
+                {t('conversation.answer')}
               </div>
-              <span className="text-muted-foreground block text-right text-xs">Now</span>
+              <span className="text-muted-foreground block text-right text-xs">{t('conversation.time')}</span>
             </div>
           </div>
         </div>
         <div className="col-span-full border-y p-12">
-          <p className="text-center text-4xl font-semibold lg:text-7xl">24/7 Availability</p>
+          <p className="text-center text-4xl font-semibold lg:text-7xl">{t('availability')}</p>
         </div>
         <div className="relative col-span-full">
           <div className="absolute z-10 max-w-lg px-6 pr-12 pt-6 md:px-12 md:pt-12">
             <span className="text-muted-foreground flex items-center gap-2">
               <Activity className="size-4" />
-              Conversation Analytics
+              {t('analyticsBadge')}
             </span>
 
             <p className="my-8 text-2xl font-semibold">
-              Track chatbot conversations in real-time.{" "}
-              <span className="text-muted-foreground"> Analyze user interactions and improve responses.</span>
+              {t('analyticsTitle')}{" "}
+              <span className="text-muted-foreground">{t('analyticsSubtitle')}</span>
             </p>
           </div>
           <MonitoringChart />

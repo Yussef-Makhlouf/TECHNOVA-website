@@ -2,47 +2,21 @@
 
 import { motion } from "framer-motion"
 import { Search, Lightbulb, PenTool, Code2, Rocket, MessageSquare } from "lucide-react"
-
-const steps = [
-    {
-        icon: Search,
-        title: "Discovery",
-        description: "Deep analysis & requirements.",
-        color: "#00D9FF",
-    },
-    {
-        icon: Lightbulb,
-        title: "Architecture",
-        description: "Tailored technical planning.",
-        color: "#7B3FEF",
-    },
-    {
-        icon: PenTool,
-        title: "Development",
-        description: "Intuitive design & robust code.",
-        color: "#FF0080",
-    },
-    {
-        icon: Code2,
-        title: "Testing",
-        description: "Rigorous optimization.",
-        color: "#FFD700",
-    },
-    {
-        icon: Rocket,
-        title: "Launch",
-        description: "Seamless deployment.",
-        color: "#00FF94",
-    },
-    {
-        icon: MessageSquare,
-        title: "Support",
-        description: "Training & long-term care.",
-        color: "#FF4D4D",
-    },
-]
+import { useTranslations } from "next-intl"
 
 export function ProcessSection() {
+    const t = useTranslations('processSteps')
+    const stepsData = t.raw('steps') as { title: string; description: string }[]
+
+    const icons = [Search, Lightbulb, PenTool, Code2, Rocket, MessageSquare]
+    const colors = ["#00D9FF", "#7B3FEF", "#FF0080", "#FFD700", "#00FF94", "#FF4D4D"]
+
+    const steps = stepsData.map((step, index) => ({
+        ...step,
+        icon: icons[index] || Search,
+        color: colors[index] || "#00D9FF"
+    }))
+
     return (
         <div className="container mx-auto px-4 relative">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">

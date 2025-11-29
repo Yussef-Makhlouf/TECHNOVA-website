@@ -1,23 +1,26 @@
 "use client"
 
 import Navigation from "@/components/navigation"
+import Footer from "@/components/footer"
 
 import { useData } from "@/lib/data-context"
-import { getIcon } from "@/lib/icons"
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { DiagonalCard } from "@/components/diagonal-card"
 import { Features } from "@/components/ui/features-8"
 import { ServiceCard } from "@/components/service-card"
+import { useTranslations, useLocale } from "next-intl"
 
 export default function ServicesPage() {
   const { services: servicesData } = useData()
+  const t = useTranslations('servicesPage')
+  const locale = useLocale()
+  const isRtl = locale === 'ar'
 
   const services = servicesData.map((service, index) => ({
-    title: service.name_en,
-    description: service.shortDescription_en,
+    title: isRtl ? service.name_ar : service.name_en,
+    description: isRtl ? service.shortDescription_ar : service.shortDescription_en,
     image: service.images[0]?.imageLink || "",
-    features: service.features.map(f => f.feature_en),
+    features: service.features.map(f => isRtl ? f.feature_ar : f.feature_en),
     href: `/services/${service.slug}`,
     color: service.color,
     index
@@ -42,17 +45,16 @@ export default function ServicesPage() {
           >
             <div className="inline-block mb-6">
               <span className="px-4 py-2 rounded-full glass-panel border border-border text-sm font-medium text-accent">
-                Our Services
+                {t('hero.badge')}
               </span>
             </div>
             <h1 className="font-heading text-5xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-              TECHNOVA{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Services</span>
+              {t('hero.title')}{" "}
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">{t('hero.titleHighlight')}</span>
             </h1>
             <div className="h-1 w-32 mx-auto my-6 bg-gradient-to-r from-primary to-accent rounded-full" />
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Comprehensive technology solutions designed to accelerate your digital transformation and drive business
-              growth.
+              {t('hero.description')}
             </p>
           </motion.div>
         </div>
@@ -66,7 +68,16 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 gap-8 lg:gap-12">
             {services.map((service, index) => (
-              <ServiceCard title={""} description={""} image={""} features={[]} href={""} index={0} color={""} />
+              <ServiceCard
+                key={index}
+                title={service.title}
+                description={service.description}
+                image={service.image}
+                features={service.features}
+                href={service.href}
+                index={index}
+                color={service.color}
+              />
             ))}
           </div>
         </div>
@@ -82,10 +93,10 @@ export default function ServicesPage() {
             className="text-center mb-16"
           >
             <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Why Choose Our Services
+              {t('whyChoose.title')}
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-              Experience the difference with our enterprise-grade solutions
+              {t('whyChoose.description')}
             </p>
           </motion.div>
           <Features />
@@ -107,31 +118,30 @@ export default function ServicesPage() {
           >
             <div className="glass-panel p-12 lg:p-16 rounded-3xl border border-border dark:bg-card/30">
               <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                Ready to Transform Your Business?
+                {t('cta.title')}
               </h2>
               <div className="h-1 w-32 mx-auto my-6 rounded-full" />
               <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                Let's discuss how our services can help you achieve your digital transformation goals.
+                {t('cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/contact"
                   className="px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-accent text-white font-medium hover:shadow-xl hover:shadow-accent/30 transition-all duration-300 hover:-translate-y-1"
                 >
-                  Get Started
+                  {t('cta.getStarted')}
                 </Link>
                 <Link
                   href="/case-studies"
                   className="px-8 py-4 rounded-xl glass-panel border border-border hover:border-accent text-foreground font-medium transition-all duration-300 hover:-translate-y-1 dark:bg-card/30"
                 >
-                  View Case Studies
+                  {t('cta.viewCaseStudies')}
                 </Link>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
-
 
     </div >
   )

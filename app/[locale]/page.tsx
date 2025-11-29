@@ -2,7 +2,7 @@
 
 import Navigation from "@/components/navigation"
 import { useData } from "@/lib/data-context"
-
+import { useTranslations } from 'next-intl'
 import { Hero } from "@/components/hero"
 import Link from "next/link"
 import {
@@ -55,6 +55,14 @@ import { Features3 } from "@/components/ui/features-3"
 import LogosMarquee from "@/components/logos-marquee"
 
 export default function HomePage() {
+  const t = useTranslations()
+  const tInnovation = useTranslations('innovation')
+  const tServices = useTranslations('services')
+  const tFeatures = useTranslations('features')
+  const tProcess = useTranslations('process')
+  const tAi = useTranslations('ai')
+  const tTestimonials = useTranslations('testimonials')
+  const tCta = useTranslations('cta')
   const stats = [
     { value: "500+", label: "Projects Completed" },
     { value: "98%", label: "Client Satisfaction" },
@@ -65,58 +73,58 @@ export default function HomePage() {
   const combinedFeatures = [
     {
       icon: <IconTarget />,
-      title: "Innovation First",
-      description: "We push boundaries and challenge conventions to deliver breakthrough solutions.",
+      title: tFeatures('items.innovation.title'),
+      description: tFeatures('items.innovation.description'),
     },
     {
       icon: <IconUsers />,
-      title: "Client-Centric",
-      description: "Your success is our mission. We build lasting partnerships, not just projects.",
+      title: tFeatures('items.clientCentric.title'),
+      description: tFeatures('items.clientCentric.description'),
     },
     {
       icon: <IconAward />,
-      title: "Excellence",
-      description: "We maintain the highest standards in every line of code and every interaction.",
+      title: tFeatures('items.excellence.title'),
+      description: tFeatures('items.excellence.description'),
     },
     {
       icon: <IconBolt />,
-      title: "Lightning Performance",
-      description: "Optimized solutions that deliver results at unprecedented speed.",
+      title: tFeatures('items.performance.title'),
+      description: tFeatures('items.performance.description'),
     },
     {
       icon: <IconGlobe />,
-      title: "Global Reach",
-      description: "Scalable infrastructure serving clients across 50+ countries.",
+      title: tFeatures('items.global.title'),
+      description: tFeatures('items.global.description'),
     },
     {
       icon: <IconStar />,
-      title: "Award-Winning",
-      description: "Recognized industry leader with multiple innovation awards.",
+      title: tFeatures('items.award.title'),
+      description: tFeatures('items.award.description'),
     },
     {
       icon: <IconCpu />,
-      title: "Powerful",
-      description: "Enterprise-grade solutions supporting entire development ecosystems.",
+      title: tFeatures('items.powerful.title'),
+      description: tFeatures('items.powerful.description'),
     },
     {
       icon: <IconFingerprint />,
-      title: "Security",
-      description: "Bank-level security protecting your valuable digital assets.",
+      title: tFeatures('items.security.title'),
+      description: tFeatures('items.security.description'),
     },
     {
       icon: <IconPencil />,
-      title: "Customization",
-      description: "Flexible solutions tailored to your unique business needs.",
+      title: tFeatures('items.customization.title'),
+      description: tFeatures('items.customization.description'),
     },
     {
       icon: <IconSettings />,
-      title: "Control",
-      description: "Complete control over your infrastructure and data.",
+      title: tFeatures('items.control.title'),
+      description: tFeatures('items.control.description'),
     },
     {
       icon: <IconSparkles />,
-      title: "Built for AI",
-      description: "AI-ready infrastructure designed for the future.",
+      title: tFeatures('items.ai.title'),
+      description: tFeatures('items.ai.description'),
     },
   ]
 
@@ -131,37 +139,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <Hero />
 
-      {/* Stats Section - Re-enabled */}
-      {/* <Section className="py-16 lg:py-20 border-y border-border/50">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center relative group"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#7B3FEF]/5 to-[#00D9FF]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative p-6">
-                  <div className="font-heading text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] bg-clip-text text-transparent mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-muted-foreground text-sm font-medium">{stat.label}</div>
-                  <div className="w-12 h-1 bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] mx-auto mt-4 rounded-full" />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </Section> */}
+
 
       {/* Innovation in Action Section */}
       <Section className="py-20 lg:py-32">
@@ -174,11 +152,11 @@ export default function HomePage() {
         >
           <div className="inline-block mb-4">
             <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#7B3FEF]/10 to-[#00D9FF]/10 border border-[#7B3FEF]/20 text-sm font-medium text-[#7B3FEF]">
-              Innovation in Action
+              {tInnovation('badge')}
             </span>
           </div>
           <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Transform Ideas Into Reality
+            {tInnovation('title')}
           </h2>
           <div className="gradient-line w-24 mx-auto my-6" />
         </motion.div>
@@ -195,22 +173,21 @@ export default function HomePage() {
               >
                 <div>
                   <p className="text-muted-foreground leading-relaxed">
-                    Our cutting-edge solutions bridge the gap between concept and execution,
-                    delivering experiences that redefine what's possible in digital innovation.
+                    {tInnovation('description')}
                   </p>
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] rounded-full"></div>
-                    <span className="text-sm font-medium text-foreground">AI-Powered Solutions</span>
+                    <span className="text-sm font-medium text-foreground">{tInnovation('features.ai')}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] rounded-full"></div>
-                    <span className="text-sm font-medium text-foreground">Seamless Integration</span>
+                    <span className="text-sm font-medium text-foreground">{tInnovation('features.integration')}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] rounded-full"></div>
-                    <span className="text-sm font-medium text-foreground">Future-Ready Technology</span>
+                    <span className="text-sm font-medium text-foreground">{tInnovation('features.technology')}</span>
                   </div>
                 </div>
               </motion.div>
@@ -272,13 +249,13 @@ export default function HomePage() {
         >
           <div className="inline-block mb-4">
             <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#00D9FF]/10 to-[#7B3FEF]/10 border border-[#00D9FF]/20 text-sm font-medium text-[#00D9FF]">
-              What We Offer
+              {tServices('badge')}
             </span>
           </div>
-          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">Our Core Services</h2>
+          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">{tServices('title')}</h2>
           <div className="gradient-line w-24 mx-auto my-6" />
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            Comprehensive solutions designed to propel your business into the future.
+            {tServices('description')}
           </p>
         </motion.div>
         <Features3 />
@@ -295,13 +272,13 @@ export default function HomePage() {
         >
           <div className="inline-block mb-4">
             <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#7B3FEF]/10 to-[#00D9FF]/10 border border-[#7B3FEF]/20 text-sm font-medium text-[#7B3FEF]">
-              Our DNA
+              {tFeatures('badge')}
             </span>
           </div>
-          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">What Sets Us Apart</h2>
+          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">{tFeatures('title')}</h2>
           <div className="gradient-line w-24 mx-auto my-6" />
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            The values and capabilities that drive our success and define our commitment to excellence.
+            {tFeatures('description')}
           </p>
         </motion.div>
         <FeaturesSectionWithHoverEffects features={combinedFeatures} />
@@ -318,13 +295,13 @@ export default function HomePage() {
         >
           <div className="inline-block mb-4">
             <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#00D9FF]/10 to-[#7B3FEF]/10 border border-[#00D9FF]/20 text-sm font-medium text-[#00D9FF]">
-              How We Work
+              {tProcess('badge')}
             </span>
           </div>
-          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">Our Proven Process</h2>
+          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">{tProcess('title')}</h2>
           <div className="gradient-line w-24 mx-auto my-6" />
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            A systematic approach to delivering exceptional results, every time.
+            {tProcess('description')}
           </p>
         </motion.div>
         <ProcessSection />
@@ -341,55 +318,17 @@ export default function HomePage() {
         >
           <div className="inline-block mb-4">
             <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#7B3FEF]/10 to-[#00D9FF]/10 border border-[#7B3FEF]/20 text-sm font-medium text-[#7B3FEF]">
-              Intelligent Technology
+              {tAi('badge')}
             </span>
           </div>
-          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">AI-Powered Solutions</h2>
+          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">{tAi('title')}</h2>
           <div className="gradient-line w-24 mx-auto my-6" />
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            Harness the power of artificial intelligence to transform your business operations.
+            {tAi('description')}
           </p>
         </motion.div>
         <Features />
       </Section>
-
-      {/* Featured Projects Section - Re-enabled */}
-      {/* <Section className="py-20 lg:py-32">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <div className="inline-block mb-6">
-            <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#00D9FF]/10 to-[#7B3FEF]/10 border border-[#00D9FF]/20 text-sm font-medium text-[#00D9FF]">
-              Success Stories
-            </span>
-          </div>
-          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">Featured Projects</h2>
-          <div className="gradient-line w-24 mx-auto my-6" />
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            Real-world examples of how we've helped businesses achieve extraordinary results.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
-          {displayedCaseStudies.map((study, index) => (
-            <CaseStudyCard key={index} study={study} index={index} />
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Link
-            href="/case-studies"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-[#00D9FF] text-[#00D9FF] font-medium hover:bg-[#00D9FF] hover:text-white transition-all duration-300 hover:-translate-y-1"
-          >
-            View All Projects
-            <ArrowRight size={20} />
-          </Link>
-        </div>
-      </Section> */}
 
       {/* Testimonials Section */}
       <Section className="py-20 lg:py-32">
@@ -402,13 +341,13 @@ export default function HomePage() {
         >
           <div className="inline-block mb-4">
             <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#7B3FEF]/10 to-[#00D9FF]/10 border border-[#7B3FEF]/20 text-sm font-medium text-[#7B3FEF]">
-              Client Feedback
+              {tTestimonials('badge')}
             </span>
           </div>
-          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">What Our Clients Say</h2>
+          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">{tTestimonials('title')}</h2>
           <div className="gradient-line w-24 mx-auto my-6" />
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            Trusted by leading organizations worldwide.
+            {tTestimonials('description')}
           </p>
         </motion.div>
         <StaggerTestimonials />
@@ -424,28 +363,27 @@ export default function HomePage() {
           className="text-center"
         >
           <h2 className="font-heading text-4xl lg:text-6xl font-bold text-foreground mb-4 leading-tight">
-            Ready to Build the{" "}
-            <span className="bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] bg-clip-text text-transparent">Future</span>
-            ?
+            {tCta('title.part1')}{" "}
+            <span className="bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] bg-clip-text text-transparent">{tCta('title.part2')}</span>
+            {tCta('title.part3')}
           </h2>
           <div className="gradient-line w-32 mx-auto my-8" />
           <p className="text-muted-foreground text-xl mb-10 leading-relaxed max-w-2xl mx-auto">
-            Transform your vision into reality with TECHNOVA's cutting-edge solutions. Let's create something
-            extraordinary together.
+            {tCta('description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] text-white rounded-full hover:shadow-2xl hover:shadow-[#00D9FF]/40 transition-all duration-300 hover:-translate-y-1 font-medium text-lg"
             >
-              Start Your Project
+              {tCta('buttons.primary')}
               <ArrowRight size={22} />
             </Link>
             <Link
               href="/services"
               className="inline-flex items-center gap-2 px-10 py-5 border-2 border-[#00D9FF] text-[#00D9FF] rounded-full hover:bg-[#00D9FF]/10 transition-all duration-300 hover:-translate-y-1 font-medium text-lg"
             >
-              Explore Solutions
+              {tCta('buttons.secondary')}
             </Link>
           </div>
         </motion.div>
