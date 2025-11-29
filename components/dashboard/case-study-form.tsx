@@ -37,12 +37,11 @@ const formSchema = z.object({
     description: z.string().min(10, {
         message: "Description must be at least 10 characters.",
     }),
-    imageFile: z.any().optional(),
-
+    
     descriptionAr: z.string().optional(),
-    image: z.string().min(1, {
-        message: "Image is required.",
-    }),
+    imageFiles: z.array(z.any()).optional(),
+    images: z.array(z.string()).optional(),
+
     
     color: z.string().optional(),
     status: z.array(
@@ -74,7 +73,8 @@ export function CaseStudyForm({ initialData, isEditing = false }: CaseStudyFormP
             categoryAr: initialData?.categoryAr || "",
             description: initialData?.description || "",
             descriptionAr: initialData?.descriptionAr || "",
-            image: initialData?.image || "",            // Default values for hidden fields
+            images: initialData?.images || [],
+            imageFiles: [],            
             color: initialData?.color || "#7B3FEF",
             status: initialData?.status || [{ value: "", label: "", labelAr: "" }],
         },
@@ -85,13 +85,13 @@ export function CaseStudyForm({ initialData, isEditing = false }: CaseStudyFormP
         name: "status",
     })
 
-    const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0]
-        if (file) {
-            const imageUrl = URL.createObjectURL(file)
-            form.setValue("image", imageUrl)
-        }
-    }
+    // const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     const file = e.target.files?.[0]
+    //     if (file) {
+    //         const imageUrl = URL.createObjectURL(file)
+    //         form.setValue("image", imageUrl)
+    //     }
+    // }
 
 async function onSubmit(values: z.infer<typeof formSchema>) {
     const formData = new FormData()
@@ -107,9 +107,10 @@ async function onSubmit(values: z.infer<typeof formSchema>) {
     formData.append("color", values.color || "#7B3FEF")
 
     // ⭐ FIX: send file — NOT preview URL
-if (values.imageFile) {
-    formData.append("images", values.imageFile);
-}
+    values.imageFiles?.forEach((file) => {
+        formData.append("images", file);
+    });
+
 
     // ⭐ FIX: send status array properly
     values.status.forEach((s, i) => {
@@ -266,55 +267,67 @@ if (values.imageFile) {
                 <input type="hidden" {...form.register("color")} />
 <FormField
     control={form.control}
-    name="image"
+    name="images"
     render={({ field }) => (
         <FormItem>
-            <FormLabel>Case Study Image</FormLabel>
+            <FormLabel>Case Study Images</FormLabel>
             <FormControl>
                 <div className="space-y-4">
 
-                    {/* File input - NEVER controlled */}
-             <Input
-    type="file"
-    accept="image/*"
-    onChange={(e) => {
-        const file = e.target.files?.[0];
-        if (!file) return;
+                    {/* File input (multiple) */}
+                    <Input
+                        type="file"
+                        accept="image/*"
+                        multiple
+                        onChange={(e) => {
+                            const files = Array.from(e.target.files || []);
 
-        // Store file (for API upload)
-        form.setValue("imageFile", file);
+                            if (files.length === 0) return;
 
-        // Show preview
-        const reader = new FileReader();
-        reader.onload = () => {
-            form.setValue("image", reader.result as string);
-        }
-        reader.readAsDataURL(file);
-    }}
-/>
+                            // Save files to form
+                            form.setValue("imageFiles", files);
 
+                            // Previews
+                            Promise.all(
+                                files.map(
+                                    file =>
+                                        new Promise((resolve) => {
+                                            const reader = new FileReader();
+                                            reader.onload = () => resolve(reader.result);
+                                            reader.readAsDataURL(file);
+                                        })
+                                )
+                            ).then((previews) => {
+                                form.setValue("images", previews as string[]);
+                            });
+                        }}
+                    />
 
-                    {/* Preview */}
-                    {field.value && (
-                        <div className="relative w-full h-48 rounded-lg overflow-hidden border">
-                            <img
-                                src={field.value}
-                                alt="Preview"
-                                className="object-cover w-full h-full"
-                            />
-                        </div>
-                    )}
+                    {/* Previews */}
+                    <div className="grid grid-cols-3 gap-4">
+                        {field.value?.map((img, index) => (
+                            <div key={index} className="relative w-full h-32 rounded-lg overflow-hidden border">
+                                <img
+                                    src={img}
+                                    alt="Preview"
+                                    className="object-cover w-full h-full"
+                                />
+                            </div>
+                        ))}
+                    </div>
 
                 </div>
             </FormControl>
 
             <FormDescription>
-                Upload a cover image for the case study.
+                Upload multiple images for the case study.
             </FormDescription>
             <FormMessage />
         </FormItem>
     )}
 />
+
+
 
 
                 <div className="space-y-4">

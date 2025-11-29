@@ -1,17 +1,5 @@
 {
   "app": {
-    "[project]/app/_not-found/page": [
-      "static/media/9d8c99ccf2e734e7-s.p.b2ed600c.woff2",
-      "static/media/a626ed2fbe2db1bf-s.p.45f567a3.woff2"
-    ],
-    "[project]/app/dashboard/careers/[id]/page": [
-      "static/media/9d8c99ccf2e734e7-s.p.b2ed600c.woff2",
-      "static/media/a626ed2fbe2db1bf-s.p.45f567a3.woff2"
-    ],
-    "[project]/app/dashboard/careers/new/page": [
-      "static/media/9d8c99ccf2e734e7-s.p.b2ed600c.woff2",
-      "static/media/a626ed2fbe2db1bf-s.p.45f567a3.woff2"
-    ],
     "[project]/app/dashboard/careers/page": [
       "static/media/9d8c99ccf2e734e7-s.p.b2ed600c.woff2",
       "static/media/a626ed2fbe2db1bf-s.p.45f567a3.woff2"
@@ -28,19 +16,27 @@
       "static/media/9d8c99ccf2e734e7-s.p.b2ed600c.woff2",
       "static/media/a626ed2fbe2db1bf-s.p.45f567a3.woff2"
     ],
+    "[project]/app/dashboard/insights/new/page": [
+      "static/media/9d8c99ccf2e734e7-s.p.b2ed600c.woff2",
+      "static/media/a626ed2fbe2db1bf-s.p.45f567a3.woff2"
+    ],
     "[project]/app/dashboard/insights/page": [
       "static/media/9d8c99ccf2e734e7-s.p.b2ed600c.woff2",
       "static/media/a626ed2fbe2db1bf-s.p.45f567a3.woff2"
     ],
+    "[project]/app/dashboard/page": [
+      "static/media/9d8c99ccf2e734e7-s.p.b2ed600c.woff2",
+      "static/media/a626ed2fbe2db1bf-s.p.45f567a3.woff2"
+    ],
+    "[project]/app/dashboard/services/[id]/page": [
+      "static/media/9d8c99ccf2e734e7-s.p.b2ed600c.woff2",
+      "static/media/a626ed2fbe2db1bf-s.p.45f567a3.woff2"
+    ],
+    "[project]/app/dashboard/services/new/page": [
+      "static/media/9d8c99ccf2e734e7-s.p.b2ed600c.woff2",
+      "static/media/a626ed2fbe2db1bf-s.p.45f567a3.woff2"
+    ],
     "[project]/app/dashboard/services/page": [
-      "static/media/9d8c99ccf2e734e7-s.p.b2ed600c.woff2",
-      "static/media/a626ed2fbe2db1bf-s.p.45f567a3.woff2"
-    ],
-    "[project]/app/dashboard/users/create/page": [
-      "static/media/9d8c99ccf2e734e7-s.p.b2ed600c.woff2",
-      "static/media/a626ed2fbe2db1bf-s.p.45f567a3.woff2"
-    ],
-    "[project]/app/dashboard/users/page": [
       "static/media/9d8c99ccf2e734e7-s.p.b2ed600c.woff2",
       "static/media/a626ed2fbe2db1bf-s.p.45f567a3.woff2"
     ]

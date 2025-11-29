@@ -22,8 +22,8 @@ import {
     APIError
 } from "./api-errors"
 
-// const API_BASE_URL = "http://localhost:8080/api/v1"
-const API_BASE_URL = "https://technoba.vercel.app/api/v1"
+const API_BASE_URL = "http://localhost:8080/api/v1"
+// const API_BASE_URL = "https://technoba.vercel.app/api/v1"
 const TOKEN_KEY = "technova_auth_token"
 
 /**
@@ -256,95 +256,80 @@ export const servicesAPI = {
         return apiClient.get(`/services/${id}`)
     },
 
-    create: async (data: any, imageFile?: File): Promise<{ success: boolean; service: ServiceAPI }> => {
-        // If there's an image file, use FormData
-        if (imageFile) {
-            const formData = new FormData()
+create: async (data: any, imageFiles?: File[]): Promise<{ success: boolean; service: ServiceAPI }> => {
+    const formData = new FormData();
 
-            // Append all text fields
-            formData.append("name_en", data.name_en)
-            formData.append("name_ar", data.name_ar)
-            formData.append("description_en", data.description_en)
-            formData.append("description_ar", data.description_ar)
-            formData.append("shortDescription_en", data.shortDescription_en)
-            formData.append("shortDescription_ar", data.shortDescription_ar)
-            formData.append("icon", data.icon)
-            formData.append("color", data.color)
+    // text fields
+    Object.keys(data).forEach(key => {
+        if (key !== "features") formData.append(key, data[key]);
+    });
 
-            // Append features as JSON string
-            if (data.features && data.features.length > 0) {
-                data.features.forEach((feature: any, index: number) => {
-                    formData.append(`feature_ar[${index}]`, feature.feature_ar)
-                    formData.append(`feature_en[${index}]`, feature.feature_en)
-                })
-            }
+    // features
+    if (data.features && data.features.length > 0) {
+        data.features.forEach((feature: any, index: number) => {
+            formData.append(`feature_ar[${index}]`, feature.feature_ar);
+            formData.append(`feature_en[${index}]`, feature.feature_en);
+        });
+    }
 
-            // Append the image file
-            formData.append("images", imageFile)
+    // images
+    if (imageFiles && imageFiles.length > 0) {
+        imageFiles.forEach(file => formData.append("images", file));
+    }
 
-            return apiClient.upload("/services/add", formData)
+    return apiClient.upload("/services/add", formData);
+},
+
+
+update: async (id: string, data: any, imageFiles?: File[]): Promise<{ success: boolean; service: ServiceAPI }> => {
+    const formData = new FormData();
+
+    // append only changed fields
+    Object.keys(data).forEach(key => {
+        if (key !== "features") {
+            if (data[key]) formData.append(key, data[key]);
         }
+    });
 
-        // Fallback to JSON if no image
-        return apiClient.post("/services/add", data)
-    },
+    // features
+    if (data.features && data.features.length > 0) {
+        data.features.forEach((feature: any, index: number) => {
+            formData.append(`feature_ar[${index}]`, feature.feature_ar);
+            formData.append(`feature_en[${index}]`, feature.feature_en);
+        });
+    }
 
-    update: async (id: string, data: any, imageFile?: File): Promise<{ success: boolean; service: ServiceAPI }> => {
-        // If there's an image file, use FormData
-        if (imageFile) {
-            const formData = new FormData()
+    // images (MULTIPLE)
+    if (imageFiles && imageFiles.length > 0) {
+        imageFiles.forEach(file => formData.append("images", file));
+    }
 
-            // Append all text fields
-            if (data.name_en) formData.append("name_en", data.name_en)
-            if (data.name_ar) formData.append("name_ar", data.name_ar)
-            if (data.description_en) formData.append("description_en", data.description_en)
-            if (data.description_ar) formData.append("description_ar", data.description_ar)
-            if (data.shortDescription_en) formData.append("shortDescription_en", data.shortDescription_en)
-            if (data.shortDescription_ar) formData.append("shortDescription_ar", data.shortDescription_ar)
-            if (data.icon) formData.append("icon", data.icon)
-            if (data.color) formData.append("color", data.color)
+    // manual fetch because it's multipart/form-data
+    const token = apiClient["getToken"]();
+    const headers: Record<string, string> = {};
+    if (token) headers["Authorization"] = `Bearer ${token}`;
 
-            // Append features
-            if (data.features && data.features.length > 0) {
-                data.features.forEach((feature: any, index: number) => {
-                    formData.append(`feature_ar[${index}]`, feature.feature_ar)
-                    formData.append(`feature_en[${index}]`, feature.feature_en)
-                })
-            }
+    const response = await fetch(`${API_BASE_URL}/services/${id}`, {
+        method: "PUT",
+        headers,
+        body: formData,
+    });
 
-            // Append the image file
-            formData.append("images", imageFile)
+    if (!response.ok) {
+        console.log(response);
+        
+        let msg = "An error occurred";
+        try {
+            const errorData = await response.json();
+            console.log(errorData);
+            
+            msg = errorData.message || errorData.error || msg;
+        } catch {}
+        throw createErrorFromResponse(response.status, msg);
+    }
 
-            // Use upload method with PUT
-            const token = apiClient["getToken"]()
-            const headers: Record<string, string> = {}
-            if (token) {
-                headers["Authorization"] = `Bearer ${token}`
-            }
-
-            const response = await fetch(`${API_BASE_URL}/services/${id}`, {
-                method: "PUT",
-                headers,
-                body: formData,
-            })
-
-            if (!response.ok) {
-                let errorMessage = "An error occurred"
-                try {
-                    const errorData = await response.json()
-                    errorMessage = errorData.message || errorData.error || errorMessage
-                } catch {
-                    errorMessage = response.statusText || errorMessage
-                }
-                throw createErrorFromResponse(response.status, errorMessage)
-            }
-
-            return await response.json()
-        }
-
-        // Fallback to JSON if no image
-        return apiClient.put(`/services/${id}`, data)
-    },
+    return await response.json();
+},
 
     delete: async (id: string): Promise<{ success: boolean; message: string }> => {
         return apiClient.delete(`/services/${id}`)

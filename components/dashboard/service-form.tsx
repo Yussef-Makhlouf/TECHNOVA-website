@@ -42,6 +42,8 @@ const formSchema = z.object({
     iconName: z.string().optional(),
     color: z.string().optional(),
     image: z.string().optional(), // Optional because it's not required when editing
+    images: z.array(z.string()).optional() // ✅ Add this
+
 })
 
 interface ServiceFormProps {
@@ -131,6 +133,8 @@ export function ServiceForm({ initialData, isEditing = false }: ServiceFormProps
     const { addService, updateService } = useData()
     const router = useRouter()
     const [imageFile, setImageFile] = useState<File | null>(null)
+    const [selectedImages, setSelectedImages] = useState<string[]>([])
+    const [imageFiles, setImageFiles] = useState<File[]>([])
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -149,56 +153,59 @@ export function ServiceForm({ initialData, isEditing = false }: ServiceFormProps
         },
     })
 
-    const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0]
-        if (file) {
-            setImageFile(file) // Store the actual file
-            const imageUrl = URL.createObjectURL(file)
-            form.setValue("image", imageUrl) // Store preview URL for display
-        }
+const handleMultiImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files || [])
+    if (files.length > 5) {
+        toast.error("You can upload up to 5 images only.")
+        return
     }
 
-    async function onSubmit(values: z.infer<typeof formSchema>) {
-        try {
-            // For new services, image is required
-            if (!isEditing && !values.image && !imageFile) {
-                toast.error("Please upload an image")
-                return
-            }
+    setSelectedImages(files.map(file => URL.createObjectURL(file)))
+    setImageFiles(files) // <-- send to API
+}
 
-            // Map form fields to API expected format
-            const serviceData = {
-                name_en: values.title,
-                name_ar: values.titleAr,
-                description_en: values.description,
-                description_ar: values.descriptionAr,
-                shortDescription_en: values.description.substring(0, 100), // Use first 100 chars as short description
-                shortDescription_ar: values.descriptionAr.substring(0, 100),
-                icon: values.iconName || "Brain",
-                color: values.color || "#7B3FEF",
-                features: values.features
-                    .filter(f => f.trim() !== "")
-                    .map((feature_en, index) => ({
-                        feature_en,
-                        feature_ar: values.featuresAr?.[index] || ""
-                    })),
-                slug: values.title.toLowerCase().replace(/\s+/g, "-")
-            }
 
-            if (isEditing && initialData) {
-                // Pass imageFile if a new image was uploaded
-                await updateService(initialData._id, serviceData as any, imageFile || undefined)
-            } else {
-                // Pass the file object to addService
-                await addService(serviceData as any, imageFile!)
-            }
-
-            router.push("/dashboard/services")
-            router.refresh()
-        } catch (error) {
-            // Error already handled by data context
+async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+        // FIXED image required checking
+        if (!isEditing && (!imageFiles || imageFiles.length === 0)) {
+            toast.error("Please upload an image");
+            return;
         }
-    }
+
+        const serviceData = {
+            name_en: values.title,
+            name_ar: values.titleAr,
+            description_en: values.description,
+            description_ar: values.descriptionAr,
+            shortDescription_en: values.description.substring(0, 100),
+            shortDescription_ar: values.descriptionAr.substring(0, 100),
+            icon: values.iconName || "Brain",
+            color: values.color || "#7B3FEF",
+            features: values.features
+                .filter(f => f.trim() !== "")
+                .map((feature_en, index) => ({
+                    feature_en,
+                    feature_ar: values.featuresAr?.[index] || ""
+                })),
+            slug: values.title.toLowerCase().replace(/\s+/g, "-")
+        };
+
+        if (isEditing && initialData) {
+            await updateService(
+                initialData._id,
+                serviceData as any,
+                imageFiles && imageFiles.length > 0 ? imageFiles : undefined
+            );
+        } else {
+            await addService(serviceData as any, imageFiles || []);
+        }
+
+        router.push("/dashboard/services");
+        router.refresh();
+    } catch {}
+}
+
 
     return (
         <Form {...form}>
@@ -332,43 +339,38 @@ export function ServiceForm({ initialData, isEditing = false }: ServiceFormProps
                             {/* Hidden fields for icon and color */}
                             <input type="hidden" {...form.register("iconName")} />
                             <input type="hidden" {...form.register("color")} />
+<Input
+    type="file"
+    accept="image/*"
+    multiple  // IMPORTANT
+    onChange={(e) => {
+        const files = Array.from(e.target.files || []);
 
-                            <FormField
-                                control={form.control}
-                                name="image"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Cover Image</FormLabel>
-                                        <FormControl>
-                                            <div className="space-y-4">
-                                                <div className="flex items-center gap-4">
-                                                    <Input
-                                                        type="file"
-                                                        accept="image/*"
-                                                        onChange={handleImageUpload}
-                                                        className="cursor-pointer"
-                                                    />
-                                                </div>
-                                                {field.value && (
-                                                    <div className="relative w-full aspect-video rounded-lg overflow-hidden border bg-muted">
-                                                        <img
-                                                            src={field.value}
-                                                            alt="Preview"
-                                                            className="object-cover w-full h-full"
-                                                        />
-                                                    </div>
-                                                )}
-                                                {/* Hidden input to store the URL */}
-                                                <input type="hidden" {...field} />
-                                            </div>
-                                        </FormControl>
-                                        <FormDescription>
-                                            Recommended size: 1920x1080px. Max size: 5MB.
-                                        </FormDescription>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
+        if (files.length === 0) return;
+
+        // store files
+        setImageFiles(files);
+
+        // generate previews
+        const previews: string[] = [];
+        files.forEach(file => {
+            const reader = new FileReader();
+            reader.onload = () => {
+                previews.push(reader.result as string);
+
+                // update form when all previews are ready
+                if (previews.length === files.length) {
+                    form.setValue("images", previews);
+                }
+            };
+            reader.readAsDataURL(file);
+        });
+    }}
+/>
+
+
+
+
                         </CardContent>
                     </Card>
 
