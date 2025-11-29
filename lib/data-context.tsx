@@ -294,7 +294,7 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
             const res = await jobsAPI.getAll(skipCache)
 
             if (res.success) {
-                const mapped = res.jobs.map((job) => ({
+                const mapped = res.careers.map((job) => ({
                     id: job._id,
                     title: job.title_en || "",
                     titleAr: job.title_ar || "",
@@ -713,19 +713,19 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
 
             if (res.success) {
                 const newJob: Job = {
-                    id: res.job._id,
-                    title: res.job.title_en || "",
-                    titleAr: res.job.title_ar || "",
-                    department: res.job.department_en || "",
-                    departmentAr: res.job.department_ar || "",
-                    location: res.job.location_en || "",
-                    locationAr: res.job.location_ar || "",
-                    type: res.job.type_en || "",
-                    typeAr: res.job.type_ar || "",
-                    description: res.job.description_en || "",
-                    descriptionAr: res.job.description_ar || "",
-                    requirements: res.job.requirements || [],
-                    responsibilities: res.job.responsibilities || []
+                    id: res.career._id,
+                    title: res.career.title_en || "",
+                    titleAr: res.career.title_ar || "",
+                    department: res.career.department_en || "",
+                    departmentAr: res.career.department_ar || "",
+                    location: res.career.location_en || "",
+                    locationAr: res.career.location_ar || "",
+                    type: res.career.type_en || "",
+                    typeAr: res.career.type_ar || "",
+                    description: res.career.description_en || "",
+                    descriptionAr: res.career.description_ar || "",
+                    requirements: res.career.requirements || [],
+                    responsibilities: res.career.responsibilities || []
                 }
                 setJobs(prev => [...prev, newJob])
                 toast.success("Job created successfully")

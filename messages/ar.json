@@ -509,6 +509,28 @@
             "title": "الوظائف المتاحة",
             "description": "ابحث عن فرصتك التالية وانضم إلى مهمتنا لبناء المستقبل.",
             "apply": "قدم الآن"
+        },
+        "applicationForm": {
+            "title": "التقديم للوظيفة",
+            "successTitle": "تم تقديم الطلب!",
+            "successMessage": "لقد استلمنا طلبك وسنراجعه قريباً.",
+            "name": "الاسم الكامل",
+            "namePlaceholder": "الاسم",
+            "email": "البريد الإلكتروني",
+            "emailPlaceholder": "example@domain.com",
+            "phone": "رقم الهاتف",
+            "phonePlaceholder": "+966 55 000 0000",
+            "resume": "السيرة الذاتية",
+            "resumePlaceholder": "ارفع سيرتك الذاتية",
+            "resumeHint": "الصيغ المقبولة: PDF, DOC, DOCX. الحجم الأقصى: 5 ميجابايت",
+            "coverLetter": "خطاب التغطية (اختياري)",
+            "coverLetterPlaceholder": "أخبرنا لماذا أنت مناسب لهذا الدور...",
+            "cancel": "إلغاء",
+            "submitting": "جاري التقديم...",
+            "submit": "تقديم الطلب",
+            "error": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+            "invalidFileType": "نوع الملف غير صالح. يرجى رفع ملف PDF أو DOC أو DOCX.",
+            "fileTooLarge": "حجم الملف كبير جداً. الحجم الأقصى هو 5 ميجابايت."
         }
     },
     "loginPage": {
@@ -583,5 +605,40 @@
     "logosMarquee": {
         "title": "موثوق به من قبل قادة الصناعة",
         "description": "الشراكة مع الشركات المبتكرة في جميع أنحاء العالم لتقديم حلول متطورة"
+    },
+    "serviceDetailPage": {
+        "error": "خطأ",
+        "serviceNotFound": "الخدمة غير موجودة",
+        "backToServices": "العودة للخدمات",
+        "capabilities": {
+            "title": "القدرات والميزات"
+        },
+        "benefits": {
+            "title": "الفوائد الرئيسية",
+            "efficiency": {
+                "title": "زيادة الكفاءة",
+                "description": "أتمتة المهام المتكررة وتقليل التكاليف التشغيلية بشكل كبير"
+            },
+            "decision": {
+                "title": "اتخاذ قرارات أفضل",
+                "description": "رؤى مدعومة بالبيانات تساعدك على اتخاذ قرارات استراتيجية أذكى وأسرع"
+            },
+            "risk": {
+                "title": "تخفيف المخاطر",
+                "description": "تحديد المخاطر والشذوذات المحتملة قبل أن تؤثر على عملك"
+            }
+        },
+        "cta": {
+            "title": "هل أنت مستعد للاستفادة من {service}؟",
+            "description": "حدد موعداً للاستشارة مع خبرائنا لمناقشة احتياجاتك المحددة.",
+            "button": "ابدأ الآن"
+        }
+    },
+    "caseStudyDetailPage": {
+        "backToCaseStudies": "العودة لدراسات الحالة",
+        "overview": "نظرة عامة",
+        "keyResults": "النتائج الرئيسية",
+        "error": "خطأ",
+        "caseStudyNotFound": "دراسة الحالة غير موجودة"
     }
 }

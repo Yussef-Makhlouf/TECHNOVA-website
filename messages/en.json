@@ -507,6 +507,28 @@
             "title": "Open Positions",
             "description": "Find your next opportunity and join our mission to build the future.",
             "apply": "Apply Now"
+        },
+        "applicationForm": {
+            "title": "Apply for Position",
+            "successTitle": "Application Submitted!",
+            "successMessage": "We have received your application and will review it shortly.",
+            "name": "Full Name",
+            "namePlaceholder": "John Doe",
+            "email": "Email Address",
+            "emailPlaceholder": "john@example.com",
+            "phone": "Phone Number",
+            "phonePlaceholder": "+1 (555) 000-0000",
+            "resume": "Resume / CV",
+            "resumePlaceholder": "Upload your resume",
+            "resumeHint": "Accepted formats: PDF, DOC, DOCX. Max size: 5MB",
+            "coverLetter": "Cover Letter (Optional)",
+            "coverLetterPlaceholder": "Tell us why you're a great fit for this role...",
+            "cancel": "Cancel",
+            "submitting": "Submitting...",
+            "submit": "Submit Application",
+            "error": "Something went wrong. Please try again.",
+            "invalidFileType": "Invalid file type. Please upload a PDF, DOC, or DOCX file.",
+            "fileTooLarge": "File size too large. Max size is 5MB."
         }
     },
     "loginPage": {
@@ -616,5 +638,40 @@
     "logosMarquee": {
         "title": "Trusted by Industry Leaders",
         "description": "Partnering with innovative companies worldwide to deliver cutting-edge solutions"
+    },
+    "serviceDetailPage": {
+        "error": "Error",
+        "serviceNotFound": "Service not found",
+        "backToServices": "Back to Services",
+        "capabilities": {
+            "title": "Capabilities & Features"
+        },
+        "benefits": {
+            "title": "Key Benefits",
+            "efficiency": {
+                "title": "Increased Efficiency",
+                "description": "Automate repetitive tasks and reduce operational costs significantly"
+            },
+            "decision": {
+                "title": "Better Decision Making",
+                "description": "Data-driven insights help you make smarter, faster strategic decisions"
+            },
+            "risk": {
+                "title": "Risk Mitigation",
+                "description": "Identify potential risks and anomalies before they impact your business"
+            }
+        },
+        "cta": {
+            "title": "Ready to leverage {service}?",
+            "description": "Schedule a consultation with our experts to discuss your specific needs.",
+            "button": "Get Started"
+        }
+    },
+    "caseStudyDetailPage": {
+        "backToCaseStudies": "Back to Case Studies",
+        "overview": "Overview",
+        "keyResults": "Key Results",
+        "error": "Error",
+        "caseStudyNotFound": "Case study not found"
     }
 }

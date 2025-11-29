@@ -21,7 +21,7 @@ export default function ServicesPage() {
     description: isRtl ? service.shortDescription_ar : service.shortDescription_en,
     image: service.images[0]?.imageLink || "",
     features: service.features.map(f => isRtl ? f.feature_ar : f.feature_en),
-    href: `/services/${service.slug}`,
+    href: `/services/${service._id}`,
     color: service.color,
     index
   }))

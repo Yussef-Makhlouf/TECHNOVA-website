@@ -333,52 +333,62 @@ export const caseStudiesAPI = {
 
 /**
  * ============================================================================
- * JOBS API
+ * CAREERS API
  * ============================================================================
  */
-export const jobsAPI = {
+export const careersAPI = {
     /**
-     * Get all jobs
+     * Get all careers
      */
-    getAll: async (skipCache: boolean = false): Promise<{ success: boolean; jobs: JobAPI[] }> => {
-        return apiClient.get("/jobs", undefined, { skipCache })
+    getAll: async (skipCache: boolean = false): Promise<{ success: boolean; careers: JobAPI[] }> => {
+        return apiClient.get("/career", undefined, { skipCache })
     },
 
     /**
-     * Get job by ID
+     * Get career by ID
      */
-    getById: async (id: string, skipCache: boolean = false): Promise<{ success: boolean; job: JobAPI }> => {
-        return apiClient.get(`/jobs/${id}`, undefined, { skipCache })
+    getById: async (id: string, skipCache: boolean = false): Promise<{ success: boolean; career: JobAPI }> => {
+        return apiClient.get(`/career/${id}`, undefined, { skipCache })
     },
 
     /**
-     * Create new job
+     * Create new career
      */
-    create: async (data: CreateJobRequest): Promise<{ success: boolean; job: JobAPI }> => {
-        return apiClient.post("/jobs", data)
+    create: async (data: CreateJobRequest): Promise<{ success: boolean; career: JobAPI }> => {
+        return apiClient.post("/career", data)
     },
 
     /**
-     * Update job
+     * Update career
      */
-    update: async (id: string, data: UpdateJobRequest): Promise<{ success: boolean; job: JobAPI }> => {
-        return apiClient.put(`/jobs/${id}`, data)
+    update: async (id: string, data: UpdateJobRequest): Promise<{ success: boolean; career: JobAPI }> => {
+        return apiClient.put(`/career/${id}`, data)
     },
 
     /**
-     * Delete job
+     * Delete career
      */
     delete: async (id: string): Promise<{ success: boolean; message: string }> => {
-        return apiClient.delete(`/jobs/${id}`)
+        return apiClient.delete(`/career/${id}`)
     },
 
     /**
-     * Prefetch jobs
+     * Apply for a career position
+     */
+    apply: async (careerId: string, applicationData: FormData): Promise<{ success: boolean; message: string }> => {
+        return apiClient.upload(`/career/${careerId}/apply`, applicationData)
+    },
+
+    /**
+     * Prefetch careers
      */
     prefetch: async (): Promise<void> => {
-        await apiClient.prefetch("/jobs")
+        await apiClient.prefetch("/career")
     }
 }
+
+// Keep jobsAPI as alias for backward compatibility
+export const jobsAPI = careersAPI
 
 /**
  * ============================================================================
@@ -423,7 +433,7 @@ export const prefetchAllData = async (): Promise<void> => {
         servicesAPI.prefetch(),
         blogsAPI.prefetch(),
         caseStudiesAPI.prefetch(),
-        jobsAPI.prefetch()
+        careersAPI.prefetch()
     ])
 }
 

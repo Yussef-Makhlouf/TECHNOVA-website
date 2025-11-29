@@ -22,7 +22,7 @@ export default function LogosMarquee() {
     ]
 
     return (
-        <section className="py-16 lg:py-20 relative overflow-hidden">
+        <section className="py-16 lg:py-20 relative overflow-hidden" dir="ltr">
             <div className="absolute inset-0 " />
 
             <div className="container mx-auto px-4 lg:px-8 relative z-10 mb-12">

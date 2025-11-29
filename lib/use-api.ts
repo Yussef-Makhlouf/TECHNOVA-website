@@ -13,6 +13,7 @@ import {
     servicesAPI,
     blogsAPI,
     caseStudiesAPI,
+    careersAPI,
     jobsAPI
 } from "./api-service"
 import {
@@ -298,9 +299,9 @@ export function useCaseStudies(options: UseAPIOptions = {}) {
 }
 
 /**
- * Hook for fetching a single job by ID
+ * Hook for fetching a single career by ID
  */
-export function useJob(id: string | null, options: UseAPIOptions = {}) {
+export function useCareer(id: string | null, options: UseAPIOptions = {}) {
     const { skipCache = false, autoFetch = true } = options
     const [state, setState] = useState<APIState<JobAPI>>({
         data: null,
@@ -308,17 +309,17 @@ export function useJob(id: string | null, options: UseAPIOptions = {}) {
         error: null
     })
 
-    const fetchJob = useCallback(async () => {
+    const fetchCareer = useCallback(async () => {
         if (!id) return
 
         setState(prev => ({ ...prev, loading: true, error: null }))
 
         try {
-            const response = await jobsAPI.getById(id, skipCache)
+            const response = await careersAPI.getById(id, skipCache)
             if (response.success) {
-                setState({ data: response.job, loading: false, error: null })
+                setState({ data: response.career, loading: false, error: null })
             } else {
-                setState({ data: null, loading: false, error: "Failed to fetch job" })
+                setState({ data: null, loading: false, error: "Failed to fetch career" })
             }
         } catch (err) {
             setState({
@@ -331,20 +332,20 @@ export function useJob(id: string | null, options: UseAPIOptions = {}) {
 
     useEffect(() => {
         if (autoFetch && id) {
-            fetchJob()
+            fetchCareer()
         }
-    }, [autoFetch, id, fetchJob])
+    }, [autoFetch, id, fetchCareer])
 
     return {
         ...state,
-        refetch: fetchJob
+        refetch: fetchCareer
     }
 }
 
 /**
- * Hook for fetching all jobs
+ * Hook for fetching all careers
  */
-export function useJobs(options: UseAPIOptions = {}) {
+export function useCareers(options: UseAPIOptions = {}) {
     const { skipCache = false, autoFetch = true } = options
     const [state, setState] = useState<APIListState<JobAPI>>({
         data: [],
@@ -352,15 +353,15 @@ export function useJobs(options: UseAPIOptions = {}) {
         error: null
     })
 
-    const fetchJobs = useCallback(async () => {
+    const fetchCareers = useCallback(async () => {
         setState(prev => ({ ...prev, loading: true, error: null }))
 
         try {
-            const response = await jobsAPI.getAll(skipCache)
+            const response = await careersAPI.getAll(skipCache)
             if (response.success) {
-                setState({ data: response.jobs, loading: false, error: null })
+                setState({ data: response.careers, loading: false, error: null })
             } else {
-                setState({ data: [], loading: false, error: "Failed to fetch jobs" })
+                setState({ data: [], loading: false, error: "Failed to fetch careers" })
             }
         } catch (err) {
             setState({
@@ -373,12 +374,16 @@ export function useJobs(options: UseAPIOptions = {}) {
 
     useEffect(() => {
         if (autoFetch) {
-            fetchJobs()
+            fetchCareers()
         }
-    }, [autoFetch, fetchJobs])
+    }, [autoFetch, fetchCareers])
 
     return {
         ...state,
-        refetch: fetchJobs
+        refetch: fetchCareers
     }
 }
+
+// Keep old names as aliases for backward compatibility
+export const useJob = useCareer
+export const useJobs = useCareers
