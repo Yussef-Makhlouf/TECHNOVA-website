@@ -12,6 +12,9 @@ import {
     JobAPI,
     CreateJobRequest,
     UpdateJobRequest,
+    UserAPI,
+    CreateUserRequest,
+    UpdateUserRequest,
     LoginRequest,
     LoginResponse,
     PaginationParams
@@ -256,80 +259,80 @@ export const servicesAPI = {
         return apiClient.get(`/services/${id}`)
     },
 
-create: async (data: any, imageFiles?: File[]): Promise<{ success: boolean; service: ServiceAPI }> => {
-    const formData = new FormData();
+    create: async (data: any, imageFiles?: File[]): Promise<{ success: boolean; service: ServiceAPI }> => {
+        const formData = new FormData();
 
-    // text fields
-    Object.keys(data).forEach(key => {
-        if (key !== "features") formData.append(key, data[key]);
-    });
-
-    // features
-    if (data.features && data.features.length > 0) {
-        data.features.forEach((feature: any, index: number) => {
-            formData.append(`feature_ar[${index}]`, feature.feature_ar);
-            formData.append(`feature_en[${index}]`, feature.feature_en);
+        // text fields
+        Object.keys(data).forEach(key => {
+            if (key !== "features") formData.append(key, data[key]);
         });
-    }
 
-    // images
-    if (imageFiles && imageFiles.length > 0) {
-        imageFiles.forEach(file => formData.append("images", file));
-    }
-
-    return apiClient.upload("/services/add", formData);
-},
-
-
-update: async (id: string, data: any, imageFiles?: File[]): Promise<{ success: boolean; service: ServiceAPI }> => {
-    const formData = new FormData();
-
-    // append only changed fields
-    Object.keys(data).forEach(key => {
-        if (key !== "features") {
-            if (data[key]) formData.append(key, data[key]);
+        // features
+        if (data.features && data.features.length > 0) {
+            data.features.forEach((feature: any, index: number) => {
+                formData.append(`feature_ar[${index}]`, feature.feature_ar);
+                formData.append(`feature_en[${index}]`, feature.feature_en);
+            });
         }
-    });
 
-    // features
-    if (data.features && data.features.length > 0) {
-        data.features.forEach((feature: any, index: number) => {
-            formData.append(`feature_ar[${index}]`, feature.feature_ar);
-            formData.append(`feature_en[${index}]`, feature.feature_en);
+        // images
+        if (imageFiles && imageFiles.length > 0) {
+            imageFiles.forEach(file => formData.append("images", file));
+        }
+
+        return apiClient.upload("/services/add", formData);
+    },
+
+
+    update: async (id: string, data: any, imageFiles?: File[]): Promise<{ success: boolean; service: ServiceAPI }> => {
+        const formData = new FormData();
+
+        // append only changed fields
+        Object.keys(data).forEach(key => {
+            if (key !== "features") {
+                if (data[key]) formData.append(key, data[key]);
+            }
         });
-    }
 
-    // images (MULTIPLE)
-    if (imageFiles && imageFiles.length > 0) {
-        imageFiles.forEach(file => formData.append("images", file));
-    }
+        // features
+        if (data.features && data.features.length > 0) {
+            data.features.forEach((feature: any, index: number) => {
+                formData.append(`feature_ar[${index}]`, feature.feature_ar);
+                formData.append(`feature_en[${index}]`, feature.feature_en);
+            });
+        }
 
-    // manual fetch because it's multipart/form-data
-    const token = apiClient["getToken"]();
-    const headers: Record<string, string> = {};
-    if (token) headers["Authorization"] = `Bearer ${token}`;
+        // images (MULTIPLE)
+        if (imageFiles && imageFiles.length > 0) {
+            imageFiles.forEach(file => formData.append("images", file));
+        }
 
-    const response = await fetch(`${API_BASE_URL}/services/${id}`, {
-        method: "PUT",
-        headers,
-        body: formData,
-    });
+        // manual fetch because it's multipart/form-data
+        const token = apiClient["getToken"]();
+        const headers: Record<string, string> = {};
+        if (token) headers["Authorization"] = `Bearer ${token}`;
 
-    if (!response.ok) {
-        console.log(response);
-        
-        let msg = "An error occurred";
-        try {
-            const errorData = await response.json();
-            console.log(errorData);
-            
-            msg = errorData.message || errorData.error || msg;
-        } catch {}
-        throw createErrorFromResponse(response.status, msg);
-    }
+        const response = await fetch(`${API_BASE_URL}/services/${id}`, {
+            method: "PUT",
+            headers,
+            body: formData,
+        });
 
-    return await response.json();
-},
+        if (!response.ok) {
+            console.log(response);
+
+            let msg = "An error occurred";
+            try {
+                const errorData = await response.json();
+                console.log(errorData);
+
+                msg = errorData.message || errorData.error || msg;
+            } catch { }
+            throw createErrorFromResponse(response.status, msg);
+        }
+
+        return await response.json();
+    },
 
     delete: async (id: string): Promise<{ success: boolean; message: string }> => {
         return apiClient.delete(`/services/${id}`)
@@ -412,6 +415,31 @@ export const jobsAPI = {
 
     delete: async (id: string): Promise<{ success: boolean; message: string }> => {
         return apiClient.delete(`/career/${id}`)
+    },
+}
+
+/**
+ * Users API
+ */
+export const usersAPI = {
+    getAll: async (): Promise<{ success: boolean; users: UserAPI[] }> => {
+        return apiClient.get("/users/")
+    },
+
+    getById: async (id: string): Promise<{ success: boolean; user: UserAPI }> => {
+        return apiClient.get(`/users/${id}`)
+    },
+
+    create: async (data: CreateUserRequest): Promise<{ success: boolean; user: UserAPI }> => {
+        return apiClient.post("/users/", data)
+    },
+
+    update: async (id: string, data: UpdateUserRequest): Promise<{ success: boolean; user: UserAPI }> => {
+        return apiClient.put(`/users/${id}`, data)
+    },
+
+    delete: async (id: string): Promise<{ success: boolean; message: string }> => {
+        return apiClient.delete(`/users/${id}`)
     },
 }
 

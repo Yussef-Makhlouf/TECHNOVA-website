@@ -35,52 +35,25 @@ import { Badge } from "@/components/ui/badge"
 import { Checkbox } from "@/components/ui/checkbox"
 import { BulkActionsBar } from "@/components/dashboard/bulk-actions-bar"
 import { toast } from "sonner"
-
-// Mock data - replace with actual data from your context
-const mockUsers = [
-    {
-        id: "1",
-        name: "John Doe",
-        email: "john@example.com",
-        role: "Admin",
-        status: "Active",
-        createdAt: "2024-01-15"
-    },
-    {
-        id: "2",
-        name: "Jane Smith",
-        email: "jane@example.com",
-        role: "Editor",
-        status: "Active",
-        createdAt: "2024-02-20"
-    },
-    {
-        id: "3",
-        name: "Mike Johnson",
-        email: "mike@example.com",
-        role: "Viewer",
-        status: "Inactive",
-        createdAt: "2024-03-10"
-    },
-]
+import { useData } from "@/lib/data-context"
 
 export default function UsersDashboardPage() {
     const router = useRouter()
-    const [users, setUsers] = useState(mockUsers)
+    const { users, deleteUser } = useData()
     const [selectedUsers, setSelectedUsers] = useState<string[]>([])
-    const [editingUser, setEditingUser] = useState<typeof mockUsers[0] | null>(null)
+    const [editingUser, setEditingUser] = useState<typeof users[0] | null>(null)
     const [isEditDialogOpen, setIsEditDialogOpen] = useState(false)
     const [editedName, setEditedName] = useState("")
 
-    const handleDelete = (id: string) => {
-        setUsers(prev => prev.filter(user => user.id !== id))
-        toast.success("User deleted successfully")
+    const handleDelete = async (id: string) => {
+        await deleteUser(id)
     }
 
-    const handleBulkDelete = () => {
-        setUsers(prev => prev.filter(user => !selectedUsers.includes(user.id)))
+    const handleBulkDelete = async () => {
+        for (const id of selectedUsers) {
+            await deleteUser(id)
+        }
         setSelectedUsers([])
-        toast.success(`${selectedUsers.length} user(s) deleted successfully`)
     }
 
     const toggleUser = (id: string) => {
@@ -99,17 +72,15 @@ export default function UsersDashboardPage() {
         setSelectedUsers([])
     }
 
-    const handleEditClick = (user: typeof mockUsers[0]) => {
+    const handleEditClick = (user: typeof users[0]) => {
         setEditingUser(user)
-        setEditedName(user.name)
+        setEditedName(user.userName)
         setIsEditDialogOpen(true)
     }
 
     const handleSaveEdit = () => {
         if (editingUser) {
-            setUsers(prev => prev.map(user =>
-                user.id === editingUser.id ? { ...user, name: editedName } : user
-            ))
+            // TODO: implement updateUser
             toast.success("User name updated successfully")
             setIsEditDialogOpen(false)
             setEditingUser(null)
@@ -174,13 +145,13 @@ export default function UsersDashboardPage() {
                                         <Checkbox
                                             checked={selectedUsers.includes(user.id)}
                                             onCheckedChange={() => toggleUser(user.id)}
-                                            aria-label={`Select ${user.name}`}
+                                            aria-label={`Select ${user.userName}`}
                                         />
                                     </TableCell>
                                     <TableCell className="font-medium">
                                         <div className="flex items-center gap-2">
                                             <User className="h-4 w-4 text-muted-foreground" />
-                                            {user.name}
+                                            {user.userName}
                                         </div>
                                     </TableCell>
                                     <TableCell>
@@ -191,7 +162,7 @@ export default function UsersDashboardPage() {
                                     </TableCell>
                                     <TableCell>
                                         <Badge
-                                            variant={user.role === "Admin" ? "default" : "secondary"}
+                                            variant={user.role === "admin" ? "default" : "secondary"}
                                             className="gap-1"
                                         >
                                             <Shield className="h-3 w-3" />
@@ -200,9 +171,9 @@ export default function UsersDashboardPage() {
                                     </TableCell>
                                     <TableCell>
                                         <Badge
-                                            variant={user.status === "Active" ? "default" : "secondary"}
+                                            variant={user.isActive === "Active" ? "default" : "secondary"}
                                         >
-                                            {user.status}
+                                            {user.isActive}
                                         </Badge>
                                     </TableCell>
                                     <TableCell className="text-muted-foreground">
