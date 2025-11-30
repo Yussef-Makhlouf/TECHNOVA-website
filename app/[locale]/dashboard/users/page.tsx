@@ -211,7 +211,7 @@ export default function UsersDashboardPage() {
                             </TableHead>
                             <TableHead>Name</TableHead>
                             <TableHead>Email</TableHead>
-                            <TableHead>Role</TableHead>
+                            {/* <TableHead>Role</TableHead> */}
                             <TableHead>Status</TableHead>
                             <TableHead>Created</TableHead>
                             <TableHead className="w-[100px]">Actions</TableHead>
