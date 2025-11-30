@@ -19,6 +19,7 @@ import { useData, Insight } from "@/lib/data-context"
 import { useRouter } from "next/navigation"
 import { toast } from "sonner"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useState } from "react"
 
 const formSchema = z.object({
     title: z.string().min(2, {
@@ -43,9 +44,7 @@ const formSchema = z.object({
         message: "Category is required.",
     }),
     categoryAr: z.string().optional(),
-    image: z.string().min(1, {
-        message: "Image is required.",
-    }),
+    image: z.string().optional(), // Optional because it's not required when editing
     iconName: z.string().optional(),
     color: z.string().optional(),
 })
@@ -58,6 +57,7 @@ interface InsightFormProps {
 export function InsightForm({ initialData, isEditing = false }: InsightFormProps) {
     const { addInsight, updateInsight } = useData()
     const router = useRouter()
+    const [imageFile, setImageFile] = useState<File | null>(null)
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -82,13 +82,20 @@ export function InsightForm({ initialData, isEditing = false }: InsightFormProps
     const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0]
         if (file) {
+            setImageFile(file) // Store the actual file
             const imageUrl = URL.createObjectURL(file)
-            form.setValue("image", imageUrl)
+            form.setValue("image", imageUrl) // Store preview URL for display
         }
     }
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
         try {
+            // For new insights, image is required
+            if (!isEditing && !values.image && !imageFile) {
+                toast.error("Please upload an image")
+                return
+            }
+
             const insightData = {
                 ...values,
                 color: values.color || "#7B3FEF",
@@ -97,9 +104,11 @@ export function InsightForm({ initialData, isEditing = false }: InsightFormProps
             }
 
             if (isEditing && initialData) {
-                await updateInsight(initialData._id, insightData)
+                // Pass imageFile if a new image was uploaded
+                await updateInsight(initialData._id, insightData, imageFile || undefined)
             } else {
-                await addInsight(insightData)
+                // Pass the file object to addInsight
+                await addInsight(insightData, imageFile!)
             }
 
             router.push("/dashboard/insights")

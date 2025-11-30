@@ -259,14 +259,92 @@ export const blogsAPI = {
     /**
      * Create new blog
      */
-    create: async (data: CreateBlogRequest): Promise<{ success: boolean; blog: BlogAPI }> => {
+    create: async (data: any, imageFile?: File): Promise<{ success: boolean; blog: BlogAPI }> => {
+        // If there's an image file, use FormData
+        if (imageFile) {
+            const formData = new FormData()
+
+            // Append all text fields
+            if (data.title?.en) formData.append("title_en", data.title.en)
+            if (data.title?.ar) formData.append("title_ar", data.title.ar)
+            if (data.content?.en) formData.append("content_en", data.content.en)
+            if (data.content?.ar) formData.append("content_ar", data.content.ar)
+            if (data.author?.en) formData.append("author_en", data.author.en)
+            if (data.author?.ar) formData.append("author_ar", data.author.ar)
+            if (data.category?.en) formData.append("category_en", data.category.en)
+            if (data.category?.ar) formData.append("category_ar", data.category.ar)
+            if (data.readTime) formData.append("readTime", String(data.readTime))
+
+            // Append the image file
+            formData.append("images", imageFile)
+
+            return apiClient.upload("/blogs/add", formData)
+        }
+
+        // Fallback to JSON if no image
         return apiClient.post("/blogs/add", data)
     },
 
     /**
      * Update blog
      */
-    update: async (id: string, data: UpdateBlogRequest): Promise<{ success: boolean; blog: BlogAPI }> => {
+    update: async (id: string, data: any, imageFile?: File): Promise<{ success: boolean; blog: BlogAPI }> => {
+        // If there's an image file, use FormData
+        if (imageFile) {
+            const formData = new FormData()
+
+            // Append all text fields
+            if (data.title?.en) formData.append("title_en", data.title.en)
+            if (data.title?.ar) formData.append("title_ar", data.title.ar)
+            if (data.content?.en) formData.append("content_en", data.content.en)
+            if (data.content?.ar) formData.append("content_ar", data.content.ar)
+            if (data.author?.en) formData.append("author_en", data.author.en)
+            if (data.author?.ar) formData.append("author_ar", data.author.ar)
+            if (data.category?.en) formData.append("category_en", data.category.en)
+            if (data.category?.ar) formData.append("category_ar", data.category.ar)
+            if (data.readTime) formData.append("readTime", String(data.readTime))
+
+            // Append the image file
+            formData.append("images", imageFile)
+
+            // Use custom fetch for PUT with FormData
+            const token = apiClient['getToken']()
+            const headers: Record<string, string> = {
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '0'
+            }
+
+            if (token) {
+                headers["Authorization"] = `Bearer ${token}`
+            }
+
+            const response = await fetch(`https://technoba.vercel.app/api/v1/blogs/${id}`, {
+                method: "PUT",
+                headers,
+                body: formData,
+            })
+
+            if (!response.ok) {
+                let errorMessage = "An error occurred"
+                try {
+                    const errorData = await response.json()
+                    errorMessage = errorData.message || errorData.error || errorMessage
+                } catch {
+                    errorMessage = response.statusText || errorMessage
+                }
+                throw new Error(errorMessage)
+            }
+
+            const result = await response.json()
+
+            // Clear cache after update
+            apiClient.clearCache()
+
+            return result
+        }
+
+        // Fallback to JSON if no image
         return apiClient.put(`/blogs/${id}`, data)
     },
 
@@ -308,14 +386,110 @@ export const caseStudiesAPI = {
     /**
      * Create new case study
      */
-    create: async (data: CreateCaseStudyRequest): Promise<{ success: boolean; caseStudy: CaseStudyAPI }> => {
+    create: async (data: any, imageFile?: File): Promise<{ success: boolean; caseStudy: CaseStudyAPI }> => {
+        // If there's an image file, use FormData
+        if (imageFile) {
+            const formData = new FormData()
+
+            // Append all text fields
+            if (data.title_en) formData.append("title_en", data.title_en)
+            if (data.title_ar) formData.append("title_ar", data.title_ar)
+            if (data.institute_en) formData.append("institute_en", data.institute_en)
+            if (data.institute_ar) formData.append("institute_ar", data.institute_ar)
+            if (data.category_en) formData.append("category_en", data.category_en)
+            if (data.category_ar) formData.append("category_ar", data.category_ar)
+            if (data.description_en) formData.append("description_en", data.description_en)
+            if (data.description_ar) formData.append("description_ar", data.description_ar)
+            if (data.color) formData.append("color", data.color)
+
+            // Append status array
+            if (data.status && data.status.length > 0) {
+                data.status.forEach((stat: any, index: number) => {
+                    formData.append(`status[${index}][value]`, stat.value)
+                    formData.append(`status[${index}][label_en]`, stat.label_en)
+                    if (stat.label_ar) formData.append(`status[${index}][label_ar]`, stat.label_ar)
+                })
+            }
+
+            // Append the image file
+            formData.append("images", imageFile)
+
+            return apiClient.upload("/case_study/add", formData)
+        }
+
+        // Fallback to JSON if no image
         return apiClient.post("/case_study/add", data)
     },
 
     /**
      * Update case study
      */
-    update: async (id: string, data: UpdateCaseStudyRequest): Promise<{ success: boolean; caseStudy: CaseStudyAPI }> => {
+    update: async (id: string, data: any, imageFile?: File): Promise<{ success: boolean; caseStudy: CaseStudyAPI }> => {
+        // If there's an image file, use FormData
+        if (imageFile) {
+            const formData = new FormData()
+
+            // Append all text fields
+            if (data.title_en) formData.append("title_en", data.title_en)
+            if (data.title_ar) formData.append("title_ar", data.title_ar)
+            if (data.institute_en) formData.append("institute_en", data.institute_en)
+            if (data.institute_ar) formData.append("institute_ar", data.institute_ar)
+            if (data.category_en) formData.append("category_en", data.category_en)
+            if (data.category_ar) formData.append("category_ar", data.category_ar)
+            if (data.description_en) formData.append("description_en", data.description_en)
+            if (data.description_ar) formData.append("description_ar", data.description_ar)
+            if (data.color) formData.append("color", data.color)
+
+            // Append status array
+            if (data.status && data.status.length > 0) {
+                data.status.forEach((stat: any, index: number) => {
+                    formData.append(`status[${index}][value]`, stat.value)
+                    formData.append(`status[${index}][label_en]`, stat.label_en)
+                    if (stat.label_ar) formData.append(`status[${index}][label_ar]`, stat.label_ar)
+                })
+            }
+
+            // Append the image file
+            formData.append("images", imageFile)
+
+            // Use custom fetch for PUT with FormData
+            const token = apiClient['getToken']()
+            const headers: Record<string, string> = {
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '0'
+            }
+
+            if (token) {
+                headers["Authorization"] = `Bearer ${token}`
+            }
+
+            const response = await fetch(`https://technoba.vercel.app/api/v1/case_study/${id}`, {
+                method: "PUT",
+                headers,
+                body: formData,
+            })
+
+            if (!response.ok) {
+                let errorMessage = "An error occurred"
+                try {
+                    const errorData = await response.json()
+                    errorMessage = errorData.message || errorData.error || errorMessage
+                } catch {
+                    errorMessage = response.statusText || errorMessage
+                }
+                throw new Error(errorMessage)
+            }
+
+            const result = await response.json()
+
+            // Clear cache after update
+            apiClient.clearCache()
+
+            return result
+        }
+
+        // Fallback to JSON if no image
         return apiClient.put(`/case_study/${id}`, data)
     },
 

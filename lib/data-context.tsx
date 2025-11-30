@@ -126,13 +126,13 @@ type DataContextType = {
     deleteService: (id: string) => Promise<void>
 
     // Insight operations
-    addInsight: (insight: Omit<Insight, "_id">) => Promise<void>
-    updateInsight: (id: string, insight: Partial<Insight>) => Promise<void>
+    addInsight: (insight: Omit<Insight, "_id">, imageFile?: File) => Promise<void>
+    updateInsight: (id: string, insight: Partial<Insight>, imageFile?: File) => Promise<void>
     deleteInsight: (id: string) => Promise<void>
 
     // Case study operations
-    addCaseStudy: (study: Omit<CaseStudy, "id">) => Promise<void>
-    updateCaseStudy: (id: string, study: Partial<CaseStudy>) => Promise<void>
+    addCaseStudy: (study: Omit<CaseStudy, "id">, imageFile?: File) => Promise<void>
+    updateCaseStudy: (id: string, study: Partial<CaseStudy>, imageFile?: File) => Promise<void>
     deleteCaseStudy: (id: string) => Promise<void>
 
     // Job operations
@@ -476,9 +476,15 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
     /**
      * Insight operations
      */
-    const addInsight = async (insight: Omit<Insight, "_id">) => {
+    const addInsight = async (insight: Omit<Insight, "_id">, imageFile?: File) => {
         try {
-            const apiData: CreateBlogRequest = {
+            // For new insights, image is required
+            if (!imageFile && !insight.image) {
+                toast.error("Please upload an image")
+                throw new Error("Image is required for new insights")
+            }
+
+            const apiData: any = {
                 title: {
                     en: insight.title,
                     ar: insight.titleAr
@@ -495,18 +501,23 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
                     en: insight.category,
                     ar: insight.categoryAr
                 },
-                readTime: parseInt(insight.readTime) || 5,
-                images: insight.image ? [{ imageLink: insight.image }] : []
+                readTime: parseInt(insight.readTime) || 5
             }
 
-            const res = await blogsAPI.create(apiData)
+            // Only include images array if no file is being uploaded
+            if (!imageFile && insight.image) {
+                apiData.images = [{ imageLink: insight.image }]
+            }
+
+            const res = await blogsAPI.create(apiData, imageFile)
 
             if (res.success) {
                 const newInsight = {
                     ...insight,
                     _id: res.blog._id,
                     date: res.blog.createdAt,
-                    createdAt: res.blog.createdAt
+                    createdAt: res.blog.createdAt,
+                    image: res.blog.images?.[0]?.imageLink || insight.image || ""
                 }
                 setInsights(prev => [...prev, newInsight])
                 toast.success("Insight created successfully")
@@ -518,7 +529,7 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
         }
     }
 
-    const updateInsight = async (id: string, updatedInsight: Partial<Insight>) => {
+    const updateInsight = async (id: string, updatedInsight: Partial<Insight>, imageFile?: File) => {
         const original = insights.find(i => i._id === id)
 
         try {
@@ -550,9 +561,21 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
                     ar: updatedInsight.categoryAr
                 }
             }
-            if (updatedInsight.image) apiData.images = [{ imageLink: updatedInsight.image }]
+            // Only include images array if no file is being uploaded
+            if (!imageFile && updatedInsight.image) {
+                apiData.images = [{ imageLink: updatedInsight.image }]
+            }
 
-            await blogsAPI.update(id, apiData)
+            const res = await blogsAPI.update(id, apiData, imageFile)
+
+            if (res.success) {
+                setInsights(prev => prev.map(i => i._id === id ? {
+                    ...i,
+                    ...updatedInsight,
+                    image: res.blog.images?.[0]?.imageLink || updatedInsight.image || i.image
+                } : i))
+            }
+
             toast.success("Insight updated successfully")
         } catch (err) {
             // Rollback
@@ -583,9 +606,15 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
     /**
      * Case study operations
      */
-    const addCaseStudy = async (study: Omit<CaseStudy, "id">) => {
+    const addCaseStudy = async (study: Omit<CaseStudy, "id">, imageFile?: File) => {
         try {
-            const apiData = {
+            // For new case studies, image is required
+            if (!imageFile && !study.image) {
+                toast.error("Please upload an image")
+                throw new Error("Image is required for new case studies")
+            }
+
+            const apiData: any = {
                 title_en: study.title,
                 title_ar: study.titleAr,
                 institute_en: study.institute,
@@ -599,11 +628,15 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
                     label_en: s.label,
                     label_ar: s.labelAr
                 })),
-                images: study.image ? [{ imageLink: study.image }] : [],
                 color: study.color || "#7B3FEF",
             }
 
-            const response = await caseStudiesAPI.create(apiData)
+            // Only include images array if no file is being uploaded
+            if (!imageFile && study.image) {
+                apiData.images = [{ imageLink: study.image }]
+            }
+
+            const response = await caseStudiesAPI.create(apiData, imageFile)
 
             if (response.success) {
                 const mapped = {
@@ -621,7 +654,7 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
                         label: s.label_en,
                         labelAr: s.label_ar
                     })) || [],
-                    image: response.caseStudy.images?.[0]?.imageLink || "",
+                    image: response.caseStudy.images?.[0]?.imageLink || study.image || "",
                     color: response.caseStudy.color || "#7B3FEF",
                     href: `/case-studies/${response.caseStudy._id}`,
                 }
@@ -635,7 +668,7 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
         }
     }
 
-    const updateCaseStudy = async (id: string, updatedStudy: Partial<CaseStudy>) => {
+    const updateCaseStudy = async (id: string, updatedStudy: Partial<CaseStudy>, imageFile?: File) => {
         const original = caseStudies.find(s => s.id === id)
 
         try {
@@ -651,7 +684,6 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
             if (updatedStudy.categoryAr) apiData.category_ar = updatedStudy.categoryAr
             if (updatedStudy.description) apiData.description_en = updatedStudy.description
             if (updatedStudy.descriptionAr) apiData.description_ar = updatedStudy.descriptionAr
-            if (updatedStudy.image) apiData.images = [{ imageLink: updatedStudy.image }]
             if (updatedStudy.color) apiData.color = updatedStudy.color
             if (updatedStudy.status) {
                 apiData.status = updatedStudy.status.map(s => ({
@@ -660,8 +692,21 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
                     label_ar: s.labelAr
                 }))
             }
+            // Only include images array if no file is being uploaded
+            if (!imageFile && updatedStudy.image) {
+                apiData.images = [{ imageLink: updatedStudy.image }]
+            }
 
-            await caseStudiesAPI.update(id, apiData)
+            const res = await caseStudiesAPI.update(id, apiData, imageFile)
+
+            if (res.success) {
+                setCaseStudies(prev => prev.map(s => s.id === id ? {
+                    ...s,
+                    ...updatedStudy,
+                    image: res.caseStudy.images?.[0]?.imageLink || updatedStudy.image || s.image
+                } : s))
+            }
+
             toast.success("Case study updated successfully")
         } catch (err) {
             // Rollback

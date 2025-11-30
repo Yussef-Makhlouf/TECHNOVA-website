@@ -20,6 +20,7 @@ import { useRouter } from "next/navigation"
 import { toast } from "sonner"
 import { Plus, Trash2 } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useState } from "react"
 
 const formSchema = z.object({
     title: z.string().min(2, {
@@ -38,9 +39,7 @@ const formSchema = z.object({
         message: "Description must be at least 10 characters.",
     }),
     descriptionAr: z.string().optional(),
-    image: z.string().min(1, {
-        message: "Image is required.",
-    }),
+    image: z.string().optional(), // Optional because it's not required when editing
     color: z.string().optional(),
     status: z.array(
         z.object({
@@ -59,6 +58,7 @@ interface CaseStudyFormProps {
 export function CaseStudyForm({ initialData, isEditing = false }: CaseStudyFormProps) {
     const { addCaseStudy, updateCaseStudy } = useData()
     const router = useRouter()
+    const [imageFile, setImageFile] = useState<File | null>(null)
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -86,28 +86,37 @@ export function CaseStudyForm({ initialData, isEditing = false }: CaseStudyFormP
     const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0]
         if (file) {
+            setImageFile(file) // Store the actual file
             const imageUrl = URL.createObjectURL(file)
-            form.setValue("image", imageUrl)
+            form.setValue("image", imageUrl) // Store preview URL for display
         }
     }
 
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        const caseStudyData = {
-            ...values,
-            color: values.color || "#7B3FEF",
-            href: initialData?.href || `/case-studies/${values.title.toLowerCase().replace(/\s+/g, "-")}`,
-        }
+    async function onSubmit(values: z.infer<typeof formSchema>) {
+        try {
+            // For new case studies, image is required
+            if (!isEditing && !values.image && !imageFile) {
+                toast.error("Please upload an image")
+                return
+            }
 
-        if (isEditing && initialData) {
-            updateCaseStudy(initialData.id, caseStudyData)
-            toast.success("Case Study updated successfully")
-        } else {
-            addCaseStudy(caseStudyData)
-            toast.success("Case Study created successfully")
-        }
+            const caseStudyData = {
+                ...values,
+                color: values.color || "#7B3FEF",
+                href: initialData?.href || `/case-studies/${values.title.toLowerCase().replace(/\s+/g, "-")}`,
+            }
 
-        router.push("/dashboard/case-studies")
-        router.refresh()
+            if (isEditing && initialData) {
+                await updateCaseStudy(initialData.id, caseStudyData, imageFile || undefined)
+            } else {
+                await addCaseStudy(caseStudyData, imageFile!)
+            }
+
+            router.push("/dashboard/case-studies")
+            router.refresh()
+        } catch (error) {
+            // Error already handled by data context
+        }
     }
 
     return (
