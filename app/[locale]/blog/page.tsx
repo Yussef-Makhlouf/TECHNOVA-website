@@ -8,12 +8,14 @@ import Link from "next/link"
 import { DiagonalCard } from "@/components/diagonal-card"
 import { useTranslations, useLocale } from "next-intl"
 import { useData } from "@/lib/data-context"
+import { useState, useMemo } from "react"
 
 export default function BlogPage() {
   const t = useTranslations('blogPage')
   const locale = useLocale()
   const isRtl = locale === 'ar'
   const { insights: blogsData } = useData() // Using insights data for blogs as per data context structure
+  const [selectedCategory, setSelectedCategory] = useState(0)
 
   const articles = blogsData.map(blog => ({
     ...blog,
@@ -32,6 +34,17 @@ export default function BlogPage() {
     t('categories.digitalTransformation'),
     t('categories.iot')
   ]
+
+  // Filter articles based on selected category
+  const filteredArticles = useMemo(() => {
+    if (selectedCategory === 0) {
+      return articles // Show all articles
+    }
+    const selectedCategoryName = categories[selectedCategory]
+    return articles.filter(article =>
+      article.category?.toLowerCase() === selectedCategoryName?.toLowerCase()
+    )
+  }, [selectedCategory, articles, categories])
 
   return (
     <div className="min-h-screen bg-background">
@@ -66,7 +79,8 @@ export default function BlogPage() {
             {categories.map((category, index) => (
               <button
                 key={index}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${index === 0
+                onClick={() => setSelectedCategory(index)}
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${selectedCategory === index
                   ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30"
                   : "bg-card border border-border text-muted-foreground hover:border-accent/50 hover:text-foreground dark:bg-card/50"
                   }`}
@@ -79,7 +93,7 @@ export default function BlogPage() {
       </section>
 
       {/* Featured Article */}
-      {articles.length > 0 && (
+      {filteredArticles.length > 0 && (
         <section className="py-20 lg:py-24">
           <div className="container mx-auto px-4 lg:px-8">
             <motion.div
@@ -92,8 +106,8 @@ export default function BlogPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="relative h-80 lg:h-auto overflow-hidden">
                   <img
-                    src={articles[0].image || "/placeholder.svg"}
-                    alt={articles[0].title}
+                    src={filteredArticles[0].image || "/placeholder.svg"}
+                    alt={filteredArticles[0].title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute top-4 left-4">
@@ -104,33 +118,33 @@ export default function BlogPage() {
                 <div className="p-8 lg:p-12 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-4">
                     <span className="px-3 py-1 bg-[#7B3FEF]/20 text-[#7B3FEF] rounded-full text-xs font-medium">
-                      {articles[0].category}
+                      {filteredArticles[0].category}
                     </span>
                     <div className="flex items-center gap-4 text-foreground/60 text-sm">
                       <span className="flex items-center gap-1">
                         <Calendar size={14} />
-                        {articles[0].date}
+                        {filteredArticles[0].date}
                       </span>
                       <span className="flex items-center gap-1">
                         <Clock size={14} />
-                        {articles[0].readTime}
+                        {filteredArticles[0].readTime}
                       </span>
                     </div>
                   </div>
 
                   <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                    {articles[0].title}
+                    {filteredArticles[0].title}
                   </h2>
 
-                  <p className="text-foreground/70 leading-relaxed mb-6 line-clamp-3">{articles[0].description}</p>
+                  <p className="text-foreground/70 leading-relaxed mb-6 line-clamp-3">{filteredArticles[0].description}</p>
 
                   <div className="flex items-center justify-between">
                     <span className="text-foreground/60 text-sm flex items-center gap-1">
                       <User size={14} />
-                      {t('featured.by')} {articles[0].author}
+                      {t('featured.by')} {filteredArticles[0].author}
                     </span>
                     <Link
-                      href={articles[0].href}
+                      href={filteredArticles[0].href}
                       className="inline-flex items-center gap-2 text-[#00D9FF] hover:gap-3 transition-all duration-300 font-medium"
                     >
                       {t('featured.readMore')}
@@ -146,19 +160,25 @@ export default function BlogPage() {
 
       <section className="pb-20 lg:pb-24">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.slice(1).map((article, index) => (
-              <DiagonalCard
-                key={index}
-                icon={FileText}
-                title={article.title}
-                description={article.description}
-                href={article.href}
-                index={index}
-                className="h-full"
-              />
-            ))}
-          </div>
+          {filteredArticles.length > 1 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredArticles.slice(1).map((article, index) => (
+                <DiagonalCard
+                  key={index}
+                  icon={FileText}
+                  title={article.title}
+                  description={article.description}
+                  href={article.href}
+                  index={index}
+                  className="h-full"
+                />
+              ))}
+            </div>
+          ) : filteredArticles.length === 0 ? (
+            <div className="text-center py-20">
+              <p className="text-foreground/60 text-lg">{t('noResults') || 'No articles found in this category'}</p>
+            </div>
+          ) : null}
         </div>
       </section>
 

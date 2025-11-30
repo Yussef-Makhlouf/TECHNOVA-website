@@ -453,6 +453,7 @@
         }
     },
     "blogPage": {
+        "noResults": "No results found",
         "hero": {
             "title": "Insights & Articles",
             "description": "Stay updated with the latest trends, insights, and best practices in AI, digital innovation, and secure systems."
@@ -679,8 +680,8 @@
     },
     "features8": {
         "reliability": {
-            "title": "Precision & Rigor",
-            "description": "Commitment to the highest standards of quality and institutional rigor."
+            "title": "Reliability",
+            "description": "99.9% "
         },
         "security": {
             "title": "Ethical AI & Privacy",

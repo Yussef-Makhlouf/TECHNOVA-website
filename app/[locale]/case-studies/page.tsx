@@ -65,7 +65,7 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-24 bg-[#0f172a]">
+      <section className="py-20 lg:py-24 dark:bg-[#0f172a]">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
