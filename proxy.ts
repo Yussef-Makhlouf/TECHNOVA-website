@@ -7,7 +7,7 @@ import { routing } from './i18n/routing';
 // Create the next-intl middleware
 const intlMiddleware = createMiddleware(routing);
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
     const authCookie = request.cookies.get(AUTH_COOKIE_NAME)
     const isAuth = !!authCookie
 
@@ -46,4 +46,3 @@ export function middleware(request: NextRequest) {
 export const config = {
     matcher: ['/', '/(ar|en)/:path*', '/((?!api|_next|_vercel|.*\\..*).*)'],
 }
-
