@@ -672,6 +672,9 @@
         "overview": "Overview",
         "keyResults": "Key Results",
         "error": "Error",
-        "caseStudyNotFound": "Case study not found"
+        "caseStudyNotFound": "Case study not found",
+        "ctaTitle": "Ready to Write Your Success Story?",
+        "ctaDescription": "Let's discuss how we can help you achieve similar results for your business.",
+        "ctaButton": "Start Your Project"
     }
 }

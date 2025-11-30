@@ -260,14 +260,14 @@ export default function CaseStudyDetailsPage() {
                     >
                         <div className="glass-panel p-12 lg:p-16 rounded-3xl border-2 border-border/50 dark:bg-card/30 shadow-2xl">
                             <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                                Ready to Write Your Success Story?
+                                {t("ctaTitle")}
                             </h2>
                             <div
                                 className="h-1 w-32 mx-auto my-6 rounded-full"
                                 style={{ backgroundColor: caseStudy.color || "#7B3FEF" }}
                             />
                             <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                                Let's discuss how we can help you achieve similar results for your business.
+                                {t("ctaDescription")}
                             </p>
                             <Link
                                 href={`/${locale}/contact`}
@@ -277,7 +277,7 @@ export default function CaseStudyDetailsPage() {
                                     boxShadow: `0 10px 40px ${caseStudy.color || "#7B3FEF"}30`
                                 }}
                             >
-                                Start Your Project
+                                {t("ctaButton")}
                                 <ArrowLeft className="h-5 w-5 rotate-180" />
                             </Link>
                         </div>
