@@ -62,20 +62,34 @@ export async function updatePassword(data: z.infer<typeof updatePasswordSchema>)
 
     try {
         const userSession = JSON.parse(authCookie.value)
-        const user = userStore.getById(userSession.id)
+        const { email, token } = userSession
 
-        if (!user) {
-            return { success: false, error: "User not found" }
+        if (!email || !token) {
+            return { success: false, error: "Invalid session data" }
         }
 
-        if (user.password !== data.currentPassword) {
-            return { success: false, error: "Incorrect current password" }
+        const response = await fetch("https://technoba.vercel.app/api/v1/change_password", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                email: email,
+                newPassword: data.newPassword
+            })
+        })
+
+        const resData = await response.json()
+
+        if (!response.ok) {
+            return { success: false, error: resData.message || "Failed to update password" }
         }
 
-        userStore.update(user.id, { password: data.newPassword })
         return { success: true }
 
     } catch (e) {
-        return { success: false, error: "Invalid session" }
+        console.error("Password update error:", e)
+        return { success: false, error: "Something went wrong" }
     }
 }

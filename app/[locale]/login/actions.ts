@@ -18,22 +18,31 @@ export async function login(data: z.infer<typeof loginSchema>) {
 
     const { email, password } = result.data
 
-    // Use userStore to verify credentials
-    // We need to import userStore dynamically or ensure it's available on server
-    // Since this is a server action, it runs on server.
-    // However, importing from a file that has global state might be tricky in Next.js server actions due to isolation.
-    // But for a simple demo with "use server", module level variables might persist or might not depending on deployment.
-    // For local dev, it usually works but might reset on recompile.
+    try {
+        const response = await fetch("https://technoba.vercel.app/api/v1/users/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, password }),
+        })
 
-    // We'll import it at the top level, but for now let's assume standard import works.
-    const { userStore } = await import("@/lib/user-store")
+        const responseData = await response.json()
 
-    const user = userStore.verifyCredentials(email, password)
+        if (!response.ok || !responseData.userUpdated) {
+            return { success: false, error: responseData.message || "Invalid credentials" }
+        }
 
-    if (user) {
-        // Set cookie with user email/id to identify them
-        // In a real app, use a signed JWT or session ID
-        const cookieValue = JSON.stringify({ id: user.id, email: user.email, role: user.role })
+        const user = responseData.userUpdated
+        const token = user.token
+
+        // Store token and user info in cookie
+        const cookieValue = JSON.stringify({
+            id: user._id,
+            email: user.email,
+            role: user.role,
+            token: token
+        })
 
             ; (await cookies()).set(AUTH_COOKIE_NAME, cookieValue, {
                 httpOnly: true,
@@ -42,10 +51,13 @@ export async function login(data: z.infer<typeof loginSchema>) {
                 path: "/",
                 maxAge: 60 * 60 * 24 * 7, // 1 week
             })
-        return { success: true }
-    }
 
-    return { success: false, error: "Invalid email or password" }
+        return { success: true }
+
+    } catch (error) {
+        console.error("Login error:", error)
+        return { success: false, error: "Something went wrong" }
+    }
 }
 
 export async function logout() {

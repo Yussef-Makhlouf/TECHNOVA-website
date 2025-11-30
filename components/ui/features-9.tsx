@@ -75,7 +75,7 @@ export function Features() {
               {t('analyticsBadge')}
             </span>
 
-            <p className="my-8 text-2xl font-semibold">
+            <p className="my-8 text-2xl font-semibold ">
               {t('analyticsTitle')}{" "}
               <span className="text-muted-foreground">{t('analyticsSubtitle')}</span>
             </p>

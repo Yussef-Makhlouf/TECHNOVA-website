@@ -19,6 +19,9 @@ import {
     JobAPI,
     CreateJobRequest,
     UpdateJobRequest,
+    UserAPI,
+    CreateUserRequest,
+    UpdateUserRequest,
     LoginRequest,
     LoginResponse,
     PaginationParams
@@ -389,6 +392,55 @@ export const careersAPI = {
 
 // Keep jobsAPI as alias for backward compatibility
 export const jobsAPI = careersAPI
+
+/**
+ * ============================================================================
+ * USERS API
+ * ============================================================================
+ */
+export const usersAPI = {
+    /**
+     * Get all users
+     */
+    getAll: async (skipCache: boolean = false): Promise<{ success: boolean; users: UserAPI[] }> => {
+        return apiClient.get("/users", undefined, { skipCache })
+    },
+
+    /**
+     * Get user by ID
+     */
+    getById: async (id: string, skipCache: boolean = false): Promise<{ success: boolean; user: UserAPI }> => {
+        return apiClient.get(`/users/${id}`, undefined, { skipCache })
+    },
+
+    /**
+     * Create new user
+     */
+    create: async (data: CreateUserRequest): Promise<{ success: boolean; user: UserAPI }> => {
+        return apiClient.post("/users/add", data)
+    },
+
+    /**
+     * Update user
+     */
+    update: async (id: string, data: UpdateUserRequest): Promise<{ success: boolean; user: UserAPI }> => {
+        return apiClient.put(`/users/${id}`, data)
+    },
+
+    /**
+     * Delete user
+     */
+    delete: async (id: string): Promise<{ success: boolean; message: string }> => {
+        return apiClient.delete(`/users/${id}`)
+    },
+
+    /**
+     * Prefetch users
+     */
+    prefetch: async (): Promise<void> => {
+        await apiClient.prefetch("/users")
+    }
+}
 
 /**
  * ============================================================================

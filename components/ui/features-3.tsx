@@ -2,10 +2,11 @@
 
 import { Card, CardContent } from '@/components/ui/card'
 import { Zap, Shield, Users, Rocket, Brain, Globe } from 'lucide-react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 
 export function Features3() {
     const t = useTranslations('features3')
+    const locale = useLocale()
     return (
         <section className="py-0">
             <div className="mx-auto max-w-3xl lg:max-w-6xl px-6">
@@ -130,8 +131,8 @@ export function Features3() {
                                     <div className="relative flex aspect-square h-24 w-24 rounded-full border-2 border-[#7B3FEF]/30 bg-gradient-to-br from-[#7B3FEF]/10 to-[#00D9FF]/10 items-center justify-center flex-shrink-0">
                                         <Globe className="h-12 w-12 text-[#00D9FF]" strokeWidth={1.5} />
                                     </div>
-                                    <div className="flex-1 text-center md:text-left space-y-3">
-                                        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] bg-clip-text text-transparent">
+                                    <div className={`flex-1 text-center space-y-3 ${locale === 'ar' ? 'md:text-right' : 'md:text-left'}`}>
+                                        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] bg-clip-text text-transparent text-auto">
                                             {t('globalReach.title')}
                                         </h2>
                                         <p className="text-foreground/80 text-base md:text-lg max-w-3xl">

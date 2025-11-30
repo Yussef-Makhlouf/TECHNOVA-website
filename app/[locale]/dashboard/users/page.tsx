@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useTransition } from "react"
+import { useState, useTransition, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import {
     Table,
@@ -35,6 +35,7 @@ import { Badge } from "@/components/ui/badge"
 import { Checkbox } from "@/components/ui/checkbox"
 import { BulkActionsBar } from "@/components/dashboard/bulk-actions-bar"
 import { toast } from "sonner"
+import { usersAPI } from "@/lib/api-service"
 
 // Mock data - replace with actual data from your context
 const mockUsers = [
@@ -66,21 +67,70 @@ const mockUsers = [
 
 export default function UsersDashboardPage() {
     const router = useRouter()
-    const [users, setUsers] = useState(mockUsers)
+    const [users, setUsers] = useState<any[]>([])
+    const [isLoading, setIsLoading] = useState(true)
     const [selectedUsers, setSelectedUsers] = useState<string[]>([])
-    const [editingUser, setEditingUser] = useState<typeof mockUsers[0] | null>(null)
+    const [editingUser, setEditingUser] = useState<any | null>(null)
     const [isEditDialogOpen, setIsEditDialogOpen] = useState(false)
     const [editedName, setEditedName] = useState("")
 
-    const handleDelete = (id: string) => {
-        setUsers(prev => prev.filter(user => user.id !== id))
-        toast.success("User deleted successfully")
+    // Fetch users on mount
+    useEffect(() => {
+        const fetchUsers = async () => {
+            try {
+                setIsLoading(true)
+                const response = await usersAPI.getAll()
+                if (response.success) {
+                    setUsers(response.users)
+                } else {
+                    toast.error("Failed to fetch users")
+                }
+            } catch (error) {
+                console.error("Error fetching users:", error)
+                toast.error("Error fetching users")
+            } finally {
+                setIsLoading(false)
+            }
+        }
+
+        fetchUsers()
+    }, [])
+
+    const handleDelete = async (id: string) => {
+        try {
+            const response = await usersAPI.delete(id)
+            if (response.success) {
+                setUsers(prev => prev.filter(user => user._id !== id))
+                toast.success("User deleted successfully")
+            } else {
+                toast.error(response.message || "Failed to delete user")
+            }
+        } catch (error) {
+            console.error("Error deleting user:", error)
+            toast.error("Error deleting user")
+        }
     }
 
-    const handleBulkDelete = () => {
-        setUsers(prev => prev.filter(user => !selectedUsers.includes(user.id)))
-        setSelectedUsers([])
-        toast.success(`${selectedUsers.length} user(s) deleted successfully`)
+    const handleBulkDelete = async () => {
+        // Note: The API doesn't seem to support bulk delete for users yet based on api-service.ts
+        // We'll implement it by deleting one by one for now or show a warning
+        // Ideally we should add deleteMultiple to usersAPI if supported by backend
+
+        try {
+            // Optimistic update or sequential delete
+            const promises = selectedUsers.map(id => usersAPI.delete(id))
+            await Promise.all(promises)
+
+            setUsers(prev => prev.filter(user => !selectedUsers.includes(user._id)))
+            setSelectedUsers([])
+            toast.success(`${selectedUsers.length} user(s) deleted successfully`)
+        } catch (error) {
+            console.error("Error deleting users:", error)
+            toast.error("Failed to delete some users")
+            // Refresh list to be safe
+            const response = await usersAPI.getAll()
+            if (response.success) setUsers(response.users)
+        }
     }
 
     const toggleUser = (id: string) => {
@@ -91,7 +141,7 @@ export default function UsersDashboardPage() {
 
     const toggleAll = () => {
         setSelectedUsers(prev =>
-            prev.length === users.length ? [] : users.map(u => u.id)
+            prev.length === users.length ? [] : users.map(u => u._id)
         )
     }
 
@@ -99,20 +149,30 @@ export default function UsersDashboardPage() {
         setSelectedUsers([])
     }
 
-    const handleEditClick = (user: typeof mockUsers[0]) => {
+    const handleEditClick = (user: any) => {
         setEditingUser(user)
-        setEditedName(user.name)
+        setEditedName(user.userName)
         setIsEditDialogOpen(true)
     }
 
-    const handleSaveEdit = () => {
+    const handleSaveEdit = async () => {
         if (editingUser) {
-            setUsers(prev => prev.map(user =>
-                user.id === editingUser.id ? { ...user, name: editedName } : user
-            ))
-            toast.success("User name updated successfully")
-            setIsEditDialogOpen(false)
-            setEditingUser(null)
+            try {
+                const response = await usersAPI.update(editingUser._id, { userName: editedName })
+                if (response.success) {
+                    setUsers(prev => prev.map(user =>
+                        user._id === editingUser._id ? { ...user, userName: editedName } : user
+                    ))
+                    toast.success("User name updated successfully")
+                    setIsEditDialogOpen(false)
+                    setEditingUser(null)
+                } else {
+                    toast.error("Failed to update user")
+                }
+            } catch (error) {
+                console.error("Error updating user:", error)
+                toast.error("Error updating user")
+            }
         }
     }
 
@@ -158,7 +218,13 @@ export default function UsersDashboardPage() {
                         </TableRow>
                     </TableHeader>
                     <TableBody>
-                        {users.length === 0 ? (
+                        {isLoading ? (
+                            <TableRow>
+                                <TableCell colSpan={7} className="text-center h-24 text-muted-foreground">
+                                    Loading users...
+                                </TableCell>
+                            </TableRow>
+                        ) : users.length === 0 ? (
                             <TableRow>
                                 <TableCell colSpan={7} className="text-center h-24 text-muted-foreground">
                                     No users found. Add one to get started.
@@ -167,20 +233,20 @@ export default function UsersDashboardPage() {
                         ) : (
                             users.map((user) => (
                                 <TableRow
-                                    key={user.id}
-                                    className={selectedUsers.includes(user.id) ? "bg-muted/50" : ""}
+                                    key={user._id}
+                                    className={selectedUsers.includes(user._id) ? "bg-muted/50" : ""}
                                 >
                                     <TableCell>
                                         <Checkbox
-                                            checked={selectedUsers.includes(user.id)}
-                                            onCheckedChange={() => toggleUser(user.id)}
-                                            aria-label={`Select ${user.name}`}
+                                            checked={selectedUsers.includes(user._id)}
+                                            onCheckedChange={() => toggleUser(user._id)}
+                                            aria-label={`Select ${user.userName}`}
                                         />
                                     </TableCell>
                                     <TableCell className="font-medium">
                                         <div className="flex items-center gap-2">
                                             <User className="h-4 w-4 text-muted-foreground" />
-                                            {user.name}
+                                            {user.userName}
                                         </div>
                                     </TableCell>
                                     <TableCell>
@@ -191,7 +257,7 @@ export default function UsersDashboardPage() {
                                     </TableCell>
                                     <TableCell>
                                         <Badge
-                                            variant={user.role === "Admin" ? "default" : "secondary"}
+                                            variant={user.role === "admin" ? "default" : "secondary"}
                                             className="gap-1"
                                         >
                                             <Shield className="h-3 w-3" />
@@ -200,13 +266,13 @@ export default function UsersDashboardPage() {
                                     </TableCell>
                                     <TableCell>
                                         <Badge
-                                            variant={user.status === "Active" ? "default" : "secondary"}
+                                            variant={user.isActive === "true" || user.isActive === true ? "default" : "secondary"}
                                         >
-                                            {user.status}
+                                            {user.isActive === "true" || user.isActive === true ? "Active" : "Inactive"}
                                         </Badge>
                                     </TableCell>
                                     <TableCell className="text-muted-foreground">
-                                        {user.createdAt}
+                                        {new Date(user.createdAt).toLocaleDateString()}
                                     </TableCell>
                                     <TableCell>
                                         <DropdownMenu>
@@ -222,7 +288,7 @@ export default function UsersDashboardPage() {
                                                     <Pencil className="mr-2 h-4 w-4" /> Edit Name
                                                 </DropdownMenuItem>
                                                 <DropdownMenuSeparator />
-                                                <DropdownMenuItem onClick={() => handleDelete(user.id)} className="text-destructive">
+                                                <DropdownMenuItem onClick={() => handleDelete(user._id)} className="text-destructive">
                                                     <Trash className="mr-2 h-4 w-4" /> Delete
                                                 </DropdownMenuItem>
                                             </DropdownMenuContent>

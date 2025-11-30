@@ -166,6 +166,35 @@ export interface CreateJobRequest {
 
 export interface UpdateJobRequest extends Partial<CreateJobRequest> { }
 
+// User Types
+export interface UserAPI {
+    _id: string
+    userName: string
+    email: string
+    role: string
+    isActive: string
+    customId?: string
+    createdAt: string
+    updatedAt: string
+    token?: string
+}
+
+export interface CreateUserRequest {
+    userName: string
+    email: string
+    password: string
+    role?: string
+    phone?: string
+}
+
+export interface UpdateUserRequest {
+    userName?: string
+    email?: string
+    password?: string
+    role?: string
+    isActive?: string
+}
+
 // Authentication Types
 export interface LoginRequest {
     email: string
