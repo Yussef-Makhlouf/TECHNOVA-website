@@ -676,5 +676,27 @@
         "ctaTitle": "Ready to Write Your Success Story?",
         "ctaDescription": "Let's discuss how we can help you achieve similar results for your business.",
         "ctaButton": "Start Your Project"
+    },
+    "features8": {
+        "reliability": {
+            "title": "Reliability",
+            "description": "99.9%"
+        },
+        "security": {
+            "title": "AI-Powered Security",
+            "description": "Advanced threat detection algorithms that adapt to evolving cyber risks in real-time."
+        },
+        "analytics": {
+            "title": "Real-time Analytics",
+            "description": "Instant data processing and visualization for immediate business insights."
+        },
+        "enterprise": {
+            "title": "Enterprise Grade",
+            "description": "Scalable infrastructure built to support mission-critical applications."
+        },
+        "collaboration": {
+            "title": "Collaborative Ecosystem",
+            "description": "Seamless integration tools that empower your teams to work better together."
+        }
     }
 }
