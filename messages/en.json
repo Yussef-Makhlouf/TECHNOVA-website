@@ -1,104 +1,104 @@
 {
     "hero": {
-        "badge": "The Future is Now",
+        "badge": "Leading the Future",
         "title": {
-            "part1": "Redefining Digital",
-            "part2": "Evolution"
+            "part1": "AI & ",
+            "part2": "Intelligent Solutions"
         },
-        "subtitle": "TECHNOVA bridges the gap between imagination and reality. We build space-age digital experiences that propel your business into the next dimension.",
+        "subtitle": "Technova specializes in integrating Artificial Intelligence with innovative digital solutions.  ",
         "cta": {
-            "primary": "Start Your Journey",
-            "secondary": "Explore Services"
+            "primary": "Start Your Digital Transformation",
+            "secondary": "Explore Core Services"
         }
     },
     "innovation": {
-        "badge": "Innovation in Action",
-        "title": "Transform Ideas Into Reality",
-        "description": "Our cutting-edge solutions bridge the gap between concept and execution, delivering experiences that redefine what's possible in digital innovation.",
+        "badge": "Our Strategic Focus",
+        "title": "AI-Driven Solutions for Measurable Impact",
+        "description": "We transform data into insight, insight into experience, and experience into sustainable success. Our mission is built on human-centered innovation and a firm commitment to privacy.",
         "features": {
-            "ai": "AI-Powered Solutions",
-            "integration": "Seamless Integration",
-            "technology": "Future-Ready Technology"
+            "ai": "Advanced AI Consulting",
+            "integration": "Seamless Systems Integration",
+            "technology": "Web & Application Development"
         }
     },
     "services": {
-        "badge": "What We Offer",
-        "title": "Our Core Services",
-        "description": "Comprehensive solutions designed to propel your business into the future."
+        "badge": "Our Expertise",
+        "title": "Four Specialized Service Departments",
+        "description": "Comprehensive solutions across Innovation, Big Data, Creative Production, and AI Audio Technologies."
     },
     "features": {
-        "badge": "Our DNA",
-        "title": "What Sets Us Apart",
-        "description": "The values and capabilities that drive our success and define our commitment to excellence.",
+        "badge": "Our Core Values",
+        "title": "Partnership Built on Trust and Excellence",
+        "description": "We position ourselves as a trusted strategic partner, delivering integrated digital transformation solutions.",
         "items": {
             "innovation": {
-                "title": "Innovation First",
-                "description": "We push boundaries and challenge conventions to deliver breakthrough solutions."
+                "title": "Creative Design",
+                "description": "The foundation of effective solutions, rooted in cultural and market understanding for distinctive experiences."
             },
             "clientCentric": {
-                "title": "Client-Centric",
-                "description": "Your success is our mission. We build lasting partnerships, not just projects."
+                "title": "Success Partnership",
+                "description": "We invest in long-term partnerships, working side-by-side from concept to measurable impact."
             },
             "excellence": {
-                "title": "Excellence",
-                "description": "We maintain the highest standards in every line of code and every interaction."
+                "title": "Excellence in Execution",
+                "description": "Commitment to precision, professionalism, and measurable outcomes with institutional rigor."
             },
             "performance": {
-                "title": "Lightning Performance",
-                "description": "Optimized solutions that deliver results at unprecedented speed."
+                "title": "Sustainable Innovation",
+                "description": "Building intelligent, scalable, and long-lasting solutions designed to evolve over time."
             },
             "global": {
-                "title": "Global Reach",
-                "description": "Scalable infrastructure serving clients across 50+ countries."
+                "title": "Ethical Values",
+                "description": "Prioritizing data protection, transparency, and AI that enhances human capability, not replaces it."
             },
             "award": {
-                "title": "Award-Winning",
-                "description": "Recognized industry leader with multiple innovation awards."
+                "title": "Deep Specialization",
+                "description": "Expertise in AI and secure digital infrastructure, aligned with GCC national transformation visions."
             },
             "powerful": {
-                "title": "Powerful",
-                "description": "Enterprise-grade solutions supporting entire development ecosystems."
+                "title": "Big Data & Analytics",
+                "description": "Data Management, Predictive Modelling, and Business Intelligence to enhance efficiency."
             },
             "security": {
-                "title": "Security",
-                "description": "Bank-level security protecting your valuable digital assets."
+                "title": "Creative Production",
+                "description": "AI-Driven Video & Image Production, Interactive Experiences, and Virtual Avatars."
             },
             "customization": {
-                "title": "Customization",
-                "description": "Flexible solutions tailored to your unique business needs."
+                "title": "AI Audio Technologies",
+                "description": "Text-to-Speech, Voice Cloning, AI Music, and Speech-to-Speech Processing."
             },
             "control": {
-                "title": "Control",
-                "description": "Complete control over your infrastructure and data."
+                "title": "Capacity Building",
+                "description": "Technical Training and Development to empower organizations and individuals."
             },
             "ai": {
-                "title": "Built for AI",
-                "description": "AI-ready infrastructure designed for the future."
+                "title": "End-to-End Delivery",
+                "description": "Supporting digital transformation journeys from concept to full execution."
             }
         }
     },
     "process": {
-        "badge": "How We Work",
-        "title": "Our Proven Process",
-        "description": "A systematic approach to delivering exceptional results, every time."
+        "badge": "Our Workflow",
+        "title": "Systematic Execution for Guaranteed Results",
+        "description": "A proven 6-step process ensuring high standards of quality and seamless project delivery."
     },
     "ai": {
         "badge": "Intelligent Technology",
         "title": "AI-Powered Solutions",
-        "description": "Harness the power of artificial intelligence to transform your business operations.",
+        "description": "We design AI-driven solutions that enhance efficiency, increase value, and create measurable impact.",
         "chatbot": {
             "badge": "AI-Powered Assistance",
-            "title": "Intelligent chatbot system, Get instant answers to all your questions.",
+            "title": "Intelligent Chatbot System: Get instant answers and 24/7 support.",
             "mapLabel": "AI Assistant Active Worldwide",
             "supportBadge": "24/7 Chat Support",
-            "supportTitle": "Connect with AI chatbot anytime for instant support and guidance.",
+            "supportTitle": "Connect with our AI chatbot anytime for instant support and guidance.",
             "availability": "24/7 Availability",
             "analyticsBadge": "Conversation Analytics",
             "analyticsTitle": "Track chatbot conversations in real-time.",
             "analyticsSubtitle": "Analyze user interactions and improve responses.",
             "conversation": {
-                "question": "How can I integrate the chatbot into my website?",
-                "answer": "chatbot can be easily integrated with just a few lines of code. I'll guide you through the process step by step!",
+                "question": "How does Technova ensure data protection in its AI solutions?",
+                "answer": "Our priority is the protection of data, transparency, and respect for privacy, as part of our core Ethical Values.",
                 "date": "Sat 22 Feb",
                 "time": "Now"
             }
@@ -106,25 +106,25 @@
     },
     "testimonials": {
         "badge": "Client Feedback",
-        "title": "What Our Clients Say",
-        "description": "Trusted by leading organizations worldwide."
+        "title": "Trusted by Strategic Partners",
+        "description": "Serving Government Sectors, Corporations, Startups, and Educational Institutions."
     },
     "cta": {
         "title": {
-            "part1": "Ready to Build the",
-            "part2": "Future",
+            "part1": "Ready to Achieve",
+            "part2": "Sustainable Success",
             "part3": "?"
         },
-        "description": "Transform your vision into reality with TECHNOVA's cutting-edge solutions. Let's create something extraordinary together.",
+        "description": "Let's discuss how our deep specialization in AI and digital solutions can transform your vision into reality.",
         "buttons": {
-            "primary": "Start Your Project",
-            "secondary": "Explore Solutions"
+            "primary": "Schedule a Consultation",
+            "secondary": "View Our Portfolio"
         }
     },
     "navigation": {
         "home": "Home",
         "services": "Services",
-        "about": "About",
+        "about": "About Us",
         "caseStudies": "Case Studies",
         "insights": "Insights",
         "careers": "Careers",
@@ -134,25 +134,25 @@
         "toggleTheme": "Toggle theme"
     },
     "footer": {
-        "description": "Leading the future with innovative technology solutions and Neo-Futurist approach.",
+        "description": "Leading the integration of AI and innovation globally, creating smart, sustainable, and secure solutions.",
         "servicesTitle": "Services",
         "companyTitle": "Company",
         "contactTitle": "Contact",
-        "copyright": "All rights reserved. Built with passion for the future.",
+        "copyright": "All rights reserved. Technova. Built with a commitment to ethical AI and excellence in execution.",
         "links": {
             "aiSolutions": "AI Solutions",
-            "cloudInfrastructure": "Cloud Infrastructure",
-            "cybersecurity": "Cybersecurity",
-            "digitalTransformation": "Digital Transformation",
+            "cloudInfrastructure": "Big Data & Analytics",
+            "cybersecurity": "Creative Production",
+            "digitalTransformation": "AI Audio Technologies",
             "aboutUs": "About Us",
             "careers": "Careers",
             "caseStudies": "Case Studies",
-            "blog": "Blog"
+            "blog": "Insights"
         },
         "contactInfo": {
-            "address1": "123 Tech Street",
+            "address1": "Gulf Region Headquarters",
             "address2": "Innovation District",
-            "address3": "San Francisco, CA 94105"
+            "address3": "Strategic Partner to Governments & Enterprises"
         }
     },
     "testimonialsItems": {
@@ -160,44 +160,44 @@
         "next": "Next testimonial",
         "items": [
             {
-                "text": "My favorite solution in the market. We work 5x faster with TECHNOVA.",
-                "author": "Alex, CEO at TechCorp"
+                "text": "Technova's deep specialization in AI and secure digital infrastructure was the key to our successful transformation.",
+                "author": "Government Sector Partner"
             },
             {
-                "text": "I'm confident my data is safe with TECHNOVA. I can't say that about other providers.",
-                "author": "Dan, CTO at SecureNet"
+                "text": "The commitment to Excellence in Execution is evident in every deliverable. Precision and professionalism define their work.",
+                "author": "Enterprise Client, CTO"
             },
             {
-                "text": "I know it's cliche, but we were lost before we found TECHNOVA. Can't thank you guys enough!",
-                "author": "Stephanie, COO at InnovateCo"
+                "text": "Their ethical approach to AI and data protection gave us the confidence to move forward with complex projects.",
+                "author": "Financial Services Director"
             },
             {
-                "text": "TECHNOVA's products make planning for the future seamless. Can't recommend them enough!",
-                "author": "Marie, CFO at FuturePlanning"
+                "text": "A true Success Partnership. They worked side-by-side with us from concept to measurable impact.",
+                "author": "Startup Founder"
             },
             {
-                "text": "If I could give 11 stars, I'd give 12.",
-                "author": "Andre, Head of Design at CreativeSolutions"
+                "text": "The AI Audio Technologies department delivered a solution that was both innovative and perfectly tailored to our needs.",
+                "author": "Media Production Head"
             },
             {
-                "text": "SO SO SO HAPPY WE FOUND YOU GUYS!!!! I'd bet you've saved me 100 hours so far.",
-                "author": "Jeremy, Product Manager at TimeWise"
+                "text": "We value their Creative Design approach, which made our digital experience both meaningful and distinctive.",
+                "author": "Cultural Institution Lead"
             },
             {
-                "text": "Took some convincing, but now that we're on TECHNOVA, we're never going back.",
-                "author": "Pam, Marketing Director at BrandBuilders"
+                "text": "The 6-step workflow ensured a fast and adaptive execution, even in our complex environment.",
+                "author": "Operations Director"
             },
             {
-                "text": "I would be lost without TECHNOVA's in-depth analytics. The ROI is EASILY 100X for us.",
-                "author": "Daniel, Data Scientist at AnalyticsPro"
+                "text": "Technova's solutions are scalable and long-lasting, a true example of Sustainable Innovation.",
+                "author": "Technology Investment Fund"
             },
             {
-                "text": "It's just the best. Period.",
-                "author": "Fernando, UX Designer at UserFirst"
+                "text": "The team's alignment with national transformation visions made them the ideal strategic partner.",
+                "author": "Public Sector Official"
             },
             {
-                "text": "I switched 5 years ago and never looked back.",
-                "author": "Andy, DevOps Engineer at CloudMasters"
+                "text": "Transforming our data into insight has been seamless and highly impactful thanks to their Big Data & Analytics team.",
+                "author": "Data Scientist"
             }
         ]
     },
@@ -205,63 +205,63 @@
         "steps": [
             {
                 "title": "Discovery",
-                "description": "Deep analysis & requirements."
+                "description": "In-depth analysis and requirement gathering to define the project scope."
             },
             {
                 "title": "Architecture",
-                "description": "Tailored technical planning."
+                "description": "Solution design and technical planning for a secure and scalable system."
             },
             {
                 "title": "Development",
-                "description": "Intuitive design & robust code."
+                "description": "Agile development and robust coding of the AI and digital solution."
             },
             {
                 "title": "Testing",
-                "description": "Rigorous optimization."
+                "description": "Rigorous optimization, security review, and quality assurance."
             },
             {
                 "title": "Launch",
-                "description": "Seamless deployment."
+                "description": "Seamless deployment and final optimization for market readiness."
             },
             {
                 "title": "Support",
-                "description": "Training & long-term care."
+                "description": "Training, ongoing support, and continuous optimization."
             }
         ]
     },
     "servicesPage": {
         "hero": {
-            "badge": "Our Services",
+            "badge": "Our Specialized Solutions",
             "title": "TECHNOVA",
             "titleHighlight": "Services",
-            "description": "Comprehensive technology solutions designed to accelerate your digital transformation and drive business growth."
+            "description": "AI-driven solutions across four specialized departments: Innovation, Big Data, Creative Production, and AI Audio Technologies."
         },
         "whyChoose": {
-            "title": "Why Choose Our Services",
-            "description": "Experience the difference with our enterprise-grade solutions"
+            "title": "Why Choose Technova's Expertise",
+            "description": "Experience the difference of deep specialization in AI and secure digital infrastructure."
         },
         "cta": {
             "title": "Ready to Transform Your Business?",
-            "description": "Let's discuss how our services can help you achieve your digital transformation goals.",
+            "description": "Let's discuss how our specialized services can help you achieve your digital transformation goals.",
             "getStarted": "Get Started",
-            "viewCaseStudies": "View Case Studies"
+            "viewCaseStudies": "View Success Stories"
         }
     },
     "contactPage": {
         "hero": {
-            "badge": "Contact Us",
-            "title": "Get in Touch",
-            "description": "We'd love to hear from you. Fill out the form below and we'll get back to you shortly."
+            "badge": "Contact Our Team",
+            "title": "Let's Build the Future Together",
+            "description": "Connect with our experts to discuss your project and start your journey towards measurable impact."
         },
         "form": {
             "name": "Name",
             "email": "Email",
-            "phone": "Phone",
-            "service": "Service",
-            "message": "Message",
+            "phone": "Phone Number",
+            "service": "Service of Interest",
+            "message": "Your Project Details",
             "submit": "Send Message",
             "submitting": "Sending...",
-            "success": "Message sent successfully!",
+            "success": "Message sent successfully! We will be in touch shortly.",
             "error": "Something went wrong. Please try again."
         },
         "info": {
@@ -270,41 +270,41 @@
         },
         "vision": {
             "title": "Our Vision",
-            "description": "Leading the integration of AI and innovation globally, creating intelligent, sustainable, and secure solutions that empower organizations and individuals to thrive in the digital age."
+            "description": "To lead the integration of AI and innovation globally, creating smart, sustainable, and secure solutions that empower organizations and individuals to thrive in the digital age."
         },
         "mission": {
             "title": "Our Mission",
             "description": "We design AI-driven solutions that enhance efficiency, increase value, and create measurable impact. We transform data into insight, insight into experience, and experience into sustainable success with a firm commitment to privacy and human-centered innovation."
         },
         "values": {
-            "title": "Our Values",
-            "description": "The principles that guide everything we do and shape our company culture.",
+            "title": "Our Core Values",
+            "description": "The principles that guide our work: Creativity, Sustainable Innovation, Ethical Values, Success Partnership, and Excellence in Execution.",
             "items": {
                 "creativity": {
                     "title": "Creativity",
-                    "description": "We believe creativity is the foundation of effective solutions. We develop ideas rooted in cultural and market understanding to create meaningful and distinctive experiences."
+                    "description": "The foundation of effective solutions, rooted in cultural and market understanding."
                 },
                 "sustainableInnovation": {
                     "title": "Sustainable Innovation",
-                    "description": "We build intelligent solutions that are scalable and long-lasting, designed to evolve and remain valuable over time."
+                    "description": "Building intelligent, scalable, and long-lasting solutions that evolve over time."
                 },
                 "ethicalValues": {
                     "title": "Ethical Values",
-                    "description": "We believe in AI that enhances human capability, not replaces it. Our priority is the protection of data, transparency, and respect for privacy."
+                    "description": "Prioritizing data protection, transparency, and AI that enhances human capability."
                 },
                 "successPartnership": {
                     "title": "Success Partnership",
-                    "description": "We invest in long-term partnerships built on trust and shared goals. We work side-by-side with our partners from concept to execution to measurable impact."
+                    "description": "Investing in long-term partnerships built on trust and shared goals for measurable impact."
                 },
                 "excellence": {
                     "title": "Excellence in Execution",
-                    "description": "We commit to precision, professionalism, and measurable outcomes. Every project we deliver reflects high standards of quality and institutional rigor."
+                    "description": "Commitment to precision, professionalism, and high standards of quality in every project."
                 }
             }
         },
         "journey": {
             "title": "Our Journey",
-            "description": "Key milestones that shaped our path to becoming industry leaders.",
+            "description": "Key milestones that shaped our path to becoming industry leaders in AI and digital transformation.",
             "milestones": [
                 {
                     "year": "2010",
@@ -330,7 +330,7 @@
         },
         "globalPresence": {
             "title": "Global Presence",
-            "description": "We have a global presence with a team of experts who are committed to delivering the best possible results for our clients."
+            "description": "Strategically located in the heart of the Gulf, serving governments, enterprises, and startups across the GCC and beyond."
         }
     },
     "aboutPage": {
@@ -338,45 +338,45 @@
             "badge": "About Us",
             "title": "About",
             "titleHighlight": "TECHNOVA",
-            "description": "Leading technology company specializing in integrating AI with innovative digital solutions."
+            "description": "We are a strategic partner to governments, enterprises, and startups, supporting them in digital transformation journeys from concept to full execution."
         },
         "vision": {
             "title": "Our Vision",
-            "description": "Leading the integration of AI and innovation globally, creating intelligent, sustainable, and secure solutions that empower organizations and individuals to thrive in the digital age."
+            "description": "To lead the integration of AI and innovation globally, creating smart, sustainable, and secure solutions that empower organizations and individuals to thrive in the digital age."
         },
         "mission": {
             "title": "Our Mission",
             "description": "We design AI-driven solutions that enhance efficiency, increase value, and create measurable impact. We transform data into insight, insight into experience, and experience into sustainable success with a firm commitment to privacy and human-centered innovation."
         },
         "values": {
-            "title": "Our Values",
-            "description": "The principles that guide everything we do and shape our company culture.",
+            "title": "Our Core Values",
+            "description": "The principles that guide our work: Creativity, Sustainable Innovation, Ethical Values, Success Partnership, and Excellence in Execution.",
             "items": {
                 "creativity": {
-                    "title": "Creativity",
-                    "description": "We believe creativity is the foundation of effective solutions. We develop ideas rooted in cultural and market understanding to create meaningful and distinctive experiences."
+                    "title": "Creative Design",
+                    "description": "The foundation of effective solutions, rooted in cultural and market understanding."
                 },
                 "sustainableInnovation": {
                     "title": "Sustainable Innovation",
-                    "description": "We build intelligent solutions that are scalable and long-lasting, designed to evolve and remain valuable over time."
+                    "description": "Building intelligent, scalable, and long-lasting solutions that evolve over time."
                 },
                 "ethicalValues": {
                     "title": "Ethical Values",
-                    "description": "We believe in AI that enhances human capability, not replaces it. Our priority is the protection of data, transparency, and respect for privacy."
+                    "description": "Prioritizing data protection, transparency, and AI that enhances human capability."
                 },
                 "successPartnership": {
                     "title": "Success Partnership",
-                    "description": "We invest in long-term partnerships built on trust and shared goals. We work side-by-side with our partners from concept to execution to measurable impact."
+                    "description": "Investing in long-term partnerships built on trust and shared goals for measurable impact."
                 },
                 "excellence": {
                     "title": "Excellence in Execution",
-                    "description": "We commit to precision, professionalism, and measurable outcomes. Every project we deliver reflects high standards of quality and institutional rigor."
+                    "description": "Commitment to precision, professionalism, and high standards of quality in every project."
                 }
             }
         },
         "journey": {
             "title": "Our Journey",
-            "description": "Key milestones that shaped our path to becoming industry leaders.",
+            "description": "Key milestones that shaped our path to becoming industry leaders in AI and digital transformation.",
             "milestones": [
                 {
                     "year": "2010",
@@ -402,48 +402,48 @@
         },
         "cta": {
             "title": "Ready to Write Your Success Story?",
-            "description": "Let's discuss how we can help you achieve similar results for your business.",
+            "description": "Let's discuss how our deep specialization in AI can help you achieve similar results for your business.",
             "button": "Start Your Project"
         }
     },
     "caseStudiesPage": {
         "hero": {
-            "title": "Case Studies",
-            "description": "Real-world success stories showcasing how we helped companies achieve their digital transformation goals."
+            "title": "Success Stories & Case Studies",
+            "description": "Real-world examples showcasing how we convert innovation into measurable impact for our strategic partners."
         },
         "cta": {
             "title": "Ready to Write Your Success Story?",
-            "description": "Let's discuss how we can help you achieve similar results for your business.",
+            "description": "Let's discuss how our deep specialization in AI can help you achieve similar results for your business.",
             "button": "Start Your Project"
         }
     },
     "insightsPage": {
         "hero": {
-            "badge": "Industry Insights",
+            "badge": "Thought Leadership",
             "title": "TECHNOVA",
             "titleHighlight": "Insights",
-            "description": "In-depth analysis, research, and thought leadership on technology trends shaping the future of business."
+            "description": "In-depth analysis and thought leadership on AI, digital transformation, and secure infrastructure, aligned with national visions."
         },
         "categories": {
             "all": "All",
             "marketAnalysis": "Market Analysis",
-            "technology": "Technology",
-            "strategy": "Strategy",
-            "industryInsights": "Industry Insights",
-            "security": "Security",
-            "workforce": "Workforce"
+            "technology": "AI & ML",
+            "strategy": "Digital Strategy",
+            "industryInsights": "GCC Transformation",
+            "security": "Data Protection",
+            "workforce": "Capacity Building"
         },
         "featured": {
             "badge": "Featured Insight",
-            "title": "Latest Research",
+            "title": "Latest Research on Ethical AI",
             "readMore": "Read Insight",
             "by": "By"
         },
         "cta": {
-            "title": "Stay Ahead of the Curve",
-            "description": "Subscribe to our insights newsletter and receive the latest research and analysis directly in your inbox.",
+            "title": "Stay Ahead of the AI Curve",
+            "description": "Subscribe to our insights newsletter and receive the latest research and analysis on AI and digital transformation.",
             "subscribe": "Subscribe Now",
-            "viewCaseStudies": "View Case Studies"
+            "viewCaseStudies": "View Success Stories"
         },
         "detail": {
             "backToInsights": "Back to Insights",
@@ -455,15 +455,15 @@
     "blogPage": {
         "hero": {
             "title": "Insights & Articles",
-            "description": "Stay updated with the latest trends, insights, and best practices in technology and digital innovation."
+            "description": "Stay updated with the latest trends, insights, and best practices in AI, digital innovation, and secure systems."
         },
         "categories": {
             "all": "All",
             "ai": "AI & ML",
-            "cloud": "Cloud",
-            "cybersecurity": "Cybersecurity",
+            "cloud": "Big Data",
+            "cybersecurity": "Security",
             "digitalTransformation": "Digital Transformation",
-            "iot": "IoT"
+            "iot": "Creative Production"
         },
         "featured": {
             "badge": "Featured",
@@ -478,34 +478,34 @@
     },
     "careersPage": {
         "hero": {
-            "title": "Join Our Team",
-            "description": "Build the future of technology with a team of passionate innovators and industry leaders."
+            "title": "Join Our Mission",
+            "description": "Be part of the team that is leading the integration of AI and innovation in the world. We are looking for pioneers."
         },
         "benefits": {
-            "title": "Why Join TECHNOVA?",
-            "description": "We offer more than just a job – we provide a platform for growth, innovation, and impact.",
+            "title": "Why Join Technova?",
+            "description": "We offer a platform for growth, innovation, and impact, aligned with our core values of excellence and creativity.",
             "items": {
                 "health": {
-                    "title": "Health & Wellness",
-                    "description": "Comprehensive health insurance and wellness programs"
+                    "title": "Growth & Capacity Building",
+                    "description": "Continuous learning and technical training to ensure long-term career evolution."
                 },
                 "growth": {
-                    "title": "Growth Opportunities",
-                    "description": "Continuous learning and career development programs"
+                    "title": "Strategic Impact",
+                    "description": "Work on projects that align with national transformation visions and create measurable impact."
                 },
                 "culture": {
-                    "title": "Collaborative Culture",
-                    "description": "Work with talented teams on cutting-edge projects"
+                    "title": "Ethical & Creative Culture",
+                    "description": "A collaborative environment that values creativity, transparency, and ethical AI practice."
                 },
                 "compensation": {
                     "title": "Competitive Compensation",
-                    "description": "Industry-leading salaries and performance bonuses"
+                    "description": "Industry-leading salaries and performance bonuses."
                 }
             }
         },
         "openPositions": {
             "title": "Open Positions",
-            "description": "Find your next opportunity and join our mission to build the future.",
+            "description": "Find your next opportunity and join our mission to build the future of digital solutions.",
             "apply": "Apply Now"
         },
         "applicationForm": {
@@ -534,7 +534,7 @@
     "loginPage": {
         "welcome": {
             "title": "Welcome back!",
-            "subtitle": "Please enter your details to access the dashboard"
+            "subtitle": "Please enter your details to access the partner dashboard"
         },
         "form": {
             "email": "Email",
@@ -577,49 +577,49 @@
     "features3": {
         "endToEnd": {
             "title": "End-to-End Solutions",
-            "description": "Complete technology solutions from consultation to deployment and support"
+            "description": "Complete technology solutions from consultation to deployment and ongoing support"
         },
         "enterpriseSecurity": {
-            "title": "Enterprise Security",
-            "description": "Bank-level security protocols with 24/7 monitoring and threat detection"
+            "title": "Data Protection & Privacy",
+            "description": "Firm commitment to privacy and ethical values in all AI and digital systems"
         },
         "lightningFast": {
-            "title": "Lightning Fast",
-            "description": "Optimized infrastructure ensuring peak performance at scale"
+            "title": "Fast & Adaptive Execution",
+            "description": "Systematic approach ensuring rapid deployment across complex environments"
         },
         "aiPowered": {
             "title": "AI-Powered Intelligence",
-            "description": "Cutting-edge AI and machine learning integration for smarter solutions"
+            "description": "Cutting-edge AI and machine learning integration for smarter, more efficient solutions"
         },
         "expertTeam": {
             "title": "Expert Team Support",
-            "description": "Dedicated specialists available 24/7 to ensure your success"
+            "description": "Dedicated specialists available to ensure your success and continuous optimization"
         },
         "globalReach": {
-            "title": "Global Reach, Local Expertise",
-            "description": "Serving clients across the Middle East and beyond with cutting-edge technology solutions tailored to regional needs and international standards"
+            "title": "Strategic Gulf Presence",
+            "description": "Serving governments and enterprises in the GCC, aligned with national transformation visions"
         }
     },
     "featuresAdvanced": {
         "realTimeMonitoring": {
-            "title": "Real-time Monitoring",
-            "description": "Track system performance with advanced analytics"
+            "title": "Measurable Impact",
+            "description": "Solutions designed to create measurable impact and enhance efficiency"
         },
         "enterpriseSecurity": {
-            "title": "Enterprise Security",
-            "description": "Military-grade encryption and protection"
+            "title": "Secure & Scalable",
+            "description": "Building practical, secure, and scalable systems that transform how you work"
         },
         "lightningFast": {
-            "title": "Lightning Fast",
-            "description": "Optimized performance for instant response"
+            "title": "Creative Design",
+            "description": "Bridging creativity and technology to build distinctive digital experiences"
         },
         "globalNetwork": {
-            "title": "Global Network",
-            "description": "Distributed infrastructure worldwide"
+            "title": "Success Partnership",
+            "description": "Long-term partnership from concept to full execution and measurable impact"
         },
         "support247": {
-            "title": "24/7 Support",
-            "description": "Round-the-clock expert assistance"
+            "title": "Ethical AI",
+            "description": "AI that enhances human capability, with a priority on transparency and data protection"
         },
         "description": "We believe in AI that enhances human capability, not replaces it. Our priority is the protection of data, transparency, and respect for privacy."
     },
@@ -632,12 +632,12 @@
         "description": "We commit to precision, professionalism, and measurable outcomes. Every project we deliver reflects high standards of quality and institutional rigor."
     },
     "globalPresence": {
-        "title": "Global Presence",
-        "description": "We have a global presence with a team of experts who are committed to delivering the best possible results for our clients."
+        "title": "Strategic Gulf Presence",
+        "description": "Strategically located in the heart of the Gulf, serving governments, enterprises, and startups across the GCC and beyond."
     },
     "logosMarquee": {
-        "title": "Trusted by Industry Leaders",
-        "description": "Partnering with innovative companies worldwide to deliver cutting-edge solutions"
+        "title": "Trusted by Strategic Partners",
+        "description": "Partnering with governments, enterprises, and startups to deliver cutting-edge AI and digital solutions."
     },
     "serviceDetailPage": {
         "error": "Error",
@@ -649,54 +649,102 @@
         "benefits": {
             "title": "Key Benefits",
             "efficiency": {
-                "title": "Increased Efficiency",
-                "description": "Automate repetitive tasks and reduce operational costs significantly"
+                "title": "Enhanced Efficiency",
+                "description": "AI-driven automation to significantly reduce operational costs and time."
             },
             "decision": {
-                "title": "Better Decision Making",
-                "description": "Data-driven insights help you make smarter, faster strategic decisions"
+                "title": "Data-Driven Insight",
+                "description": "Transforming data into insight for smarter, faster strategic decisions."
             },
             "risk": {
-                "title": "Risk Mitigation",
-                "description": "Identify potential risks and anomalies before they impact your business"
+                "title": "Future-Ready & Secure",
+                "description": "Building scalable, secure systems that mitigate risk and ensure long-term value."
             }
         },
         "cta": {
             "title": "Ready to leverage {service}?",
-            "description": "Schedule a consultation with our experts to discuss your specific needs.",
+            "description": "Schedule a consultation with our experts to discuss your specific needs and measurable impact.",
             "button": "Get Started"
         }
     },
     "caseStudyDetailPage": {
-        "backToCaseStudies": "Back to Case Studies",
+        "backToCaseStudies": "Back to Success Stories",
         "overview": "Overview",
-        "keyResults": "Key Results",
+        "keyResults": "Measurable Impact",
         "error": "Error",
-        "caseStudyNotFound": "Case study not found",
+        "caseStudyNotFound": "Success story not found",
         "ctaTitle": "Ready to Write Your Success Story?",
-        "ctaDescription": "Let's discuss how we can help you achieve similar results for your business.",
+        "ctaDescription": "Let's discuss how our deep specialization in AI can help you achieve similar results for your business.",
         "ctaButton": "Start Your Project"
     },
     "features8": {
         "reliability": {
-            "title": "Reliability",
-            "description": "99.9%"
+            "title": "Precision & Rigor",
+            "description": "Commitment to the highest standards of quality and institutional rigor."
         },
         "security": {
-            "title": "AI-Powered Security",
-            "description": "Advanced threat detection algorithms that adapt to evolving cyber risks in real-time."
+            "title": "Ethical AI & Privacy",
+            "description": "Prioritizing data protection, transparency, and AI that enhances human capability."
         },
         "analytics": {
-            "title": "Real-time Analytics",
-            "description": "Instant data processing and visualization for immediate business insights."
+            "title": "Big Data & Analytics",
+            "description": "Transforming data into insight for immediate business intelligence."
         },
         "enterprise": {
-            "title": "Enterprise Grade",
-            "description": "Scalable infrastructure built to support mission-critical applications."
+            "title": "Strategic Partnership",
+            "description": "Trusted partner to governments and enterprises for digital transformation."
         },
         "collaboration": {
-            "title": "Collaborative Ecosystem",
-            "description": "Seamless integration tools that empower your teams to work better together."
+            "title": "Creative Production",
+            "description": "Bridging creativity and technology for distinctive digital experiences."
         }
+    },
+    "aiChatbot": {
+        "title": "AI Chatbot",
+        "description": "Intelligent chatbot system, Get instant answers to all your questions."
+    },
+    "pricing": {
+        "title": "Pricing",
+        "description": "Flexible plans for every stage of your digital transformation journey."
+    },
+    "blog": {
+        "title": "Insights",
+        "description": "In-depth analysis and thought leadership on AI and digital transformation."
+    },
+    "security": {
+        "title": "Security",
+        "description": "Bank-level security protecting your valuable digital assets."
+    },
+    "404": {
+        "title": "404 - Page Not Found",
+        "description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable."
+    },
+    "cookies": {
+        "title": "Cookies Policy",
+        "description": "We use cookies to ensure you get the best experience on our website."
+    },
+    "legal": {
+        "title": "Legal",
+        "description": "Terms of Service and Privacy Policy."
+    },
+    "forms": {
+        "title": "Forms",
+        "description": "Contact and application forms."
+    },
+    "notifications": {
+        "title": "Notifications",
+        "description": "System notifications and alerts."
+    },
+    "loading": {
+        "title": "Loading",
+        "description": "Please wait while we load the content."
+    },
+    "viewMore": {
+        "title": "View More",
+        "description": "Click to view more content."
+    },
+    "readMore": {
+        "title": "Read More",
+        "description": "Click to read the full article."
     }
 }
