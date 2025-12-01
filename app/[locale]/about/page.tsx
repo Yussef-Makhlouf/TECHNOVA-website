@@ -50,25 +50,25 @@ export default function AboutPage() {
 
   const milestones = [
     {
-      date: "Nov 2025",
+      date: "Sep 2025",
       title: t('journey.milestones.0.title'),
       description: t('journey.milestones.0.description'),
       color: "#7B3FEF",
     },
     {
-      date: "20 Nov",
+      date: "20 Oct 2025",
       title: t('journey.milestones.1.title'),
       description: t('journey.milestones.1.description'),
       color: "#00D9FF",
     },
     {
-      date: "1 Dec",
+      date: "1 Dec 2025",
       title: t('journey.milestones.2.title'),
       description: t('journey.milestones.2.description'),
       color: "#7B3FEF",
     },
     {
-      date: "12 Dec",
+      date: "8 Dec 2025",
       title: t('journey.milestones.3.title'),
       description: t('journey.milestones.3.description'),
       color: "#00D9FF",

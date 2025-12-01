@@ -142,13 +142,14 @@ export default function HomePage() {
 
 
       {/* Innovation in Action Section */}
-      <Section className="py-20 lg:py-32">
+      <Section className="py-20 lg:py-32 overflow-hidden">
+        {/* Header - Outside main container for better mobile flow */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-12 lg:mb-16"
         >
           <div className="inline-block mb-4">
             <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#7B3FEF]/10 to-[#00D9FF]/10 border border-[#7B3FEF]/20 text-sm font-medium text-[#7B3FEF]">
@@ -161,78 +162,146 @@ export default function HomePage() {
           <div className="gradient-line w-24 mx-auto my-6" />
         </motion.div>
 
-        <div className="relative max-w-6xl mx-auto">
-          <div className="relative p-8 lg:p-12">
-            <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="space-y-6"
-              >
-                <div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {tInnovation('description')}
-                  </p>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] rounded-full"></div>
-                    <span className="text-sm font-medium text-foreground">{tInnovation('features.ai')}</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] rounded-full"></div>
-                    <span className="text-sm font-medium text-foreground">{tInnovation('features.integration')}</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] rounded-full"></div>
-                    <span className="text-sm font-medium text-foreground">{tInnovation('features.technology')}</span>
-                  </div>
-                </div>
-              </motion.div>
+        {/* Main Container with Robot + Floating Cards */}
+        <div className="relative max-w-7xl mx-auto px-4">
+          <div className="relative min-h-[700px] lg:min-h-[800px]">
 
+            {/* Central Robot Scene - Base Layer */}
+            <div className="absolute inset-0 flex items-center justify-center">
               <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="lg:col-span-2"
+                className="relative w-full h-full max-w-[600px] max-h-[600px]"
               >
-                <div className="relative h-[500px] lg:h-[600px] rounded-2xl overflow-hidden flex items-center justify-center">
-                  {/* Circular Text - Behind the scene */}
-                  <div
-                    className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none"
-                    style={{ "--radius": "220px" } as React.CSSProperties}
-                  >
-                    <div className="w-full h-full max-w-[600px] max-h-[600px] relative hidden md:block opacity-30">
-                      <CircularText
-                        text="TECHNOVA   INNOVATION   ARTIFICIAL   INTELLIGENCE   "
-                        onHover="speedUp"
-                        spinDuration={30}
-                        className="text-sm font-heading text-[#00D9FF]"
-                      />
-                    </div>
-                    {/* Mobile version */}
-                    <div
-                      className="w-full h-full max-w-[400px] max-h-[400px] relative md:hidden opacity-30"
-                      style={{ "--radius": "160px" } as React.CSSProperties}
-                    >
-                      <CircularText
-                        text="TECHNOVA   INNOVATION   ARTIFICIAL   INTELLIGENCE   "
-                        onHover="speedUp"
-                        spinDuration={30}
-                        className="text-xs font-heading text-[#00D9FF]"
-                      />
-                    </div>
+                {/* Circular Text Background */}
+                <div
+                  className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none"
+                  style={{ "--radius": "220px" } as React.CSSProperties}
+                >
+                  <div className="w-full h-full max-w-[600px] max-h-[600px] relative hidden md:block opacity-20">
+                    <CircularText
+                      text="TECHNOVA   INNOVATION   ARTIFICIAL   INTELLIGENCE   "
+                      onHover="speedUp"
+                      spinDuration={30}
+                      className="text-sm font-heading text-[#00D9FF]"
+                    />
                   </div>
+                </div>
 
+                {/* Spline Robot */}
+                <div className="relative h-[400px] md:h-[500px] lg:h-[600px] z-10 pt-20">
                   <SplineScene
                     scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                    className="w-full h-full relative z-10"
+                    className="w-full h-full"
                   />
                 </div>
               </motion.div>
+            </div>
+
+            {/* Floating Content Cards - Absolutely Positioned */}
+
+            {/* Top-Left Card: Description */}
+            <motion.div
+              initial={{ opacity: 0, x: -40, y: -20 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="absolute top-0 left-0 lg:top-8 lg:left-8 max-w-xs z-20
+                         backdrop-blur-md bg-gradient-to-br from-white/10 to-white/5
+                         border border-white/20 rounded-2xl p-6
+                         shadow-2xl shadow-purple-500/10
+                         hover:scale-105 hover:border-purple-500/30 hover:shadow-purple-500/20
+                         transition-all duration-300 "
+            >
+              <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">
+                {tInnovation('description')}
+              </p>
+            </motion.div>
+
+            {/* Right Card: Feature 1 */}
+            <motion.div
+              initial={{ opacity: 0, x: 40, y: -20 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="absolute top-1/4 right-0 lg:right-8 max-w-[280px] z-20
+                         backdrop-blur-md bg-gradient-to-br from-white/10 to-white/5
+                         border border-white/20 rounded-2xl p-5
+                         shadow-2xl shadow-cyan-500/10
+                         hover:scale-105 hover:border-cyan-500/30 hover:shadow-cyan-500/20
+                         transition-all duration-300
+                         hidden lg:flex flex-col gap-6"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] rounded-full"></div>
+                <span className="text-sm font-semibold text-foreground">{tInnovation('features.ai')}</span>
+              </div>
+            </motion.div>
+
+            {/* Bottom-Left Card: Feature 2 */}
+            <motion.div
+              initial={{ opacity: 0, x: -40, y: 20 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="absolute bottom-8 left-0 lg:left-8 max-w-[280px] z-20
+                         backdrop-blur-md bg-gradient-to-br from-white/10 to-white/5
+                         border border-white/20 rounded-2xl p-5
+                         shadow-2xl shadow-purple-500/10
+                         hover:scale-105 hover:border-purple-500/30 hover:shadow-purple-500/20
+                         transition-all duration-300
+                         hidden lg:flex flex-col gap-2 "
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] rounded-full"></div>
+                <span className="text-sm font-semibold text-foreground">{tInnovation('features.integration')}</span>
+              </div>
+            </motion.div>
+
+            {/* Bottom-Right Card: Feature 3 */}
+            <motion.div
+              initial={{ opacity: 0, x: 40, y: 20 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              viewport={{ once: true }}
+              className="absolute bottom-8 right-0 lg:right-8 max-w-[280px] z-20
+                         backdrop-blur-md bg-gradient-to-br from-white/10 to-white/5
+                         border border-white/20 rounded-2xl p-5
+                         shadow-2xl shadow-cyan-500/10
+                         hover:scale-105 hover:border-cyan-500/30 hover:shadow-cyan-500/20
+                         transition-all duration-300
+                         hidden lg:flex flex-col gap-2"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] rounded-full"></div>
+                <span className="text-sm font-semibold text-foreground">{tInnovation('features.technology')}</span>
+              </div>
+            </motion.div>
+
+            {/* Mobile: Feature Pills Below Robot */}
+            <div className="lg:hidden absolute bottom-0 left-0 right-0 flex flex-wrap gap-3 justify-center px-4 z-20">
+              {[
+                { key: 'ai', label: tInnovation('features.ai') },
+                { key: 'integration', label: tInnovation('features.integration') },
+                { key: 'technology', label: tInnovation('features.technology') }
+              ].map((feature, index) => (
+                <motion.div
+                  key={feature.key}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 * index }}
+                  className="backdrop-blur-md bg-gradient-to-br from-white/10 to-white/5
+                             border border-white/20 rounded-full px-4 py-2
+                             shadow-lg"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] rounded-full"></div>
+                    <span className="text-xs font-medium text-foreground">{feature.label}</span>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
