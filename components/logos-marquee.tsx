@@ -13,9 +13,9 @@ export default function LogosMarquee() {
         "/microsoft_logo.svg",
         "/gemini.svg",
         "/cloudflare_Logo.svg",
-        "/yussef_dev.png",
+        // "/yussef_dev.png",
         "/aws.svg",
-        // "/yussef.png",
+        "/yussef.png",
     ]
 
     return (
