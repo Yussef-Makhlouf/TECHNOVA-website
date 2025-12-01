@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -576,12 +577,12 @@ export default function LoginPage() {
                         </div>
 
                         <div className="flex items-center justify-between">
-                            <a
+                            <Link
                                 href="/reset-password"
                                 className="text-sm text-[#7B3FEF] hover:underline font-medium"
                             >
                                 {t('form.forgotPassword')}
-                            </a>
+                            </Link>
                         </div>
 
                         {error && (

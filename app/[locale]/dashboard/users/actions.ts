@@ -68,7 +68,7 @@ export async function updatePassword(data: z.infer<typeof updatePasswordSchema>)
             return { success: false, error: "Invalid session data" }
         }
 
-        const response = await fetch("https://technoba.vercel.app/api/v1/change_password", {
+        const response = await fetch("http://localhost:8080/api/v1/change_password", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

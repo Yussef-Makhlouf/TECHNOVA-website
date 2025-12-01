@@ -41,11 +41,20 @@ export default function ResetPasswordPage() {
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
         setIsLoading(true)
-        // Simulate API call
-        await new Promise((resolve) => setTimeout(resolve, 1500))
-        setIsLoading(false)
-        setIsSubmitted(true)
-        toast.success(t('success.title'))
+        try {
+            const { authAPI } = await import("@/lib/api-service")
+            const result = await authAPI.forgotPassword(values.email)
+            if (result.success) {
+                setIsSubmitted(true)
+                toast.success(t('success.title'))
+            } else {
+                toast.error(result.message || "Failed to send reset email")
+            }
+        } catch (error: any) {
+            toast.error(error.message || "An error occurred")
+        } finally {
+            setIsLoading(false)
+        }
     }
 
     return (

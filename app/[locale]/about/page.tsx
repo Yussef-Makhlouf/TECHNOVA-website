@@ -50,25 +50,25 @@ export default function AboutPage() {
 
   const milestones = [
     {
-      year: "2010",
+      date: "Nov 2025",
       title: t('journey.milestones.0.title'),
       description: t('journey.milestones.0.description'),
       color: "#7B3FEF",
     },
     {
-      year: "2015",
+      date: "20 Nov",
       title: t('journey.milestones.1.title'),
       description: t('journey.milestones.1.description'),
       color: "#00D9FF",
     },
     {
-      year: "2020",
+      date: "1 Dec",
       title: t('journey.milestones.2.title'),
       description: t('journey.milestones.2.description'),
       color: "#7B3FEF",
     },
     {
-      year: "2025",
+      date: "12 Dec",
       title: t('journey.milestones.3.title'),
       description: t('journey.milestones.3.description'),
       color: "#00D9FF",
@@ -122,7 +122,7 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="flex-1 text-center lg:text-left"
+              className="flex-1 "
             >
               <div className="inline-flex items-center justify-center lg:justify-end gap-3 mb-4">
                 <Eye size={32} className="text-[#7B3FEF]" />
@@ -157,7 +157,7 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="flex-1 text-center lg:text-left"
+              className="flex-1 "
             >
               <div className="inline-flex items-center justify-center lg:justify-start gap-3 mb-4">
                 <Target size={32} className="text-[#00D9FF]" />
@@ -224,7 +224,7 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto">
             <div className="relative">
               {/* Timeline line */}
-              <div className="hidden lg:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#7B3FEF] via-[#00D9FF] to-[#7B3FEF] opacity-30" />
+              <div className="hidden lg:block absolute left-12 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#7B3FEF] via-[#00D9FF] to-[#7B3FEF] opacity-30" />
 
               <div className="space-y-12">
                 {milestones.map((milestone, index) => (
@@ -239,22 +239,23 @@ export default function AboutPage() {
                     {/* Timeline dot */}
                     <div className="flex-shrink-0 relative z-10">
                       <div
-                        className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg"
+                        className="w-24 h-16 rounded-2xl flex items-center justify-center shadow-lg border border-white/5 backdrop-blur-sm"
                         style={{
-                          backgroundColor: `${milestone.color}20`,
-                          boxShadow: `0 0 20px ${milestone.color}30`,
+                          backgroundColor: `${milestone.color}15`,
+                          boxShadow: `0 0 20px ${milestone.color}20`,
+                          borderColor: `${milestone.color}40`
                         }}
                       >
-                        <span className="font-heading text-sm font-bold" style={{ color: milestone.color }}>
-                          {milestone.year}
+                        <span className="font-heading text-sm font-bold text-center leading-tight" style={{ color: milestone.color }}>
+                          {milestone.date}
                         </span>
                       </div>
                     </div>
 
                     {/* Content */}
                     <div className="flex-1 pb-8">
-                      <div className="glass-panel p-6 rounded-2xl border-border hover:border-[#00D9FF]/50 transition-all duration-500 hover:shadow-xl hover:shadow-[#00D9FF]/20">
-                        <h3 className="font-heading text-2xl font-bold text-foreground mb-3">{milestone.title}</h3>
+                      <div className="glass-panel p-6 rounded-2xl border-border hover:border-[#00D9FF]/50 transition-all duration-500 hover:shadow-xl hover:shadow-[#00D9FF]/20 group">
+                        <h3 className="font-heading text-2xl font-bold text-foreground mb-3 group-hover:text-[#00D9FF] transition-colors">{milestone.title}</h3>
                         <p className="text-muted-foreground leading-relaxed">{milestone.description}</p>
                       </div>
                     </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import { Link } from "@/i18n/routing"
 import { useState, useEffect } from "react"
 import { Menu, X, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"

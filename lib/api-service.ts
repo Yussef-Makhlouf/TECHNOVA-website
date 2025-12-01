@@ -70,6 +70,20 @@ export const authAPI = {
      */
     isAuthenticated: (): boolean => {
         return !!apiClient['getToken']()
+    },
+
+    /**
+     * Forgot password
+     */
+    forgotPassword: async (email: string): Promise<{ success: boolean; message: string }> => {
+        return apiClient.post("/users/forget", { email })
+    },
+
+    /**
+     * Reset password
+     */
+    resetPassword: async (token: string, password: string): Promise<{ success: boolean; message: string }> => {
+        return apiClient.post(`/users/reset/${token}`, { password })
     }
 }
 
@@ -116,8 +130,6 @@ export const servicesAPI = {
             formData.append("description_ar", data.description_ar)
             formData.append("shortDescription_en", data.shortDescription_en)
             formData.append("shortDescription_ar", data.shortDescription_ar)
-            formData.append("icon", data.icon)
-            formData.append("color", data.color)
 
             // Append features as JSON string
             if (data.features && data.features.length > 0) {
@@ -152,8 +164,6 @@ export const servicesAPI = {
             if (data.description_ar) formData.append("description_ar", data.description_ar)
             if (data.shortDescription_en) formData.append("shortDescription_en", data.shortDescription_en)
             if (data.shortDescription_ar) formData.append("shortDescription_ar", data.shortDescription_ar)
-            if (data.icon) formData.append("icon", data.icon)
-            if (data.color) formData.append("color", data.color)
 
             // Append features
             if (data.features && data.features.length > 0) {
@@ -178,7 +188,7 @@ export const servicesAPI = {
                 headers["Authorization"] = `Bearer ${token}`
             }
 
-            const response = await fetch(`https://technoba.vercel.app/api/v1/services/${id}`, {
+            const response = await fetch(`http://localhost:8080/api/v1/services/${id}`, {
                 method: "PUT",
                 headers,
                 body: formData,
@@ -319,7 +329,7 @@ export const blogsAPI = {
                 headers["Authorization"] = `Bearer ${token}`
             }
 
-            const response = await fetch(`https://technoba.vercel.app/api/v1/blogs/${id}`, {
+            const response = await fetch(`http://localhost:8080/api/v1/blogs/${id}`, {
                 method: "PUT",
                 headers,
                 body: formData,
@@ -464,7 +474,7 @@ export const caseStudiesAPI = {
                 headers["Authorization"] = `Bearer ${token}`
             }
 
-            const response = await fetch(`https://technoba.vercel.app/api/v1/case_study/${id}`, {
+            const response = await fetch(`http://localhost:8080/api/v1/case_study/${id}`, {
                 method: "PUT",
                 headers,
                 body: formData,

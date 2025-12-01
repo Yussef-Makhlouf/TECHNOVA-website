@@ -23,7 +23,7 @@
     },
     "services": {
         "badge": "Our Expertise",
-        "title": "Four Specialized Service Departments",
+        "title": "Specialized Service Departments",
         "description": "Comprehensive solutions across Innovation, Big Data, Creative Production, and AI Audio Technologies."
     },
     "features": {
@@ -117,8 +117,8 @@
         },
         "description": "Let's discuss how our deep specialization in AI and digital solutions can transform your vision into reality.",
         "buttons": {
-            "primary": "Schedule a Consultation",
-            "secondary": "View Our Portfolio"
+            "primary": "Start Now",
+            "secondary": "View Our Services"
         }
     },
     "navigation": {
@@ -234,7 +234,7 @@
             "badge": "Our Specialized Solutions",
             "title": "TECHNOVA",
             "titleHighlight": "Services",
-            "description": "AI-driven solutions across four specialized departments: Innovation, Big Data, Creative Production, and AI Audio Technologies."
+            "description": "AI-driven solutions across  specialized departments: Innovation, Big Data, Creative Production, and AI Audio Technologies."
         },
         "whyChoose": {
             "title": "Why Choose Technova's Expertise",
@@ -251,7 +251,7 @@
         "hero": {
             "badge": "Contact Our Team",
             "title": "Let's Build the Future Together",
-            "description": "Connect with our experts to discuss your project and start your journey towards measurable impact."
+            "description": "Connect with our experts to discuss your project and start your journey"
         },
         "form": {
             "name": "Name",
@@ -265,8 +265,15 @@
             "error": "Something went wrong. Please try again."
         },
         "info": {
+            "address": "Contact Us",
             "titleHighlight": "TECHNOVA",
-            "description": "Leading technology company specializing in integrating AI with innovative digital solutions."
+            "description": "Leading technology company specializing in integrating AI with innovative digital solutions.",
+            "phone": "Phone Number",
+            "email": "Email",
+            "location": "Location",
+            "officeHours": "Office Hours",
+            "officeHoursDescription": "Monday - Friday: 9:00 AM - 6:00 PM",
+            "officeHoursDescription2": "Saturday - Sunday: 10:00 AM - 4:00 PM"
         },
         "vision": {
             "title": "Our Vision",
@@ -379,24 +386,24 @@
             "description": "Key milestones that shaped our path to becoming industry leaders in AI and digital transformation.",
             "milestones": [
                 {
-                    "year": "2010",
-                    "title": "Founded",
-                    "description": "TECHNOVA was established with a vision to revolutionize the technology landscape and help businesses embrace digital transformation."
+                    "year": "Nov 2025",
+                    "title": "Strategic Initiation",
+                    "description": "Commencing the new strategic phase with a focus on advanced AI integration and global outreach."
                 },
                 {
-                    "year": "2015",
-                    "title": "Global Expansion",
-                    "description": "Expanded operations to serve clients across 25+ countries, establishing ourselves as a trusted global technology partner."
+                    "year": "20 Nov",
+                    "title": "Development Sprint",
+                    "description": "Accelerated development of core features and infrastructure to support the upcoming platform launch."
                 },
                 {
-                    "year": "2020",
-                    "title": "AI Innovation Hub",
-                    "description": "Launched our dedicated AI and Machine Learning division, pioneering advanced solutions for enterprise clients."
+                    "year": "1 Dec",
+                    "title": "Beta Launch",
+                    "description": "Initial release to strategic partners for testing and feedback, ensuring a robust final product."
                 },
                 {
-                    "year": "2025",
-                    "title": "Industry Leader",
-                    "description": "Recognized as a leading technology innovator with 500+ successful projects and 98% client satisfaction rate."
+                    "year": "12 Dec",
+                    "title": "Global Release",
+                    "description": "Full-scale launch of the new platform, marking a significant milestone in our digital transformation journey."
                 }
             ]
         },
@@ -544,38 +551,6 @@
             "submit": "Log in",
             "submitting": "Signing in..."
         },
-        "errors": {
-            "invalidCredentials": "Invalid email or password. Please try again.",
-            "generic": "Something went wrong. Please try again."
-        },
-        "success": "Login successful",
-        "links": {
-            "home": "Home",
-            "about": "About",
-            "contact": "Contact"
-        }
-    },
-    "resetPasswordPage": {
-        "title": "Reset Password",
-        "description": "Enter your email to receive a password reset link",
-        "form": {
-            "email": "Email",
-            "submit": "Send Reset Link",
-            "submitting": "Sending Link..."
-        },
-        "success": {
-            "title": "Check your email",
-            "description": "We have sent a password reset link to",
-            "tryAnother": "Try another email"
-        },
-        "footer": {
-            "backToLogin": "Back to Login"
-        },
-        "validation": {
-            "invalidEmail": "Please enter a valid email address."
-        }
-    },
-    "features3": {
         "endToEnd": {
             "title": "End-to-End Solutions",
             "description": "Complete technology solutions from consultation to deployment and ongoing support"

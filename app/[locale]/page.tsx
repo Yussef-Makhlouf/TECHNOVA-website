@@ -4,7 +4,7 @@ import Navigation from "@/components/navigation"
 import { useData } from "@/lib/data-context"
 import { useTranslations } from 'next-intl'
 import { Hero } from "@/components/hero"
-import Link from "next/link"
+import { Link } from "@/i18n/routing"
 import {
   ArrowRight,
   Target,
@@ -330,28 +330,7 @@ export default function HomePage() {
         <Features />
       </Section>
 
-      {/* Testimonials Section */}
-      <Section className="py-20 lg:py-32">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <div className="inline-block mb-4">
-            <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#7B3FEF]/10 to-[#00D9FF]/10 border border-[#7B3FEF]/20 text-sm font-medium text-[#7B3FEF]">
-              {tTestimonials('badge')}
-            </span>
-          </div>
-          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">{tTestimonials('title')}</h2>
-          <div className="gradient-line w-24 mx-auto my-6" />
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            {tTestimonials('description')}
-          </p>
-        </motion.div>
-        <StaggerTestimonials />
-      </Section>
+
 
       {/* CTA Section */}
       <Section className="py-20 lg:py-32">
@@ -374,24 +353,45 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] text-white rounded-full hover:shadow-2xl hover:shadow-[#00D9FF]/40 transition-all duration-300 hover:-translate-y-1 font-medium text-lg"
+              className="inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] text-white rounded-full hover:shadow-2xl hover:shadow-[#00D9FF]/40 transition-all duration-300 hover:-translate-y-1 font-medium text-lg text-center "
             >
               {tCta('buttons.primary')}
               <ArrowRight size={22} />
             </Link>
-            <Link
+            {/* <Link
               href="/services"
               className="inline-flex items-center gap-2 px-10 py-5 border-2 border-[#00D9FF] text-[#00D9FF] rounded-full hover:bg-[#00D9FF]/10 transition-all duration-300 hover:-translate-y-1 font-medium text-lg"
             >
               {tCta('buttons.secondary')}
-            </Link>
+            </Link> */}
           </div>
         </motion.div>
       </Section>
 
       {/* Partners Marquee */}
       <LogosMarquee />
-
+      {/* Testimonials Section */}
+      {/* <Section className="py-20 lg:py-32">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <div className="inline-block mb-4">
+            <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#7B3FEF]/10 to-[#00D9FF]/10 border border-[#7B3FEF]/20 text-sm font-medium text-[#7B3FEF]">
+              {tTestimonials('badge')}
+            </span>
+          </div>
+          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">{tTestimonials('title')}</h2>
+          <div className="gradient-line w-24 mx-auto my-6" />
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+            {tTestimonials('description')}
+          </p>
+        </motion.div>
+        <StaggerTestimonials />
+      </Section> */}
     </div>
   )
 }
