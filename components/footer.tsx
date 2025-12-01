@@ -1,5 +1,5 @@
 import { Link } from "@/i18n/routing"
-import { Linkedin, Twitter, Github, Mail } from "lucide-react"
+import { Linkedin, Twitter, Github, Mail, Instagram } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 export default function Footer() {
@@ -39,7 +39,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-3 mt-6">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/110027749/admin/dashboard/"
                 className="w-9 h-9 rounded-lg bg-muted hover:bg-[#00D9FF]/20 flex items-center justify-center text-muted-foreground hover:text-[#00D9FF] transition-all duration-300"
               >
                 <Linkedin size={18} />
@@ -51,10 +51,10 @@ export default function Footer() {
                 <Twitter size={18} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/globaltechnova?igsh=MTYzd3FiOTFuaXFxcA=="
                 className="w-9 h-9 rounded-lg bg-muted hover:bg-[#00D9FF]/20 flex items-center justify-center text-muted-foreground hover:text-[#00D9FF] transition-all duration-300"
               >
-                <Github size={18} />
+                <Instagram size={18} />
               </a>
               <a
                 href="#"
@@ -156,20 +156,20 @@ export default function Footer() {
             <h3 className="font-heading text-foreground font-bold mb-4">{t('contactTitle')}</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>{t('contactInfo.address1')}</li>
-              <li>{t('contactInfo.address2')}</li>
-              <li>{t('contactInfo.address3')}</li>
+              {/* <li>{t('contactInfo.address2')}</li>
+              <li>{t('contactInfo.address3')}</li> */}
               <li className="pt-2">
                 <a
-                  href="mailto:hello@technova.com"
+                  href="mailto:Info@globaltechnova.com"
                   className="hover:text-[#00D9FF] transition-colors inline-flex items-center gap-2"
                 >
                   <Mail size={14} className="text-[#7B3FEF]" />
-                  hello@technova.com
-                </a>
+Info@globaltechnova.com
+</a>
               </li>
               <li>
-                <a href="tel:+1234567890" className="hover:text-[#00D9FF] transition-colors">
-                  +1 (234) 567-890
+                <a href="tel:+971502717411" className="hover:text-[#00D9FF] transition-colors">
+                  +971502717411
                 </a>
               </li>
             </ul>

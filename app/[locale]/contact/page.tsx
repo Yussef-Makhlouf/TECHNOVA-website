@@ -39,12 +39,12 @@ export default function ContactPage() {
   const services = [
     "Web Development",
     "Mobile App Development",
-    "UI/UX Design",
     "Cloud Solutions",
     "AI & Machine Learning",
     "Digital Transformation Strategy",
     "Cybersecurity",
     "Consultation",
+    "others"
   ]
 
   const form = useForm<ContactFormValues>({
@@ -123,9 +123,9 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-heading text-lg font-bold text-foreground mb-2">{t('info.address')}</h3>
                       <p className="text-muted-foreground">
-                        123 Tech Street<br />
-                        Innovation District<br />
-                        San Francisco, CA 94105
+                       Abu Dhabi UAE <br />
+                       <br />
+                        
                       </p>
                     </div>
                   </div>
@@ -137,8 +137,8 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-heading text-lg font-bold text-foreground mb-2">{t('info.phone')}</h3>
                       <p className="text-muted-foreground">
-                        +1 (234) 567-890<br />
-                        +1 (987) 654-321
+                       +971502717411<br />
+                  
                       </p>
                     </div>
                   </div>
@@ -150,8 +150,9 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-heading text-lg font-bold text-foreground mb-2">{t('info.email')}</h3>
                       <p className="text-muted-foreground">
-                        hello@technova.com<br />
-                        support@technova.com
+                        
+Info@globaltechnova.com
+                      
                       </p>
                     </div>
                   </div>
