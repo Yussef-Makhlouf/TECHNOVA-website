@@ -6,19 +6,16 @@ import { useTranslations } from 'next-intl'
 export default function LogosMarquee() {
     const t = useTranslations('logosMarquee')
     const logos = [
-        "/logos/logo-1.svg",
-        "/logos/logo-2.svg",
-        "/logos/logo-3.svg",
-        "/logos/logo-4.svg",
-        "/logos/logo-5.svg",
-        "/logos/logo-6.svg",
-        "/logos/logo-7.svg",
-        "/logos/logo-8.svg",
-        "/logos/logo-9.svg",
-        "/logos/logo-10.svg",
-        "/logos/logo-11.svg",
-        "/logos/logo-12.svg",
-        "/logos/logo-13.svg",
+        "/meta.png",
+        "/open-ai.svg",
+        "/logixi.png",
+        "/github-mark-white.png",
+        "/microsoft_logo.svg",
+        "/gemini.svg",
+        "/cloudflare_Logo.svg",
+        "/yussef_dev.png",
+        "/aws.svg",
+        // "/yussef.png",
     ]
 
     return (
