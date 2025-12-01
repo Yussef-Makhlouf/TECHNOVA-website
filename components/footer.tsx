@@ -57,7 +57,7 @@ export default function Footer() {
                 <Instagram size={18} />
               </a>
               <a
-                href="#"
+                href="mailto:Info@globaltechnova.com"
                 className="w-9 h-9 rounded-lg bg-muted hover:bg-[#00D9FF]/20 flex items-center justify-center text-muted-foreground hover:text-[#00D9FF] transition-all duration-300"
               >
                 <Mail size={18} />
