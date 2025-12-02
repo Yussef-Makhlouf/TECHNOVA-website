@@ -576,6 +576,48 @@
             "description": "Serving governments and enterprises in the GCC, aligned with national transformation visions"
         }
     },
+    "registerPage": {
+        "welcome": {
+            "title": "Welcome to Technova!",
+            "subtitle": "Please enter your details to create your account"
+        },
+        "form": {
+            "email": "Email",
+            "submit": "Create account",
+            "submitting": "Submitting..."
+        },
+        "success": {
+            "title": "Check your email",
+            "description": "We have sent a password reset link to",
+            "tryAnother": "Try another email"
+        },
+        "footer": {
+            "backToLogin": "Back to Login"
+        },
+        "validation": {
+            "invalidEmail": "Please enter a valid email address."
+        }
+    },
+    "resetPasswordPage": {
+        "title": "Reset Password",
+        "description": "Enter your email to receive a password reset link",
+        "form": {
+            "email": "Email",
+            "submit": "Send Reset Link",
+            "submitting": "Sending Link..."
+        },
+        "success": {
+            "title": "Check your email",
+            "description": "We have sent a password reset link to",
+            "tryAnother": "Try another email"
+        },
+        "footer": {
+            "backToLogin": "Back to Login"
+        },
+        "validation": {
+            "invalidEmail": "Please enter a valid email address."
+        }
+    },
     "features3": {
         "endToEnd": {
             "title": "End-to-End Solutions",

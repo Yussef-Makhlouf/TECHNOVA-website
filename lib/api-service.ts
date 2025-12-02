@@ -190,7 +190,7 @@ export const servicesAPI = {
                 headers["Authorization"] = `Bearer ${token}`
             }
 
-            const response = await fetch(`http://localhost:8080/api/v1/services/${id}`, {
+            const response = await fetch(`https://technova-main.vercel.app/api/v1/services/${id}`, {
                 method: "PUT",
                 headers,
                 body: formData,
@@ -331,7 +331,7 @@ export const blogsAPI = {
                 headers["Authorization"] = `Bearer ${token}`
             }
 
-            const response = await fetch(`http://localhost:8080/api/v1/blogs/${id}`, {
+            const response = await fetch(`https://technova-main.vercel.app/api/v1/blogs/${id}`, {
                 method: "PUT",
                 headers,
                 body: formData,
@@ -476,7 +476,7 @@ export const caseStudiesAPI = {
                 headers["Authorization"] = `Bearer ${token}`
             }
 
-            const response = await fetch(`http://localhost:8080/api/v1/case_study/${id}`, {
+            const response = await fetch(`https://technova-main.vercel.app/api/v1/case_study/${id}`, {
                 method: "PUT",
                 headers,
                 body: formData,
