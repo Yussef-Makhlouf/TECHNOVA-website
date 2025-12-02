@@ -18,6 +18,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { toast } from "sonner"
 import { useTranslations } from "next-intl"
 import { WorldMap } from "@/components/world-map"
+import { contactAPI } from "@/lib/api-service"
 
 export default function ContactPage() {
   const t = useTranslations('contactPage')
@@ -60,12 +61,29 @@ export default function ContactPage() {
 
   async function onSubmit(data: ContactFormValues) {
     setIsSubmitting(true)
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-    setIsSubmitting(false)
-    setIsSuccess(true)
-    toast.success(t('form.success'))
-    form.reset()
+    try {
+      // Call the backend API
+      const response = await contactAPI.send({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        service: data.service,
+        message: data.message,
+      })
+
+      if (response.success) {
+        setIsSuccess(true)
+        toast.success(t('form.success'))
+        form.reset()
+      } else {
+        toast.error(response.message || t('form.error'))
+      }
+    } catch (error: any) {
+      console.error('Contact form error:', error)
+      toast.error(error.message || t('form.error'))
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -123,9 +141,9 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-heading text-lg font-bold text-foreground mb-2">{t('info.address')}</h3>
                       <p className="text-muted-foreground">
-                       Abu Dhabi UAE <br />
-                       <br />
-                        
+                        Abu Dhabi UAE <br />
+                        <br />
+
                       </p>
                     </div>
                   </div>
@@ -137,8 +155,8 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-heading text-lg font-bold text-foreground mb-2">{t('info.phone')}</h3>
                       <p className="text-muted-foreground">
-                       +971502717411<br />
-                  
+                        +971502717411<br />
+
                       </p>
                     </div>
                   </div>
@@ -150,9 +168,9 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-heading text-lg font-bold text-foreground mb-2">{t('info.email')}</h3>
                       <p className="text-muted-foreground">
-                        
-Info@globaltechnova.com
-                      
+
+                        Info@globaltechnova.com
+
                       </p>
                     </div>
                   </div>

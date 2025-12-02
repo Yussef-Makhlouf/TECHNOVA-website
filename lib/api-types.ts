@@ -238,3 +238,17 @@ export interface PaginatedResponse<T> {
         totalPages: number
     }
 }
+
+// Contact Form Types
+export interface ContactFormRequest {
+    name: string
+    email: string
+    phone: string
+    service: string
+    message: string
+}
+
+export interface ContactFormResponse {
+    success: boolean
+    message: string
+}

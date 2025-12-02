@@ -24,7 +24,9 @@ import {
     UpdateUserRequest,
     LoginRequest,
     LoginResponse,
-    PaginationParams
+    PaginationParams,
+    ContactFormRequest,
+    ContactFormResponse
 } from "./api-types"
 import { apiClient } from "./api-client"
 
@@ -623,6 +625,20 @@ export const usersAPI = {
      */
     prefetch: async (): Promise<void> => {
         await apiClient.prefetch("/users")
+    }
+}
+
+/**
+ * ============================================================================
+ * CONTACT API
+ * ============================================================================
+ */
+export const contactAPI = {
+    /**
+     * Send contact form message
+     */
+    send: async (data: ContactFormRequest): Promise<ContactFormResponse> => {
+        return apiClient.post("/contact/send", data)
     }
 }
 
