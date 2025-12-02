@@ -26,9 +26,25 @@ export function CareerApplicationForm({ careerId, careerTitle, onClose }: Career
         setIsSubmitting(true)
         setError(null)
 
-        const formData = new FormData(e.currentTarget)
+        // Create FormData manually to avoid duplicate file fields
+        const formData = new FormData()
 
-        // Add the resume file if selected
+        // Get form values
+        const form = e.currentTarget
+        const nameValue = (form.elements.namedItem('name') as HTMLInputElement)?.value
+        const emailValue = (form.elements.namedItem('email') as HTMLInputElement)?.value
+        const phoneValue = (form.elements.namedItem('phone') as HTMLInputElement)?.value
+        const coverLetterValue = (form.elements.namedItem('coverLetter') as HTMLTextAreaElement)?.value
+
+        // Add text fields
+        formData.append('name', nameValue)
+        formData.append('email', emailValue)
+        formData.append('phone', phoneValue)
+        if (coverLetterValue) {
+            formData.append('coverLetter', coverLetterValue)
+        }
+
+        // Add the resume file
         if (resumeFile) {
             formData.append("resume", resumeFile)
         }
