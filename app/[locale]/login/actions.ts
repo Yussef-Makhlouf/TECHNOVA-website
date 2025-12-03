@@ -19,7 +19,7 @@ export async function login(data: z.infer<typeof loginSchema>) {
     const { email, password } = result.data
 
     try {
-        const response = await fetch("http://localhost:8080/api/v1/users/login", {
+        const response = await fetch("https://technova-main.vercel.app/api/v1/users/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

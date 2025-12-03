@@ -37,7 +37,7 @@ export async function createUser(data: z.infer<typeof createUserSchema>) {
         const userSession = JSON.parse(authCookie.value)
         const { token } = userSession
 
-        const response = await fetch("http://localhost:8080/api/v1/users/add", {
+        const response = await fetch("https://technova-main.vercel.app/api/v1/api/v1/users/add", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -85,7 +85,7 @@ export async function updatePassword(data: z.infer<typeof updatePasswordSchema>)
             return { success: false, error: "Invalid session data" }
         }
 
-        const response = await fetch("http://localhost:8080/api/v1/change_password", {
+        const response = await fetch("https://technova-main.vercel.app/api/v1/change_password", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
