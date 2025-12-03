@@ -1,7 +1,6 @@
 "use server"
 
 import { z } from "zod"
-import { userStore } from "@/lib/user-store"
 import { cookies } from "next/headers"
 import { AUTH_COOKIE_NAME } from "@/lib/auth"
 
@@ -24,27 +23,45 @@ export async function createUser(data: z.infer<typeof createUserSchema>) {
 
     try {
         const userSession = JSON.parse(authCookie.value)
-        // In a real app, verify against DB again
-        const currentUser = userStore.getById(userSession.id)
 
-        if (!currentUser || currentUser.role !== "admin") {
+        // Verify admin role from session
+        if (!userSession || userSession.role !== "admin") {
             return { success: false, error: "Unauthorized: Admin access required" }
         }
     } catch (e) {
         return { success: false, error: "Invalid session" }
     }
 
-    // Check if email exists
-    if (userStore.getByEmail(data.email)) {
-        return { success: false, error: "Email already exists" }
+    // Create user via API
+    try {
+        const userSession = JSON.parse(authCookie.value)
+        const { token } = userSession
+
+        const response = await fetch("http://localhost:8080/api/v1/users/add", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                userName: data.name,
+                email: data.email,
+                password: data.password,
+                role: "user" // Default role
+            })
+        })
+
+        const resData = await response.json()
+
+        if (!response.ok) {
+            return { success: false, error: resData.message || "Failed to create user" }
+        }
+
+        return { success: true }
+    } catch (error) {
+        console.error("User creation error:", error)
+        return { success: false, error: "Something went wrong" }
     }
-
-    userStore.add({
-        ...data,
-        role: "user", // Default role
-    })
-
-    return { success: true }
 }
 
 const updatePasswordSchema = z.object({

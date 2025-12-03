@@ -48,7 +48,7 @@ The timeout error will be gone! Your frontend will now connect to:
 - ✅ `http://localhost:8080/api/v1` (your local backend)
 
 Instead of:
-- ❌ `https://technoba.vercel.app/api/v1` (production)
+- ❌ `https://technova-main.vercel.app/api/v1` (production)
 
 ---
 
