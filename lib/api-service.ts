@@ -26,7 +26,8 @@ import {
     LoginResponse,
     PaginationParams,
     ContactFormRequest,
-    ContactFormResponse
+    ContactFormResponse,
+    CareerApplication
 } from "./api-types"
 import { apiClient } from "./api-client"
 
@@ -600,6 +601,13 @@ export const careersAPI = {
      */
     apply: async (careerId: string, applicationData: FormData): Promise<{ success: boolean; message: string }> => {
         return apiClient.upload(`/career/${careerId}/apply`, applicationData)
+    },
+
+    /**
+     * Get applications for a career
+     */
+    getApplications: async (careerId: string): Promise<{ success: boolean; applications: CareerApplication[] }> => {
+        return apiClient.get(`/career/${careerId}/applications`)
     },
 
     /**

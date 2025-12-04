@@ -166,6 +166,19 @@ export interface CreateJobRequest {
 
 export interface UpdateJobRequest extends Partial<CreateJobRequest> { }
 
+export interface CareerApplication {
+    _id: string
+    careerId: string
+    name: string
+    email: string
+    phone: string
+    resumeUrl: string
+    coverLetter?: string
+    appliedAt: string
+    createdAt: string
+    updatedAt: string
+}
+
 // User Types
 export interface UserAPI {
     _id: string

@@ -19,7 +19,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Plus, MoreHorizontal, Pencil, Trash, Languages } from "lucide-react"
+import { Plus, MoreHorizontal, Pencil, Trash, Languages, FileText } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Badge } from "@/components/ui/badge"
@@ -224,6 +224,9 @@ export default function CareersDashboardPage() {
                                                 <DropdownMenuLabel>Actions</DropdownMenuLabel>
                                                 <DropdownMenuItem onClick={() => router.push(`/dashboard/careers/${job.id}`)}>
                                                     <Pencil className="mr-2 h-4 w-4" /> Edit
+                                                </DropdownMenuItem>
+                                                <DropdownMenuItem onClick={() => router.push(`/dashboard/careers/${job.id}/applications`)}>
+                                                    <FileText className="mr-2 h-4 w-4" /> View Applications
                                                 </DropdownMenuItem>
                                                 <DropdownMenuSeparator />
                                                 <DropdownMenuItem onClick={() => handleDelete(job.id)} className="text-destructive">
