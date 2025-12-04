@@ -42,14 +42,19 @@ export const authAPI = {
      * Login user
      */
     login: async (credentials: LoginRequest): Promise<LoginResponse> => {
-        const response = await apiClient.post<LoginResponse>("/auth/login", credentials)
+        const response = await apiClient.post<any>("/users/login", credentials)
 
-        // Store token if login successful
-        if (response.success && response.token) {
-            apiClient.setToken(response.token)
+        // Store token if login successful - token is in userUpdated.token
+        if (response.userUpdated && response.userUpdated.token) {
+            apiClient.setToken(response.userUpdated.token)
         }
 
-        return response
+        return {
+            success: true,
+            message: response.message,
+            token: response.userUpdated?.token,
+            user: response.userUpdated
+        }
     },
 
     /**
@@ -86,6 +91,35 @@ export const authAPI = {
      */
     resetPassword: async (token: string, password: string): Promise<{ success: boolean; message: string }> => {
         return apiClient.post(`/users/reset/${token}`, { password })
+    },
+
+    /**
+     * Get current user from token
+     */
+    getCurrentUser: (): any | null => {
+        const token = authAPI.getToken()
+        if (!token) return null
+
+        try {
+            const base64Url = token.split('.')[1]
+            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/')
+            const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function (c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
+            }).join(''))
+
+            return JSON.parse(jsonPayload)
+        } catch (error) {
+            console.error("Error decoding token:", error)
+            return null
+        }
+
+    },
+
+    /**
+     * Change password
+     */
+    changePassword: async (newPassword: string): Promise<{ success: boolean; message: string }> => {
+        return apiClient.post("/users/change_password", { newPassword })
     }
 }
 
