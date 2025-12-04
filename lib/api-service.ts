@@ -715,6 +715,101 @@ export const uploadAPI = {
 
 /**
  * ============================================================================
+ * NFC SCANS API
+ * ============================================================================
+ */
+
+export interface NfcScan {
+    _id: string;
+    ip: string;
+    userAgent: string;
+    language: string;
+    country?: string;
+    timestamp: string;
+    tagId: string;
+}
+
+export interface NfcStats {
+    totalScans: number;
+    uniqueVisitors: number;
+    uniqueTags: number;
+    scansByTag: Array<{ _id: string; count: number; lastScan: string }>;
+    dailyScans: Array<{ _id: string; count: number }>;
+    recentScans: NfcScan[];
+}
+
+export interface NfcPaginatedResponse {
+    success: boolean;
+    data: NfcScan[];
+    pagination: {
+        page: number;
+        limit: number;
+        total: number;
+        pages: number;
+    };
+}
+
+export const nfcAPI = {
+    /**
+     * Get all NFC scans with pagination
+     */
+    getScans: async (params?: {
+        page?: number;
+        limit?: number;
+        startDate?: string;
+        endDate?: string;
+        tagId?: string;
+    }): Promise<NfcPaginatedResponse> => {
+        const queryParams = new URLSearchParams();
+        if (params?.page) queryParams.append('page', String(params.page));
+        if (params?.limit) queryParams.append('limit', String(params.limit));
+        if (params?.startDate) queryParams.append('startDate', params.startDate);
+        if (params?.endDate) queryParams.append('endDate', params.endDate);
+        if (params?.tagId) queryParams.append('tagId', params.tagId);
+
+        const query = queryParams.toString();
+        return apiClient.get(`/nfc${query ? `?${query}` : ''}`);
+    },
+
+    /**
+     * Get NFC scan statistics
+     */
+    getStats: async (): Promise<{ success: boolean; data: NfcStats }> => {
+        return apiClient.get('/nfc/stats');
+    },
+
+    /**
+     * Get scans by tag ID
+     */
+    getScansByTag: async (tagId: string, params?: {
+        page?: number;
+        limit?: number;
+    }): Promise<NfcPaginatedResponse> => {
+        const queryParams = new URLSearchParams();
+        if (params?.page) queryParams.append('page', String(params.page));
+        if (params?.limit) queryParams.append('limit', String(params.limit));
+
+        const query = queryParams.toString();
+        return apiClient.get(`/nfc/tag/${tagId}${query ? `?${query}` : ''}`);
+    },
+
+    /**
+     * Delete a scan
+     */
+    deleteScan: async (id: string): Promise<{ success: boolean; message: string }> => {
+        return apiClient.delete(`/nfc/${id}`);
+    },
+
+    /**
+     * Delete all scans
+     */
+    deleteAllScans: async (): Promise<{ success: boolean; message: string; deletedCount: number }> => {
+        return apiClient.delete('/nfc/all');
+    },
+};
+
+/**
+ * ============================================================================
  * UTILITY FUNCTIONS
  * ============================================================================
  */
@@ -748,3 +843,4 @@ export const getCacheStats = () => {
 // Export the client for advanced usage
 export { apiClient }
 export default apiClient
+

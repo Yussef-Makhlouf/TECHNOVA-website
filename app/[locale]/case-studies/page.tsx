@@ -1,7 +1,18 @@
 "use client"
 
-import Navigation from "@/components/navigation"
+import { ComingSoon } from "@/components/coming-soon"
+import { useTranslations } from "next-intl"
 
+export default function CaseStudiesPage() {
+  const t = useTranslations('caseStudiesPage')
+  return <ComingSoon title={t('hero.title')} />
+}
+
+/* ========== ORIGINAL CODE - DISABLED ========== */
+/*
+"use client"
+
+import Navigation from "@/components/navigation"
 import { useData } from "@/lib/data-context"
 import { ArrowRight, TrendingUp } from "lucide-react"
 import { motion } from "framer-motion"
@@ -13,7 +24,12 @@ export default function CaseStudiesPage() {
   const t = useTranslations('caseStudiesPage')
   const locale = useLocale()
   const isRtl = locale === 'ar'
-  const { caseStudies: caseStudiesData } = useData()
+  const { caseStudies: caseStudiesData, loading } = useData()
+
+  // If no case studies data after loading completes, show Coming Soon
+  if (!loading.caseStudies && (!caseStudiesData || caseStudiesData.length === 0)) {
+    return <ComingSoon title={t('hero.title')} />
+  }
 
   const caseStudies = caseStudiesData.map(study => ({
     ...study,
@@ -31,7 +47,6 @@ export default function CaseStudiesPage() {
     <div className="min-h-screen">
       <Navigation />
 
-      {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A2463]/10 via-transparent to-transparent" />
         <div className="absolute top-20 right-10 w-96 h-96 bg-[#7B3FEF]/10 rounded-full blur-3xl" />
@@ -53,7 +68,6 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* Case Studies Grid */}
       <section className="py-20 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -64,7 +78,6 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20 lg:py-24 dark:bg-[#0f172a]">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
@@ -91,8 +104,8 @@ export default function CaseStudiesPage() {
           </motion.div>
         </div>
       </section>
-
-
     </div>
   )
 }
+*/
+/* ========== END OF ORIGINAL CODE ========== */

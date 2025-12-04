@@ -1,7 +1,18 @@
 "use client"
 
-import Navigation from "@/components/navigation"
+import { ComingSoon } from "@/components/coming-soon"
+import { useTranslations } from "next-intl"
 
+export default function InsightsPage() {
+  const t = useTranslations('insightsPage')
+  return <ComingSoon title={t('hero.title')} />
+}
+
+/* ========== ORIGINAL CODE - DISABLED ========== */
+/*
+"use client"
+
+import Navigation from "@/components/navigation"
 import { useData } from "@/lib/data-context"
 import { getIcon } from "@/lib/icons"
 import { ArrowRight, Calendar, Clock } from "lucide-react"
@@ -14,7 +25,12 @@ export default function InsightsPage() {
   const t = useTranslations('insightsPage')
   const locale = useLocale()
   const isRtl = locale === 'ar'
-  const { insights: insightsData } = useData()
+  const { insights: insightsData, loading } = useData()
+
+  // If no insights data after loading completes, show Coming Soon
+  if (!loading.insights && (!insightsData || insightsData.length === 0)) {
+    return <ComingSoon title={t('hero.title')} />
+  }
 
   const insights = insightsData.map(insight => ({
     ...insight,
@@ -39,7 +55,6 @@ export default function InsightsPage() {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
         <div className="absolute top-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
@@ -69,7 +84,6 @@ export default function InsightsPage() {
         </div>
       </section>
 
-      {/* Category Filter */}
       <section className="py-8 border-b border-border bg-card/30 dark:bg-card/20">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex flex-wrap gap-3 justify-center">
@@ -88,7 +102,6 @@ export default function InsightsPage() {
         </div>
       </section>
 
-      {/* Featured Insight */}
       {insights.length > 0 && (
         <section className="py-20 lg:py-32 relative overflow-hidden">
           <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
@@ -163,7 +176,6 @@ export default function InsightsPage() {
         </section>
       )}
 
-      {/* All Insights Grid */}
       <section className="pb-20 lg:pb-32 relative overflow-hidden">
         <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
 
@@ -176,7 +188,6 @@ export default function InsightsPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20 lg:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
@@ -215,8 +226,8 @@ export default function InsightsPage() {
           </motion.div>
         </div>
       </section>
-
-
     </div>
   )
 }
+*/
+/* ========== END OF ORIGINAL CODE ========== */
