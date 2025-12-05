@@ -19,41 +19,12 @@ import { useTranslations } from "next-intl"
 import { WorldMap } from "@/components/world-map"
 import { contactAPI } from "@/lib/api-service"
 
-// Technova Services organized by department
-const serviceCategories = [
-  {
-    department: "Innovation & Technical Solutions",
-    services: [
-      "AI Solutions & Smart Systems Development",
-      "Web & Application Development",
-      "Technical Training & Capacity Building",
-      "Systems Integration",
-      "Advanced AI Consulting",
-    ]
-  },
-  {
-    department: "Big Data & Analytics",
-    services: [
-      "Data Management & Analytics",
-      "Predictive Modelling & Business Intelligence",
-    ]
-  },
-  {
-    department: "Creative & Digital Production",
-    services: [
-      "AI-Driven Video & Image Production",
-      "Virtual Avatars & Digital Twin Development",
-      "Interactive Experiences & Deepfake Solutions",
-    ]
-  },
-  {
-    department: "AI Audio Technologies",
-    services: [
-      "Text-to-Speech & Voice Cloning",
-      "Speech-to-Speech Processing",
-      "AI Music & Audio Generation",
-    ]
-  },
+// Technova main service departments
+const mainServices = [
+  "Innovation & Technical Solutions",
+  "Big Data & Analytics",
+  "Creative & Digital Production",
+  "AI Audio Technologies",
 ]
 
 // Multi-select services component
@@ -159,41 +130,30 @@ function ServicesMultiSelect({
             transition={{ duration: 0.15 }}
             className="absolute z-50 w-full mt-2 py-2 bg-popover border border-border rounded-lg shadow-xl max-h-[500px] overflow-y-auto"
           >
-            {serviceCategories.map((category, idx) => (
-              <div key={category.department} className={idx > 0 ? 'mt-2 pt-2 border-t border-border/50' : ''}>
-                {/* Department Header */}
-                <div className="px-3 py-2 sticky top-0 bg-popover/95 backdrop-blur-sm">
-                  <h4 className="text-xs font-semibold text-accent uppercase tracking-wider">
-                    {category.department}
-                  </h4>
+            {mainServices.map((service) => {
+              const isSelected = selectedServices.includes(service)
+              return (
+                <div
+                  key={service}
+                  onClick={() => toggleService(service)}
+                  className={`px-3 py-3 cursor-pointer transition-all duration-150 flex items-center gap-3 mx-1 rounded-md
+                    ${isSelected
+                      ? 'bg-primary/10 text-primary'
+                      : 'text-foreground hover:bg-muted'
+                    }`}
+                >
+                  <div className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all
+                    ${isSelected
+                      ? 'bg-primary border-primary'
+                      : 'border-muted-foreground/30'
+                    }`}
+                  >
+                    {isSelected && <Check size={12} className="text-primary-foreground" />}
+                  </div>
+                  <span className="text-sm font-medium">{service}</span>
                 </div>
-                {/* Services */}
-                {category.services.map((service) => {
-                  const isSelected = selectedServices.includes(service)
-                  return (
-                    <div
-                      key={service}
-                      onClick={() => toggleService(service)}
-                      className={`px-3 py-2.5 cursor-pointer transition-all duration-150 flex items-center gap-3 mx-1 rounded-md
-                        ${isSelected
-                          ? 'bg-primary/10 text-primary'
-                          : 'text-foreground hover:bg-muted'
-                        }`}
-                    >
-                      <div className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all
-                        ${isSelected
-                          ? 'bg-primary border-primary'
-                          : 'border-muted-foreground/30'
-                        }`}
-                      >
-                        {isSelected && <Check size={12} className="text-primary-foreground" />}
-                      </div>
-                      <span className="text-sm">{service}</span>
-                    </div>
-                  )
-                })}
-              </div>
-            ))}
+              )
+            })}
           </motion.div>
         )}
       </AnimatePresence>
