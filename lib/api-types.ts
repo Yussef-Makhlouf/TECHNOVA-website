@@ -257,7 +257,8 @@ export interface ContactFormRequest {
     name: string
     email: string
     phone: string
-    service: string
+    service?: string  // Single service (deprecated, for backwards compatibility)
+    services?: string[]  // Multiple services
     message: string
 }
 

@@ -5,31 +5,233 @@ import type React from "react"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 
-import { Mail, Phone, MapPin, Calendar, CheckCircle, AlertCircle, Loader2 } from "lucide-react"
-import { motion } from "framer-motion"
-import { useState } from "react"
+import { Mail, Phone, MapPin, Calendar, CheckCircle, AlertCircle, Loader2, ChevronDown, X, Check } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
+import { useState, useRef, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { toast } from "sonner"
 import { useTranslations } from "next-intl"
 import { WorldMap } from "@/components/world-map"
 import { contactAPI } from "@/lib/api-service"
 
+// Technova Services organized by department
+const serviceCategories = [
+  {
+    department: "Innovation & Technical Solutions",
+    services: [
+      "AI Solutions & Smart Systems Development",
+      "Web & Application Development",
+      "Technical Training & Capacity Building",
+      "Systems Integration",
+      "Advanced AI Consulting",
+    ]
+  },
+  {
+    department: "Big Data & Analytics",
+    services: [
+      "Data Management & Analytics",
+      "Predictive Modelling & Business Intelligence",
+    ]
+  },
+  {
+    department: "Creative & Digital Production",
+    services: [
+      "AI-Driven Video & Image Production",
+      "Virtual Avatars & Digital Twin Development",
+      "Interactive Experiences & Deepfake Solutions",
+    ]
+  },
+  {
+    department: "AI Audio Technologies",
+    services: [
+      "Text-to-Speech & Voice Cloning",
+      "Speech-to-Speech Processing",
+      "AI Music & Audio Generation",
+    ]
+  },
+]
+
+// Multi-select services component
+function ServicesMultiSelect({
+  selectedServices,
+  onServicesChange,
+  error
+}: {
+  selectedServices: string[],
+  onServicesChange: (services: string[]) => void,
+  error?: string
+}) {
+  const [isOpen, setIsOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
+  const toggleService = (service: string) => {
+    if (selectedServices.includes(service)) {
+      onServicesChange(selectedServices.filter(s => s !== service))
+    } else {
+      onServicesChange([...selectedServices, service])
+    }
+  }
+
+  const removeService = (service: string, e: React.MouseEvent) => {
+    e.stopPropagation()
+    onServicesChange(selectedServices.filter(s => s !== service))
+  }
+
+  const clearAll = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    onServicesChange([])
+  }
+
+  return (
+    <div className="relative" ref={dropdownRef}>
+      {/* Trigger Button */}
+      <div
+        onClick={() => setIsOpen(!isOpen)}
+        className={`w-full min-h-[44px] px-3 py-2 rounded-md border cursor-pointer transition-all duration-200 
+          ${error ? 'border-red-500 focus-visible:ring-red-500' : 'border-input'} 
+          bg-background hover:bg-muted/50 flex items-center justify-between gap-2`}
+      >
+        <div className="flex-1 flex flex-wrap gap-1.5">
+          {selectedServices.length === 0 ? (
+            <span className="text-muted-foreground text-sm">Select services you're interested in...</span>
+          ) : (
+            selectedServices.slice(0, 3).map((service) => (
+              <span
+                key={service}
+                className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20"
+              >
+                {service.length > 25 ? service.substring(0, 25) + '...' : service}
+                <button
+                  onClick={(e) => removeService(service, e)}
+                  className="hover:bg-primary/20 rounded-full p-0.5 transition-colors"
+                >
+                  <X size={12} />
+                </button>
+              </span>
+            ))
+          )}
+          {selectedServices.length > 3 && (
+            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-accent/10 text-accent border border-accent/20">
+              +{selectedServices.length - 3} more
+            </span>
+          )}
+        </div>
+        <div className="flex items-center gap-1 shrink-0">
+          {selectedServices.length > 0 && (
+            <button
+              onClick={clearAll}
+              className="p-1 hover:bg-muted rounded transition-colors"
+              title="Clear all"
+            >
+              <X size={14} className="text-muted-foreground" />
+            </button>
+          )}
+          <ChevronDown
+            size={16}
+            className={`text-muted-foreground transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          />
+        </div>
+      </div>
+
+      {/* Dropdown */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.15 }}
+            className="absolute z-50 w-full mt-2 py-2 bg-popover border border-border rounded-lg shadow-xl max-h-[400px] overflow-y-auto"
+          >
+            {serviceCategories.map((category, idx) => (
+              <div key={category.department} className={idx > 0 ? 'mt-2 pt-2 border-t border-border/50' : ''}>
+                {/* Department Header */}
+                <div className="px-3 py-2 sticky top-0 bg-popover/95 backdrop-blur-sm">
+                  <h4 className="text-xs font-semibold text-accent uppercase tracking-wider">
+                    {category.department}
+                  </h4>
+                </div>
+                {/* Services */}
+                {category.services.map((service) => {
+                  const isSelected = selectedServices.includes(service)
+                  return (
+                    <div
+                      key={service}
+                      onClick={() => toggleService(service)}
+                      className={`px-3 py-2.5 cursor-pointer transition-all duration-150 flex items-center gap-3 mx-1 rounded-md
+                        ${isSelected
+                          ? 'bg-primary/10 text-primary'
+                          : 'text-foreground hover:bg-muted'
+                        }`}
+                    >
+                      <div className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all
+                        ${isSelected
+                          ? 'bg-primary border-primary'
+                          : 'border-muted-foreground/30'
+                        }`}
+                      >
+                        {isSelected && <Check size={12} className="text-primary-foreground" />}
+                      </div>
+                      <span className="text-sm">{service}</span>
+                    </div>
+                  )
+                })}
+              </div>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Selected Services Summary (shown below when dropdown is closed) */}
+      {!isOpen && selectedServices.length > 3 && (
+        <div className="mt-2 flex flex-wrap gap-1">
+          {selectedServices.slice(3).map((service) => (
+            <span
+              key={service}
+              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-muted text-muted-foreground"
+            >
+              {service.length > 30 ? service.substring(0, 30) + '...' : service}
+              <button
+                onClick={(e) => removeService(service, e)}
+                className="hover:bg-primary/20 rounded-full p-0.5 transition-colors"
+              >
+                <X size={12} />
+              </button>
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function ContactPage() {
   const t = useTranslations('contactPage')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [selectedServices, setSelectedServices] = useState<string[]>([])
 
   const formSchema = z.object({
     name: z.string().min(2, { message: t('validation.nameRequired') }),
     email: z.string().email({ message: t('validation.emailInvalid') }),
     phone: z.string().min(10, { message: t('validation.phoneMin') }),
-    service: z.string().min(1, { message: t('validation.serviceRequired') }),
+    services: z.array(z.string()).min(1, { message: t('validation.serviceRequired') }),
     message: z.string().min(10, { message: t('validation.messageMin') }),
     appointmentDate: z.string().optional(),
     appointmentTime: z.string().optional(),
@@ -37,37 +239,31 @@ export default function ContactPage() {
 
   type ContactFormValues = z.infer<typeof formSchema>
 
-  const services = [
-    "Web Development",
-    "Mobile App Development",
-    "Cloud Solutions",
-    "AI & Machine Learning",
-    "Digital Transformation Strategy",
-    "Cybersecurity",
-    "Consultation",
-    "others"
-  ]
-
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       email: "",
       phone: "",
-      service: "",
+      services: [],
       message: "",
     },
   })
 
+  // Sync selectedServices with form state
+  useEffect(() => {
+    form.setValue('services', selectedServices, { shouldValidate: selectedServices.length > 0 })
+  }, [selectedServices, form])
+
   async function onSubmit(data: ContactFormValues) {
     setIsSubmitting(true)
     try {
-      // Call the backend API
+      // Call the backend API with services array
       const response = await contactAPI.send({
         name: data.name,
         email: data.email,
         phone: data.phone,
-        service: data.service,
+        services: data.services,
         message: data.message,
       })
 
@@ -75,6 +271,7 @@ export default function ContactPage() {
         setIsSuccess(true)
         toast.success(t('form.success'))
         form.reset()
+        setSelectedServices([])
       } else {
         toast.error(response.message || t('form.error'))
       }
@@ -251,45 +448,38 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label htmlFor="phone" className="text-sm font-medium text-foreground">
-                        {t('form.phone')}
-                      </label>
-                      <Input
-                        id="phone"
-                        placeholder="+1 (555) 000-0000"
-                        {...form.register("phone")}
-                        className={form.formState.errors.phone ? "border-red-500 focus-visible:ring-red-500" : ""}
-                      />
-                      {form.formState.errors.phone && (
-                        <p className="text-xs text-red-500 flex items-center gap-1">
-                          <AlertCircle size={12} /> {form.formState.errors.phone.message}
-                        </p>
-                      )}
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="service" className="text-sm font-medium text-foreground">
-                        {t('form.service')}
-                      </label>
-                      <Select onValueChange={(value) => form.setValue("service", value)}>
-                        <SelectTrigger className={form.formState.errors.service ? "border-red-500 focus-visible:ring-red-500" : ""}>
-                          <SelectValue placeholder="Select a service" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {services.map((service) => (
-                            <SelectItem key={service} value={service}>
-                              {service}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                      {form.formState.errors.service && (
-                        <p className="text-xs text-red-500 flex items-center gap-1">
-                          <AlertCircle size={12} /> {form.formState.errors.service.message}
-                        </p>
-                      )}
-                    </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="phone" className="text-sm font-medium text-foreground">
+                      {t('form.phone')}
+                    </label>
+                    <Input
+                      id="phone"
+                      placeholder="+1 (555) 000-0000"
+                      {...form.register("phone")}
+                      className={form.formState.errors.phone ? "border-red-500 focus-visible:ring-red-500" : ""}
+                    />
+                    {form.formState.errors.phone && (
+                      <p className="text-xs text-red-500 flex items-center gap-1">
+                        <AlertCircle size={12} /> {form.formState.errors.phone.message}
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-foreground">
+                      {t('form.service')} <span className="text-muted-foreground text-xs">(Select multiple)</span>
+                    </label>
+                    <ServicesMultiSelect
+                      selectedServices={selectedServices}
+                      onServicesChange={setSelectedServices}
+                      error={form.formState.errors.services?.message}
+                    />
+                    {form.formState.errors.services && (
+                      <p className="text-xs text-red-500 flex items-center gap-1">
+                        <AlertCircle size={12} /> {form.formState.errors.services.message}
+                      </p>
+                    )}
                   </div>
 
                   <div className="space-y-2">

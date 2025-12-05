@@ -45,12 +45,6 @@ export default function Footer() {
                 <Linkedin size={18} />
               </a>
               <a
-                href="#"
-                className="w-9 h-9 rounded-lg bg-muted hover:bg-[#00D9FF]/20 flex items-center justify-center text-muted-foreground hover:text-[#00D9FF] transition-all duration-300"
-              >
-                <Twitter size={18} />
-              </a>
-              <a
                 href="https://www.instagram.com/globaltechnova?igsh=MTYzd3FiOTFuaXFxcA=="
                 className="w-9 h-9 rounded-lg bg-muted hover:bg-[#00D9FF]/20 flex items-center justify-center text-muted-foreground hover:text-[#00D9FF] transition-all duration-300"
               >
