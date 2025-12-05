@@ -134,39 +134,37 @@ function ServicesMultiSelect({
         </div>
       </div>
 
-      {/* Dropdown */}
-      <AnimatePresence>
-        {isOpen && (
-          <div
-            className="absolute z-50 w-full mt-2 py-2 bg-popover border border-border rounded-lg shadow-xl max-h-[500px] overflow-y-auto"
-          >
-            {mainServices.map((service) => {
-              const isSelected = selectedServices.includes(service)
-              return (
-                <div
-                  key={service}
-                  onClick={() => toggleService(service)}
-                  className={`px-3 py-3 cursor-pointer duration-150 flex items-center gap-3 mx-1 rounded-md
-                    ${isSelected
-                      ? 'bg-primary/10 text-primary'
-                      : 'text-foreground hover:bg-muted'
-                    }`}
+      {/* Dropdown - Using CSS transitions for better performance */}
+      {isOpen && (
+        <div
+          className="absolute z-50 w-full mt-2 py-2 bg-popover border border-border rounded-lg shadow-xl max-h-[300px] overflow-y-auto animate-in fade-in-0 zoom-in-95 duration-100"
+        >
+          {mainServices.map((service) => {
+            const isSelected = selectedServices.includes(service)
+            return (
+              <div
+                key={service}
+                onClick={() => toggleService(service)}
+                className={`px-3 py-2.5 cursor-pointer flex items-center gap-3 mx-1 rounded-md active:scale-[0.98] select-none
+                  ${isSelected
+                    ? 'bg-primary/10 text-primary'
+                    : 'text-foreground hover:bg-muted'
+                  }`}
+              >
+                <div className={`w-5 h-5 rounded border-2 flex items-center justify-center
+                  ${isSelected
+                    ? 'bg-primary border-primary'
+                    : 'border-muted-foreground/30'
+                  }`}
                 >
-                  <div className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all
-                    ${isSelected
-                      ? 'bg-primary border-primary'
-                      : 'border-muted-foreground/30'
-                    }`}
-                  >
-                    {isSelected && <Check size={12} className="text-primary" />}
-                  </div>
-                  <span className="text-sm font-medium">{service}</span>
+                  {isSelected && <Check size={12} className="text-primary-foreground" />}
                 </div>
-              )
-            })}
-          </div>
-        )}
-      </AnimatePresence>
+                <span className="text-sm font-medium">{service}</span>
+              </div>
+            )
+          })}
+        </div>
+      )}
 
       {/* Selected Services Summary (shown below when dropdown is closed) */}
       {!isOpen && selectedServices.length > 3 && (
@@ -191,7 +189,7 @@ function ServicesMultiSelect({
   )
 }
 
-// Projects Multi-select component with beautiful chips UI
+// Projects Multi-select component with optimized performance
 function ProjectsMultiSelect({
   selectedProjects,
   onProjectsChange,
@@ -215,21 +213,20 @@ function ProjectsMultiSelect({
         {aiProducts.map((project) => {
           const isSelected = selectedProjects.includes(project)
           return (
-            <Button
+            <button
               key={project}
               type="button"
               onClick={() => toggleProject(project)}
-          
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border-2 ${isSelected
-                  ? ' text-white border-transparent shadow-lg shadow-primary/25'
-                  : 'bg-muted/30 text-muted-foreground border-border/50 hover:border-primary/50 hover:text-foreground'
+              className={`px-4 py-2 rounded-full text-sm font-medium border-2 select-none active:scale-95 transition-all duration-100 ${isSelected
+                ? 'bg-gradient-to-r from-primary to-accent text-white border-transparent shadow-lg shadow-primary/25'
+                : 'bg-muted/30 text-muted-foreground border-border/50 hover:border-primary/50 hover:text-foreground hover:bg-muted/50'
                 }`}
             >
               <span className="flex items-center gap-2">
-                {isSelected && <Check size={14} className="text-white" />}
+                {isSelected && <Check size={14} />}
                 {project}
               </span>
-            </Button>
+            </button>
           )
         })}
       </div>
