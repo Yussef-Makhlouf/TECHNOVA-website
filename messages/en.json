@@ -616,7 +616,9 @@
             "backToLogin": "Back to Login"
         },
         "validation": {
-            "invalidEmail": "Please enter a valid email address."
+            "invalidEmail": "Please enter a valid email address.",
+            "passwordLength": "Password must be at least 8 characters long",
+            "passwordsDoNotMatch": "Passwords do not match"
         }
     },
     "resetPasswordPage": {
@@ -627,6 +629,7 @@
             "submit": "Send Reset Link",
             "submitting": "Sending Link..."
         },
+     
         "success": {
             "title": "Check your email",
             "description": "We have sent a password reset link to",
@@ -636,7 +639,9 @@
             "backToLogin": "Back to Login"
         },
         "validation": {
-            "invalidEmail": "Please enter a valid email address."
+            "invalidEmail": "Please enter a valid email address.",
+            "passwordLength": "Password must be at least 8 characters long",
+            "passwordsDoNotMatch": "Passwords do not match"
         },
         "newPassword": {
             "title": "New Password",
@@ -645,6 +650,16 @@
                 "password": "Password",
                 "submit": "Reset Password",
                 "submitting": "Resetting Password..."
+            },
+            "validation": {
+                "invalidEmail": "Please enter a valid email address.",
+                "passwordLength": "Password must be at least 8 characters long",
+                "passwordsDoNotMatch": "Passwords do not match"
+            },
+            "success": {
+                "title": "Password Reset Successful",
+                "description": "Your password has been reset successfully.",
+                "backToLogin": "Back to Login"
             },
             "password": "New Password",
             "confirmPassword": "Confirm Password",
