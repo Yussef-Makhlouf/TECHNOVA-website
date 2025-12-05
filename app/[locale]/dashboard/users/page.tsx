@@ -255,7 +255,7 @@ export default function UsersDashboardPage() {
                                             {user.email}
                                         </div>
                                     </TableCell>
-                                    <TableCell>
+                                    {/* <TableCell>
                                         <Badge
                                             variant={user.role === "admin" ? "default" : "secondary"}
                                             className="gap-1"
@@ -263,7 +263,7 @@ export default function UsersDashboardPage() {
                                             <Shield className="h-3 w-3" />
                                             {user.role}
                                         </Badge>
-                                    </TableCell>
+                                    </TableCell> */}
                                     <TableCell>
                                         <Badge
                                             variant={user.isActive === "true" || user.isActive === true ? "default" : "secondary"}
