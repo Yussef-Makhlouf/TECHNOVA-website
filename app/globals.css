@@ -240,6 +240,7 @@
 .floating-tile:hover {
   transform: translateY(-8px) scale(1.02);
 }
+
 /* Arabic Font Support */
 .font-arabic {
   font-family: var(--font-arabic), var(--font-sans);
@@ -278,3 +279,69 @@
   margin-left: 0.5rem;
 }
 
+/* React International Phone Custom Styles */
+.phone-input-custom {
+  width: 100%;
+}
+
+.phone-input-custom .react-international-phone-input-container {
+  width: 100%;
+}
+
+.phone-input-custom .react-international-phone-input {
+  width: 100%;
+  height: 44px;
+  background-color: var(--background) !important;
+  border-color: var(--input) !important;
+  color: var(--foreground) !important;
+  border-radius: 0.375rem !important;
+  font-size: 0.875rem;
+}
+
+.phone-input-custom .react-international-phone-input:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 2px rgba(123, 63, 239, 0.2) !important;
+}
+
+.phone-input-custom .react-international-phone-country-selector-button {
+  height: 44px;
+  background-color: var(--muted) !important;
+  border-color: var(--input) !important;
+  border-radius: 0.375rem 0 0 0.375rem !important;
+  padding: 0 12px;
+}
+
+.phone-input-custom .react-international-phone-country-selector-button:hover {
+  background-color: var(--secondary) !important;
+}
+
+.phone-input-custom .react-international-phone-country-selector-dropdown {
+  background-color: var(--popover) !important;
+  border-color: var(--border) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2) !important;
+  max-height: 300px;
+  z-index: 50;
+}
+
+.phone-input-custom .react-international-phone-country-selector-dropdown__list-item {
+  padding: 10px 12px;
+  color: var(--foreground) !important;
+}
+
+.phone-input-custom .react-international-phone-country-selector-dropdown__list-item:hover {
+  background-color: var(--muted) !important;
+}
+
+.phone-input-custom .react-international-phone-country-selector-dropdown__list-item--selected {
+  background-color: rgba(123, 63, 239, 0.1) !important;
+  color: var(--primary) !important;
+}
+
+.dark .phone-input-custom .react-international-phone-input {
+  background-color: var(--background) !important;
+}
+
+.dark .phone-input-custom .react-international-phone-country-selector-button {
+  background-color: var(--muted) !important;
+}

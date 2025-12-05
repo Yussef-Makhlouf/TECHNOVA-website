@@ -4,7 +4,7 @@
  */
 
 export const API_BASE_URL =
-    process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+    process.env.NEXT_PUBLIC_API_URL || "https://api.globaltechnova.com/api/v1";
 
 export const API_ENDPOINTS = {
     // Auth endpoints

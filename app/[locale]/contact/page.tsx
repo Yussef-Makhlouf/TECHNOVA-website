@@ -27,6 +27,20 @@ const mainServices = [
   "AI Audio Technologies",
 ]
 
+// AI Products / Projects
+const aiProducts = [
+  "Natai",
+  "Foodai",
+  "Fai",
+  "Ai dashboards",
+  "Avatar",
+  "Chatbot",
+]
+
+// Import for phone input - will be used dynamically
+import { PhoneInput } from 'react-international-phone'
+import 'react-international-phone/style.css'
+
 // Multi-select services component
 function ServicesMultiSelect({
   selectedServices,
@@ -123,11 +137,7 @@ function ServicesMultiSelect({
       {/* Dropdown */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.15 }}
+          <div
             className="absolute z-50 w-full mt-2 py-2 bg-popover border border-border rounded-lg shadow-xl max-h-[500px] overflow-y-auto"
           >
             {mainServices.map((service) => {
@@ -136,7 +146,7 @@ function ServicesMultiSelect({
                 <div
                   key={service}
                   onClick={() => toggleService(service)}
-                  className={`px-3 py-3 cursor-pointer transition-all duration-150 flex items-center gap-3 mx-1 rounded-md
+                  className={`px-3 py-3 cursor-pointer duration-150 flex items-center gap-3 mx-1 rounded-md
                     ${isSelected
                       ? 'bg-primary/10 text-primary'
                       : 'text-foreground hover:bg-muted'
@@ -148,13 +158,13 @@ function ServicesMultiSelect({
                       : 'border-muted-foreground/30'
                     }`}
                   >
-                    {isSelected && <Check size={12} className="text-primary-foreground" />}
+                    {isSelected && <Check size={12} className="text-primary" />}
                   </div>
                   <span className="text-sm font-medium">{service}</span>
                 </div>
               )
             })}
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
 
@@ -181,17 +191,70 @@ function ServicesMultiSelect({
   )
 }
 
+// Projects Multi-select component with beautiful chips UI
+function ProjectsMultiSelect({
+  selectedProjects,
+  onProjectsChange,
+  error
+}: {
+  selectedProjects: string[],
+  onProjectsChange: (projects: string[]) => void,
+  error?: string
+}) {
+  const toggleProject = (project: string) => {
+    if (selectedProjects.includes(project)) {
+      onProjectsChange(selectedProjects.filter(p => p !== project))
+    } else {
+      onProjectsChange([...selectedProjects, project])
+    }
+  }
+
+  return (
+    <div className="space-y-3">
+      <div className="flex flex-wrap gap-2">
+        {aiProducts.map((project) => {
+          const isSelected = selectedProjects.includes(project)
+          return (
+            <Button
+              key={project}
+              type="button"
+              onClick={() => toggleProject(project)}
+          
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border-2 ${isSelected
+                  ? ' text-white border-transparent shadow-lg shadow-primary/25'
+                  : 'bg-muted/30 text-muted-foreground border-border/50 hover:border-primary/50 hover:text-foreground'
+                }`}
+            >
+              <span className="flex items-center gap-2">
+                {isSelected && <Check size={14} className="text-white" />}
+                {project}
+              </span>
+            </Button>
+          )
+        })}
+      </div>
+      {selectedProjects.length > 0 && (
+        <p className="text-xs text-muted-foreground">
+          {selectedProjects.length} product{selectedProjects.length > 1 ? 's' : ''} selected
+        </p>
+      )}
+    </div>
+  )
+}
+
 export default function ContactPage() {
   const t = useTranslations('contactPage')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [selectedServices, setSelectedServices] = useState<string[]>([])
+  const [selectedProjects, setSelectedProjects] = useState<string[]>([])
 
   const formSchema = z.object({
     name: z.string().min(2, { message: t('validation.nameRequired') }),
     email: z.string().email({ message: t('validation.emailInvalid') }),
     phone: z.string().min(10, { message: t('validation.phoneMin') }),
     services: z.array(z.string()).min(1, { message: t('validation.serviceRequired') }),
+    projects: z.array(z.string()).optional(),
     message: z.string().min(10, { message: t('validation.messageMin') }),
     appointmentDate: z.string().optional(),
     appointmentTime: z.string().optional(),
@@ -206,6 +269,7 @@ export default function ContactPage() {
       email: "",
       phone: "",
       services: [],
+      projects: [],
       message: "",
     },
   })
@@ -215,15 +279,21 @@ export default function ContactPage() {
     form.setValue('services', selectedServices, { shouldValidate: selectedServices.length > 0 })
   }, [selectedServices, form])
 
+  // Sync selectedProjects with form state
+  useEffect(() => {
+    form.setValue('projects', selectedProjects)
+  }, [selectedProjects, form])
+
   async function onSubmit(data: ContactFormValues) {
     setIsSubmitting(true)
     try {
-      // Call the backend API with services array
+      // Call the backend API with services and projects arrays
       const response = await contactAPI.send({
         name: data.name,
         email: data.email,
         phone: data.phone,
         services: data.services,
+        projects: data.projects,
         message: data.message,
       })
 
@@ -232,6 +302,7 @@ export default function ContactPage() {
         toast.success(t('form.success'))
         form.reset()
         setSelectedServices([])
+        setSelectedProjects([])
       } else {
         toast.error(response.message || t('form.error'))
       }
@@ -408,11 +479,15 @@ export default function ContactPage() {
                     <label htmlFor="phone" className="text-sm font-medium text-foreground">
                       {t('form.phone')}
                     </label>
-                    <Input
-                      id="phone"
-                      placeholder="+1 (555) 000-0000"
-                      {...form.register("phone")}
-                      className={form.formState.errors.phone ? "border-red-500 focus-visible:ring-red-500" : ""}
+                    <PhoneInput
+                      defaultCountry="ae"
+                      value={form.watch("phone")}
+                      onChange={(phone) => form.setValue("phone", phone, { shouldValidate: true })}
+                      inputClassName={`w-full ${form.formState.errors.phone ? "!border-red-500" : ""}`}
+                      countrySelectorStyleProps={{
+                        buttonClassName: "!bg-muted/50 hover:!bg-muted !border-input"
+                      }}
+                      className="phone-input-custom"
                     />
                     {form.formState.errors.phone && (
                       <p className="text-xs text-red-500 flex items-center gap-1">
@@ -435,6 +510,16 @@ export default function ContactPage() {
                         <AlertCircle size={12} /> {form.formState.errors.services.message}
                       </p>
                     )}
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-foreground">
+                      Our Products <span className="text-muted-foreground text-xs">(Optional - Select interested products)</span>
+                    </label>
+                    <ProjectsMultiSelect
+                      selectedProjects={selectedProjects}
+                      onProjectsChange={setSelectedProjects}
+                    />
                   </div>
 
                   <div className="space-y-2">

@@ -259,6 +259,7 @@ export interface ContactFormRequest {
     phone: string
     service?: string  // Single service (deprecated, for backwards compatibility)
     services?: string[]  // Multiple services
+    projects?: string[]  // AI Products selection (Natai, Foodai, Fai, etc.)
     message: string
 }
 
