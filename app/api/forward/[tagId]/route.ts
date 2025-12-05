@@ -66,45 +66,40 @@ function getClientIP(request: NextRequest): string {
 }
 
 /**
- * GET handler for NFC scan tracking
- * 
- * @param request - Next.js request object
- * @param params - Route parameters containing tagId
- * @returns 302 redirect to Linktree URL
+ * Background function to save NFC scan data
+ * This runs after the redirect response is sent
  */
-export async function GET(
-    request: NextRequest,
-    { params }: { params: Promise<{ tagId: string }> }
-) {
+async function saveNfcScanInBackground(
+    ip: string,
+    userAgent: string,
+    language: string,
+    tagId: string,
+    timestamp: Date
+): Promise<void> {
     try {
-        // Extract tagId from URL parameters
-        const { tagId } = await params;
+        // Connect to MongoDB
+        await connectToDatabase();
 
-        // Extract visitor information from headers
-        const ip = getClientIP(request);
-        const userAgent = request.headers.get('user-agent') || 'unknown';
-        const language = request.headers.get('accept-language') || 'unknown';
-
-        // Try to get country from Vercel headers
-        let country = request.headers.get('x-vercel-ip-country') || undefined;
-
-        // If no country (local dev), try to fetch from IP API
-        if (!country && ip !== 'unknown' && ip !== '::1' && ip !== '127.0.0.1') {
+        // Try to get country from IP API (with timeout)
+        let country: string | undefined;
+        if (ip !== 'unknown' && ip !== '::1' && ip !== '127.0.0.1') {
             try {
-                const geoRes = await fetch(`http://ip-api.com/json/${ip}`);
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 2000); // 2 second timeout
+
+                const geoRes = await fetch(`http://ip-api.com/json/${ip}`, {
+                    signal: controller.signal
+                });
+                clearTimeout(timeoutId);
+
                 const geoData = await geoRes.json();
                 if (geoData.status === 'success') {
                     country = geoData.country;
                 }
             } catch (e) {
-                // Ignore geo error
+                // Ignore geo error - country will be undefined
             }
         }
-
-        const timestamp = new Date();
-
-        // Connect to MongoDB (uses cached connection in serverless)
-        await connectToDatabase();
 
         // Create and save the scan record
         const scanRecord = new NfcScan({
@@ -117,20 +112,44 @@ export async function GET(
         });
 
         await scanRecord.save();
-
-        // Log for debugging (visible in Vercel logs)
-        console.log(`📱 NFC Scan logged: tagId=${tagId}, ip=${ip}`);
-
-        // Redirect to Linktree (302 temporary redirect)
-        // Using 302 ensures the browser always hits this endpoint
-        // and doesn't cache the redirect like it might with 301
-        return NextResponse.redirect(LINKTREE_URL, { status: 302 });
+        console.log(`📱 NFC Scan logged: tagId=${tagId}, ip=${ip}, country=${country || 'unknown'}`);
     } catch (error) {
-        // Log error but still redirect user (graceful degradation)
-        console.error('❌ NFC Scan logging error:', error);
-
-        // Even if logging fails, redirect the user
-        // Business continuity is more important than analytics
-        return NextResponse.redirect(LINKTREE_URL, { status: 302 });
+        console.error('❌ Background NFC Scan logging error:', error);
     }
+}
+
+/**
+ * GET handler for NFC scan tracking
+ * 
+ * OPTIMIZED: Redirects immediately, saves data in background
+ * This ensures the user experience is instant (~50ms) instead of waiting
+ * for database operations and geolocation API calls (~1-3 seconds)
+ * 
+ * @param request - Next.js request object
+ * @param params - Route parameters containing tagId
+ * @returns 302 redirect to Linktree URL
+ */
+export async function GET(
+    request: NextRequest,
+    { params }: { params: Promise<{ tagId: string }> }
+) {
+    // Extract tagId from URL parameters
+    const { tagId } = await params;
+
+    // Extract visitor information from headers (fast - no async)
+    const ip = getClientIP(request);
+    const userAgent = request.headers.get('user-agent') || 'unknown';
+    const language = request.headers.get('accept-language') || 'unknown';
+    const timestamp = new Date();
+
+    // 🚀 FIRE AND FORGET: Start background save (don't await!)
+    // This allows the redirect to happen immediately
+    saveNfcScanInBackground(ip, userAgent, language, tagId, timestamp);
+
+    // Log for debugging
+    console.log(`⚡ NFC Redirect (instant): tagId=${tagId}, ip=${ip}`);
+
+    // 🎯 REDIRECT IMMEDIATELY (302 temporary redirect)
+    // User doesn't wait for database or geolocation - instant redirect!
+    return NextResponse.redirect(LINKTREE_URL, { status: 302 });
 }
