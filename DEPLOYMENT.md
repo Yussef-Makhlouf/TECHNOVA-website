@@ -86,8 +86,9 @@ URL_ENDPOINT=https://ik.imagekit.io/6t9jvr8ri
 PROJECT_FOLDER=Technova
 
 # SMTP (Gmail for sending)
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
+SMTP_HOST=mail.globaltechnova.com
+
+SMTP_PORT=465
 SMTP_USER=Info@globaltechnova.com
 SMTP_PASS=kjys rifg uvor rrhz
 

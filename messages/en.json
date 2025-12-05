@@ -253,6 +253,21 @@
             "title": "Let's Build the Future Together",
             "description": "Connect with our experts to discuss your project and start your journey"
         },
+        "validation": {
+            "messageMin": "The message must be at least 10 characters long",
+            "nameRequired": "Name is required",
+            "emailRequired": "Email is required",
+            "phoneRequired": "Phone is required",
+            "serviceRequired": "Service is required",
+            "messageRequired": "Message is required",
+            "emailInvalid": "Email is invalid",
+            "phoneInvalid": "Phone is invalid",
+            "serviceInvalid": "Service is invalid",
+            "messageInvalid": "Message is invalid",
+            "nameInvalid": "Name is invalid",
+           "phoneMin": "Phone number must be at least 10 digits long",
+           "phoneMax": "Phone number must be at most 15 digits long"
+        },
         "form": {
             "name": "Name",
             "email": "Email",

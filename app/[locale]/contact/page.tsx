@@ -157,7 +157,7 @@ function ServicesMultiSelect({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.15 }}
-            className="absolute z-50 w-full mt-2 py-2 bg-popover border border-border rounded-lg shadow-xl max-h-[400px] overflow-y-auto"
+            className="absolute z-50 w-full mt-2 py-2 bg-popover border border-border rounded-lg shadow-xl max-h-[500px] overflow-y-auto"
           >
             {serviceCategories.map((category, idx) => (
               <div key={category.department} className={idx > 0 ? 'mt-2 pt-2 border-t border-border/50' : ''}>
@@ -327,58 +327,53 @@ export default function ContactPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="glass-panel p-8 rounded-3xl border border-border h-full">
-                <h2 className="font-heading text-3xl font-bold text-foreground mb-8">{t('info.address')}</h2>
+              <div className="glass-panel p-8 lg:p-10 rounded-3xl border border-border h-full min-h-[700px] flex flex-col">
+                <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-12">{t('info.address')}</h2>
 
-                <div className="space-y-8">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                      <MapPin size={24} />
+                <div className="space-y-10 flex-1 flex flex-col justify-around">
+                  <div className="flex items-start gap-5">
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                      <MapPin size={28} />
                     </div>
                     <div>
-                      <h3 className="font-heading text-lg font-bold text-foreground mb-2">{t('info.address')}</h3>
-                      <p className="text-muted-foreground">
-                        Abu Dhabi UAE <br />
-                        <br />
-
+                      <h3 className="font-heading text-xl font-bold text-foreground mb-3">{t('info.address')}</h3>
+                      <p className="text-muted-foreground text-lg">
+                        Abu Dhabi UAE
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent shrink-0">
-                      <Phone size={24} />
+                  <div className="flex items-start gap-5">
+                    <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center text-accent shrink-0">
+                      <Phone size={28} />
                     </div>
                     <div>
-                      <h3 className="font-heading text-lg font-bold text-foreground mb-2">{t('info.phone')}</h3>
-                      <p className="text-muted-foreground">
-                        +971502717411<br />
-
+                      <h3 className="font-heading text-xl font-bold text-foreground mb-3">{t('info.phone')}</h3>
+                      <p className="text-muted-foreground text-lg">
+                        +971502717411
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary shrink-0">
-                      <Mail size={24} />
+                  <div className="flex items-start gap-5">
+                    <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary shrink-0">
+                      <Mail size={28} />
                     </div>
                     <div>
-                      <h3 className="font-heading text-lg font-bold text-foreground mb-2">{t('info.email')}</h3>
-                      <p className="text-muted-foreground">
-
+                      <h3 className="font-heading text-xl font-bold text-foreground mb-3">{t('info.email')}</h3>
+                      <p className="text-muted-foreground text-lg">
                         Info@globaltechnova.com
-
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                      <Calendar size={24} />
+                  <div className="flex items-start gap-5">
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                      <Calendar size={28} />
                     </div>
                     <div>
-                      <h3 className="font-heading text-lg font-bold text-foreground mb-2">{t('info.officeHours')}</h3>
-                      <p className="text-muted-foreground">
+                      <h3 className="font-heading text-xl font-bold text-foreground mb-3">{t('info.officeHours')}</h3>
+                      <p className="text-muted-foreground text-lg">
                         Mon - Fri: 9:00 AM - 6:00 PM<br />
                         Sat - Sun: Closed
                       </p>
@@ -395,7 +390,7 @@ export default function ContactPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="glass-panel p-8 lg:p-10 rounded-3xl border border-border relative overflow-hidden">
+              <div className="glass-panel p-8 lg:p-10 rounded-3xl border border-border relative overflow-visible min-h-[700px]">
                 {isSuccess ? (
                   <div className="absolute inset-0 flex flex-col items-center justify-center bg-card/95 backdrop-blur-sm z-20 text-center p-8">
                     <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center text-green-500 mb-6">
@@ -411,7 +406,7 @@ export default function ContactPage() {
                   </div>
                 ) : null}
 
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 relative z-10">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="h-full flex flex-col space-y-6 relative z-10">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium text-foreground">
@@ -489,9 +484,9 @@ export default function ContactPage() {
                     <Textarea
                       id="message"
                       placeholder="Tell us about your project..."
-                      rows={5}
+                      rows={8}
                       {...form.register("message")}
-                      className={form.formState.errors.message ? "border-red-500 focus-visible:ring-red-500" : ""}
+                      className={`min-h-[180px] ${form.formState.errors.message ? "border-red-500 focus-visible:ring-red-500" : ""}`}
                     />
                     {form.formState.errors.message && (
                       <p className="text-xs text-red-500 flex items-center gap-1">
@@ -500,14 +495,16 @@ export default function ContactPage() {
                     )}
                   </div>
 
+                  <div className="flex-1" />
+
                   <Button
                     type="submit"
-                    className="w-full h-12 bg-gradient-to-r from-primary to-accent text-white font-medium hover:shadow-lg hover:shadow-primary/25 transition-all duration-300"
+                    className="w-full h-14 bg-gradient-to-r from-primary to-accent text-white font-medium text-lg hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 mt-auto"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
                       <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
                         {t('form.submitting')}
                       </>
                     ) : (
