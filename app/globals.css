@@ -256,32 +256,47 @@
 }
 
 /* RTL Support */
-[dir=\"rtl\"] {
+[dir="rtl"] {
   direction: rtl;
 }
 
-[dir=\"rtl\"] .text-left {
+[dir="rtl"] .text-left {
   text-align: right;
 }
 
-[dir=\"rtl\"] .text-right {
+[dir="rtl"] .text-right {
   text-align: left;
 }
 
 /* Ensure proper spacing for RTL */
-[dir=\"rtl\"] .ml-2 {
+[dir="rtl"] .ml-2 {
   margin-left: 0;
   margin-right: 0.5rem;
 }
 
-[dir=\"rtl\"] .mr-2 {
+[dir="rtl"] .mr-2 {
   margin-right: 0;
   margin-left: 0.5rem;
 }
 
-/* React International Phone Custom Styles */
+/* React International Phone Custom Styles - Enhanced */
 .phone-input-custom {
-  width: 100%;
+  --react-international-phone-border-radius: 0.75rem;
+  --react-international-phone-border-color: var(--input);
+  --react-international-phone-background-color: rgba(255, 255, 255, 0.5);
+  --react-international-phone-text-color: var(--foreground);
+  --react-international-phone-selected-dropdown-item-background-color: rgba(123, 63, 239, 0.1);
+  --react-international-phone-country-selector-background-color: rgba(255, 255, 255, 0.5);
+  --react-international-phone-country-selector-border-color: var(--input);
+  --react-international-phone-country-selector-arrow-color: var(--muted-foreground);
+  --react-international-phone-dropdown-item-background-color: var(--popover);
+  --react-international-phone-dropdown-item-text-color: var(--foreground);
+  --react-international-phone-dropdown-item-hover-background-color: var(--muted);
+}
+
+.dark .phone-input-custom {
+  --react-international-phone-background-color: rgba(15, 23, 42, 0.5);
+  --react-international-phone-country-selector-background-color: rgba(15, 23, 42, 0.5);
 }
 
 .phone-input-custom .react-international-phone-input-container {
@@ -290,43 +305,24 @@
 
 .phone-input-custom .react-international-phone-input {
   width: 100%;
-  height: 44px;
-  background-color: var(--background) !important;
-  border-color: var(--input) !important;
-  color: var(--foreground) !important;
-  border-radius: 0.375rem !important;
-  font-size: 0.875rem;
-}
-
-.phone-input-custom .react-international-phone-input:focus {
-  border-color: var(--primary) !important;
-  box-shadow: 0 0 0 2px rgba(123, 63, 239, 0.2) !important;
-}
-
-.phone-input-custom .react-international-phone-country-selector-button {
-  height: 44px;
-  background-color: var(--muted) !important;
-  border-color: var(--input) !important;
-  border-radius: 0.375rem 0 0 0.375rem !important;
-  padding: 0 12px;
-}
-
-.phone-input-custom .react-international-phone-country-selector-button:hover {
-  background-color: var(--secondary) !important;
+  font-size: 1rem;
+  font-family: var(--font-sans);
 }
 
 .phone-input-custom .react-international-phone-country-selector-dropdown {
   background-color: var(--popover) !important;
-  border-color: var(--border) !important;
-  border-radius: 0.5rem !important;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2) !important;
-  max-height: 300px;
-  z-index: 50;
+  border: 1px solid var(--border) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.2) !important;
+  backdrop-filter: blur(12px);
+  padding: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .phone-input-custom .react-international-phone-country-selector-dropdown__list-item {
-  padding: 10px 12px;
-  color: var(--foreground) !important;
+  border-radius: 0.5rem;
+  margin-bottom: 2px;
+  transition: all 0.2s;
 }
 
 .phone-input-custom .react-international-phone-country-selector-dropdown__list-item:hover {
@@ -334,14 +330,11 @@
 }
 
 .phone-input-custom .react-international-phone-country-selector-dropdown__list-item--selected {
-  background-color: rgba(123, 63, 239, 0.1) !important;
-  color: var(--primary) !important;
+  background-color: var(--primary) !important;
+  color: white !important;
 }
 
-.dark .phone-input-custom .react-international-phone-input {
-  background-color: var(--background) !important;
-}
-
-.dark .phone-input-custom .react-international-phone-country-selector-button {
-  background-color: var(--muted) !important;
+.phone-input-custom .react-international-phone-country-selector-dropdown__list-item--selected:hover {
+  background-color: var(--primary) !important;
+  opacity: 0.9;
 }

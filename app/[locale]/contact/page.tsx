@@ -1,6 +1,6 @@
 "use client"
 
-import type React from "react"
+import React from "react"
 
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
@@ -41,8 +41,8 @@ const aiProducts = [
 import { PhoneInput } from 'react-international-phone'
 import 'react-international-phone/style.css'
 
-// Multi-select services component
-function ServicesMultiSelect({
+// Multi-select services component - Optimized with memo
+const ServicesMultiSelect = React.memo(function ServicesMultiSelect({
   selectedServices,
   onServicesChange,
   error
@@ -88,20 +88,20 @@ function ServicesMultiSelect({
       {/* Trigger Button */}
       <div
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-full min-h-[44px] px-3 py-2 rounded-md border cursor-pointer transition-all duration-200 
+        className={`w-full min-h-[56px] px-4 py-3 rounded-xl border cursor-pointer transition-all duration-200 
           ${error ? 'border-red-500 focus-visible:ring-red-500' : 'border-input'} 
-          bg-background hover:bg-muted/50 flex items-center justify-between gap-2`}
+          bg-background/50 hover:bg-muted/50 backdrop-blur-sm flex items-center justify-between gap-2`}
       >
         <div className="flex-1 flex flex-wrap gap-1.5">
           {selectedServices.length === 0 ? (
-            <span className="text-muted-foreground text-sm">Select services you're interested in...</span>
+            <span className="text-muted-foreground text-sm">Select services...</span>
           ) : (
             selectedServices.slice(0, 3).map((service) => (
               <span
                 key={service}
-                className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20"
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-medium bg-primary/10 text-primary border border-primary/20"
               >
-                {service.length > 25 ? service.substring(0, 25) + '...' : service}
+                {service.length > 20 ? service.substring(0, 20) + '...' : service}
                 <button
                   onClick={(e) => removeService(service, e)}
                   className="hover:bg-primary/20 rounded-full p-0.5 transition-colors"
@@ -117,11 +117,11 @@ function ServicesMultiSelect({
             </span>
           )}
         </div>
-        <div className="flex items-center gap-1 shrink-0">
+        <div className="flex items-center gap-2 shrink-0">
           {selectedServices.length > 0 && (
             <button
               onClick={clearAll}
-              className="p-1 hover:bg-muted rounded transition-colors"
+              className="p-1 hover:bg-muted rounded-full transition-colors"
               title="Clear all"
             >
               <X size={14} className="text-muted-foreground" />
@@ -137,7 +137,7 @@ function ServicesMultiSelect({
       {/* Dropdown - Using CSS transitions for better performance */}
       {isOpen && (
         <div
-          className="absolute z-50 w-full mt-2 py-2 bg-popover border border-border rounded-lg shadow-xl max-h-[300px] overflow-y-auto animate-in fade-in-0 zoom-in-95 duration-100"
+          className="absolute z-50 w-full mt-2 py-2 bg-popover/95 backdrop-blur-xl border border-border rounded-xl shadow-2xl max-h-[300px] overflow-y-auto animate-in fade-in-0 zoom-in-95 duration-100"
         >
           {mainServices.map((service) => {
             const isSelected = selectedServices.includes(service)
@@ -145,13 +145,13 @@ function ServicesMultiSelect({
               <div
                 key={service}
                 onClick={() => toggleService(service)}
-                className={`px-3 py-2.5 cursor-pointer flex items-center gap-3 mx-1 rounded-md active:scale-[0.98] select-none
+                className={`px-4 py-3 cursor-pointer flex items-center gap-3 mx-2 rounded-lg active:scale-[0.98] select-none transition-colors
                   ${isSelected
                     ? 'bg-primary/10 text-primary'
-                    : 'text-foreground hover:bg-muted'
+                    : 'text-foreground hover:bg-muted/50'
                   }`}
               >
-                <div className={`w-5 h-5 rounded border-2 flex items-center justify-center
+                <div className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-colors
                   ${isSelected
                     ? 'bg-primary border-primary'
                     : 'border-muted-foreground/30'
@@ -187,10 +187,10 @@ function ServicesMultiSelect({
       )}
     </div>
   )
-}
+})
 
 // Projects Multi-select component with optimized performance
-function ProjectsMultiSelect({
+const ProjectsMultiSelect = React.memo(function ProjectsMultiSelect({
   selectedProjects,
   onProjectsChange,
   error
@@ -217,9 +217,9 @@ function ProjectsMultiSelect({
               key={project}
               type="button"
               onClick={() => toggleProject(project)}
-              className={`px-4 py-2 rounded-full text-sm font-medium border-2 select-none active:scale-95 transition-all duration-100 ${isSelected
-                ? 'bg-gradient-to-r from-primary to-accent text-white border-transparent shadow-lg shadow-primary/25'
-                : 'bg-muted/30 text-muted-foreground border-border/50 hover:border-primary/50 hover:text-foreground hover:bg-muted/50'
+              className={`px-4 py-2 rounded-full text-sm font-medium border select-none active:scale-95 transition-all duration-200 ${isSelected
+                ? 'bg-primary/10 text-primary border-primary/50 shadow-[0_0_15px_rgba(123,63,239,0.2)]'
+                : 'bg-muted/30 text-muted-foreground border-transparent hover:border-primary/20 hover:text-foreground hover:bg-muted/50'
                 }`}
             >
               <span className="flex items-center gap-2">
@@ -231,13 +231,13 @@ function ProjectsMultiSelect({
         })}
       </div>
       {selectedProjects.length > 0 && (
-        <p className="text-xs text-muted-foreground">
+        <p className="text-xs text-muted-foreground pl-1">
           {selectedProjects.length} product{selectedProjects.length > 1 ? 's' : ''} selected
         </p>
       )}
     </div>
   )
-}
+})
 
 export default function ContactPage() {
   const t = useTranslations('contactPage')
@@ -480,11 +480,11 @@ export default function ContactPage() {
                       defaultCountry="ae"
                       value={form.watch("phone")}
                       onChange={(phone) => form.setValue("phone", phone, { shouldValidate: true })}
-                      inputClassName={`w-full ${form.formState.errors.phone ? "!border-red-500" : ""}`}
+                      inputClassName={`w-full !h-14 !text-base !bg-background/50 !border-input hover:!border-primary/50 focus:!border-primary !rounded-r-xl !rounded-l-none transition-all duration-200 ${form.formState.errors.phone ? "!border-red-500" : ""}`}
                       countrySelectorStyleProps={{
-                        buttonClassName: "!bg-muted/50 hover:!bg-muted !border-input"
+                        buttonClassName: "!h-14 !bg-background/50 !border-input hover:!bg-muted/50 !rounded-l-xl !rounded-r-none !px-4 transition-all duration-200"
                       }}
-                      className="phone-input-custom"
+                      className="phone-input-custom shadow-sm"
                     />
                     {form.formState.errors.phone && (
                       <p className="text-xs text-red-500 flex items-center gap-1">
