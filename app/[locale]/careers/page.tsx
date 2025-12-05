@@ -1,5 +1,17 @@
 "use client"
 
+import { ComingSoon } from "@/components/coming-soon"
+import { useTranslations } from "next-intl"
+
+export default function CareersPage() {
+  const t = useTranslations('careersPage')
+  return <ComingSoon title={t('hero.title')} />
+}
+
+/* ========== ORIGINAL CODE - DISABLED ========== */
+/*
+"use client"
+
 import { useState } from "react"
 import Navigation from "@/components/navigation"
 import { useCareers } from "@/lib/use-api"
@@ -19,6 +31,11 @@ export default function CareersPage() {
 
   // Application form state
   const [selectedCareer, setSelectedCareer] = useState<{ id: string; title: string } | null>(null)
+
+  // If no careers data after loading, show Coming Soon
+  if (!loading && !error && (!careersData || careersData.length === 0)) {
+    return <ComingSoon title={t('hero.title')} />
+  }
 
   const benefits = [
     {
@@ -47,7 +64,6 @@ export default function CareersPage() {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
         <div className="absolute top-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
@@ -69,7 +85,6 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Benefits */}
       <section className="py-20 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
@@ -93,7 +108,6 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Open Positions */}
       <section className="py-20 lg:py-24 bg-muted/30 dark:bg-card/10">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
@@ -109,21 +123,18 @@ export default function CareersPage() {
             </p>
           </motion.div>
 
-          {/* Loading State */}
           {loading && (
             <div className="flex justify-center py-12">
               <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
             </div>
           )}
 
-          {/* Error State */}
           {error && (
             <div className="max-w-2xl mx-auto text-center py-12">
               <p className="text-destructive text-lg">{error}</p>
             </div>
           )}
 
-          {/* Careers List */}
           {!loading && !error && careersData && (
             <div className="max-w-4xl mx-auto space-y-4">
               {careersData.length === 0 ? (
@@ -185,7 +196,6 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Application Form Modal */}
       {selectedCareer && (
         <CareerApplicationForm
           careerId={selectedCareer.id}
@@ -196,3 +206,5 @@ export default function CareersPage() {
     </div>
   )
 }
+*/
+/* ========== END OF ORIGINAL CODE ========== */

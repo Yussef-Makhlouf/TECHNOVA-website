@@ -574,7 +574,13 @@
         "globalReach": {
             "title": "Strategic Gulf Presence",
             "description": "Serving governments and enterprises in the GCC, aligned with national transformation visions"
-        }
+        },
+        "links": {
+            "home": "Home",
+            "about": "About Us",
+            "contact": "Contact Us"
+        },
+        "success":"Message sent successfully! We will be in touch shortly."
     },
     "registerPage": {
         "welcome": {
@@ -616,6 +622,19 @@
         },
         "validation": {
             "invalidEmail": "Please enter a valid email address."
+        },
+        "newPassword": {
+            "title": "New Password",
+            "description": "Enter your new password",
+            "form": {
+                "password": "Password",
+                "submit": "Reset Password",
+                "submitting": "Resetting Password..."
+            },
+            "password": "New Password",
+            "confirmPassword": "Confirm Password",
+            "submit": "Reset Password",
+            "submitting": "Resetting Password..."
         }
     },
     "features3": {
@@ -792,71 +811,71 @@
         "description": "Click to read the full article."
     },
     "reliability": {
-    "title": "Reliability",
-    "description": "99.9% "
-},
-"security": {
-    "title": "Ethical AI & Privacy",
-    "description": "Prioritizing data protection, transparency, and AI that enhances human capability."
-},
-"analytics": {
-    "title": "Big Data & Analytics",
-    "description": "Transforming data into insight for immediate business intelligence."
-},
-"enterprise": {
-    "title": "Strategic Partnership",
-    "description": "Trusted partner to governments and enterprises for digital transformation."
-},
-"collaboration": {
-    "title": "Creative Production",
-    "description": "Bridging creativity and technology for distinctive digital experiences."
-},
-"aiChatbot": {
-"title": "AI Chatbot",
-"description": "Intelligent chatbot system, Get instant answers to all your questions."
-},
-"pricing": {
-"title": "Pricing",
-"description": "Flexible plans for every stage of your digital transformation journey."
-},
-"blog": {
-"title": "Insights",
-"description": "In-depth analysis and thought leadership on AI and digital transformation."
-},
-"security": {
-"title": "Security",
-"description": "Bank-level security protecting your valuable digital assets."
-},
-"404": {
-"title": "404 - Page Not Found",
-"description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable."
-},
-"cookies": {
-"title": "Cookies Policy",
-"description": "We use cookies to ensure you get the best experience on our website."
-},
-"legal": {
-"title": "Legal",
-"description": "Terms of Service and Privacy Policy."
-},
-"forms": {
-"title": "Forms",
-"description": "Contact and application forms."
-},
-"notifications": {
-"title": "Notifications",
-"description": "System notifications and alerts."
-},
-"loading": {
-"title": "Loading",
-"description": "Please wait while we load the content."
-},
-"viewMore": {
-"title": "View More",
-"description": "Click to view more content."
-},
-"readMore": {
-"title": "Read More",
-"description": "Click to read the full article."
-}
+        "title": "Reliability",
+        "description": "99.9% "
+    },
+    "security": {
+        "title": "Ethical AI & Privacy",
+        "description": "Prioritizing data protection, transparency, and AI that enhances human capability."
+    },
+    "analytics": {
+        "title": "Big Data & Analytics",
+        "description": "Transforming data into insight for immediate business intelligence."
+    },
+    "enterprise": {
+        "title": "Strategic Partnership",
+        "description": "Trusted partner to governments and enterprises for digital transformation."
+    },
+    "collaboration": {
+        "title": "Creative Production",
+        "description": "Bridging creativity and technology for distinctive digital experiences."
+    },
+    "aiChatbot": {
+        "title": "AI Chatbot",
+        "description": "Intelligent chatbot system, Get instant answers to all your questions."
+    },
+    "pricing": {
+        "title": "Pricing",
+        "description": "Flexible plans for every stage of your digital transformation journey."
+    },
+    "blog": {
+        "title": "Insights",
+        "description": "In-depth analysis and thought leadership on AI and digital transformation."
+    },
+    "security": {
+        "title": "Security",
+        "description": "Bank-level security protecting your valuable digital assets."
+    },
+    "404": {
+        "title": "404 - Page Not Found",
+        "description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable."
+    },
+    "cookies": {
+        "title": "Cookies Policy",
+        "description": "We use cookies to ensure you get the best experience on our website."
+    },
+    "legal": {
+        "title": "Legal",
+        "description": "Terms of Service and Privacy Policy."
+    },
+    "forms": {
+        "title": "Forms",
+        "description": "Contact and application forms."
+    },
+    "notifications": {
+        "title": "Notifications",
+        "description": "System notifications and alerts."
+    },
+    "loading": {
+        "title": "Loading",
+        "description": "Please wait while we load the content."
+    },
+    "viewMore": {
+        "title": "View More",
+        "description": "Click to view more content."
+    },
+    "readMore": {
+        "title": "Read More",
+        "description": "Click to read the full article."
+    }
 }

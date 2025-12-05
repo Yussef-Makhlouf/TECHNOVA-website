@@ -26,7 +26,8 @@ import {
     LoginResponse,
     PaginationParams,
     ContactFormRequest,
-    ContactFormResponse
+    ContactFormResponse,
+    CareerApplication
 } from "./api-types"
 import { apiClient } from "./api-client"
 
@@ -42,14 +43,19 @@ export const authAPI = {
      * Login user
      */
     login: async (credentials: LoginRequest): Promise<LoginResponse> => {
-        const response = await apiClient.post<LoginResponse>("/auth/login", credentials)
+        const response = await apiClient.post<any>("/users/login", credentials)
 
-        // Store token if login successful
-        if (response.success && response.token) {
-            apiClient.setToken(response.token)
+        // Store token if login successful - token is in userUpdated.token
+        if (response.userUpdated && response.userUpdated.token) {
+            apiClient.setToken(response.userUpdated.token)
         }
 
-        return response
+        return {
+            success: true,
+            message: response.message,
+            token: response.userUpdated?.token,
+            user: response.userUpdated
+        }
     },
 
     /**
@@ -86,6 +92,35 @@ export const authAPI = {
      */
     resetPassword: async (token: string, password: string): Promise<{ success: boolean; message: string }> => {
         return apiClient.post(`/users/reset/${token}`, { password })
+    },
+
+    /**
+     * Get current user from token
+     */
+    getCurrentUser: (): any | null => {
+        const token = authAPI.getToken()
+        if (!token) return null
+
+        try {
+            const base64Url = token.split('.')[1]
+            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/')
+            const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function (c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
+            }).join(''))
+
+            return JSON.parse(jsonPayload)
+        } catch (error) {
+            console.error("Error decoding token:", error)
+            return null
+        }
+
+    },
+
+    /**
+     * Change password
+     */
+    changePassword: async (newPassword: string): Promise<{ success: boolean; message: string }> => {
+        return apiClient.post("/users/change_password", { newPassword })
     }
 }
 
@@ -190,7 +225,8 @@ export const servicesAPI = {
                 headers["Authorization"] = `Bearer ${token}`
             }
 
-            const response = await fetch(`https://technova-main.vercel.app/api/v1/services/${id}`, {
+            // const response = await fetch(`https://technova-main.vercel.app/api/v1/services/${id}`, {
+            const response = await fetch(`http://localhost:8080/api/v1/services/${id}`, {
                 method: "PUT",
                 headers,
                 body: formData,
@@ -331,7 +367,8 @@ export const blogsAPI = {
                 headers["Authorization"] = `Bearer ${token}`
             }
 
-            const response = await fetch(`https://technova-main.vercel.app/api/v1/blogs/${id}`, {
+            // const response = await fetch(`https://technova-main.vercel.app/api/v1/blogs/${id}`, {
+            const response = await fetch(`http://localhost:8080/api/v1/blogs/${id}`, {
                 method: "PUT",
                 headers,
                 body: formData,
@@ -476,7 +513,7 @@ export const caseStudiesAPI = {
                 headers["Authorization"] = `Bearer ${token}`
             }
 
-            const response = await fetch(`https://technova-main.vercel.app/api/v1/case_study/${id}`, {
+            const response = await fetch(`http://localhost:8080/api/v1/case_study/${id}`, {
                 method: "PUT",
                 headers,
                 body: formData,
@@ -566,6 +603,13 @@ export const careersAPI = {
      */
     apply: async (careerId: string, applicationData: FormData): Promise<{ success: boolean; message: string }> => {
         return apiClient.upload(`/career/${careerId}/apply`, applicationData)
+    },
+
+    /**
+     * Get applications for a career
+     */
+    getApplications: async (careerId: string): Promise<{ success: boolean; applications: CareerApplication[] }> => {
+        return apiClient.get(`/career/${careerId}/applications`)
     },
 
     /**
@@ -673,6 +717,101 @@ export const uploadAPI = {
 
 /**
  * ============================================================================
+ * NFC SCANS API
+ * ============================================================================
+ */
+
+export interface NfcScan {
+    _id: string;
+    ip: string;
+    userAgent: string;
+    language: string;
+    country?: string;
+    timestamp: string;
+    tagId: string;
+}
+
+export interface NfcStats {
+    totalScans: number;
+    uniqueVisitors: number;
+    uniqueTags: number;
+    scansByTag: Array<{ _id: string; count: number; lastScan: string }>;
+    dailyScans: Array<{ _id: string; count: number }>;
+    recentScans: NfcScan[];
+}
+
+export interface NfcPaginatedResponse {
+    success: boolean;
+    data: NfcScan[];
+    pagination: {
+        page: number;
+        limit: number;
+        total: number;
+        pages: number;
+    };
+}
+
+export const nfcAPI = {
+    /**
+     * Get all NFC scans with pagination
+     */
+    getScans: async (params?: {
+        page?: number;
+        limit?: number;
+        startDate?: string;
+        endDate?: string;
+        tagId?: string;
+    }): Promise<NfcPaginatedResponse> => {
+        const queryParams = new URLSearchParams();
+        if (params?.page) queryParams.append('page', String(params.page));
+        if (params?.limit) queryParams.append('limit', String(params.limit));
+        if (params?.startDate) queryParams.append('startDate', params.startDate);
+        if (params?.endDate) queryParams.append('endDate', params.endDate);
+        if (params?.tagId) queryParams.append('tagId', params.tagId);
+
+        const query = queryParams.toString();
+        return apiClient.get(`/nfc${query ? `?${query}` : ''}`);
+    },
+
+    /**
+     * Get NFC scan statistics
+     */
+    getStats: async (): Promise<{ success: boolean; data: NfcStats }> => {
+        return apiClient.get('/nfc/stats');
+    },
+
+    /**
+     * Get scans by tag ID
+     */
+    getScansByTag: async (tagId: string, params?: {
+        page?: number;
+        limit?: number;
+    }): Promise<NfcPaginatedResponse> => {
+        const queryParams = new URLSearchParams();
+        if (params?.page) queryParams.append('page', String(params.page));
+        if (params?.limit) queryParams.append('limit', String(params.limit));
+
+        const query = queryParams.toString();
+        return apiClient.get(`/nfc/tag/${tagId}${query ? `?${query}` : ''}`);
+    },
+
+    /**
+     * Delete a scan
+     */
+    deleteScan: async (id: string): Promise<{ success: boolean; message: string }> => {
+        return apiClient.delete(`/nfc/${id}`);
+    },
+
+    /**
+     * Delete all scans
+     */
+    deleteAllScans: async (): Promise<{ success: boolean; message: string; deletedCount: number }> => {
+        return apiClient.delete('/nfc/all');
+    },
+};
+
+/**
+ * ============================================================================
  * UTILITY FUNCTIONS
  * ============================================================================
  */
@@ -706,3 +845,4 @@ export const getCacheStats = () => {
 // Export the client for advanced usage
 export { apiClient }
 export default apiClient
+
