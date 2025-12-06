@@ -245,7 +245,8 @@
             "description": "Let's discuss how our specialized services can help you achieve your digital transformation goals.",
             "getStarted": "Get Started",
             "viewCaseStudies": "View Success Stories"
-        }
+        },
+        "exploreService": "Explore Service"
     },
     "contactPage": {
         "hero": {
@@ -265,8 +266,8 @@
             "serviceInvalid": "Service is invalid",
             "messageInvalid": "Message is invalid",
             "nameInvalid": "Name is invalid",
-           "phoneMin": "Phone number must be at least 10 digits long",
-           "phoneMax": "Phone number must be at most 15 digits long"
+            "phoneMin": "Phone number must be at least 10 digits long",
+            "phoneMax": "Phone number must be at most 15 digits long"
         },
         "form": {
             "name": "Name",
@@ -595,7 +596,7 @@
             "about": "About Us",
             "contact": "Contact Us"
         },
-        "success":"Message sent successfully! We will be in touch shortly."
+        "success": "Message sent successfully! We will be in touch shortly."
     },
     "registerPage": {
         "welcome": {
@@ -629,7 +630,6 @@
             "submit": "Send Reset Link",
             "submitting": "Sending Link..."
         },
-     
         "success": {
             "title": "Check your email",
             "description": "We have sent a password reset link to",

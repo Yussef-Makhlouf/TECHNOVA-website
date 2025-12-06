@@ -5,6 +5,7 @@ import { Link } from "@/i18n/routing"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern"
+import { useTranslations } from "next-intl"
 
 interface ServiceCardProps {
   title: string
@@ -18,6 +19,7 @@ interface ServiceCardProps {
 
 export function ServiceCard({ title, description, image, features, href, index, color }: ServiceCardProps) {
   const isEven = index % 2 === 0
+  const t = useTranslations("servicesPage")
 
   return (
     <motion.div
@@ -46,7 +48,7 @@ export function ServiceCard({ title, description, image, features, href, index, 
             {/* Service Number */}
             <div className="flex items-center gap-4">
               <span
-                className="text-4xl lg:text-5xl font-bold opacity-20"
+                className="text-4xl lg:text-5xl font-bold opacity-40 dark:opacity-30"
                 style={{ color }}
               >
                 {String(index + 1).padStart(2, '0')}
@@ -80,7 +82,7 @@ export function ServiceCard({ title, description, image, features, href, index, 
                   </span>
                 </div>
               ))}
-              {features.length > 4 && (
+              {features.length > 5 && (
                 <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted/30">
                   <span className="text-sm font-medium text-muted-foreground">
                     +{features.length - 4} more
@@ -94,7 +96,7 @@ export function ServiceCard({ title, description, image, features, href, index, 
               href={href}
               className={`inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] text-white font-semibold text-lg hover:translate-y-[-4px] transition-all duration-300 group/btn w-fit ${isEven ? '' : 'ml-auto'}`}
             >
-              <span>Explore Service</span>
+              <span>{t("exploreService")}</span>
               <ArrowRight
                 size={20}
                 className="transition-transform duration-300 group-hover/btn:translate-x-2"
@@ -116,7 +118,7 @@ export function ServiceCard({ title, description, image, features, href, index, 
                   repeat: Infinity,
                   ease: "linear"
                 }}
-                className="absolute inset-0 rounded-full border-2 border-dashed opacity-20"
+                className="absolute -inset-4 rounded-full border-[3px] border-dashed opacity-50 dark:opacity-30"
                 style={{ borderColor: color }}
               />
               <motion.div
@@ -129,7 +131,7 @@ export function ServiceCard({ title, description, image, features, href, index, 
                   repeat: Infinity,
                   ease: "linear"
                 }}
-                className="absolute inset-4 rounded-full border border-dashed opacity-10"
+                className="absolute inset-1 rounded-full border-2 border-dashed opacity-35 dark:opacity-20"
                 style={{ borderColor: color }}
               />
 
@@ -144,7 +146,7 @@ export function ServiceCard({ title, description, image, features, href, index, 
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-20 h-20 lg:w-28 lg:h-28 rounded-2xl overflow-hidden shadow-2xl"
+                className="absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-50 h-50 lg:w-100 lg:h-100 rounded-2xl overflow-hidden "
                 style={{
                   transform: 'translate(-50%, -50%) translateZ(50px)',
                   transformStyle: 'preserve-3d'
@@ -154,10 +156,10 @@ export function ServiceCard({ title, description, image, features, href, index, 
                   src={image}
                   alt={title}
                   fill
-                  className="object-cover"
+                  className="object-cover pt-12"
                 />
                 {/* 3D depth overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                {/* <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" /> */}
               </motion.div>
 
               {/* Center dot - Behind image */}
@@ -173,8 +175,8 @@ export function ServiceCard({ title, description, image, features, href, index, 
         <div
           className="absolute w-16 h-16 bottom-[-2.8rem] right-[-2.8rem] rotate-45 border-t border-l transition-colors"
           style={{
-            backgroundColor: `${color}20`, // 20% opacity
-            borderColor: `${color}50` // 50% opacity
+            backgroundColor: `${color}10`, // 20% opacity
+            borderColor: `${color}30` // 50% opacity
           }}
         />
       </div>
