@@ -23,8 +23,8 @@ import { contactAPI } from "@/lib/api-service"
 const mainServices = [
   "Innovation & Technical Solutions",
   "Big Data & Analytics",
-  "Creative & Digital Production",
-  "AI Audio Technologies",
+  "Creative & Digital Production & AI Audio Technologies",
+ 
 ]
 
 // AI Products / Projects
@@ -35,6 +35,7 @@ const aiProducts = [
   "Ai dashboards",
   "Avatar",
   "Chatbot",
+  "Other"
 ]
 
 // Import for phone input - will be used dynamically
@@ -249,7 +250,7 @@ export default function ContactPage() {
   const formSchema = z.object({
     name: z.string().min(2, { message: t('validation.nameRequired') }),
     email: z.string().email({ message: t('validation.emailInvalid') }),
-    phone: z.string().min(10, { message: t('validation.phoneMin') }),
+    phone: z.string().optional().refine((val) => !val || val.length < 5 || val.length >= 10, { message: t('validation.phoneMin') }),
     services: z.array(z.string()).min(1, { message: t('validation.serviceRequired') }),
     projects: z.array(z.string()).optional(),
     message: z.string().min(10, { message: t('validation.messageMin') }),
@@ -288,7 +289,7 @@ export default function ContactPage() {
       const response = await contactAPI.send({
         name: data.name,
         email: data.email,
-        phone: data.phone,
+        phone: data.phone || "",
         services: data.services,
         projects: data.projects,
         message: data.message,
@@ -375,9 +376,9 @@ export default function ContactPage() {
                     <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center text-accent shrink-0">
                       <Phone size={28} />
                     </div>
-                    <div>
+                    <div >
                       <h3 className="font-heading text-xl font-bold text-foreground mb-3">{t('info.phone')}</h3>
-                      <p className="text-muted-foreground text-lg">
+                      <p className="text-muted-foreground text-lg" dir="ltr">
                         +971502717411
                       </p>
                     </div>
@@ -472,7 +473,7 @@ export default function ContactPage() {
                   </div>
 
 
-                  <div className="space-y-2">
+                  <div className="space-y-2" dir="ltr">
                     <label htmlFor="phone" className="text-sm font-medium text-foreground">
                       {t('form.phone')}
                     </label>
