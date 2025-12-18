@@ -75,7 +75,7 @@ export default function Navigation() {
 
             <Link
               href="/contact"
-              className="px-6 py-2.5 bg-[#7B3FEF] text-white rounded-lg hover:bg-[#6B2FDF] transition-all duration-300 hover:shadow-lg hover:shadow-[#7B3FEF]/30 text-sm font-medium"
+              className="px-6 py-2.5 bg-[#7B3FEF] text-white rounded-full hover:bg-[#6B2FDF] transition-all duration-300 hover:shadow-lg hover:shadow-[#7B3FEF]/30 text-sm font-medium"
             >
               {t('getStarted')}
             </Link>

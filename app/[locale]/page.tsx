@@ -44,7 +44,6 @@ import {
 import IntegrationsSection from "@/components/ui/service-card"
 import { AnimatedGradientBackground } from "@/components/ui/animated-gradient-background"
 import { Section } from "@/components/ui/section"
-import { CaseStudyCard } from "@/components/ui/case-study-card"
 import { StaggerTestimonials } from "@/components/ui/stagger-testimonials"
 import Logomarquee from "@/components/logomarquee"
 import { SplineScene } from "@/components/ui/splite"
@@ -53,6 +52,8 @@ import { WhyTechnovaSection } from "@/components/ui/why-technova-section"
 import { ProcessSection } from "@/components/ui/process-section"
 import { Features3 } from "@/components/ui/features-3"
 import LogosMarquee from "@/components/logos-marquee"
+import { ImageGallery } from "@/components/ui/image-gallery"
+import { HomeCaseStudies } from "@/components/home-case-studies"
 
 export default function HomePage() {
   const t = useTranslations()
@@ -63,6 +64,7 @@ export default function HomePage() {
   const tAi = useTranslations('ai')
   const tTestimonials = useTranslations('testimonials')
   const tCta = useTranslations('cta')
+  const tGallery = useTranslations('gallery')
   const stats = [
     { value: "500+", label: "Projects Completed" },
     { value: "98%", label: "Client Satisfaction" },
@@ -399,40 +401,152 @@ export default function HomePage() {
         <Features />
       </Section>
 
+      {/* Case Studies Section */}
+      <HomeCaseStudies />
 
-
-      {/* CTA Section */}
+      {/* Gallery Section */}
       <Section className="py-20 lg:py-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="text-center mb-16"
         >
-          <h2 className="font-heading text-4xl lg:text-6xl font-bold text-foreground mb-4 leading-tight">
-            {tCta('title.part1')}{" "}
-            <span className="bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] bg-clip-text text-transparent">{tCta('title.part2')}</span>
-            {tCta('title.part3')}
-          </h2>
-          <div className="gradient-line w-32 mx-auto my-8" />
-          <p className="text-muted-foreground text-xl mb-10 leading-relaxed max-w-2xl mx-auto">
-            {tCta('description')}
+          <div className="inline-block mb-4">
+            <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#00D9FF]/10 to-[#7B3FEF]/10 border border-[#00D9FF]/20 text-sm font-medium text-[#00D9FF]">
+              {tGallery('badge')}
+            </span>
+          </div>
+          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">{tGallery('title')}</h2>
+          <div className="gradient-line w-24 mx-auto my-6" />
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+            {tGallery('description')}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-[#7B3FEF] to-[#00D9FF] text-white rounded-full hover:shadow-2xl hover:shadow-[#00D9FF]/40 transition-all duration-300 hover:-translate-y-1 font-medium text-lg text-center "
-            >
-              {tCta('buttons.primary')}
-              <ArrowRight size={22} />
-            </Link>
-            {/* <Link
-              href="/services"
-              className="inline-flex items-center gap-2 px-10 py-5 border-2 border-[#00D9FF] text-[#00D9FF] rounded-full hover:bg-[#00D9FF]/10 transition-all duration-300 hover:-translate-y-1 font-medium text-lg"
-            >
-              {tCta('buttons.secondary')}
-            </Link> */}
+        </motion.div>
+        <ImageGallery />
+      </Section>
+
+      {/* CTA Section */}
+      <Section className="py-20 lg:py-40 relative overflow-hidden">
+        {/* Animated Background Orbs - Solid Colors */}
+        <div className="absolute inset-0 pointer-events-none">
+        </div>
+
+        {/* Main CTA Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="relative max-w-5xl mx-auto"
+        >
+          {/* Glassmorphism Card with Solid Border */}
+          <div className="relative p-[2px] rounded-3xl bg-[#7B3FEF] overflow-hidden">
+            <div className="relative backdrop-blur-xl bg-background/95 rounded-3xl p-10 lg:p-16">
+              {/* Decorative Corner Elements */}
+              <div className="absolute top-6 left-6 w-16 h-16 border-l-2 border-t-2 border-[#00D9FF]/60 rounded-tl-2xl" />
+              <div className="absolute top-6 right-6 w-16 h-16 border-r-2 border-t-2 border-[#7B3FEF]/60 rounded-tr-2xl" />
+              <div className="absolute bottom-6 left-6 w-16 h-16 border-l-2 border-b-2 border-[#7B3FEF]/60 rounded-bl-2xl" />
+              <div className="absolute bottom-6 right-6 w-16 h-16 border-r-2 border-b-2 border-[#00D9FF]/60 rounded-br-2xl" />
+
+              <div className="text-center relative z-10">
+                {/* Badge */}
+
+                {/* Title */}
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight"
+                >
+                  {tCta('title.part1')}{" "}
+                  <span className="relative inline-block">
+                    <span className="text-[#7B3FEF]">
+                      {tCta('title.part2')}
+                    </span>
+
+
+                  </span>
+                  {tCta('title.part3')}
+                </motion.h2>
+
+                {/* Decorative Line */}
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "8rem" }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  viewport={{ once: true }}
+                  className="h-[2px] bg-[#7B3FEF] mx-auto my-8"
+                />
+
+                {/* Description */}
+                <motion.p
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  viewport={{ once: true }}
+                  className="text-muted-foreground text-lg md:text-xl mb-12 leading-relaxed max-w-2xl mx-auto"
+                >
+                  {tCta('description')}
+                </motion.p>
+
+                {/* CTA Buttons */}
+
+                {/* Primary Button - Contact */}
+                <Link
+                  href="/contact"
+                  className="group relative inline-flex items-center gap-3 px-20 py-5 overflow-hidden rounded-full font-semibold text-lg transition-all duration-500 bg-[#7B3FEF] text-white hover:bg-[#6B2FDF] hover:shadow-[0_0_40px_rgba(123,63,239,0.5)] hover:-translate-y-1"
+                >
+                  {/* Shine Effect */}
+                  <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 bg-white/20" style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)' }} />
+
+                  <span className="relative z-10 flex items-center gap-3">
+                    {tCta('buttons.primary')}
+
+                    <ArrowRight size={22} />
+
+                  </span>
+                </Link>
+
+                {/* Secondary Button - Services */}
+                {/* <Link
+                    href="/services"
+                    className="group relative inline-flex items-center gap-3 px-10 py-5 overflow-hidden rounded-full font-semibold text-lg transition-all duration-500 border-2 border-[#00D9FF] text-[#00D9FF] hover:bg-[#00D9FF]/15 hover:shadow-[0_0_40px_rgba(0,217,255,0.4)] hover:-translate-y-1"
+                  >
+                    <span className="flex items-center gap-3">
+                      {tCta('buttons.secondary')}
+                      <SparklesIcon size={20} />
+                    </span>
+                  </Link> */}
+
+
+                {/* Trust Indicators */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  viewport={{ once: true }}
+                  className="mt-12 flex flex-wrap justify-center items-center gap-6 text-sm text-muted-foreground"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                    <span>{tCta('trust.available') || "متاح للمشاريع"}</span>
+                  </div>
+                  <div className="hidden sm:block w-px h-4 bg-border" />
+                  <div className="flex items-center gap-2">
+                    <Shield size={16} className="text-[#00D9FF]" />
+                    <span>{tCta('trust.secure') || "آمن & مسرح"}</span>
+                  </div>
+                  <div className="hidden sm:block w-px h-4 bg-border" />
+                  <div className="flex items-center gap-2">
+                    <Zap size={16} className="text-[#7B3FEF]" />
+                    <span>{tCta('trust.fast') || " سريع الرد"}</span>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
           </div>
         </motion.div>
       </Section>

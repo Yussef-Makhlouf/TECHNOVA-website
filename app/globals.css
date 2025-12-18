@@ -187,6 +187,17 @@
   animation: float 3s ease-in-out infinite;
 }
 
+/* Border Beam Animation */
+@keyframes border-beam {
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.animate-border-beam {
+  animation: border-beam calc(var(--duration)*1s) infinite linear;
+}
+
 /* Enhanced glassmorphism for better light/dark mode support */
 .glass-panel {
   background: rgba(255, 255, 255, 0.8);

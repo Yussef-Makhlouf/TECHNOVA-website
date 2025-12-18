@@ -11,6 +11,12 @@
             "secondary": "Explore Core Services"
         }
     },
+    "homeCaseStudies": {
+        "badge": "Case Studies",
+        "title": "Our Recent Work",
+        "description": "Explore how we've helped businesses transform their digital presence with cutting-edge technology and design.",
+        "viewAll": "View All Projects"
+    },
     "innovation": {
         "badge": "Our Strategic Focus",
         "title": "AI-Driven Solutions for Measurable Impact",
@@ -114,6 +120,11 @@
             "part1": "Ready to Achieve",
             "part2": "Sustainable Success",
             "part3": "?"
+        },
+        "trust": {
+            "available": "Available",
+            "secure": "Secure",
+            "fast": "Fast"
         },
         "description": "Let's discuss how our deep specialization in AI and digital solutions can transform your vision into reality.",
         "buttons": {
@@ -431,9 +442,13 @@
     },
     "caseStudiesPage": {
         "hero": {
+            "badge": "Success Stories",
             "title": "Success Stories & Case Studies",
             "description": "Real-world examples showcasing how we convert innovation into measurable impact for our strategic partners."
         },
+        "readMore": "Read Full Case Study",
+        "featured": "Featured",
+        "viewAll": "View All",
         "cta": {
             "title": "Ready to Write Your Success Story?",
             "description": "Let's discuss how our deep specialization in AI can help you achieve similar results for your business.",
@@ -907,5 +922,32 @@
     "readMore": {
         "title": "Read More",
         "description": "Click to read the full article."
+    },
+    "gallery": {
+        "badge": "Team Events",
+        "title": "Behind The Scenes",
+        "description": "A glimpse into our team's journey, celebrating milestones and building connections together."
+    },
+    "featuresAccordion": {
+        "title": "The Foundation for AI",
+        "description": "Technova is evolving to be more than just AI models. We support entire ecosystems with APIs and platforms helping developers and businesses innovate.",
+        "items": {
+            "database": {
+                "title": "Database Visualization",
+                "description": "Advanced data visualization tools that transform complex datasets into actionable insights. Our solutions help you understand patterns and make data-driven decisions."
+            },
+            "authentication": {
+                "title": "Advanced Authentication",
+                "description": "Multi-layered security systems with biometric integration, ensuring your digital assets remain protected while maintaining seamless user experience."
+            },
+            "identity": {
+                "title": "Identity Management",
+                "description": "Comprehensive identity solutions that streamline user onboarding, verification, and access control across your entire organization."
+            },
+            "analytics": {
+                "title": "Analytics Dashboard",
+                "description": "Real-time analytics platforms that provide deep insights into your business operations, customer behavior, and market trends."
+            }
+        }
     }
 }

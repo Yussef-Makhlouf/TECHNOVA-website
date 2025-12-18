@@ -6,6 +6,7 @@ import { renderCanvas } from "@/components/ui/canvas"
 import { ArrowRight, Sparkles, Zap, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useTranslations } from 'next-intl'
+import IntegrationsSection from "./hero-integrations"
 
 export function Hero() {
   const t = useTranslations('hero')
@@ -69,6 +70,8 @@ export function Hero() {
             </Link>
           </div>
 
+     
+
         </div>
       </div>
 
@@ -80,4 +83,3 @@ export function Hero() {
     </section>
   )
 }
-
