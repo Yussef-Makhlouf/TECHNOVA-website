@@ -8,8 +8,9 @@ import Link from "next/link"
 import { useTranslations, useLocale } from "next-intl"
 import { ComingSoon } from "@/components/coming-soon"
 import { CaseStudyCard } from "@/components/ui/case-study-card"
-import FeaturesAccordion from "@/components/ui/features-accordion"
+// import FeaturesAccordion from "@/components/ui/features-accordion"
 import IntegrationsSection from "@/components/hero-integrations"
+import { VideoShowcase } from "@/components/video-showcase"
 
 export default function CaseStudiesPage() {
   const t = useTranslations('caseStudiesPage')
@@ -161,8 +162,11 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
+      {/* Video Showcase Section */}
+      <VideoShowcase />
+
       {/* Features Accordion Section */}
-      <FeaturesAccordion />
+      {/* <FeaturesAccordion /> */}
 
       {/* CTA Section - Minimal */}
       <section className="py-20 lg:py-28 border-t border-border">

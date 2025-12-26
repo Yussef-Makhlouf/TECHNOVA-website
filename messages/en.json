@@ -949,5 +949,51 @@
                 "description": "Real-time analytics platforms that provide deep insights into your business operations, customer behavior, and market trends."
             }
         }
+    },
+    "videoShowcase": {
+        "badge": "AI Product Demos",
+        "title": "Experience Our AI Solutions",
+        "description": "Watch our AI-powered products in action. Each solution is designed to transform how you create, produce, and manage content.",
+        "projects": {
+            "natai": {
+                "badge": "Creative AI",
+                "title": "NatAI",
+                "description": "Transform your creative vision into stunning 4K visuals, cinematic videos, and AI-powered content.",
+                "features": [
+                    "Text-to-Image 4K generation",
+                    "Image-to-Video cinematic transformation",
+                    "AI Storyboard from scripts",
+                    "AI-powered audio sync",
+                    "Professional product sessions",
+                    "Enterprise-grade security"
+                ]
+            },
+            "foodai": {
+                "badge": "Food Photography AI",
+                "title": "FoodAI",
+                "description": "Create mouthwatering food content with ultra-high detail preservation and professional styling.",
+                "features": [
+                    "4K Native Output",
+                    "Multiple Angles (macro, overhead, 45°)",
+                    "AI Style Transfer & lighting",
+                    "Video Animation for social media",
+                    "Batch Processing",
+                    "Menu Project Management"
+                ]
+            },
+            "dashboardai": {
+                "badge": "Analytics AI",
+                "title": "Dashboard AI",
+                "description": "Intelligent analytics and data visualization powered by advanced AI algorithms.",
+                "features": [
+                    "Real-time data analytics",
+                    "AI-powered insights",
+                    "Smart visualizations",
+                    "Automated reporting",
+                    "Predictive analytics",
+                    "Custom dashboards"
+                ]
+            }
+        }
     }
 }
