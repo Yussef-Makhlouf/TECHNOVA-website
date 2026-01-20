@@ -18,13 +18,14 @@ import { toast } from "sonner"
 import { useTranslations } from "next-intl"
 import { WorldMap } from "@/components/world-map"
 import { contactAPI } from "@/lib/api-service"
+import * as fpixel from "@/lib/fpixel"
 
 // Technova main service departments
 const mainServices = [
   "Innovation & Technical Solutions",
   "Big Data & Analytics",
   "Creative & Digital Production & AI Audio Technologies",
- 
+
 ]
 
 // AI Products / Projects
@@ -301,6 +302,13 @@ export default function ContactPage() {
         form.reset()
         setSelectedServices([])
         setSelectedProjects([])
+
+        // Track Facebook Pixel Lead Event
+        fpixel.event("Lead", {
+          value: 0,
+          currency: "SAR",
+          content_name: "Contact Form Submission",
+        })
       } else {
         toast.error(response.message || t('form.error'))
       }

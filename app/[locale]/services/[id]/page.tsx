@@ -11,6 +11,8 @@ import { DiagonalCard } from "@/components/diagonal-card"
 import { useTranslations } from "next-intl"
 import { useLocale } from "next-intl"
 import * as LucideIcons from "lucide-react"
+import * as fpixel from "@/lib/fpixel"
+import { useEffect } from "react"
 
 export default function ServiceDetailPage() {
   const params = useParams()
@@ -20,6 +22,16 @@ export default function ServiceDetailPage() {
 
   // Fetch service data by ID
   const { data: service, loading, error } = useService(id)
+
+  // Track ViewContent event
+  useEffect(() => {
+    if (service) {
+      fpixel.event("ViewContent", {
+        content_name: service.name_en || "Service Page",
+        content_category: "AI Solutions",
+      })
+    }
+  }, [service])
 
   if (loading) {
     return (
