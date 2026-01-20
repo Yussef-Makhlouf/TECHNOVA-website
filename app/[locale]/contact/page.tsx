@@ -306,7 +306,7 @@ export default function ContactPage() {
         // Track Facebook Pixel Lead Event
         fpixel.event("Lead", {
           value: 0,
-          currency: "SAR",
+          currency: "AED",
           content_name: "Contact Form Submission",
         })
       } else {

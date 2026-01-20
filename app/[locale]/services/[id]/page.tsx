@@ -29,6 +29,8 @@ export default function ServiceDetailPage() {
       fpixel.event("ViewContent", {
         content_name: service.name_en || "Service Page",
         content_category: "AI Solutions",
+        content_ids: [service._id],
+        content_type: "services",
       })
     }
   }, [service])

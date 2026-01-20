@@ -6,6 +6,8 @@ import { Calendar, Clock, ArrowLeft, TrendingUp } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { useParams } from "next/navigation"
+import { useEffect } from "react"
+import * as fpixel from "@/lib/fpixel"
 
 export default function InsightDetailPage() {
   const params = useParams()
@@ -42,6 +44,16 @@ export default function InsightDetailPage() {
       </div>
     `,
   }
+
+  // Track Facebook Pixel
+  useEffect(() => {
+    fpixel.event("ViewContent", {
+      content_name: insight.title,
+      content_category: "Insights",
+      content_ids: [slug],
+      content_type: "insights",
+    })
+  }, [slug])
 
   return (
     <div className="min-h-screen bg-background">

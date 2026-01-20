@@ -8,7 +8,8 @@ import { ArrowLeft, ArrowRight, Building2, Calendar, ChevronLeft, ChevronRight, 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useTranslations, useLocale } from "next-intl"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import * as fpixel from "@/lib/fpixel"
 
 export default function CaseStudyDetailsPage() {
     const params = useParams()
@@ -20,6 +21,18 @@ export default function CaseStudyDetailsPage() {
     const { data: caseStudy, loading, error } = useCaseStudy(id)
     const [selectedImage, setSelectedImage] = useState<number | null>(null)
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+    // Track Facebook Pixel ViewContent
+    useEffect(() => {
+        if (caseStudy) {
+            fpixel.event("ViewContent", {
+                content_name: (locale === 'ar' ? caseStudy.title_ar : caseStudy.title_en) || "Case Study",
+                content_category: "Case Study",
+                content_ids: [caseStudy._id],
+                content_type: "case study",
+            })
+        }
+    }, [caseStudy, locale])
 
     if (loading) {
         return (
@@ -204,8 +217,8 @@ export default function CaseStudyDetailsPage() {
                                             key={index}
                                             onClick={() => setCurrentImageIndex(index)}
                                             className={`flex-shrink-0 w-20 h-14 overflow-hidden border-2 transition-all ${currentImageIndex === index
-                                                    ? 'opacity-100'
-                                                    : 'opacity-50 hover:opacity-80'
+                                                ? 'opacity-100'
+                                                : 'opacity-50 hover:opacity-80'
                                                 }`}
                                             style={{
                                                 borderColor: currentImageIndex === index ? accentColor : 'transparent'

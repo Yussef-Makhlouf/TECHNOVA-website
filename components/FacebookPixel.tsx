@@ -24,7 +24,6 @@ export default function FacebookPixel() {
                 strategy="afterInteractive"
                 onLoad={() => {
                     setLoaded(true)
-                    fpixel.pageview()
                 }}
                 dangerouslySetInnerHTML={{
                     __html: `

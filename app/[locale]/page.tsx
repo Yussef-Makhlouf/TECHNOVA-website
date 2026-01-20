@@ -3,6 +3,8 @@
 import Navigation from "@/components/navigation"
 import { useData } from "@/lib/data-context"
 import { useTranslations } from 'next-intl'
+import { useEffect } from "react"
+import * as fpixel from "@/lib/fpixel"
 import { Hero } from "@/components/hero"
 import { Link } from "@/i18n/routing"
 import {
@@ -71,6 +73,16 @@ export default function HomePage() {
     { value: "50+", label: "Expert Team Members" },
     { value: "15+", label: "Years Experience" },
   ]
+
+  // Track Home Page View
+  useEffect(() => {
+    fpixel.event("ViewContent", {
+      content_name: "Home Page",
+      content_category: "General",
+      content_ids: ["home"],
+      content_type: "product",
+    })
+  }, [])
 
   const combinedFeatures = [
     {
