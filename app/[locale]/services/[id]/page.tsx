@@ -200,27 +200,83 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-muted/30 dark:bg-card/10">
+      <section className="py-20 lg:py-28 bg-gradient-to-br from-muted/50 via-background to-muted/30 dark:from-card/20 dark:via-background dark:to-card/10">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-6">
-              {t("cta.title", { service: title })}
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8">
-              {t("cta.description")}
-            </p>
-            <Link
-              href={`/${locale}/contact`}
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg transition-all duration-300 hover:shadow-xl font-medium"
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            {/* Decorative accent */}
+            <div
+              className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-6"
               style={{
-                backgroundColor: service.color,
-                color: "#ffffff",
+                background: `linear-gradient(135deg, ${service.color}20, ${service.color}40)`,
               }}
             >
-              {t("cta.button")}
-              <ArrowRight size={20} />
-            </Link>
-          </div>
+              <IconComponent size={32} style={{ color: service.color }} />
+            </div>
+
+            <h2 className="font-heading text-3xl lg:text-5xl font-bold text-foreground mb-6">
+              {t("cta.title", { service: title })}
+            </h2>
+            <p className="text-muted-foreground text-lg lg:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+              {t("cta.description")}
+            </p>
+
+            {/* Buttons Container */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              {/* Primary CTA Button */}
+              <Link href={`/${locale}/contact`}>
+                <Button
+                  size="lg"
+                  className="group relative overflow-hidden px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-2xl transition-all duration-300"
+                  style={{
+                    background: `linear-gradient(135deg, ${service.color}, ${service.color}dd)`,
+                    color: "#ffffff",
+                  }}
+                >
+                  <span className="relative z-10 flex items-center gap-2">
+                    {t("cta.button")}
+                    <ArrowRight
+                      size={20}
+                      className="group-hover:translate-x-1 transition-transform duration-300"
+                    />
+                  </span>
+                  {/* Hover overlay */}
+                  <span
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    style={{
+                      background: `linear-gradient(135deg, ${service.color}ee, ${service.color})`,
+                    }}
+                  />
+                </Button>
+              </Link>
+
+              {/* Secondary Button */}
+              <Link href={`/${locale}/services`}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="px-8 py-6 text-lg font-semibold border-2 bg-background/50 dark:bg-card/30 hover:bg-muted dark:hover:bg-card/50 hover:text-muted-foreground transition-all duration-300"
+                  style={{
+                    borderColor: service.color,
+                    color: service.color,
+                  }}
+                >
+                  <ArrowLeft size={20} className="mr-2" />
+                  {t("backToServices")}
+                </Button>
+              </Link>
+            </div>
+
+            {/* Trust indicator */}
+            {/* <p className="mt-8 text-sm text-muted-foreground/70">
+              {locale === "ar" ? "✨ استشارة مجانية • رد سريع خلال 24 ساعة" : "✨ Free consultation • Response within 24 hours"}
+            </p> */}
+          </motion.div>
         </div>
       </section>
     </div>
