@@ -12,7 +12,8 @@
 
 import { createErrorFromResponse, NetworkError, APIError } from "./api-errors"
 
-const API_BASE_URL = "https://technoba.vercel.app/api/v1"
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.globaltechnova.com/api/v1"
+// "https://technova-main.vercel.app/api/v1"
 const TOKEN_KEY = "technova_auth_token"
 
 // Cache configuration
@@ -86,31 +87,26 @@ export class APIClient {
     addResponseInterceptor(interceptor: (response: Response) => Response | Promise<Response>): void {
         this.responseInterceptors.push(interceptor)
     }
-
-    /**
-     * Get authentication token from storage
-     */
-    private getToken(): string | null {
-        if (typeof window === "undefined") return null
-        return localStorage.getItem(TOKEN_KEY)
-    }
-
-    /**
-     * Set authentication token
-     */
     setToken(token: string): void {
         if (typeof window !== "undefined") {
             localStorage.setItem(TOKEN_KEY, token)
         }
     }
 
-    /**
-     * Remove authentication token
-     */
     removeToken(): void {
         if (typeof window !== "undefined") {
             localStorage.removeItem(TOKEN_KEY)
         }
+    }
+
+    /**
+     * Get authentication token
+     */
+    getToken(): string | null {
+        if (typeof window !== "undefined") {
+            return localStorage.getItem(TOKEN_KEY)
+        }
+        return null
     }
 
     /**

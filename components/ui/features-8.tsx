@@ -1,7 +1,9 @@
 import { Card, CardContent } from '@/components/ui/card'
 import { Shield, Users } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 export function Features() {
+    const t = useTranslations('features8');
     return (
         <section className="bg-gray-50 py-16 md:py-32 dark:bg-transparent">
             <div className="mx-auto max-w-3xl lg:max-w-5xl px-6">
@@ -16,9 +18,9 @@ export function Features() {
                                             fill="currentColor"
                                         />
                                     </svg>
-                                    <span className="mx-auto block w-fit text-5xl font-semibold">99.9%</span>
+                                    <span className="mx-auto block w-fit text-5xl font-semibold">{t('reliability.description')}</span>
                                 </div>
-                                <h2 className="mt-6 text-center text-3xl font-semibold">Reliability</h2>
+                                <h2 className="mt-6 text-center text-3xl font-semibold">{t('reliability.title')}</h2>
                             </CardContent>
                         </Card>
                         <Card className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2">
@@ -49,8 +51,8 @@ export function Features() {
                                     </svg>
                                 </div>
                                 <div className="relative z-10 mt-6 space-y-2 text-center">
-                                    <h2 className="group-hover:text-secondary-950 text-lg font-medium transition dark:text-white">AI-Powered Security</h2>
-                                    <p className="text-foreground">Advanced threat detection algorithms that adapt to evolving cyber risks in real-time.</p>
+                                    <h2 className="group-hover:text-secondary-950 text-lg font-medium transition dark:text-white">{t('security.title')}</h2>
+                                    <p className="text-foreground">{t('security.description')}</p>
                                 </div>
                             </CardContent>
                         </Card>
@@ -96,8 +98,8 @@ export function Features() {
                                     </svg>
                                 </div>
                                 <div className="relative z-10 mt-14 space-y-2 text-center">
-                                    <h2 className="text-lg font-medium transition">Real-time Analytics</h2>
-                                    <p className="text-foreground">Instant data processing and visualization for immediate business insights.</p>
+                                    <h2 className="text-lg font-medium transition">{t('analytics.title')}</h2>
+                                    <p className="text-foreground">{t('analytics.description')}</p>
                                 </div>
                             </CardContent>
                         </Card>
@@ -108,8 +110,8 @@ export function Features() {
                                         <Shield className="m-auto size-5" strokeWidth={1} />
                                     </div>
                                     <div className="space-y-2">
-                                        <h2 className="group-hover:text-secondary-950 text-lg font-medium text-zinc-800 transition dark:text-white">Enterprise Grade</h2>
-                                        <p className="text-foreground">Scalable infrastructure built to support mission-critical applications.</p>
+                                        <h2 className="group-hover:text-secondary-950 text-lg font-medium text-zinc-800 transition dark:text-white">{t('enterprise.title')}</h2>
+                                        <p className="text-foreground">{t('enterprise.description')}</p>
                                     </div>
                                 </div>
                                 <div className="rounded-tl-(--radius) relative -mb-6 -mr-6 mt-6 h-fit border-l border-t p-6 py-6 sm:ml-6">
@@ -148,8 +150,8 @@ export function Features() {
                                         <Users className="m-auto size-6" strokeWidth={1} />
                                     </div>
                                     <div className="space-y-2">
-                                        <h2 className="text-lg font-medium transition">Collaborative Ecosystem</h2>
-                                        <p className="text-foreground">Seamless integration tools that empower your teams to work better together.</p>
+                                        <h2 className="text-lg font-medium transition">{t('collaboration.title')}</h2>
+                                        <p className="text-foreground">{t('collaboration.description')}</p>
                                     </div>
                                 </div>
                                 <div className="before:bg-(--color-border) relative mt-6 before:absolute before:inset-0 before:mx-auto before:w-px sm:-my-6 sm:-mr-6">

@@ -1,36 +1,35 @@
 "use client"
 
 import Marquee from "react-fast-marquee"
+import { useTranslations } from 'next-intl'
 
 export default function LogosMarquee() {
+    const t = useTranslations('logosMarquee')
     const logos = [
-        "/logos/logo-1.svg",
-        "/logos/logo-2.svg",
-        "/logos/logo-3.svg",
-        "/logos/logo-4.svg",
-        "/logos/logo-5.svg",
-        "/logos/logo-6.svg",
-        "/logos/logo-7.svg",
-        "/logos/logo-8.svg",
-        "/logos/logo-9.svg",
-        "/logos/logo-10.svg",
-        "/logos/logo-11.svg",
-        "/logos/logo-12.svg",
-        "/logos/logo-13.svg",
+        "/meta.png",
+        "/open-ai.svg",
+        "/logixi.png",
+        "/github-mark-white.png",
+        "/microsoft_logo.svg",
+        "/gemini.svg",
+        "/cloudflare_Logo.svg",
+        // "/yussef_dev.png",
+        "/aws.svg",
+        "/yussef.png",
     ]
 
     return (
-        <section className="py-16 lg:py-20 relative overflow-hidden">
+        <section className="py-16 lg:py-20 relative overflow-hidden" dir="ltr">
             <div className="absolute inset-0 " />
 
             <div className="container mx-auto px-4 lg:px-8 relative z-10 mb-12">
                 <div className="text-center">
                     <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-3">
-                        Trusted By Industry Leaders
+                        {t('title')}
                     </h2>
                     <div className="gradient-line w-24 mx-auto my-4" />
                     <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                        Partnering with innovative companies worldwide to deliver cutting-edge solutions
+                        {t('description')}
                     </p>
                 </div>
             </div>

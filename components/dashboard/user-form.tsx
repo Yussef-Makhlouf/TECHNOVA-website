@@ -19,7 +19,7 @@ import { Input } from "@/components/ui/input"
 import { toast } from "sonner"
 import { Card, CardContent } from "@/components/ui/card"
 import { Loader2, Eye, EyeOff, Save, Upload, User } from "lucide-react"
-import { createUser } from "@/app/dashboard/users/actions"
+import { createUser } from "@/app/[locale]/dashboard/users/actions"
 
 const userFormSchema = z.object({
     name: z.string().min(2, "Name must be at least 2 characters"),

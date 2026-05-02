@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useMemo, memo } from "react";
 import { motion } from "framer-motion";
 import DottedMap from "dotted-map";
 import Image from "next/image";
@@ -14,21 +14,22 @@ interface MapProps {
   lineColor?: string;
 }
 
-export function WorldMap({
+export const WorldMap = memo(function WorldMap({
   dots = [],
   lineColor = "#00D9FF",
 }: MapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
-  const map = new DottedMap({ height: 100, grid: "diagonal" });
-
   const { theme } = useTheme();
 
-  const svgMap = map.getSVG({
-    radius: 0.22,
-    color: theme === "dark" ? "#FFFFFF60" : "#00000030",
-    shape: "circle",
-    backgroundColor: theme === "dark" ? "transparent" : "transparent",
-  });
+  const svgMap = useMemo(() => {
+    const map = new DottedMap({ height: 100, grid: "diagonal" });
+    return map.getSVG({
+      radius: 0.22,
+      color: theme === "dark" ? "#FFFFFF60" : "#00000030",
+      shape: "circle",
+      backgroundColor: theme === "dark" ? "transparent" : "transparent",
+    });
+  }, [theme]);
 
   const projectPoint = (lat: number, lng: number) => {
     const x = (lng + 180) * (800 / 360);
@@ -165,7 +166,7 @@ export function WorldMap({
           </g>
         ))}
       </svg>
-      
+
       {/* TECHNOVA Text Overlay */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <motion.h1
@@ -175,7 +176,7 @@ export function WorldMap({
           className="text-6xl lg:text-8xl font-black tracking-wider bg-gradient-to-r from-[#7B3FEF] via-[#00D9FF] to-[#7B3FEF] bg-clip-text text-transparent select-none"
           style={{
             textShadow: 'none',
-        
+
           }}
         >
           TECHNOVA
@@ -183,4 +184,4 @@ export function WorldMap({
       </div>
     </div>
   );
-}
+});

@@ -1,0 +1,999 @@
+{
+    "hero": {
+        "badge": "Leading the Future",
+        "title": {
+            "part1": "AI & ",
+            "part2": "Intelligent Solutions"
+        },
+        "subtitle": "Technova specializes in integrating Artificial Intelligence with innovative digital solutions.  ",
+        "cta": {
+            "primary": "Start Your Digital Transformation",
+            "secondary": "Explore Core Services"
+        }
+    },
+    "homeCaseStudies": {
+        "badge": "Case Studies",
+        "title": "Our Recent Work",
+        "description": "Explore how we've helped businesses transform their digital presence with cutting-edge technology and design.",
+        "viewAll": "View All Projects"
+    },
+    "innovation": {
+        "badge": "Our Strategic Focus",
+        "title": "AI-Driven Solutions for Measurable Impact",
+        "description": "We transform data into insight, insight into experience, and experience into sustainable success. Our mission is built on human-centered innovation and a firm commitment to privacy.",
+        "features": {
+            "ai": "Advanced AI Consulting",
+            "integration": "Seamless Systems Integration",
+            "technology": "Web & Application Development"
+        }
+    },
+    "services": {
+        "badge": "Our Expertise",
+        "title": "Specialized Service Departments",
+        "description": "Comprehensive solutions across Innovation, Big Data, Creative Production, and AI Audio Technologies."
+    },
+    "features": {
+        "badge": "Our Core Values",
+        "title": "Partnership Built on Trust and Excellence",
+        "description": "We position ourselves as a trusted strategic partner, delivering integrated digital transformation solutions.",
+        "items": {
+            "innovation": {
+                "title": "Creative Design",
+                "description": "The foundation of effective solutions, rooted in cultural and market understanding for distinctive experiences."
+            },
+            "clientCentric": {
+                "title": "Success Partnership",
+                "description": "We invest in long-term partnerships, working side-by-side from concept to measurable impact."
+            },
+            "excellence": {
+                "title": "Excellence in Execution",
+                "description": "Commitment to precision, professionalism, and measurable outcomes with institutional rigor."
+            },
+            "performance": {
+                "title": "Sustainable Innovation",
+                "description": "Building intelligent, scalable, and long-lasting solutions designed to evolve over time."
+            },
+            "global": {
+                "title": "Ethical Values",
+                "description": "Prioritizing data protection, transparency, and AI that enhances human capability, not replaces it."
+            },
+            "award": {
+                "title": "Deep Specialization",
+                "description": "Expertise in AI and secure digital infrastructure, aligned with GCC national transformation visions."
+            },
+            "powerful": {
+                "title": "Big Data & Analytics",
+                "description": "Data Management, Predictive Modelling, and Business Intelligence to enhance efficiency."
+            },
+            "security": {
+                "title": "Creative Production",
+                "description": "AI-Driven Video & Image Production, Interactive Experiences, and Virtual Avatars."
+            },
+            "customization": {
+                "title": "AI Audio Technologies",
+                "description": "Text-to-Speech, Voice Cloning, AI Music, and Speech-to-Speech Processing."
+            },
+            "control": {
+                "title": "Capacity Building",
+                "description": "Technical Training and Development to empower organizations and individuals."
+            },
+            "ai": {
+                "title": "End-to-End Delivery",
+                "description": "Supporting digital transformation journeys from concept to full execution."
+            }
+        }
+    },
+    "process": {
+        "badge": "Our Workflow",
+        "title": "Systematic Execution for Guaranteed Results",
+        "description": "A proven 6-step process ensuring high standards of quality and seamless project delivery."
+    },
+    "ai": {
+        "badge": "Intelligent Technology",
+        "title": "AI-Powered Solutions",
+        "description": "We design AI-driven solutions that enhance efficiency, increase value, and create measurable impact.",
+        "chatbot": {
+            "badge": "AI-Powered Assistance",
+            "title": "Intelligent Chatbot System: Get instant answers and 24/7 support.",
+            "mapLabel": "AI Assistant Active Worldwide",
+            "supportBadge": "24/7 Chat Support",
+            "supportTitle": "Connect with our AI chatbot anytime for instant support and guidance.",
+            "availability": "24/7 Availability",
+            "analyticsBadge": "Conversation Analytics",
+            "analyticsTitle": "Track chatbot conversations in real-time.",
+            "analyticsSubtitle": "Analyze user interactions and improve responses.",
+            "conversation": {
+                "question": "How does Technova ensure data protection in its AI solutions?",
+                "answer": "Our priority is the protection of data, transparency, and respect for privacy, as part of our core Ethical Values.",
+                "date": "Sat 22 Feb",
+                "time": "Now"
+            }
+        }
+    },
+    "testimonials": {
+        "badge": "Client Feedback",
+        "title": "Trusted by Strategic Partners",
+        "description": "Serving Government Sectors, Corporations, Startups, and Educational Institutions."
+    },
+    "cta": {
+        "title": {
+            "part1": "Ready to Achieve",
+            "part2": "Sustainable Success",
+            "part3": "?"
+        },
+        "trust": {
+            "available": "Available",
+            "secure": "Secure",
+            "fast": "Fast"
+        },
+        "description": "Let's discuss how our deep specialization in AI and digital solutions can transform your vision into reality.",
+        "buttons": {
+            "primary": "Start Now",
+            "secondary": "View Our Services"
+        }
+    },
+    "navigation": {
+        "home": "Home",
+        "services": "Services",
+        "about": "About Us",
+        "caseStudies": "Case Studies",
+        "insights": "Insights",
+        "careers": "Careers",
+        "contact": "Contact",
+        "getStarted": "Get Started",
+        "toggleMenu": "Toggle menu",
+        "toggleTheme": "Toggle theme"
+    },
+    "footer": {
+        "description": "Leading the integration of AI and innovation globally, creating smart, sustainable, and secure solutions.",
+        "servicesTitle": "Services",
+        "companyTitle": "Company",
+        "contactTitle": "Contact",
+        "copyright": "All rights reserved. Technova. Built with a commitment to ethical AI and excellence in execution.",
+        "links": {
+            "aiSolutions": "AI Solutions",
+            "cloudInfrastructure": "Big Data & Analytics",
+            "cybersecurity": "Creative Production",
+            "digitalTransformation": "AI Audio Technologies",
+            "aboutUs": "About Us",
+            "careers": "Careers",
+            "caseStudies": "Case Studies",
+            "blog": "Insights"
+        },
+        "contactInfo": {
+            "address1": "Abu Dhabi - United Arab Emirates ",
+            "address2": " ",
+            "address3": " "
+        }
+    },
+    "testimonialsItems": {
+        "previous": "Previous testimonial",
+        "next": "Next testimonial",
+        "items": [
+            {
+                "text": "Technova's deep specialization in AI and secure digital infrastructure was the key to our successful transformation.",
+                "author": "Government Sector Partner"
+            },
+            {
+                "text": "The commitment to Excellence in Execution is evident in every deliverable. Precision and professionalism define their work.",
+                "author": "Enterprise Client, CTO"
+            },
+            {
+                "text": "Their ethical approach to AI and data protection gave us the confidence to move forward with complex projects.",
+                "author": "Financial Services Director"
+            },
+            {
+                "text": "A true Success Partnership. They worked side-by-side with us from concept to measurable impact.",
+                "author": "Startup Founder"
+            },
+            {
+                "text": "The AI Audio Technologies department delivered a solution that was both innovative and perfectly tailored to our needs.",
+                "author": "Media Production Head"
+            },
+            {
+                "text": "We value their Creative Design approach, which made our digital experience both meaningful and distinctive.",
+                "author": "Cultural Institution Lead"
+            },
+            {
+                "text": "The 6-step workflow ensured a fast and adaptive execution, even in our complex environment.",
+                "author": "Operations Director"
+            },
+            {
+                "text": "Technova's solutions are scalable and long-lasting, a true example of Sustainable Innovation.",
+                "author": "Technology Investment Fund"
+            },
+            {
+                "text": "The team's alignment with national transformation visions made them the ideal strategic partner.",
+                "author": "Public Sector Official"
+            },
+            {
+                "text": "Transforming our data into insight has been seamless and highly impactful thanks to their Big Data & Analytics team.",
+                "author": "Data Scientist"
+            }
+        ]
+    },
+    "processSteps": {
+        "steps": [
+            {
+                "title": "Discovery",
+                "description": "In-depth analysis and requirement gathering to define the project scope."
+            },
+            {
+                "title": "Architecture",
+                "description": "Solution design and technical planning for a secure and scalable system."
+            },
+            {
+                "title": "Development",
+                "description": "Agile development and robust coding of the AI and digital solution."
+            },
+            {
+                "title": "Testing",
+                "description": "Rigorous optimization, security review, and quality assurance."
+            },
+            {
+                "title": "Launch",
+                "description": "Seamless deployment and final optimization for market readiness."
+            },
+            {
+                "title": "Support",
+                "description": "Training, ongoing support, and continuous optimization."
+            }
+        ]
+    },
+    "servicesPage": {
+        "hero": {
+            "badge": "Our Specialized Solutions",
+            "title": "TECHNOVA",
+            "titleHighlight": "Services",
+            "description": "AI-driven solutions across  specialized departments: Innovation, Big Data, Creative Production, and AI Audio Technologies."
+        },
+        "whyChoose": {
+            "title": "Why Choose Technova's Expertise",
+            "description": "Experience the difference of deep specialization in AI and secure digital infrastructure."
+        },
+        "cta": {
+            "title": "Ready to Transform Your Business?",
+            "description": "Let's discuss how our specialized services can help you achieve your digital transformation goals.",
+            "getStarted": "Get Started",
+            "viewCaseStudies": "View Success Stories"
+        },
+        "exploreService": "Explore Service"
+    },
+    "contactPage": {
+        "hero": {
+            "badge": "Contact Our Team",
+            "title": "Let's Build the Future Together",
+            "description": "Connect with our experts to discuss your project and start your journey"
+        },
+        "validation": {
+            "messageMin": "The message must be at least 10 characters long",
+            "nameRequired": "Name is required",
+            "emailRequired": "Email is required",
+            "phoneRequired": "Phone is required",
+            "serviceRequired": "Service is required",
+            "messageRequired": "Message is required",
+            "emailInvalid": "Email is invalid",
+            "phoneInvalid": "Phone is invalid",
+            "serviceInvalid": "Service is invalid",
+            "messageInvalid": "Message is invalid",
+            "nameInvalid": "Name is invalid",
+            "phoneMin": "Phone number must be at least 10 digits long",
+            "phoneMax": "Phone number must be at most 15 digits long"
+        },
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "phone": "Phone Number",
+            "service": "Service of Interest",
+            "message": "Your Project Details",
+            "submit": "Send Message",
+            "submitting": "Sending...",
+            "success": "Message sent successfully! We will be in touch shortly.",
+            "error": "Something went wrong. Please try again."
+        },
+        "info": {
+            "address": "Contact Us",
+            "titleHighlight": "TECHNOVA",
+            "description": "Leading technology company specializing in integrating AI with innovative digital solutions.",
+            "phone": "Phone Number",
+            "email": "Email",
+            "location": "Location",
+            "officeHours": "Office Hours",
+            "officeHoursDescription": "Monday - Friday: 9:00 AM - 6:00 PM",
+            "officeHoursDescription2": "Saturday - Sunday: 10:00 AM - 4:00 PM"
+        },
+        "vision": {
+            "title": "Our Vision",
+            "description": "To lead the integration of AI and innovation globally, creating smart, sustainable, and secure solutions that empower organizations and individuals to thrive in the digital age."
+        },
+        "mission": {
+            "title": "Our Mission",
+            "description": "We design AI-driven solutions that enhance efficiency, increase value, and create measurable impact. We transform data into insight, insight into experience, and experience into sustainable success with a firm commitment to privacy and human-centered innovation."
+        },
+        "values": {
+            "title": "Our Core Values",
+            "description": "The principles that guide our work: Creativity, Sustainable Innovation, Ethical Values, Success Partnership, and Excellence in Execution.",
+            "items": {
+                "creativity": {
+                    "title": "Creativity",
+                    "description": "The foundation of effective solutions, rooted in cultural and market understanding."
+                },
+                "sustainableInnovation": {
+                    "title": "Sustainable Innovation",
+                    "description": "Building intelligent, scalable, and long-lasting solutions that evolve over time."
+                },
+                "ethicalValues": {
+                    "title": "Ethical Values",
+                    "description": "Prioritizing data protection, transparency, and AI that enhances human capability."
+                },
+                "successPartnership": {
+                    "title": "Success Partnership",
+                    "description": "Investing in long-term partnerships built on trust and shared goals for measurable impact."
+                },
+                "excellence": {
+                    "title": "Excellence in Execution",
+                    "description": "Commitment to precision, professionalism, and high standards of quality in every project."
+                }
+            }
+        },
+        "journey": {
+            "title": "Our Journey",
+            "description": "Key milestones that shaped our path to becoming industry leaders in AI and digital transformation.",
+            "milestones": [
+                {
+                    "year": "2010",
+                    "title": "Founded",
+                    "description": "TECHNOVA was established with a vision to revolutionize the technology landscape and help businesses embrace digital transformation."
+                },
+                {
+                    "year": "2015",
+                    "title": "Global Expansion",
+                    "description": "Expanded operations to serve clients across 25+ countries, establishing ourselves as a trusted global technology partner."
+                },
+                {
+                    "year": "2020",
+                    "title": "AI Innovation Hub",
+                    "description": "Launched our dedicated AI and Machine Learning division, pioneering advanced solutions for enterprise clients."
+                },
+                {
+                    "year": "2025",
+                    "title": "Industry Leader",
+                    "description": "Recognized as a leading technology innovator with 500+ successful projects and 98% client satisfaction rate."
+                }
+            ]
+        },
+        "globalPresence": {
+            "title": "Global Presence",
+            "description": "Strategically located in the heart of the Gulf, serving governments, enterprises, and startups across the GCC and beyond."
+        }
+    },
+    "aboutPage": {
+        "hero": {
+            "badge": "About Us",
+            "title": "About",
+            "titleHighlight": "TECHNOVA",
+            "description": "We are a strategic partner to governments, enterprises, and startups, supporting them in digital transformation journeys from concept to full execution."
+        },
+        "vision": {
+            "title": "Our Vision",
+            "description": "To lead the integration of AI and innovation globally, creating smart, sustainable, and secure solutions that empower organizations and individuals to thrive in the digital age."
+        },
+        "mission": {
+            "title": "Our Mission",
+            "description": "We design AI-driven solutions that enhance efficiency, increase value, and create measurable impact. We transform data into insight, insight into experience, and experience into sustainable success with a firm commitment to privacy and human-centered innovation."
+        },
+        "values": {
+            "title": "Our Core Values",
+            "description": "The principles that guide our work: Creativity, Sustainable Innovation, Ethical Values, Success Partnership, and Excellence in Execution.",
+            "items": {
+                "creativity": {
+                    "title": "Creative Design",
+                    "description": "The foundation of effective solutions, rooted in cultural and market understanding."
+                },
+                "sustainableInnovation": {
+                    "title": "Sustainable Innovation",
+                    "description": "Building intelligent, scalable, and long-lasting solutions that evolve over time."
+                },
+                "ethicalValues": {
+                    "title": "Ethical Values",
+                    "description": "Prioritizing data protection, transparency, and AI that enhances human capability."
+                },
+                "successPartnership": {
+                    "title": "Success Partnership",
+                    "description": "Investing in long-term partnerships built on trust and shared goals for measurable impact."
+                },
+                "excellence": {
+                    "title": "Excellence in Execution",
+                    "description": "Commitment to precision, professionalism, and high standards of quality in every project."
+                }
+            }
+        },
+        "journey": {
+            "title": "Our Journey",
+            "description": "Key milestones that shaped our path to becoming industry leaders in AI and digital transformation.",
+            "milestones": [
+                {
+                    "year": "Nov 2025",
+                    "title": "Strategic Initiation",
+                    "description": "Commencing the new strategic phase with a focus on advanced AI integration and global outreach."
+                },
+                {
+                    "year": "20 Nov",
+                    "title": "Development Sprint",
+                    "description": "Accelerated development of core features and infrastructure to support the upcoming platform launch."
+                },
+                {
+                    "year": "1 Dec",
+                    "title": "Beta Launch",
+                    "description": "Initial release to strategic partners for testing and feedback, ensuring a robust final product."
+                },
+                {
+                    "year": "12 Dec",
+                    "title": "Global Release",
+                    "description": "Full-scale launch of the new platform, marking a significant milestone in our digital transformation journey."
+                }
+            ]
+        },
+        "cta": {
+            "title": "Ready to Write Your Success Story?",
+            "description": "Let's discuss how our deep specialization in AI can help you achieve similar results for your business.",
+            "button": "Start Your Project"
+        }
+    },
+    "caseStudiesPage": {
+        "hero": {
+            "badge": "Success Stories",
+            "title": "Success Stories & Case Studies",
+            "description": "Real-world examples showcasing how we convert innovation into measurable impact for our strategic partners."
+        },
+        "readMore": "Read Full Case Study",
+        "featured": "Featured",
+        "viewAll": "View All",
+        "cta": {
+            "title": "Ready to Write Your Success Story?",
+            "description": "Let's discuss how our deep specialization in AI can help you achieve similar results for your business.",
+            "button": "Start Your Project"
+        }
+    },
+    "insightsPage": {
+        "hero": {
+            "badge": "Thought Leadership",
+            "title": "TECHNOVA",
+            "titleHighlight": "Insights",
+            "description": "In-depth analysis and thought leadership on AI, digital transformation, and secure infrastructure, aligned with national visions."
+        },
+        "categories": {
+            "all": "All",
+            "marketAnalysis": "Market Analysis",
+            "technology": "AI & ML",
+            "strategy": "Digital Strategy",
+            "industryInsights": "GCC Transformation",
+            "security": "Data Protection",
+            "workforce": "Capacity Building"
+        },
+        "featured": {
+            "badge": "Featured Insight",
+            "title": "Latest Research on Ethical AI",
+            "readMore": "Read Insight",
+            "by": "By"
+        },
+        "cta": {
+            "title": "Stay Ahead of the AI Curve",
+            "description": "Subscribe to our insights newsletter and receive the latest research and analysis on AI and digital transformation.",
+            "subscribe": "Subscribe Now",
+            "viewCaseStudies": "View Success Stories"
+        },
+        "detail": {
+            "backToInsights": "Back to Insights",
+            "marketReport": "Market Report",
+            "by": "By",
+            "insightNotFound": "Insight not found"
+        }
+    },
+    "blogPage": {
+        "noResults": "No results found",
+        "hero": {
+            "title": "Insights & Articles",
+            "description": "Stay updated with the latest trends, insights, and best practices in AI, digital innovation, and secure systems."
+        },
+        "categories": {
+            "all": "All",
+            "ai": "AI & ML",
+            "cloud": "Big Data",
+            "cybersecurity": "Security",
+            "digitalTransformation": "Digital Transformation",
+            "iot": "Creative Production"
+        },
+        "featured": {
+            "badge": "Featured",
+            "by": "By",
+            "readMore": "Read Article"
+        },
+        "detail": {
+            "backToBlog": "Back to Blog",
+            "by": "By",
+            "articleNotFound": "Article not found"
+        }
+    },
+    "careersPage": {
+        "hero": {
+            "title": "Join Our Mission",
+            "description": "Be part of the team that is leading the integration of AI and innovation in the world. We are looking for pioneers."
+        },
+        "benefits": {
+            "title": "Why Join Technova?",
+            "description": "We offer a platform for growth, innovation, and impact, aligned with our core values of excellence and creativity.",
+            "items": {
+                "health": {
+                    "title": "Growth & Capacity Building",
+                    "description": "Continuous learning and technical training to ensure long-term career evolution."
+                },
+                "growth": {
+                    "title": "Strategic Impact",
+                    "description": "Work on projects that align with national transformation visions and create measurable impact."
+                },
+                "culture": {
+                    "title": "Ethical & Creative Culture",
+                    "description": "A collaborative environment that values creativity, transparency, and ethical AI practice."
+                },
+                "compensation": {
+                    "title": "Competitive Compensation",
+                    "description": "Industry-leading salaries and performance bonuses."
+                }
+            }
+        },
+        "openPositions": {
+            "title": "Open Positions",
+            "description": "Find your next opportunity and join our mission to build the future of digital solutions.",
+            "apply": "Apply Now"
+        },
+        "applicationForm": {
+            "title": "Apply for Position",
+            "successTitle": "Application Submitted!",
+            "successMessage": "We have received your application and will review it shortly.",
+            "name": "Full Name",
+            "namePlaceholder": "John Doe",
+            "email": "Email Address",
+            "emailPlaceholder": "john@example.com",
+            "phone": "Phone Number",
+            "phonePlaceholder": "+1 (555) 000-0000",
+            "resume": "Resume / CV",
+            "resumePlaceholder": "Upload your resume",
+            "resumeHint": "Accepted formats: PDF, DOC, DOCX. Max size: 5MB",
+            "coverLetter": "Cover Letter (Optional)",
+            "coverLetterPlaceholder": "Tell us why you're a great fit for this role...",
+            "cancel": "Cancel",
+            "submitting": "Submitting...",
+            "submit": "Submit Application",
+            "error": "Something went wrong. Please try again.",
+            "invalidFileType": "Invalid file type. Please upload a PDF, DOC, or DOCX file.",
+            "fileTooLarge": "File size too large. Max size is 5MB."
+        }
+    },
+    "loginPage": {
+        "welcome": {
+            "title": "Welcome back!",
+            "subtitle": "Please enter your details to access the partner dashboard"
+        },
+        "form": {
+            "email": "Email",
+            "password": "Password",
+            "forgotPassword": "Forgot password?",
+            "submit": "Log in",
+            "submitting": "Signing in..."
+        },
+        "endToEnd": {
+            "title": "End-to-End Solutions",
+            "description": "Complete technology solutions from consultation to deployment and ongoing support"
+        },
+        "enterpriseSecurity": {
+            "title": "Data Protection & Privacy",
+            "description": "Firm commitment to privacy and ethical values in all AI and digital systems"
+        },
+        "lightningFast": {
+            "title": "Fast & Adaptive Execution",
+            "description": "Systematic approach ensuring rapid deployment across complex environments"
+        },
+        "aiPowered": {
+            "title": "AI-Powered Intelligence",
+            "description": "Cutting-edge AI and machine learning integration for smarter, more efficient solutions"
+        },
+        "expertTeam": {
+            "title": "Expert Team Support",
+            "description": "Dedicated specialists available to ensure your success and continuous optimization"
+        },
+        "globalReach": {
+            "title": "Strategic Gulf Presence",
+            "description": "Serving governments and enterprises in the GCC, aligned with national transformation visions"
+        },
+        "links": {
+            "home": "Home",
+            "about": "About Us",
+            "contact": "Contact Us"
+        },
+        "success": "Message sent successfully! We will be in touch shortly."
+    },
+    "registerPage": {
+        "welcome": {
+            "title": "Welcome to Technova!",
+            "subtitle": "Please enter your details to create your account"
+        },
+        "form": {
+            "email": "Email",
+            "submit": "Create account",
+            "submitting": "Submitting..."
+        },
+        "success": {
+            "title": "Check your email",
+            "description": "We have sent a password reset link to",
+            "tryAnother": "Try another email"
+        },
+        "footer": {
+            "backToLogin": "Back to Login"
+        },
+        "validation": {
+            "invalidEmail": "Please enter a valid email address.",
+            "passwordLength": "Password must be at least 8 characters long",
+            "passwordsDoNotMatch": "Passwords do not match"
+        }
+    },
+    "resetPasswordPage": {
+        "title": "Reset Password",
+        "description": "Enter your email to receive a password reset link",
+        "form": {
+            "email": "Email",
+            "submit": "Send Reset Link",
+            "submitting": "Sending Link..."
+        },
+        "success": {
+            "title": "Check your email",
+            "description": "We have sent a password reset link to",
+            "tryAnother": "Try another email"
+        },
+        "footer": {
+            "backToLogin": "Back to Login"
+        },
+        "validation": {
+            "invalidEmail": "Please enter a valid email address.",
+            "passwordLength": "Password must be at least 8 characters long",
+            "passwordsDoNotMatch": "Passwords do not match"
+        },
+        "newPassword": {
+            "title": "New Password",
+            "description": "Enter your new password",
+            "form": {
+                "password": "Password",
+                "submit": "Reset Password",
+                "submitting": "Resetting Password..."
+            },
+            "validation": {
+                "invalidEmail": "Please enter a valid email address.",
+                "passwordLength": "Password must be at least 8 characters long",
+                "passwordsDoNotMatch": "Passwords do not match"
+            },
+            "success": {
+                "title": "Password Reset Successful",
+                "description": "Your password has been reset successfully.",
+                "backToLogin": "Back to Login"
+            },
+            "password": "New Password",
+            "confirmPassword": "Confirm Password",
+            "submit": "Reset Password",
+            "submitting": "Resetting Password..."
+        }
+    },
+    "features3": {
+        "endToEnd": {
+            "title": "End-to-End Solutions",
+            "description": "Complete technology solutions from consultation to deployment and ongoing support"
+        },
+        "enterpriseSecurity": {
+            "title": "Data Protection & Privacy",
+            "description": "Firm commitment to privacy and ethical values in all AI and digital systems"
+        },
+        "lightningFast": {
+            "title": "Fast & Adaptive Execution",
+            "description": "Systematic approach ensuring rapid deployment across complex environments"
+        },
+        "aiPowered": {
+            "title": "AI-Powered Intelligence",
+            "description": "Cutting-edge AI and machine learning integration for smarter, more efficient solutions"
+        },
+        "expertTeam": {
+            "title": "Expert Team Support",
+            "description": "Dedicated specialists available to ensure your success and continuous optimization"
+        },
+        "globalReach": {
+            "title": "Strategic Gulf Presence",
+            "description": "Serving governments and enterprises in the GCC, aligned with national transformation visions"
+        }
+    },
+    "featuresAdvanced": {
+        "realTimeMonitoring": {
+            "title": "Measurable Impact",
+            "description": "Solutions designed to create measurable impact and enhance efficiency"
+        },
+        "enterpriseSecurity": {
+            "title": "Secure & Scalable",
+            "description": "Building practical, secure, and scalable systems that transform how you work"
+        },
+        "lightningFast": {
+            "title": "Creative Design",
+            "description": "Bridging creativity and technology to build distinctive digital experiences"
+        },
+        "globalNetwork": {
+            "title": "Success Partnership",
+            "description": "Long-term partnership from concept to full execution and measurable impact"
+        },
+        "support247": {
+            "title": "Ethical AI",
+            "description": "AI that enhances human capability, with a priority on transparency and data protection"
+        },
+        "description": "We believe in AI that enhances human capability, not replaces it. Our priority is the protection of data, transparency, and respect for privacy."
+    },
+    "successPartnership": {
+        "title": "Success Partnership",
+        "description": "We invest in long-term partnerships built on trust and shared goals. We work side-by-side with our partners from concept to execution to measurable impact."
+    },
+    "excellence": {
+        "title": "Excellence in Execution",
+        "description": "We commit to precision, professionalism, and measurable outcomes. Every project we deliver reflects high standards of quality and institutional rigor."
+    },
+    "globalPresence": {
+        "title": "Strategic Gulf Presence",
+        "description": "Strategically located in the heart of the Gulf, serving governments, enterprises, and startups across the GCC and beyond."
+    },
+    "logosMarquee": {
+        "title": "Trusted by Strategic Partners",
+        "description": "Partnering with governments, enterprises, and startups to deliver cutting-edge AI and digital solutions."
+    },
+    "serviceDetailPage": {
+        "error": "Error",
+        "serviceNotFound": "Service not found",
+        "backToServices": "Back to Services",
+        "capabilities": {
+            "title": "Capabilities & Features"
+        },
+        "benefits": {
+            "title": "Key Benefits",
+            "efficiency": {
+                "title": "Enhanced Efficiency",
+                "description": "AI-driven automation to significantly reduce operational costs and time."
+            },
+            "decision": {
+                "title": "Data-Driven Insight",
+                "description": "Transforming data into insight for smarter, faster strategic decisions."
+            },
+            "risk": {
+                "title": "Future-Ready & Secure",
+                "description": "Building scalable, secure systems that mitigate risk and ensure long-term value."
+            }
+        },
+        "cta": {
+            "title": "Ready to leverage {service}?",
+            "description": "Schedule a consultation with our experts to discuss your specific needs and measurable impact.",
+            "button": "Get Started"
+        }
+    },
+    "caseStudyDetailPage": {
+        "backToCaseStudies": "Back to Success Stories",
+        "overview": "Overview",
+        "keyResults": "Measurable Impact",
+        "error": "Error",
+        "caseStudyNotFound": "Success story not found",
+        "ctaTitle": "Ready to Write Your Success Story?",
+        "ctaDescription": "Let's discuss how our deep specialization in AI can help you achieve similar results for your business.",
+        "ctaButton": "Start Your Project"
+    },
+    "features8": {
+        "reliability": {
+            "title": "Reliability",
+            "description": "99.9% "
+        },
+        "security": {
+            "title": "Ethical AI & Privacy",
+            "description": "Prioritizing data protection, transparency, and AI that enhances human capability."
+        },
+        "analytics": {
+            "title": "Big Data & Analytics",
+            "description": "Transforming data into insight for immediate business intelligence."
+        },
+        "enterprise": {
+            "title": "Strategic Partnership",
+            "description": "Trusted partner to governments and enterprises for digital transformation."
+        },
+        "collaboration": {
+            "title": "Creative Production",
+            "description": "Bridging creativity and technology for distinctive digital experiences."
+        }
+    },
+    "aiChatbot": {
+        "title": "AI Chatbot",
+        "description": "Intelligent chatbot system, Get instant answers to all your questions."
+    },
+    "pricing": {
+        "title": "Pricing",
+        "description": "Flexible plans for every stage of your digital transformation journey."
+    },
+    "blog": {
+        "title": "Insights",
+        "description": "In-depth analysis and thought leadership on AI and digital transformation."
+    },
+    "security": {
+        "title": "Security",
+        "description": "Bank-level security protecting your valuable digital assets."
+    },
+    "404": {
+        "title": "404 - Page Not Found",
+        "description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable."
+    },
+    "cookies": {
+        "title": "Cookies Policy",
+        "description": "We use cookies to ensure you get the best experience on our website."
+    },
+    "legal": {
+        "title": "Legal",
+        "description": "Terms of Service and Privacy Policy."
+    },
+    "forms": {
+        "title": "Forms",
+        "description": "Contact and application forms."
+    },
+    "notifications": {
+        "title": "Notifications",
+        "description": "System notifications and alerts."
+    },
+    "loading": {
+        "title": "Loading",
+        "description": "Please wait while we load the content."
+    },
+    "viewMore": {
+        "title": "View More",
+        "description": "Click to view more content."
+    },
+    "readMore": {
+        "title": "Read More",
+        "description": "Click to read the full article."
+    },
+    "reliability": {
+        "title": "Reliability",
+        "description": "99.9% "
+    },
+    "security": {
+        "title": "Ethical AI & Privacy",
+        "description": "Prioritizing data protection, transparency, and AI that enhances human capability."
+    },
+    "analytics": {
+        "title": "Big Data & Analytics",
+        "description": "Transforming data into insight for immediate business intelligence."
+    },
+    "enterprise": {
+        "title": "Strategic Partnership",
+        "description": "Trusted partner to governments and enterprises for digital transformation."
+    },
+    "collaboration": {
+        "title": "Creative Production",
+        "description": "Bridging creativity and technology for distinctive digital experiences."
+    },
+    "aiChatbot": {
+        "title": "AI Chatbot",
+        "description": "Intelligent chatbot system, Get instant answers to all your questions."
+    },
+    "pricing": {
+        "title": "Pricing",
+        "description": "Flexible plans for every stage of your digital transformation journey."
+    },
+    "blog": {
+        "title": "Insights",
+        "description": "In-depth analysis and thought leadership on AI and digital transformation."
+    },
+    "security": {
+        "title": "Security",
+        "description": "Bank-level security protecting your valuable digital assets."
+    },
+    "404": {
+        "title": "404 - Page Not Found",
+        "description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable."
+    },
+    "cookies": {
+        "title": "Cookies Policy",
+        "description": "We use cookies to ensure you get the best experience on our website."
+    },
+    "legal": {
+        "title": "Legal",
+        "description": "Terms of Service and Privacy Policy."
+    },
+    "forms": {
+        "title": "Forms",
+        "description": "Contact and application forms."
+    },
+    "notifications": {
+        "title": "Notifications",
+        "description": "System notifications and alerts."
+    },
+    "loading": {
+        "title": "Loading",
+        "description": "Please wait while we load the content."
+    },
+    "viewMore": {
+        "title": "View More",
+        "description": "Click to view more content."
+    },
+    "readMore": {
+        "title": "Read More",
+        "description": "Click to read the full article."
+    },
+    "gallery": {
+        "badge": "Team Events",
+        "title": "Behind The Scenes",
+        "description": "A glimpse into our team's journey, celebrating milestones and building connections together."
+    },
+    "featuresAccordion": {
+        "title": "The Foundation for AI",
+        "description": "Technova is evolving to be more than just AI models. We support entire ecosystems with APIs and platforms helping developers and businesses innovate.",
+        "items": {
+            "database": {
+                "title": "Database Visualization",
+                "description": "Advanced data visualization tools that transform complex datasets into actionable insights. Our solutions help you understand patterns and make data-driven decisions."
+            },
+            "authentication": {
+                "title": "Advanced Authentication",
+                "description": "Multi-layered security systems with biometric integration, ensuring your digital assets remain protected while maintaining seamless user experience."
+            },
+            "identity": {
+                "title": "Identity Management",
+                "description": "Comprehensive identity solutions that streamline user onboarding, verification, and access control across your entire organization."
+            },
+            "analytics": {
+                "title": "Analytics Dashboard",
+                "description": "Real-time analytics platforms that provide deep insights into your business operations, customer behavior, and market trends."
+            }
+        }
+    },
+    "videoShowcase": {
+        "badge": "AI Product Demos",
+        "title": "Experience Our AI Solutions",
+        "description": "Watch our AI-powered products in action. Each solution is designed to transform how you create, produce, and manage content.",
+        "projects": {
+            "natai": {
+                "badge": "Creative AI",
+                "title": "NatAI",
+                "description": "Transform your creative vision into stunning 4K visuals, cinematic videos, and AI-powered content.",
+                "features": [
+                    "Text-to-Image 4K generation",
+                    "Image-to-Video cinematic transformation",
+                    "AI Storyboard from scripts",
+                    "AI-powered audio sync",
+                    "Professional product sessions",
+                    "Enterprise-grade security"
+                ]
+            },
+            "foodai": {
+                "badge": "Food Photography AI",
+                "title": "FoodAI",
+                "description": "Create mouthwatering food content with ultra-high detail preservation and professional styling.",
+                "features": [
+                    "4K Native Output",
+                    "Multiple Angles (macro, overhead, 45°)",
+                    "AI Style Transfer & lighting",
+                    "Video Animation for social media",
+                    "Batch Processing",
+                    "Menu Project Management"
+                ]
+            },
+            "dashboardai": {
+                "badge": "Analytics AI",
+                "title": "Dashboard AI",
+                "description": "Intelligent analytics and data visualization powered by advanced AI algorithms.",
+                "features": [
+                    "Real-time data analytics",
+                    "AI-powered insights",
+                    "Smart visualizations",
+                    "Automated reporting",
+                    "Predictive analytics",
+                    "Custom dashboards"
+                ]
+            }
+        }
+    }
+}

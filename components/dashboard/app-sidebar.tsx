@@ -24,10 +24,11 @@ import {
     LogOut,
     Moon,
     Sun,
+    Smartphone,
 } from "lucide-react"
 import Link from "next/link"
 import { useRouter, usePathname } from "next/navigation"
-import { logout } from "@/app/login/actions"
+import { logout } from "@/app/[locale]/login/actions"
 import { Logo } from "@/components/ui/logo"
 import { useTheme } from "next-themes"
 import { useSidebar } from "@/components/ui/sidebar"
@@ -73,6 +74,11 @@ export function AppSidebar() {
             title: "Careers",
             url: "/dashboard/careers",
             icon: Users,
+        },
+        {
+            title: "NFC Scans",
+            url: "/dashboard/nfc",
+            icon: Smartphone,
         },
         {
             title: "Users",

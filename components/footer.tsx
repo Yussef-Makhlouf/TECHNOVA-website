@@ -1,7 +1,10 @@
-import Link from "next/link"
-import { Linkedin, Twitter, Github, Mail } from "lucide-react"
+import { Link } from "@/i18n/routing"
+import { Linkedin, Twitter, Github, Mail, Instagram } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export default function Footer() {
+  const t = useTranslations('footer')
+
   return (
     <footer className="relative bg-card border-t border-border mt-20 overflow-hidden">
       {/* Pattern Background with Gradient Overlay */}
@@ -32,29 +35,23 @@ export default function Footer() {
               <span className="font-heading text-xl font-bold text-foreground tracking-wider">TECHNOVA</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Leading the future with innovative technology solutions and Neo-Futurist approach.
+              {t('description')}
             </p>
             <div className="flex gap-3 mt-6">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/110027749/admin/dashboard/"
                 className="w-9 h-9 rounded-lg bg-muted hover:bg-[#00D9FF]/20 flex items-center justify-center text-muted-foreground hover:text-[#00D9FF] transition-all duration-300"
               >
                 <Linkedin size={18} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/globaltechnova?igsh=MTYzd3FiOTFuaXFxcA=="
                 className="w-9 h-9 rounded-lg bg-muted hover:bg-[#00D9FF]/20 flex items-center justify-center text-muted-foreground hover:text-[#00D9FF] transition-all duration-300"
               >
-                <Twitter size={18} />
+                <Instagram size={18} />
               </a>
               <a
-                href="#"
-                className="w-9 h-9 rounded-lg bg-muted hover:bg-[#00D9FF]/20 flex items-center justify-center text-muted-foreground hover:text-[#00D9FF] transition-all duration-300"
-              >
-                <Github size={18} />
-              </a>
-              <a
-                href="#"
+                href="mailto:Info@globaltechnova.com"
                 className="w-9 h-9 rounded-lg bg-muted hover:bg-[#00D9FF]/20 flex items-center justify-center text-muted-foreground hover:text-[#00D9FF] transition-all duration-300"
               >
                 <Mail size={18} />
@@ -64,7 +61,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-heading text-foreground font-bold mb-4">Services</h3>
+            <h3 className="font-heading text-foreground font-bold mb-4">{t('servicesTitle')}</h3>
             <ul className="space-y-3">
               <li>
                 <Link
@@ -72,7 +69,7 @@ export default function Footer() {
                   className="text-muted-foreground hover:text-[#00D9FF] transition-colors text-sm flex items-center gap-2 group"
                 >
                   <span className="w-1 h-1 rounded-full bg-[#7B3FEF] group-hover:bg-[#00D9FF] transition-colors" />
-                  AI Solutions
+                  {t('links.aiSolutions')}
                 </Link>
               </li>
               <li>
@@ -81,7 +78,7 @@ export default function Footer() {
                   className="text-muted-foreground hover:text-[#00D9FF] transition-colors text-sm flex items-center gap-2 group"
                 >
                   <span className="w-1 h-1 rounded-full bg-[#7B3FEF] group-hover:bg-[#00D9FF] transition-colors" />
-                  Cloud Infrastructure
+                  {t('links.cloudInfrastructure')}
                 </Link>
               </li>
               <li>
@@ -90,7 +87,7 @@ export default function Footer() {
                   className="text-muted-foreground hover:text-[#00D9FF] transition-colors text-sm flex items-center gap-2 group"
                 >
                   <span className="w-1 h-1 rounded-full bg-[#7B3FEF] group-hover:bg-[#00D9FF] transition-colors" />
-                  Cybersecurity
+                  {t('links.cybersecurity')}
                 </Link>
               </li>
               <li>
@@ -99,7 +96,7 @@ export default function Footer() {
                   className="text-muted-foreground hover:text-[#00D9FF] transition-colors text-sm flex items-center gap-2 group"
                 >
                   <span className="w-1 h-1 rounded-full bg-[#7B3FEF] group-hover:bg-[#00D9FF] transition-colors" />
-                  Digital Transformation
+                  {t('links.digitalTransformation')}
                 </Link>
               </li>
             </ul>
@@ -107,7 +104,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="font-heading text-foreground font-bold mb-4">Company</h3>
+            <h3 className="font-heading text-foreground font-bold mb-4">{t('companyTitle')}</h3>
             <ul className="space-y-3">
               <li>
                 <Link
@@ -115,7 +112,7 @@ export default function Footer() {
                   className="text-muted-foreground hover:text-[#00D9FF] transition-colors text-sm flex items-center gap-2 group"
                 >
                   <span className="w-1 h-1 rounded-full bg-[#7B3FEF] group-hover:bg-[#00D9FF] transition-colors" />
-                  About Us
+                  {t('links.aboutUs')}
                 </Link>
               </li>
               <li>
@@ -124,7 +121,7 @@ export default function Footer() {
                   className="text-muted-foreground hover:text-[#00D9FF] transition-colors text-sm flex items-center gap-2 group"
                 >
                   <span className="w-1 h-1 rounded-full bg-[#7B3FEF] group-hover:bg-[#00D9FF] transition-colors" />
-                  Careers
+                  {t('links.careers')}
                 </Link>
               </li>
               <li>
@@ -133,7 +130,7 @@ export default function Footer() {
                   className="text-muted-foreground hover:text-[#00D9FF] transition-colors text-sm flex items-center gap-2 group"
                 >
                   <span className="w-1 h-1 rounded-full bg-[#7B3FEF] group-hover:bg-[#00D9FF] transition-colors" />
-                  Case Studies
+                  {t('links.caseStudies')}
                 </Link>
               </li>
               <li>
@@ -142,7 +139,7 @@ export default function Footer() {
                   className="text-muted-foreground hover:text-[#00D9FF] transition-colors text-sm flex items-center gap-2 group"
                 >
                   <span className="w-1 h-1 rounded-full bg-[#7B3FEF] group-hover:bg-[#00D9FF] transition-colors" />
-                  Blog
+                  {t('links.blog')}
                 </Link>
               </li>
             </ul>
@@ -150,23 +147,23 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-heading text-foreground font-bold mb-4">Contact</h3>
+            <h3 className="font-heading text-foreground font-bold mb-4">{t('contactTitle')}</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>123 Tech Street</li>
-              <li>Innovation District</li>
-              <li>San Francisco, CA 94105</li>
+              <li>{t('contactInfo.address1')}</li>
+              {/* <li>{t('contactInfo.address2')}</li>
+              <li>{t('contactInfo.address3')}</li> */}
               <li className="pt-2">
                 <a
-                  href="mailto:hello@technova.com"
+                  href="mailto:Info@globaltechnova.com"
                   className="hover:text-[#00D9FF] transition-colors inline-flex items-center gap-2"
                 >
                   <Mail size={14} className="text-[#7B3FEF]" />
-                  hello@technova.com
-                </a>
+Info@globaltechnova.com
+</a>
               </li>
               <li>
-                <a href="tel:+1234567890" className="hover:text-[#00D9FF] transition-colors">
-                  +1 (234) 567-890
+                <a href="tel:+971502717411" className="hover:text-[#00D9FF] transition-colors">
+                  +971502717411
                 </a>
               </li>
             </ul>
@@ -176,7 +173,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-border">
           <div className="gradient-line w-32 mx-auto mb-6" />
           <p className="text-center text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} TECHNOVA. All rights reserved. Built with passion for the future.
+            &copy; {new Date().getFullYear()} TECHNOVA. {t('copyright')}
           </p>
         </div>
       </div>

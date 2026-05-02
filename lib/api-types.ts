@@ -166,6 +166,48 @@ export interface CreateJobRequest {
 
 export interface UpdateJobRequest extends Partial<CreateJobRequest> { }
 
+export interface CareerApplication {
+    _id: string
+    careerId: string
+    name: string
+    email: string
+    phone: string
+    resumeUrl: string
+    coverLetter?: string
+    appliedAt: string
+    createdAt: string
+    updatedAt: string
+}
+
+// User Types
+export interface UserAPI {
+    _id: string
+    userName: string
+    email: string
+    role: string
+    isActive: string
+    customId?: string
+    createdAt: string
+    updatedAt: string
+    token?: string
+}
+
+export interface CreateUserRequest {
+    userName: string
+    email: string
+    password: string
+    role?: string
+    phone?: string
+}
+
+export interface UpdateUserRequest {
+    userName?: string
+    email?: string
+    password?: string
+    role?: string
+    isActive?: string
+}
+
 // Authentication Types
 export interface LoginRequest {
     email: string
@@ -208,4 +250,20 @@ export interface PaginatedResponse<T> {
         total: number
         totalPages: number
     }
+}
+
+// Contact Form Types
+export interface ContactFormRequest {
+    name: string
+    email: string
+    phone: string
+    service?: string  // Single service (deprecated, for backwards compatibility)
+    services?: string[]  // Multiple services
+    projects?: string[]  // AI Products selection (Natai, Foodai, Fai, etc.)
+    message: string
+}
+
+export interface ContactFormResponse {
+    success: boolean
+    message: string
 }
