@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import Marquee from "react-fast-marquee"
 import { useTranslations } from 'next-intl'
 
@@ -13,7 +14,6 @@ export default function LogosMarquee() {
         "/microsoft_logo.svg",
         "/gemini.svg",
         "/cloudflare_Logo.svg",
-        // "/yussef_dev.png",
         "/aws.svg",
         "/yussef.png",
     ]
@@ -51,10 +51,12 @@ export default function LogosMarquee() {
                         >
                             <div className="relative w-32 h-16 lg:w-40 lg:h-20 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
                                 <div className="absolute inset-0 bg-gradient-to-br from-[#7B3FEF]/10 to-[#00D9FF]/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl" />
-                                <img
+                                <Image
                                     src={logo}
                                     alt={`Partner logo ${index + 1}`}
-                                    className="relative w-full h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
+                                    fill
+                                    sizes="(max-width: 768px) 128px, 160px"
+                                    className="relative object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
                                     style={{
                                         filter: "brightness(0) saturate(100%) invert(50%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)",
                                     }}

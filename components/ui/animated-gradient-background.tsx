@@ -12,6 +12,7 @@ export const AnimatedGradientBackground = () => {
     >
       <motion.div
         className="absolute top-0 left-0 w-[50vw] h-[50vh] bg-gradient-to-br from-[#7B3FEF]/10 to-transparent rounded-full blur-3xl"
+        style={{ willChange: "transform, opacity" }}
         animate={{
           x: ["-25%", "25%", "-25%"],
           y: ["-25%", "25%", "-25%"],
@@ -26,6 +27,7 @@ export const AnimatedGradientBackground = () => {
       />
       <motion.div
         className="absolute bottom-0 right-0 w-[50vw] h-[50vh] bg-gradient-to-tl from-[#00D9FF]/10 to-transparent rounded-full blur-3xl"
+        style={{ willChange: "transform, opacity" }}
         animate={{
           x: ["25%", "-25%", "25%"],
           y: ["25%", "-25%", "25%"],

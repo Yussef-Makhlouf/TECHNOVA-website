@@ -396,10 +396,10 @@ export default async function LocaleLayout({
               <FacebookPixel />
               <div className="fixed inset-0 z-0 pointer-events-none">
                 <AnimatedGridPattern
-                  numSquares={30}
+                  numSquares={15}
                   maxOpacity={0.1}
-                  duration={3}
-                  repeatDelay={1}
+                  duration={5}
+                  repeatDelay={2}
                   className={cn(
                     "[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]",
                     "inset-x-0 inset-y-0 h-full w-full skew-y-12 opacity-20 dark:opacity-30",

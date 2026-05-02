@@ -12,7 +12,10 @@ export function Hero() {
   const t = useTranslations('hero')
 
   useEffect(() => {
-    renderCanvas()
+    const cleanup = renderCanvas()
+    return () => {
+      if (cleanup) cleanup()
+    }
   }, [])
 
   return (
